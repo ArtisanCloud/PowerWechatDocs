@@ -1,9 +1,7 @@
 @import '_variables';
 
 .navbar {
-  --navbar-line-height: calc(
-    var(--navbar-height) - 2 * var(--navbar-padding-v)
-  );
+  --navbar-line-height: var(--navbar-height);
 
   padding: var(--navbar-padding-v) var(--navbar-padding-h);
   line-height: var(--navbar-line-height);
@@ -23,7 +21,7 @@
 
   .navbar-links-wrapper {
     display: flex;
-    position: absolute;
+    //position: absolute;
     box-sizing: border-box;
     top: var(--navbar-padding-v);
     right: var(--navbar-padding-h);
@@ -31,6 +29,7 @@
     padding-left: var(--navbar-padding-h);
     white-space: nowrap;
     font-size: 0.9rem;
+    justify-content: flex-end;
 
     .search-box {
       flex: 0 0 auto;
@@ -170,4 +169,10 @@
     width: 1.25rem;
     height: 1.25rem;
   }
+}
+
+// search input
+#docsearch-container {
+  display: flex;
+  align-items: center;
 }

@@ -1,0 +1,44 @@
+//
+// contact.scss
+//
+.error {
+  margin: 8px 0px;
+  display: none;
+  color: $danger;
+}
+
+#ajaxsuccess {
+  font-size: 16px;
+  width: 100%;
+  display: none;
+  clear: both;
+  margin: 8px 0px;
+}
+
+.error_message,
+#success_page {
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.error_message {
+  background-color: rgba(240, 115, 90, 0.1) !important;
+  border: 2px solid rgba(240, 115, 90, 0.1) !important;
+  color: #f0735a !important;
+  font-size: 14px;
+}
+
+.contact-loader {
+  display: none;
+}
+
+#success_page {
+  background-color: rgba(83, 199, 151, 0.1) !important;
+  border: 2px solid rgba(83, 199, 151, 0.1) !important;
+  color: #53c797 !important;
+  p {
+    margin-bottom: 0 !important;
+  }
+}

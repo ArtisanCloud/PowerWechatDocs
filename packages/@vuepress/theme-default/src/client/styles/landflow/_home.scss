@@ -1,0 +1,123 @@
+//
+// home.scss
+//
+
+@mixin home-common {
+  background-size: cover;
+  align-self: center;
+  position: relative;
+  background-position: center center;
+}
+.bg-home {
+  height: 100vh;
+  @include home-common();
+}
+.bg-half-260 {
+  padding: 260px 0;
+  @include home-common();
+}
+.bg-half-170 {
+  padding: 170px 0;
+  @include home-common();
+}
+
+.bg-half-130 {
+  padding: 130px 0;
+  @include home-common();
+}
+
+.bg-profile {
+  padding: 80px 0;
+  @include home-common();
+}
+
+.bg-hero {
+  padding: 100px 0;
+  @include home-common();
+}
+
+.home-wrapper {
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 40rem;
+    right: -11rem;
+    width: 90rem;
+    height: 35rem;
+    transform: rotate(99deg);
+    background: linear-gradient(90deg, rgba($primary, 0.3), transparent);
+    z-index: 1;
+
+    @media (max-width: 768px) {
+      right: -25rem;
+    }
+  }
+}
+
+//Saas
+.home-dashboard {
+  img {
+    position: relative;
+    top: 60px;
+    z-index: 1;
+  }
+}
+
+//Studio
+.text-type-element {
+  &:after {
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 100%;
+    background-color: rgba($primary, 0.15);
+    right: 0;
+    left: 0;
+    bottom: 15px;
+    z-index: -1;
+    transition: all 0.5s ease;
+  }
+}
+
+//Business Landing
+.home-slider {
+  .carousel-control-next,
+  .carousel-control-prev {
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 30px;
+    border: 1px solid $gray-400;
+  }
+  .carousel-control-next-icon,
+  .carousel-control-prev-icon {
+    width: 30%;
+  }
+}
+
+//Responsive
+@media (max-width: 768px) {
+  .bg-saas-shape {
+    img {
+      max-width: 720px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .bg-home,
+  .bg-half-170,
+  .bg-half-260,
+  .main-slider .slides .bg-slider {
+    padding: 150px 0;
+    height: auto;
+  }
+
+  .bg-saas-shape {
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}

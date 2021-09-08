@@ -1,11 +1,13 @@
 <template>
-  <nav v-if="navbarLinks.length" class="navbar-links">
-    <div v-for="item in navbarLinks" :key="item.text" class="navbar-links-item">
+  <ul v-if="navbarLinks.length" class="navigation-menu nav-left nav-light">
+    <template v-for="item in navbarLinks" :key="item.text">
       <DropdownLink v-if="item.children" :item="item" />
 
-      <NavLink v-else :item="item" />
-    </div>
-  </nav>
+      <li v-else>
+        <NavLink :item="item" />
+      </li>
+    </template>
+  </ul>
 </template>
 
 <script setup lang="ts">

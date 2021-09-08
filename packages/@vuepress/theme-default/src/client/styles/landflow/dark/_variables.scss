@@ -1,0 +1,76 @@
+//
+// variables.scss
+//
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap');
+
+// Color variables
+$white: #1f2d3d;
+
+$primary: #4259ed; //0063f7
+$secondary: #9091a8;
+$success: #00b090;
+$warning: #ffcd35;
+$info: #36a3f7;
+$danger: #f03e55;
+$dark: #ffffff; //3c4858
+$black: #161c2d;
+$muted: #8492a6; //8492a6
+$light: #253649;
+
+// Gray
+$gray-100: #495057;
+$gray-200: #6c757d;
+$gray-300: #adb5bd;
+$gray-400: #ced4da;
+$gray-500: #dee2e6;
+$gray-600: #e9ecef;
+$gray-700: #f8f9fa;
+
+// Overlay
+$overlay: rgba($white, 0.75);
+$gradident-overlay: rgba($primary, 0.6);
+$bg-overlay-white: rgba($white, 0.5);
+
+//Body Background
+$shadow: 0 0 3px rgba($dark, 0.15);
+$shadow-md: 0 5px 13px rgba($dark, 0.2);
+$shadow-lg: 0 10px 25px rgba($dark, 0.15);
+$footer: lighten($white, 3%);
+
+// Base font
+$font-size-base: 16px;
+
+$font-family-base: 'Nunito Sans', sans-serif;
+$font-family-secondary: 'Nunito Sans', sans-serif;
+
+//Loops
+$colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'success': $success,
+  'warning': $warning,
+  'info': $info,
+  'danger': $danger,
+  'dark': $dark,
+  'muted': $muted,
+  'light': $light,
+  'white': $white,
+  'footer': $footer,
+);
+
+$heading-font-sizes: (
+  'h1': 42px,
+  'h2': 36px,
+  'h3': 30px,
+  'h4': 24px,
+  'h5': 18px,
+  'h6': 16px,
+);
+
+$display-font-sizes: (
+  'display-1': 80px,
+  'display-2': 72px,
+  'display-3': 64px,
+  'display-4': 56px,
+);

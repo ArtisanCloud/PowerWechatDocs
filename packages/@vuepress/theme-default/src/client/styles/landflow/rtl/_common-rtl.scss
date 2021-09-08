@@ -1,0 +1,70 @@
+//
+// _blog.scss
+//
+
+.blog {
+  .tag {
+    right: 10px !important;
+    left: auto;
+  }
+}
+
+//
+// home.scss
+//
+.home-wrapper {
+  &:before {
+    left: -20rem !important;
+    right: auto;
+    transform: rotate(80deg);
+
+    @media (max-width: 768px) {
+      left: -30rem !important;
+      right: auto;
+    }
+  }
+}
+
+//
+// _team.scss
+//
+.team {
+  .team-social {
+    left: 10px !important;
+    right: auto;
+  }
+}
+
+//Testimonial
+.swiper-slider-hero,
+.tns-inner,
+.tns-nav {
+  direction: ltr;
+}
+
+.tns-visually-hidden {
+  left: 0 !important;
+  visibility: hidden;
+}
+
+//
+// _work.scss
+//
+.container-filter {
+  .categories {
+    &.active,
+    &:hover {
+      &:after {
+        right: 0 !important;
+        left: auto;
+      }
+    }
+  }
+}
+
+.job-catagories {
+  .icons {
+    left: 24px !important;
+    right: auto;
+  }
+}

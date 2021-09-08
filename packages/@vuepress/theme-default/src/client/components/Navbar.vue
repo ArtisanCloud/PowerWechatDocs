@@ -1,9 +1,31 @@
 <template>
-  <header ref="navbar" class="navbar">
+  <header
+    id="topnav"
+    ref="navbar"
+    class="navbar"
+    :class="{ 'nav-sticky': navSticky }"
+  >
     <ToggleSidebarButton @toggle="$emit('toggle-sidebar')" />
 
     <span ref="siteBrand">
-      <RouterLink :to="siteBrandLink">
+      <RouterLink class="logo" :to="siteBrandLink">
+        <span class="logo-light-mode">
+          <img src="/images/logo-dark.png" class="l-dark" height="22" alt="" />
+          <img
+            src="/images/logo-light.png"
+            class="l-light"
+            height="22"
+            alt=""
+          />
+        </span>
+        <img
+          src="/images/logo-light.png"
+          height="22"
+          class="logo-dark-mode"
+          alt=""
+        />
+      </RouterLink>
+      <RouterLink v-if="false" :to="siteBrandLink">
         <img
           v-if="siteBrandLogo"
           class="logo"
@@ -36,8 +58,14 @@
 </template>
 
 <script setup lang="ts">
-import { useRouteLocale, useSiteLocaleData, withBase } from '@vuepress/client'
+import {
+  usePageFrontmatter,
+  useRouteLocale,
+  useSiteLocaleData,
+  withBase,
+} from '@vuepress/client'
 import { computed, onMounted, ref } from 'vue'
+import { DefaultThemeHomePageFrontmatter } from '../../shared'
 import { useDarkMode, useThemeLocaleData } from '../composables'
 import NavbarLinks from './NavbarLinks.vue'
 import ToggleDarkModeButton from './ToggleDarkModeButton.vue'
@@ -49,7 +77,9 @@ const routeLocale = useRouteLocale()
 const siteLocale = useSiteLocaleData()
 const themeLocale = useThemeLocaleData()
 const isDarkMode = useDarkMode()
+const frontmatter = usePageFrontmatter<DefaultThemeHomePageFrontmatter>()
 
+const scrollY = ref(0)
 const navbar = ref<HTMLElement | null>(null)
 const siteBrand = ref<HTMLElement | null>(null)
 const siteBrandLink = computed(
@@ -72,6 +102,16 @@ const linksWrapperStyle = computed(() => {
   }
 })
 const enableDarkMode = computed(() => themeLocale.value.darkMode)
+const isHome = computed(() => !!frontmatter.value.home)
+const navSticky = computed(() => {
+  if (!isHome.value) {
+    return true
+  }
+  if (scrollY.value > 70) {
+    return true
+  }
+  return false
+})
 
 // avoid overlapping of long title and long navbar links
 onMounted(() => {
@@ -94,6 +134,9 @@ onMounted(() => {
   handleLinksWrapWidth()
   window.addEventListener('resize', handleLinksWrapWidth, false)
   window.addEventListener('orientationchange', handleLinksWrapWidth, false)
+  window.addEventListener('scroll', () => {
+    scrollY.value = window.scrollY
+  })
 })
 
 function getCssValue(el: HTMLElement | null, property: string): number {

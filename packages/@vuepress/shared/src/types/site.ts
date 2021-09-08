@@ -31,6 +31,12 @@ export interface SiteLocaleData {
   // site description
   description: string
 
+  // home banner note text
+  bannerNote: string
+
+  // home banner install command
+  bannerCodeBlock: string
+
   // tags in site <head>
   head: HeadConfig[]
 }

@@ -1,0 +1,160 @@
+//
+// _work.scss
+//
+.filter-box {
+  display: none;
+  &.show {
+    display: block;
+  }
+}
+.container-filter {
+  li {
+    padding: 0px 15px;
+    a {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      cursor: pointer;
+      line-height: 34px;
+      transition: all 0.5s ease;
+      color: $muted !important;
+      &.active,
+      &:hover {
+        color: $primary !important;
+      }
+    }
+  }
+  .categories {
+    &:after {
+      content: '';
+      position: absolute;
+      height: 0;
+      width: 0;
+      background-color: rgba($primary, 0.2);
+      right: 0;
+      left: 0;
+      bottom: 8px;
+      z-index: -1;
+      transition: all 0.5s ease;
+    }
+    &.active,
+    &:hover {
+      &:after {
+        width: 100%;
+        right: auto;
+        left: 0;
+        height: 6px;
+      }
+    }
+  }
+}
+
+.spacing {
+  padding: 7px;
+}
+
+@each $name, $value in $colors {
+  .work-container {
+    &.work-#{$name} {
+      .content {
+        a {
+          transition: all 0.5s ease;
+          &.title,
+          &.tag,
+          &.author,
+          &.link {
+            &:hover {
+              color: $value !important;
+            }
+          }
+        }
+      }
+      &.work-border {
+        border-top: 4px solid $value !important;
+      }
+    }
+  }
+}
+
+.work-container {
+  &.work-border {
+    transition: all 0.3s ease;
+    &:hover {
+      transform: translateY(-10px);
+    }
+  }
+}
+
+.spacing {
+  padding: 10px;
+}
+
+//Job / Careers
+.job-catagories {
+  &:hover {
+    @each $name, $value in $colors {
+      &.bg-catagory-#{$name} {
+        background-color: #{$value} !important;
+      }
+    }
+  }
+}
+
+.job-catagories {
+  .title,
+  .sub-title,
+  .icons {
+    transition: all 0.5s ease;
+  }
+  .icons {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    opacity: 0.1;
+  }
+  &:hover {
+    box-shadow: $shadow-md !important;
+    transform: scale(1.05) translateY(-10px);
+    .title {
+      color: $white !important;
+    }
+    .sub-title {
+      color: rgba($white, 0.5) !important;
+    }
+    .icons {
+      color: $white !important;
+    }
+  }
+}
+
+.feature-company {
+  transition: all 0.5s ease;
+  &:hover {
+    box-shadow: $shadow-lg !important;
+    .company-name {
+      color: $primary !important;
+    }
+  }
+}
+
+.job-vacancy {
+  @each $name, $value in $colors {
+    &.job-#{$name} {
+      &:hover {
+        background: rgba($value, 0.05) !important;
+        .job-caragory,
+        .icon {
+          color: $value !important;
+        }
+      }
+    }
+  }
+}
+
+.job-vacancy {
+  transition: all 0.5s ease;
+  .job-caragory,
+  .icon {
+    transition: all 0.5s ease;
+  }
+}

@@ -23,3 +23,5 @@ node_modules/
 
 # Typescript build info
 *.tsbuildinfo
+
+.idea

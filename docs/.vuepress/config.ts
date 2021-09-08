@@ -54,13 +54,17 @@ export default defineUserConfig<DefaultThemeOptions>({
   locales: {
     '/': {
       lang: 'en-US',
-      title: 'VuePress',
-      description: 'Vue-powered Static Site Generator',
+      title: 'PowerWeChat',
+      description: 'An easy-to-use Golang WeChat SDK',
+      bannerNote: 'Start Golang WeChat development now',
+      bannerCodeBlock: 'go get -u github.com/ArtisanCloud/power-wechat',
     },
     '/zh/': {
       lang: 'zh-CN',
-      title: 'VuePress',
-      description: 'Vue 驱动的静态网站生成器',
+      title: 'PowerWeChat',
+      description: '一款简单易用的Golang微信SDK',
+      bannerNote: '立即开启Golang微信开发之路',
+      bannerCodeBlock: 'go get -u github.com/ArtisanCloud/power-wechat',
     },
   },
 
@@ -73,9 +77,11 @@ export default defineUserConfig<DefaultThemeOptions>({
   themeConfig: {
     logo: '/images/hero.png',
 
-    repo: 'vuepress/vuepress-next',
+    repo: 'ArtisanCloud/power-wechat',
 
     docsDir: 'docs',
+
+    darkMode: false, // 暂时没有暗黑模式
 
     // theme-level locales config
     locales: {
@@ -87,10 +93,10 @@ export default defineUserConfig<DefaultThemeOptions>({
        */
       '/': {
         // navbar
-        navbar: navbar.en,
+        navbar: navbar.zh,
 
         // sidebar
-        sidebar: sidebar.en,
+        sidebar: sidebar.zh,
 
         // page meta
         editLinkText: 'Edit this page on GitHub',

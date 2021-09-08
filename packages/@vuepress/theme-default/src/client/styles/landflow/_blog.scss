@@ -1,0 +1,39 @@
+//
+// _blog.scss
+//
+@each $name, $value in $colors {
+  .blog {
+    &.blog-#{$name} {
+      .tag {
+        background: $value !important;
+      }
+      .title {
+        &:hover {
+          color: $value !important;
+        }
+      }
+      .link {
+        color: $value !important;
+      }
+    }
+  }
+}
+
+.blog {
+  transition: all 0.5s ease;
+  .tag {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: $shadow-lg !important;
+    .tag {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+}

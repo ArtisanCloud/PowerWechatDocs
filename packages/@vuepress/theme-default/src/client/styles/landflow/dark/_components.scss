@@ -1,0 +1,359 @@
+//
+// components.scss
+//
+
+//Buttons
+@each $name, $value in $colors {
+  .btn-#{$name} {
+    background-color: #{$value} !important;
+    border: 1px solid #{$value} !important;
+    color: $dark !important;
+    box-shadow: 0 3px 5px 0 rgba($value, 0.3);
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+    &.focus {
+      background-color: darken($value, 10%) !important;
+      border-color: darken($value, 10%) !important;
+      color: $dark !important;
+    }
+  }
+
+  .btn-soft-#{$name} {
+    color: #{$value} !important;
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+    &.focus {
+      color: $dark !important;
+    }
+  }
+
+  .btn-outline-#{$name} {
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+    &.focus,
+    &:not(:disabled):not(.disabled):active {
+      color: $dark !important;
+    }
+  }
+}
+
+.btn {
+  &.btn-dark {
+    color: $white !important;
+    background: $dark;
+    border: 1px solid $gray-100 !important;
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+    &.focus {
+      background-color: darken($dark, 5%) !important;
+      color: $white !important;
+    }
+  }
+  &.btn-soft-dark {
+    color: rgba($dark, 0.5) !important;
+    border: 1px solid $gray-100 !important;
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+    &.focus {
+      color: $white !important;
+    }
+  }
+  &.btn-outline-dark {
+    border: 1px solid $gray-100 !important;
+    color: $dark !important;
+    background-color: transparent;
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+    &.focus {
+      background-color: $dark !important;
+      color: $white !important;
+    }
+  }
+  &.btn-light {
+    color: $dark !important;
+    border-color: darken($gray-200, 15%) !important;
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+    &.focus {
+      background-color: lighten($light, 10%) !important;
+      color: $dark !important;
+    }
+  }
+  &.btn-soft-light {
+    color: rgba($dark, 0.5) !important;
+    border: 1px solid darken($gray-200, 15%) !important;
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+    &.focus {
+      color: $dark !important;
+    }
+  }
+  &.btn-outline-light {
+    border-color: darken($gray-200, 15%) !important;
+    color: $dark !important;
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+    &.focus {
+      background-color: lighten($light, 10%) !important;
+      color: $dark !important;
+    }
+  }
+}
+
+//Shadow
+.shadow {
+  box-shadow: $shadow !important;
+}
+.shadow-lg {
+  box-shadow: $shadow-lg !important;
+}
+.shadow-md {
+  box-shadow: $shadow-md !important;
+}
+
+//Badges
+.badge {
+  padding: 4px 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  &:focus,
+  &.focus {
+    box-shadow: none !important;
+  }
+}
+
+.progress {
+  background-color: $gray-100;
+}
+
+//Dropdowns
+@each $name, $value in $colors {
+  .dropdown-#{$name} {
+    .dropdown-menu {
+      .dropdown-item {
+        &:hover,
+        &.active,
+        &:active,
+        &.focus,
+        &:focus {
+          background-color: transparent;
+          color: #{$value} !important;
+        }
+      }
+    }
+  }
+}
+
+.btn-group {
+  .dropdown-toggle {
+    &:after {
+      border: solid $dark;
+      border-width: 0 2px 2px 0;
+    }
+  }
+  .dropdown-menu {
+    box-shadow: $shadow;
+  }
+}
+
+//Alert
+@each $name, $value in $colors {
+  .alert-#{$name} {
+    color: $dark;
+  }
+  .alert-outline-#{$name} {
+    background-color: $dark;
+  }
+}
+.alert {
+  &.alert-light {
+    background-color: lighten($light, 3%);
+    color: $dark;
+    border-color: $gray-200;
+  }
+}
+
+.breadcrumb {
+  .breadcrumb-item {
+    a {
+      color: $dark;
+    }
+    &:after {
+      color: $dark;
+    }
+  }
+}
+
+//Pagination
+.pagination {
+  .page-item {
+    .page-link {
+      color: $dark;
+      border: 1px solid $gray-100;
+      background: $white;
+      &:hover {
+        color: $dark;
+      }
+    }
+    &.active {
+      .page-link {
+        color: $dark;
+      }
+    }
+  }
+}
+
+//Accordion
+.accordion {
+  .accordion-item {
+    .accordion-button {
+      &.collapsed {
+        background-color: $white;
+        color: $dark !important;
+        &:before {
+          color: $dark !important;
+        }
+      }
+    }
+  }
+}
+
+//Nav
+.nav-pills {
+  background: lighten($white, 10%);
+  .nav-link {
+    color: $dark !important;
+    &.nav-link-alt {
+      color: $dark !important;
+      &:hover {
+        background: none !important;
+      }
+      &.active {
+        background: $white !important;
+      }
+    }
+    &:hover {
+      background: lighten($white, 8%);
+    }
+    &.active {
+      color: $dark !important;
+    }
+  }
+}
+
+//blockquote
+.blockquote {
+  border-left: 3px solid $gray-300;
+}
+
+//Form
+.form-control {
+  background-color: $white;
+  border: 1px solid $gray-100;
+  color: $dark;
+  &::placeholder {
+    color: $dark !important;
+  }
+  &[readonly] {
+    background-color: $white;
+  }
+  &:disabled {
+    background-color: $gray-300;
+  }
+}
+
+.form-check-input {
+  background-color: $white;
+  border-color: $gray-100;
+}
+
+//Subscribe form
+.subcribe-form {
+  input {
+    color: $dark !important;
+    background-color: rgba($white, 0.8) !important;
+    border-color: $gray-100 !important;
+  }
+}
+
+//Table
+.table-responsive {
+  .table {
+    color: $dark;
+    td,
+    th {
+      border-color: darken($gray-200, 2%);
+    }
+  }
+  .table-center {
+    tbody {
+      tr {
+        &:hover {
+          color: $dark;
+          background-color: $gray-200;
+        }
+      }
+    }
+  }
+}
+
+//Social icons
+.social-icon {
+  li {
+    a {
+      color: $dark;
+      border: 1px solid $dark;
+      &:hover {
+        color: $dark !important;
+      }
+    }
+  }
+  &.social {
+    li {
+      a {
+        color: $gray-300;
+        border-color: lighten($footer, 6%);
+      }
+    }
+  }
+
+  &.social-light {
+    li {
+      a {
+        color: $gray-200;
+        border-color: $gray-200;
+      }
+    }
+  }
+}
+
+//countdown
+#countdown,
+#eventdown {
+  .count-down {
+    color: $dark;
+  }
+}
+
+//maintenance
+#maintenance {
+  color: $dark;
+}

@@ -1,6 +1,6 @@
 <template>
   <aside class="sidebar">
-    <NavbarLinks />
+    <NavbarLinks v-if="false" />
 
     <slot name="top" />
 

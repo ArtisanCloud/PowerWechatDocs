@@ -1,14 +1,18 @@
+@import 'landflow/variables';
+
+$brand: #4259ed;
+
 :root {
   // brand colors
-  --c-brand: #3eaf7c;
+  --c-brand: #4259ed;
   --c-brand-light: #4abf8a;
 
   // background colors
   --c-bg: #ffffff;
   --c-bg-light: #f3f4f5;
   --c-bg-lighter: #eeeeee;
-  --c-bg-navbar: var(--c-bg);
-  --c-bg-sidebar: var(--c-bg);
+  --c-bg-navbar: tra;
+  --c-bg-sidebar: transparent;
   --c-bg-arrow: #cccccc;
 
   // text colors
@@ -22,6 +26,9 @@
   // border colors
   --c-border: #eaecef;
   --c-border-dark: #dfe2e5;
+
+  // background colors
+  --c-bg-active: rgba(66, 89, 237, 0.05);
 
   // custom container colors
   --c-tip: #42b983;
@@ -62,7 +69,7 @@
   --font-family-code: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 
   // layout vars
-  --navbar-height: 3.6rem;
+  --navbar-height: 74px;
   --navbar-padding-v: 0.7rem;
   --navbar-padding-h: 1.5rem;
   --sidebar-width: 20rem;

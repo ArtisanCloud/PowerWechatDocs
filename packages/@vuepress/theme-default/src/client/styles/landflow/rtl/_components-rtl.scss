@@ -1,0 +1,139 @@
+//
+// components.scss
+//
+
+//Dropdown
+.btn-group {
+  .dropdown-toggle {
+    &:after {
+      left: -4px;
+      right: auto;
+    }
+  }
+  .dropdown-menu {
+    right: 0 !important;
+  }
+}
+
+//Alert
+.alert {
+  &.alert-dismissible {
+    padding-left: 30px !important;
+    padding-right: 10px !important;
+    .btn-close {
+      left: 10px !important;
+      right: auto;
+    }
+  }
+}
+
+//Breadcrumb
+.breadcrumb {
+  .breadcrumb-item {
+    &:before {
+      content: '\F0141';
+      font-family: 'Material Design Icons';
+      color: $dark;
+      padding: 0 6px !important;
+    }
+    &:after {
+      display: none;
+    }
+    &:last-child {
+      &:before {
+        display: none !important;
+      }
+    }
+  }
+}
+
+//Pagination
+.pagination {
+  padding-right: 0;
+  .page-item {
+    &:first-child .page-link {
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    &:last-child .page-link {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+    }
+  }
+}
+
+//Modal
+.modal-header {
+  .btn-close {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+}
+
+//Accordion
+.accordion {
+  .accordion-item {
+    .accordion-button {
+      text-align: right;
+      &:before {
+        left: 20px !important;
+        right: auto;
+      }
+    }
+  }
+}
+
+//Nav
+.nav-pills {
+  padding-right: 0;
+}
+
+//Processbar
+.progress-box {
+  .progress {
+    .progress-value {
+      left: -15px !important;
+      right: auto;
+    }
+  }
+}
+
+//blockquote
+.blockquote {
+  border-right: 3px solid $gray-300 !important;
+  border-left: none;
+}
+
+//Form
+.form-check .form-check-input {
+  float: right;
+  margin-left: 0.5em;
+}
+
+//Subscribe form
+.subcribe-form {
+  input {
+    padding-left: 160px !important;
+    padding-right: 30px !important;
+  }
+  button {
+    left: 6px !important;
+    right: auto;
+  }
+}
+
+//back to top
+.back-to-top {
+  left: 30px !important;
+  right: auto;
+}
+
+//back-to-home
+.back-to-home {
+  left: 2% !important;
+  right: auto;
+}

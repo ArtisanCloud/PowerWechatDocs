@@ -1,10 +1,16 @@
 @import '_variables';
 
 .home {
-  padding: var(--navbar-height) 2rem 0;
-  max-width: var(--homepage-width);
+  //padding: var(--navbar-height) 2rem 0;
+  //max-width: var(--homepage-width);
+
   margin: 0px auto;
   display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
 
   .hero {
     text-align: center;
@@ -104,6 +110,38 @@
     text-align: center;
     color: var(--c-text-lighter);
     transition: border-color var(--t-color);
+  }
+
+  // 可复制代码块
+  .code-block {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 6px;
+    color: var(--t-color);
+    background: #e1e4fb;
+
+    cursor: pointer;
+
+    .uil-copy {
+      font-size: 25px;
+      &:before {
+        transform: translate(8px, 3px);
+      }
+    }
+  }
+
+  .heading-title {
+    transform: translate(0, -40px);
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border: none;
+    color: #fff;
+    padding: 15px;
   }
 }
 

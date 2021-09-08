@@ -87,7 +87,7 @@
   color: var(--c-text);
   border-left: 0.25rem solid transparent;
   margin: 0;
-  padding: 0.35rem 1rem 0.35rem 2rem;
+  padding: 0.6rem 1rem 0.6rem 2rem;
   line-height: 1.4;
   width: 100%;
   box-sizing: border-box;
@@ -116,6 +116,7 @@ a.sidebar-item {
     font-weight: 600;
     color: var(--c-text-accent);
     border-left-color: var(--c-text-accent);
+    background-color: var(--c-bg-active);
   }
 
   &.sidebar-heading.active {

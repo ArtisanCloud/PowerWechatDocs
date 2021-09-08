@@ -15,6 +15,7 @@ export interface DefaultThemeHomePageFrontmatter
   extends DefaultThemePageFrontmatter {
   home: true
   heroImage?: string
+  heroImageTest?: string
   heroAlt?: string
   heroText?: string | null
   tagline?: string | null
@@ -23,6 +24,9 @@ export interface DefaultThemeHomePageFrontmatter
     link: string
     type?: 'primary' | 'secondary'
   }[]
+  bannerBtn?: {
+    text: string
+  }
   features?: {
     title: string
     details: string

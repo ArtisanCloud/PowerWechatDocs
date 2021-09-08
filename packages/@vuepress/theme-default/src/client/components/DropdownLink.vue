@@ -1,31 +1,16 @@
 <template>
-  <div class="dropdown-wrapper" :class="{ open }">
-    <button
-      class="dropdown-title"
-      type="button"
-      :aria-label="dropdownAriaLabel"
-      @click="handleDropdown"
-    >
-      <span class="title">{{ item.text }}</span>
-      <span class="arrow down" />
-    </button>
-
-    <button
-      class="mobile-dropdown-title"
-      type="button"
-      :aria-label="dropdownAriaLabel"
-      @click="open = !open"
-    >
-      <span class="title">{{ item.text }}</span>
-      <span class="arrow" :class="open ? 'down' : 'right'" />
-    </button>
+  <li class="has-submenu parent-parent-menu-item" :class="{ open }">
+    <a href="javascript:void(0)">
+      {{ item.text }}
+    </a>
+    <span class="menu-arrow"></span>
 
     <DropdownTransition>
-      <ul v-show="open" class="nav-dropdown">
+      <ul class="submenu">
         <li
           v-for="(child, index) in item.children"
           :key="child.link || index"
-          class="dropdown-item"
+          class="sub-menu-item"
         >
           <template v-if="child.children">
             <h4 class="dropdown-subtitle">
@@ -71,7 +56,7 @@
         </li>
       </ul>
     </DropdownTransition>
-  </div>
+  </li>
 </template>
 
 <script setup lang="ts">

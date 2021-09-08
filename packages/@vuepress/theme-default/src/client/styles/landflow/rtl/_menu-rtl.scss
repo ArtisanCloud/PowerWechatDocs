@@ -1,0 +1,204 @@
+//
+// menu.scss
+//
+#topnav {
+  .logo {
+    float: right;
+  }
+  .has-submenu {
+    .submenu {
+      .submenu-arrow {
+        transform: rotate(135deg);
+        left: 20px !important;
+        right: auto;
+      }
+    }
+  }
+
+  //Buy button
+  .buy-button {
+    float: left;
+  }
+  .navigation-menu {
+    > li {
+      float: right;
+      > a {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+    .has-submenu {
+      .menu-arrow {
+        left: -1px !important;
+        right: auto;
+      }
+    }
+  }
+  .menu-extras {
+    float: left;
+  }
+}
+@media (min-width: 992px) {
+  #topnav {
+    .navigation-menu {
+      > .has-submenu {
+        > .submenu {
+          > .has-submenu {
+            > .submenu {
+              &::before {
+                margin-right: -35px !important;
+                margin-left: auto;
+              }
+            }
+          }
+        }
+      }
+      > li {
+        .submenu {
+          right: 0 !important;
+          left: auto;
+          li {
+            ul {
+              padding-right: 0;
+              padding-left: 0;
+            }
+          }
+          &.megamenu {
+            > li {
+              .submenu {
+                left: auto !important;
+                right: 100% !important;
+                margin-right: 10px !important;
+                margin-left: auto;
+              }
+            }
+          }
+          > li {
+            .submenu {
+              right: 106% !important;
+              left: auto;
+              margin-right: 0px !important;
+              margin-left: auto;
+            }
+          }
+        }
+        &.last-elements {
+          .submenu {
+            left: 0 !important;
+            right: auto;
+            &:before {
+              left: 10px !important;
+              right: auto;
+            }
+            > li.has-submenu .submenu {
+              left: 100% !important;
+              right: auto;
+              margin-left: 10px !important;
+              margin-right: auto;
+            }
+          }
+        }
+      }
+
+      &.nav-right {
+        justify-content: flex-end !important;
+      }
+
+      &.nav-left {
+        justify-content: flex-start !important;
+        > li {
+          &.last-elements {
+            .submenu {
+              left: auto !important;
+              right: 0 !important;
+              &:before {
+                left: auto !important;
+                right: 45px !important;
+              }
+            }
+          }
+        }
+      }
+    }
+    .logo {
+      margin-left: 30px !important;
+      margin-right: auto;
+    }
+    .buy-button {
+      padding-right: 15px !important;
+      padding-left: 0;
+      margin-right: 15px !important;
+      margin-left: auto;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  #topnav {
+    .navigation-menu {
+      > li {
+        .submenu {
+          padding-right: 20px;
+          &.megamenu {
+            > li {
+              > ul {
+                padding-right: 0;
+                padding-left: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+    .navigation-menu {
+      float: none;
+      > li {
+        float: none;
+      }
+    }
+    .has-submenu {
+      .submenu {
+        .submenu-arrow {
+          left: 20px;
+          right: auto;
+        }
+      }
+    }
+  }
+  #navigation {
+    right: 0;
+    left: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  #topnav {
+    .navigation-menu {
+      .has-submenu {
+        .menu-arrow {
+          left: 16px;
+          right: auto;
+        }
+        .submenu {
+          .submenu-arrow {
+            border-width: 0px 2px 2px 0px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  #topnav {
+    .navigation-menu {
+      margin: 0 10px;
+    }
+    .navbar-toggle {
+      .lines {
+        margin-left: 0 !important;
+        margin-right: auto;
+      }
+    }
+  }
+}

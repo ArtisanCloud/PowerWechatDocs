@@ -1,130 +1,98 @@
 import type { SidebarConfig } from '@vuepress/theme-default'
 
+function concatData<T>(base: string, data: T): T {
+  if (!data || !base) {
+    return data
+  }
+  return {
+    ...data,
+    children: [...(data as any).children.map((e) => `${base}${e}`)],
+  }
+}
+
 export const zh: SidebarConfig = {
-  '/zh/guide/': [
-    {
-      text: '指南',
+  '/zh/': [
+    concatData('/zh/start/', {
+      text: '开始',
+      children: ['README.md', 'installation.md', 'quick-start.md', 'qa.md'],
+    }),
+    concatData('/zh/wecom/', {
+      text: '企业微信',
       children: [
-        '/zh/guide/README.md',
-        '/zh/guide/getting-started.md',
-        '/zh/guide/configuration.md',
-        '/zh/guide/page.md',
-        '/zh/guide/markdown.md',
-        '/zh/guide/assets.md',
-        '/zh/guide/i18n.md',
-        '/zh/guide/deployment.md',
-        '/zh/guide/theme.md',
-        '/zh/guide/plugin.md',
-        '/zh/guide/bundler.md',
-        '/zh/guide/migration.md',
+        'README.md',
+        'server.md',
+        'agent.md',
+        'message.md',
+        'user.md',
+        'web-auth.md',
+        'external-contact.md',
+        'custom-menu.md',
+        'media.md',
+        'oa.md',
+        'app-share.md',
+        'session.md',
+        'e-invoice.md',
+        'mini-program.md',
+        'jssdk.md',
+        'robot.md',
+        'mobile.md',
       ],
-    },
-  ],
-  '/zh/advanced/': [
-    {
-      text: '深入',
+    }),
+    concatData('/zh/mini-program/', {
+      text: '小程序', // 必要的
       children: [
-        '/zh/advanced/architecture.md',
-        '/zh/advanced/plugin.md',
-        '/zh/advanced/theme.md',
+        'README.md', // 指向readme.md
+        'miniprogram-code.md',
+        'service-message.md',
+        'statistics.md',
+        'wechat-login.md',
+        'template-message.md',
+        'decode-message.md',
+        'content-security.md',
+        'logistics.md',
+        'verify-signature.md',
+        'plugin.md',
+        'nearby-miniprogram.md',
+        'subscription-message.md',
+        'live.md',
+        'risk-control.md',
+        'url-scheme.md',
       ],
-    },
-    {
-      text: 'Cookbook',
+    }),
+    concatData('/zh/payment/', {
+      text: '微信支付', // 必要的
       children: [
-        '/zh/advanced/cookbook/README.md',
-        '/zh/advanced/cookbook/usage-of-client-app-enhance.md',
-        '/zh/advanced/cookbook/adding-extra-pages.md',
-        '/zh/advanced/cookbook/extending-a-theme.md',
-        '/zh/advanced/cookbook/passing-data-to-client-code.md',
-        '/zh/advanced/cookbook/markdown-and-vue-sfc.md',
+        'README.md', // 指向readme.md
+        'order.md',
+        'refund.md',
+        'bill.md',
+        'notification.md',
+        'red-pack.md',
+        'qr-pay.md',
+        'jssdk.md',
+        'work-pay.md',
+        'retrieve-order.md',
+        'security-tool.md',
+        'profit-share.md',
       ],
-    },
-  ],
-  '/zh/reference/': [
-    {
-      text: 'VuePress 参考',
+    }),
+    concatData('/zh/open-platform/', {
+      text: '开放平台', // 必要的
       children: [
-        '/zh/reference/cli.md',
-        '/zh/reference/config.md',
-        '/zh/reference/frontmatter.md',
-        '/zh/reference/components.md',
-        '/zh/reference/plugin-api.md',
-        '/zh/reference/theme-api.md',
-        '/zh/reference/client-api.md',
-        '/zh/reference/node-api.md',
+        'README.md', // 指向intro.md
+        'server.md', // 指向server.md
+        'oauth-agent.md', // 指向oauth-agent.md
       ],
-    },
-  ],
-  '/zh/reference/bundler/': [
-    {
-      text: '打包工具参考',
+    }),
+    concatData('/zh/work-open-platform/', {
+      text: '企业微信开放平台', // 必要的
       children: [
-        '/zh/reference/bundler/webpack.md',
-        '/zh/reference/bundler/vite.md',
+        'README.md', // 指向intro.md
+        'provider-api.md', // 指向provider-api.md
+        'server.md', // 指向server.md
+        'third-part-api.md', // 指向third-part-api.md
+        'work.md', // 指向work.md
       ],
-    },
-  ],
-  '/zh/reference/default-theme/': [
-    {
-      text: '默认主题参考',
-      children: [
-        '/zh/reference/default-theme/config.md',
-        '/zh/reference/default-theme/frontmatter.md',
-        '/zh/reference/default-theme/components.md',
-        '/zh/reference/default-theme/markdown.md',
-        '/zh/reference/default-theme/styles.md',
-      ],
-    },
-  ],
-  '/zh/reference/plugin/': [
-    {
-      text: '官方插件参考',
-      children: [
-        {
-          text: '常用功能',
-          children: [
-            '/zh/reference/plugin/back-to-top.md',
-            '/zh/reference/plugin/container.md',
-            '/zh/reference/plugin/google-analytics.md',
-            '/zh/reference/plugin/medium-zoom.md',
-            '/zh/reference/plugin/nprogress.md',
-            '/zh/reference/plugin/register-components.md',
-          ],
-        },
-        {
-          text: '内容搜索',
-          children: [
-            '/zh/reference/plugin/docsearch.md',
-            '/zh/reference/plugin/search.md',
-          ],
-        },
-        {
-          text: 'PWA',
-          children: [
-            '/zh/reference/plugin/pwa.md',
-            '/zh/reference/plugin/pwa-popup.md',
-          ],
-        },
-        {
-          text: '语法高亮',
-          children: [
-            '/zh/reference/plugin/prismjs.md',
-            '/zh/reference/plugin/shiki.md',
-          ],
-        },
-        {
-          text: '主题开发',
-          children: [
-            '/zh/reference/plugin/active-header-links.md',
-            '/zh/reference/plugin/debug.md',
-            '/zh/reference/plugin/git.md',
-            '/zh/reference/plugin/palette.md',
-            '/zh/reference/plugin/theme-data.md',
-            '/zh/reference/plugin/toc.md',
-          ],
-        },
-      ],
-    },
+    }),
   ],
 }

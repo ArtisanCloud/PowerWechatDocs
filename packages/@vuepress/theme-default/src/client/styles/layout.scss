@@ -14,7 +14,9 @@
   right: 0;
   height: var(--navbar-height);
   box-sizing: border-box;
-  border-bottom: 1px solid var(--c-border);
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  //border-bottom: 1px solid var(--c-border);
   background-color: var(--c-bg-navbar);
   transition: background-color var(--t-color), border-color var(--t-color);
 }
@@ -208,4 +210,13 @@ h6 {
   h1 {
     font-size: 1.9rem;
   }
+}
+
+// 修复样式冲突
+.nav-link {
+  display: inline-block !important;
+  //padding: 0 3px 0 0 !important;
+}
+p {
+  margin-top: 16px;
 }
