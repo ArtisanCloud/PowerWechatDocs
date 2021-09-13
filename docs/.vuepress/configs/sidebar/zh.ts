@@ -23,7 +23,7 @@ export const zh: SidebarConfig = {
         'server.md',
         'agent.md',
         'message.md',
-        'user.md',
+        'contacts.md',
         'web-auth.md',
         'external-contact.md',
         'custom-menu.md',
