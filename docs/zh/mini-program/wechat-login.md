@@ -1,14 +1,52 @@
 ---
-title: 微信登录
-date: 2021-07-06
+title: 微信登录与信息
+date: 2021-09-12
 ---
 
-在所有相关小程序的文档都是指 `xxxx` 得到的实例，就不在每个页面单独写了。
+## 登陆
+将获取的jscode ，换取用户的session信息
+
+
 
 ``` go
-import "log"
 
-func main() {
-  log.Println("xxxx")
-}
+var rs *ResponseCode2Session
+
+rs = MiniprogramApp.Auth.Session(code)
+
 ```
+[微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/login/auth.code2Session.html)
+
+
+## 用户信息
+
+检查加密信息是否由微信生成
+
+
+``` go
+
+
+var rs *ResponseAuthCheckEncryptedData
+
+rs = MiniprogramApp.Base.CheckEncryptedData("hsSuSUsePBqSQw2rYMtf9Nvha603xX8f2BMQBcYRoJiMNwOqt/UEhrqekebG5ar0LFNAm5MD4Uz6zorRwiXJwbySJ/FEJHav4NsobBIU1PwdjbJWVQLFy7+YFkHB32OnQXWMh6ugW7Dyk2KS5BXp1f5lniKPp1KNLyNLlFlNZ2mgJCJmWvHj5AI7BLpWwoRvqRyZvVXo+9FsWqvBdxmAPA==")
+
+```
+
+[微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/login/auth.code2Session.html)
+
+---
+
+用户支付完成后，获取该用户的 UnionId，无需用户授权。
+
+
+``` go
+
+
+var rs *ResponseAuthGetPaidUnionID
+
+rs = MiniprogramApp.Base.GetPaidUnionID("", nil)
+
+```
+
+
+[微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/user-info/auth.getPaidUnionId.html)
