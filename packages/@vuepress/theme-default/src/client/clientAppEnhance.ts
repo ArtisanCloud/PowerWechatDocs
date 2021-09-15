@@ -5,7 +5,7 @@ import CodeGroup from './components/global/CodeGroup'
 import CodeGroupItem from './components/global/CodeGroupItem.vue'
 import OutboundLink from './components/global/OutboundLink.vue'
 import { useScrollPromise } from './composables'
-
+import './styles/landflow/style.scss'
 import './styles/index.scss'
 
 export default defineClientAppEnhance(({ app, router }) => {
