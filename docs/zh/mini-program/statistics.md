@@ -22,21 +22,15 @@ const DATETIME_FORMAT = "20060102"
 
 ---
 
-获取用户访问小程序日留存
+### 小程序日留存
 
 ```go
 
-  now := time.Now().Add(-5 * 24 * time.Hour)
-  from := now.Format(services.DATETIME_FORMAT)
-  to := now.Format(services.DATETIME_FORMAT)
+now := time.Now().Add(-5 * 24 * time.Hour)
+from := now.Format(services.DATETIME_FORMAT)
+to := now.Format(services.DATETIME_FORMAT)
 
-  rs, err := MiniprogramApp.DataCube.GetDailyRetainInfo(from, to)
-
-  if err != nil {
-    panic(err)
-  }
-
-  c.JSON(http.StatusOK, rs)
+MiniprogramApp.DataCube.GetDailyRetainInfo(from, to)
 
 ```
 
@@ -44,42 +38,26 @@ const DATETIME_FORMAT = "20060102"
 
 ---
 
-获取用户访问小程序月留存
+### 小程序月留存
 
 ```go
+from := "20210906"
+to := "20210912"
 
-  from := "20210906"
-  to := "20210912"
-
-  rs, err := MiniprogramApp.DataCube.GetMonthlyRetainInfo(from, to)
-
-  if err != nil {
-		panic(err)
-	}
-
-  c.JSON(http.StatusOK, rs)
-
+MiniprogramApp.DataCube.GetMonthlyRetainInfo(from, to)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/visit-retain/analysis.getMonthlyRetain.html)
 
 ---
 
-获取用户访问小程序周留存
+### 小程序周留存
 
 ```go
+from := "20170201"
+to := "20170228"
 
-  from := "20170201"
-  to := "20170228"
-
-  rs, err := MiniprogramApp.DataCube.GetWeeklyRetainInfo(from, to)
-
-  if err != nil {
-    panic(err)
-  }
-
-  c.JSON(http.StatusOK, rs)
-
+MiniprogramApp.DataCube.GetWeeklyRetainInfo(from, to)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/visit-retain/analysis.getWeeklyRetain.html)
@@ -88,196 +66,129 @@ const DATETIME_FORMAT = "20060102"
 
 ## 日汇总统计数据
 
-获取用户访问小程序数据概况
+### 小程序数据概况
 
 ```go
+now := time.Now().Add(-5 * 24 * time.Hour)
+from := now.Format(services.DATETIME_FORMAT)
+to := now.Format(services.DATETIME_FORMAT)
 
-  now := time.Now().Add(-5 * 24 * time.Hour)
-
-  from := now.Format(services.DATETIME_FORMAT)
-  to := now.Format(services.DATETIME_FORMAT)
-
-  rs, err := MiniprogramApp.DataCube.GetDailySummary(from, to)
-
-  if err != nil {
-    panic(err)
-  }
-
-  c.JSON(http.StatusOK, rs)
-
+MiniprogramApp.DataCube.GetDailySummary(from, to)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/analysis.getDailySummary.html)
 
 ## 访问趋势
 
-获取用户访问小程序数据日趋势
+### 小程序数据日趋势
 
 ```go
+now := time.Now().Add(-5 * 24 * time.Hour)
 
+from := now.Format(services.DATETIME_FORMAT)
+to := now.Format(services.DATETIME_FORMAT)
 
-  now := time.Now().Add(-5 * 24 * time.Hour)
-  
-  from := now.Format(services.DATETIME_FORMAT)
-  to := now.Format(services.DATETIME_FORMAT)
-
-  rs, err := MiniprogramApp.DataCube.GetDailyVisitTrend(from, to)
-  
-  if err != nil {
-    panic(err)
-  }
-
-  c.JSON(http.StatusOK, rs)
-
+MiniprogramApp.DataCube.GetDailyVisitTrend(from, to)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/visit-trend/analysis.getDailyVisitTrend.html)
 
 ---
 
-获取用户访问小程序数据月趋势(能查询到的最新数据为上一个自然月的数据)
+### 小程序数据月趋势
+
+注：(能查询到的最新数据为上一个自然月的数据)
 
 ```go
+from := "20210831"
+to := "20210930"
 
-
-  from := "20210831"
-  to := "20210930"
-
-  rs, err := MiniprogramApp.DataCube.GetMonthlyVisitTrend(from, to)
-
-  if err != nil {
-    panic(err)
-  }
-
-  c.JSON(http.StatusOK, rs)
-
+MiniprogramApp.DataCube.GetMonthlyVisitTrend(from, to)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/visit-trend/analysis.getMonthlyVisitTrend.html)
 
 ---
 
-获取用户访问小程序数据周趋势
+### 小程序数据周趋势
 
 ```go
+from := "20210906"
+to := "20210912"
 
-  from := "20210906"
-  to := "20210912"
-
-  rs, err := MiniprogramApp.DataCube.GetWeeklyVisitTrend(from, to)
-
-  if err != nil {
-    panic(err)
-  }
-
-  c.JSON(http.StatusOK, rs)
-
+rs, err := MiniprogramApp.DataCube.GetWeeklyVisitTrend(from, to)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/visit-trend/analysis.getWeeklyVisitTrend.html)
 
-## 启动性能，运行性能数据
-
-获取用户访问小程序数据周趋势
+## 性能/运行性能数据
 
 ```go
+now := time.Now().Add(-5 * 24 * time.Hour)
+beginTimestamp := now.Unix()
+endTimestamp := now.Add(2 * 24 * time.Hour).Unix()
 
-  now := time.Now().Add(-5 * 24 * time.Hour)
-  beginTimestamp := now.Unix()
-  endTimestamp := now.Add(2 * 24 * time.Hour).Unix()
+options := &power.HashMap{
+  "time": power.HashMap{
+    "end_timestamp":   endTimestamp,
+    "begin_timestamp": beginTimestamp,
+  },
+  "module": "10022",
+  "params": []power.StringMap{
+    power.StringMap{
 
-  options := &power.HashMap{
-		"time": power.HashMap{
-			"end_timestamp":   endTimestamp,
-			"begin_timestamp": beginTimestamp,
-		},
-		"module": "10022",
-		"params": []power.StringMap{
-			power.StringMap{
+      "field": "networktype",
+      "value": "wifi",
+    },
+    power.StringMap{
+      "field": "device_level",
+      "value": "1",
+    },
+    power.StringMap{
+      "field": "device",
+      "value": "1",
+    },
+  },
+}
 
-				"field": "networktype",
-				"value": "wifi",
-			},
-			power.StringMap{
-				"field": "device_level",
-				"value": "1",
-			},
-			power.StringMap{
-				"field": "device",
-				"value": "1",
-			},
-		},
-	}
-  rs, err := MiniprogramApp.DataCube.GetPerformanceData(options)
-
-  if err != nil {
-    panic(err)
-  }
-
-  c.JSON(http.StatusOK, rs)
-
+MiniprogramApp.DataCube.GetPerformanceData(options)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/analysis.getPerformanceData.html)
 
 ## 用户画像数据
 
-获取小程序新增或活跃用户的画像分布数据
+### 新增或活跃用户的画像分布
 
 ```go
+from := "20210906"
+to := "20210912"
 
-  from := "20210906"
-  to := "20210912"
-  rs, err := MiniprogramApp.DataCube.GetUserPortrait(from, to)
-
-  if err != nil {
-    panic(err)
-  }
-
-  c.JSON(http.StatusOK, rs)
-
+MiniprogramApp.DataCube.GetUserPortrait(from, to)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/analysis.getUserPortrait.html)
 
 ## 访问分布数据
 
-获取用户小程序访问分布数据
+
 
 ```go
+from := "20210906"
+to := "20210906"
 
-  from := "20210906"
-  to := "20210906"
-
-  rs, err := MiniprogramApp.DataCube.GetVisitDistribution(from, to)
-
-  if err != nil {
-    panic(err)
-  }
-
-  c.JSON(http.StatusOK, rs)
-
+MiniprogramApp.DataCube.GetVisitDistribution(from, to)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/analysis.getVisitDistribution.html)
 
 ## 访问页面数据
 
-获取小程序新增或活跃用户的画像分布数据
-
 ```go
+from := "20210906"
+to := "20210912"
 
-  from := "20210906"
-  to := "20210912"
-  
-  rs, err := MiniprogramApp.DataCube.GetVisitPage(from, to)
-
-  if err != nil {
-    panic(err)
-  }
-
-  c.JSON(http.StatusOK, rs)
-
+MiniprogramApp.DataCube.GetVisitPage(from, to)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/analysis.getUserPortrait.html)
