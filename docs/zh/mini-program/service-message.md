@@ -14,7 +14,7 @@ if !exist {
   panic("parameter media id expected")
 }
 
-rs, err := MiniprogramApp.CustomerServiceMessage.GetTempMedia(mediaID)
+rs, err := MiniProgramApp.CustomerServiceMessage.GetTempMedia(mediaID)
 
 if err != nil {
   panic(err)
@@ -39,7 +39,7 @@ c.Data(http.StatusOK, rs.Header.Get("Content-Type"), content)
 
 ```go
 openID := "openID"
-MiniprogramApp.CustomerServiceMessage.Send(openID, "text", &power.HashMap{
+MiniProgramApp.CustomerServiceMessage.Send(openID, "text", &power.HashMap{
   "content": "Hello World",
 })
 ```
@@ -54,8 +54,8 @@ MiniprogramApp.CustomerServiceMessage.Send(openID, "text", &power.HashMap{
 下发客服当前输入状态给用户。
 
 ```go
-openID := "OPENID"			// 
-command := "Typing" 		// Typing or CancelTyping
+openID := "OPENID"      // 
+command := "Typing"     // Typing or CancelTyping
 
 services.AppMiniProgram.CustomerServiceMessage.SetTyping(openID, command)
 ```

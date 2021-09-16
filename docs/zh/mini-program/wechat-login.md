@@ -12,7 +12,7 @@ date: 2021-09-12
 
 var rs *ResponseCode2Session
 
-rs = MiniprogramApp.Auth.Session(code)
+rs = MiniProgramApp.Auth.Session(code)
 
 ```
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/login/auth.code2Session.html)
@@ -28,7 +28,7 @@ rs = MiniprogramApp.Auth.Session(code)
 
 var rs *ResponseAuthCheckEncryptedData
 
-rs = MiniprogramApp.Base.CheckEncryptedData("hsSuSUsePBqSQw2rYMtf9Nvha603xX8f2BMQBcYRoJiMNwOqt/UEhrqekebG5ar0LFNAm5MD4Uz6zorRwiXJwbySJ/FEJHav4NsobBIU1PwdjbJWVQLFy7+YFkHB32OnQXWMh6ugW7Dyk2KS5BXp1f5lniKPp1KNLyNLlFlNZ2mgJCJmWvHj5AI7BLpWwoRvqRyZvVXo+9FsWqvBdxmAPA==")
+rs = MiniProgramApp.Base.CheckEncryptedData("hsSuSUsePBqSQw2rYMtf9Nvha603xX8f2BMQBcYRoJiMNwOqt/UEhrqekebG5ar0LFNAm5MD4Uz6zorRwiXJwbySJ/FEJHav4NsobBIU1PwdjbJWVQLFy7+YFkHB32OnQXWMh6ugW7Dyk2KS5BXp1f5lniKPp1KNLyNLlFlNZ2mgJCJmWvHj5AI7BLpWwoRvqRyZvVXo+9FsWqvBdxmAPA==")
 
 ```
 
@@ -44,7 +44,7 @@ rs = MiniprogramApp.Base.CheckEncryptedData("hsSuSUsePBqSQw2rYMtf9Nvha603xX8f2BM
 
 var rs *ResponseAuthGetPaidUnionID
 
-rs = MiniprogramApp.Base.GetPaidUnionID("", nil)
+rs = MiniProgramApp.Base.GetPaidUnionID("", nil)
 
 ```
 

@@ -22,7 +22,7 @@ options := &power.HashMap{
   "extended_info": "",
 }
 
-MiniprogramApp.RiskControl.GetUserRiskRank(options)
+MiniProgramApp.RiskControl.GetUserRiskRank(options)
 // 当调用成功之后，会返回
 // {
 //  "errcode": 0,
@@ -35,4 +35,3 @@ MiniprogramApp.RiskControl.GetUserRiskRank(options)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/safety-control-capability/riskControl.getUserRiskRank.html)
-

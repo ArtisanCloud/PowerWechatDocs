@@ -12,18 +12,18 @@
   position: relative;
 }
 
-@each $heading, $size in $heading-font-sizes {
-  .#{$heading},
-  #{$heading} {
-    font-size: $size !important;
-  }
-}
+// @each $heading, $size in $heading-font-sizes {
+//   .#{$heading},
+//   #{$heading} {
+//     font-size: $size !important;
+//   }
+// }
 
-@each $heading, $size in $display-font-sizes {
-  .#{$heading} {
-    font-size: $size !important;
-  }
-}
+// @each $heading, $size in $display-font-sizes {
+//   .#{$heading} {
+//     font-size: $size !important;
+//   }
+// }
 
 @each $name, $value in $colors {
   .bg-#{$name} {

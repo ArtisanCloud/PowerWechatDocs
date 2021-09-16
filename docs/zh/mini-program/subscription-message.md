@@ -23,7 +23,7 @@ data := &power.HashMap{
   },
 }
 
-MiniprogramApp.SubscribeMessage.Send("[touser]", "[templateId]", "[page]", "[miniprogramState]", "[lang]", data)
+MiniProgramApp.SubscribeMessage.Send("[touser]", "[templateId]", "[page]", "[miniprogramState]", "[lang]", data)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/subscribe-message/subscribeMessage.send.html)
@@ -33,7 +33,7 @@ MiniprogramApp.SubscribeMessage.Send("[touser]", "[templateId]", "[page]", "[min
 ## 获取小程序账号的类目
 
 ``` go
-MiniprogramApp.SubscribeMessage.GetCategory()
+MiniProgramApp.SubscribeMessage.GetCategory()
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/subscribe-message/subscribeMessage.getCategory.html)
@@ -43,7 +43,7 @@ MiniprogramApp.SubscribeMessage.GetCategory()
 组合模板并添加至帐号下的个人模板库
 
 ``` go
-MiniprogramApp.SubscribeMessage.AddTemplate('[tid]', []int{1, 2}, "测试数据")
+MiniProgramApp.SubscribeMessage.AddTemplate('[tid]', []int{1, 2}, "测试数据")
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/subscribe-message/subscribeMessage.addTemplate.html)
@@ -52,7 +52,7 @@ MiniprogramApp.SubscribeMessage.AddTemplate('[tid]', []int{1, 2}, "测试数据"
 
 ``` go
 // priTmplID示例： MTvUCMmZfl-Dv66C5fVWdSP-HLWr_Eq-OPATYJW33BQ
-MiniprogramApp.SubscribeMessage.DeleteTemplate("[priTmplID]")
+MiniProgramApp.SubscribeMessage.DeleteTemplate("[priTmplID]")
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/subscribe-message/subscribeMessage.deleteTemplate.html)
@@ -62,7 +62,7 @@ MiniprogramApp.SubscribeMessage.DeleteTemplate("[priTmplID]")
 当前帐号下的个人模板列表
 
 ``` go
-MiniprogramApp.SubscribeMessage.GetTemplateList()
+MiniProgramApp.SubscribeMessage.GetTemplateList()
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/subscribe-message/subscribeMessage.getTemplateList.html)
@@ -75,7 +75,7 @@ MiniprogramApp.SubscribeMessage.GetTemplateList()
 // ids。类目id，多个用逗号隔开。 例如：2,676
 // start。 用于分页，表示从 start 开始。从 0 开始计数。
 // limit。 用于分页，表示拉取 limit 条记录。最大为 30。
-MiniprogramApp.SubscribeMessage.GetPubTemplateTitleList("[ids]", 0, 5)
+MiniProgramApp.SubscribeMessage.GetPubTemplateTitleList("[ids]", 0, 5)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/subscribe-message/subscribeMessage.getPubTemplateTitleList.html)
@@ -85,10 +85,7 @@ MiniprogramApp.SubscribeMessage.GetPubTemplateTitleList("[ids]", 0, 5)
 获取模板标题下的关键词列表
 
 ``` go
-MiniprogramApp.SubscribeMessage.GetPubTemplateKeyWordsByID("[tid]")
+MiniProgramApp.SubscribeMessage.GetPubTemplateKeyWordsByID("[tid]")
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/subscribe-message/subscribeMessage.getPubTemplateKeyWordsById.html)
-
-
-

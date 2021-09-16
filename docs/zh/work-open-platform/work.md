@@ -11,28 +11,28 @@ date: 2021-07-06
 package main
 
 import (
-	"github.com/ArtisanCloud/go-libs/fmt"
-	"github.com/ArtisanCloud/go-libs/object"
+  "github.com/ArtisanCloud/go-libs/fmt"
+  "github.com/ArtisanCloud/go-libs/object"
 )
 
 func main() {
 
     config := &object.HashMap{
-		"corp_id":       "xxxxxx",
-		"agent_id":      "xxxxx",
-		"secret":        "xxxxxx",
-		"response_type": "array",
+    "corp_id":       "xxxxxx",
+    "agent_id":      "xxxxx",
+    "secret":        "xxxxxx",
+    "response_type": "array",
 
-		"debug":      false,
-		"http_debug": false,
-	}
+    "debug":      false,
+    "http_debug": false,
+  }
 
-	app, err := work.NewWork(config, nil)
-	if err != nil {
-		fmt.Dump(err.Error())
-	}
-	response := app.Base.GetCallbackIp()
-	fmt.Dump(response)
+  app, err := work.NewWork(config, nil)
+  if err != nil {
+    fmt.Dump(err.Error())
+  }
+  response := app.Base.GetCallbackIp()
+  fmt.Dump(response)
 
 }
 ```

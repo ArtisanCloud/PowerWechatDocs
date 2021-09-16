@@ -29,7 +29,7 @@ PaymentService, err := payment.NewPayment(&payment.UserConfig{
 ``` go
 paymentService.Transfer.ToBalance(&power.HashMap{
   "partner_trade_no": "1233455", // 商户订单号，需保持唯一性(只能是字母或者数字，不能包含有符号)
-  "openid": "oxTWIuGaIt6gTKsQRLau2M0yL16E", // 	商户appid下，某用户的openid
+  "openid": "oxTWIuGaIt6gTKsQRLau2M0yL16E", //   商户appid下，某用户的openid
   "check_name": "FORCE_CHECK", // NO_CHECK：不校验真实姓名; FORCE_CHECK：强校验真实姓名
   "re_user_name": "王小帅", // 收款用户真实姓名。如果check_name设置为FORCE_CHECK，则必填用户真实姓名。如需电子回单，需要传入收款用户姓名
   "amount": 10000, // 付款金额，单位为分
@@ -46,7 +46,7 @@ paymentService.Transfer.ToBalance(&power.HashMap{
 ``` go
 paymentService.Transfer.ToBalance(&power.HashMap{
   "partner_trade_no": "1233455", // 商户订单号，需保持唯一性(只能是字母或者数字，不能包含有符号)
-  "openid": "oxTWIuGaIt6gTKsQRLau2M0yL16E", // 	商户appid下，某用户的openid
+  "openid": "oxTWIuGaIt6gTKsQRLau2M0yL16E", //   商户appid下，某用户的openid
   "check_name": "FORCE_CHECK", // NO_CHECK：不校验真实姓名; FORCE_CHECK：强校验真实姓名
   "re_user_name": "王小帅", // 收款用户真实姓名。如果check_name设置为FORCE_CHECK，则必填用户真实姓名。如需电子回单，需要传入收款用户姓名
   "amount": 10000, // 付款金额，单位为分
@@ -99,4 +99,3 @@ paymentService.Transfer.QueryBankCardOrder("[partnerTradeNo]")
  - [查询付款](https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay.php?chapter=14_3)
 
    
-

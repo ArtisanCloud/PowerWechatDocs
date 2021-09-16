@@ -10,7 +10,7 @@ date: 2021-09-13
 
 ```go
 openID := "openID"
-rs, err := MiniprogramApp.CustomerServiceMessage.Send(openID, "text", &power.HashMap{
+rs, err := MiniProgramApp.CustomerServiceMessage.Send(openID, "text", &power.HashMap{
   "content": "Hello World",
 })
 ```

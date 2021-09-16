@@ -9,14 +9,14 @@ date: 2021-09-13
 openID := "OPENID"
 
 mpTemplateMsg := &request.MPTemplateMsg{
-  AppID:       MiniprogramApp.GetConfig().GetString("app_id","xxxxxxx"),
+  AppID:       MiniProgramApp.GetConfig().GetString("app_id","xxxxxxx"),
   TemplateID:  "XXXXmZfl-Dv66C5fVWdf4zPJkYSaRbnrtk6DXIfTQ",
   URL:         "",
   MiniProgram: "",
   Data:        nil,
 }
 
-MiniprogramApp.UniformMessage.Send(openID, nil, mpTemplateMsg)
+MiniProgramApp.UniformMessage.Send(openID, nil, mpTemplateMsg)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/uniform-message/uniformMessage.send.html)
