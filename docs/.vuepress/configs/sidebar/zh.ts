@@ -41,8 +41,8 @@ export const zh: SidebarConfig = {
     concatData('/zh/mini-program/', {
       text: '小程序', // 必要的
       children: [
-        'intro.md', // 指向readme.md
-        'wechat-login.md',
+        'README.md',
+        'user-info.md',
         'statistics.md',
         'service-message.md',
         'uniform-message.md',

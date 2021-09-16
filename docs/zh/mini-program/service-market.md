@@ -6,35 +6,16 @@ date: 2021-09-13
 调用服务平台提供的服务。
 
 ```go
-
-/*
- defined in "github.com/ArtisanCloud/power-wechat/src/miniProgram/serviceMarket/response"
-
-type ResponseServiceMarketInvoceService struct {
-	*response.ResponseMiniProgram
-
-	Data string `json:"data"`
+serviceID := "SERVICEID"
+apiName := "APINAME"
+clientMsgID := "CLIENTMSGID"
+serviceData := &power.HashMap{
+  "img_url":   "http://mmbiz.qpic.cn/mmbiz_jpg/7UFjuNbYxibu66xSqsQqKcuoGBZM77HIyibdiczeWibdMeA2XMt5oibWVQMgDibriazJSOibLqZxcO6DVVcZMxDKgeAtbQ/0",
+  "data_type": 3,
+  "ocr_type":  1,
 }
 
-*/
-
-	serviceID := "SERVICEID"
-	apiName := "APINAME"
-	clientMsgID := "CLIENTMSGID"
-	serviceData := &power.HashMap{
-		"img_url":   "http://mmbiz.qpic.cn/mmbiz_jpg/7UFjuNbYxibu66xSqsQqKcuoGBZM77HIyibdiczeWibdMeA2XMt5oibWVQMgDibriazJSOibLqZxcO6DVVcZMxDKgeAtbQ/0",
-		"data_type": 3,
-		"ocr_type":  1,
-	}
-
-	rs, err := services.AppMiniProgram.ServiceMarket.InvokeService(serviceID, apiName, serviceData, clientMsgID)
-
-	if err != nil {
-		panic(err)
-	}
-
-	c.JSON(http.StatusOK, rs)
-
+services.AppMiniProgram.ServiceMarket.InvokeService(serviceID, apiName, serviceData, clientMsgID)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/service-market/serviceMarket.invokeService.html)

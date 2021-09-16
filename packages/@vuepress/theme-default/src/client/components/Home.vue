@@ -118,8 +118,6 @@ import {
 import { isArray } from '@vuepress/shared'
 import { computed, onMounted } from 'vue'
 import type { DefaultThemeHomePageFrontmatter } from '../../shared'
-import NavLink from './NavLink.vue'
-import '../styles/landflow/style.scss'
 
 const frontmatter = usePageFrontmatter<DefaultThemeHomePageFrontmatter>()
 const siteLocale = useSiteLocaleData()
