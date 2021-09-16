@@ -3,9 +3,9 @@
     id="topnav"
     ref="navbar"
     class="navbar"
-    :class="{ 'nav-sticky': navSticky }"
+    :class="{ 'nav-sticky': navSticky, 'no-sidebar': isHome }"
   >
-    <ToggleSidebarButton @toggle="$emit('toggle-sidebar')" />
+    <ToggleSidebarButton v-if="!isHome" @toggle="$emit('toggle-sidebar')" />
 
     <span ref="siteBrand">
       <RouterLink class="logo" :to="siteBrandLink">

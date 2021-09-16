@@ -63,8 +63,7 @@
                   class="code-block"
                   :data-clipboard-text="siteLocale.bannerCodeBlock"
                 >
-                  {{ siteLocale.bannerCodeBlock }}
-                  <i class="uil uil-copy"></i>
+                  {{ siteLocale.bannerCodeBlock }}<i class="uil uil-copy"></i>
                 </code>
               </div>
             </div>

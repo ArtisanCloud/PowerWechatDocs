@@ -12,7 +12,7 @@ $brand: #4259ed;
   --c-bg-light: #f3f4f5;
   --c-bg-lighter: #eeeeee;
   --c-bg-navbar: tra;
-  --c-bg-sidebar: transparent;
+  --c-bg-sidebar: white;
   --c-bg-arrow: #cccccc;
 
   // text colors
@@ -60,8 +60,8 @@ $brand: #4259ed;
   // code blocks vars
   --code-bg-color: #282c34;
   --code-hl-bg-color: rgba(0, 0, 0, 0.66);
-  --code-ln-color: #9e9e9e;
-  --code-ln-wrapper-width: 3.5rem;
+  --code-ln-color: #616060;
+  --code-ln-wrapper-width: 2.5rem; // 代码行数不应该超过3位数，所以不需要原始的3.5rem
 
   // font vars
   --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
@@ -74,7 +74,7 @@ $brand: #4259ed;
   --navbar-padding-h: 1.5rem;
   --sidebar-width: 20rem;
   --sidebar-width-mobile: calc(var(--sidebar-width) * 0.82);
-  --content-width: 800px;
+  --content-width: 830px;
   --homepage-width: 960px;
 }
 

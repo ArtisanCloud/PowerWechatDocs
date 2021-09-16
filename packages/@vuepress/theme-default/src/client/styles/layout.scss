@@ -39,13 +39,13 @@
   transition: transform var(--t-transform), background-color var(--t-color),
     border-color var(--t-color);
   &::-webkit-scrollbar {
-    width: 7px;
+    width: 3px;
   }
   &::-webkit-scrollbar-track {
     background-color: var(--c-border);
   }
   &::-webkit-scrollbar-thumb {
-    background-color: var(--c-brand);
+    background-color: #c1bdbd;
   }
 }
 
@@ -219,4 +219,8 @@ h6 {
 }
 p {
   margin-top: 16px;
+}
+
+ul {
+  margin-top: 1em;
 }
