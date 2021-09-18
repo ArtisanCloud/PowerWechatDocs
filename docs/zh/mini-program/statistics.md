@@ -25,13 +25,11 @@ const DATETIME_FORMAT = "20060102"
 ### 小程序日留存
 
 ```go
-
 now := time.Now().Add(-5 * 24 * time.Hour)
 from := now.Format(services.DATETIME_FORMAT)
 to := now.Format(services.DATETIME_FORMAT)
 
 MiniProgramApp.DataCube.GetDailyRetainInfo(from, to)
-
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/visit-retain/analysis.getDailyRetain.html)

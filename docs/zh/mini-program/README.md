@@ -4,25 +4,22 @@ date: 2021-08-12
 
 ---
 
+## 使用之前
+
 在调用小程序相应的API接口之前，我们需要将初始化一个`MiniProgramApp`实例，后面调用全部都会通过`MiniProgramApp`提供的方法来完成。
 
 具体如下：
 
 ``` go
-
 MiniProgramApp, err := miniProgram.NewMiniProgram(&miniProgram.UserConfig{
-
   AppID:  "[miniprogram_app_id]", // 小程序appid
   Secret: "[miniprogram_secret]", // 小程序app secret
-
   Log: miniProgram.Log{
     Level: "debug",
     File:  "./wechat.log",
   },
-
   HttpDebug: true,
 })
-
 ```
 
 ## UserConfig参数说明：

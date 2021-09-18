@@ -23,15 +23,6 @@ options := &power.HashMap{
 }
 
 MiniProgramApp.RiskControl.GetUserRiskRank(options)
-// 当调用成功之后，会返回
-// {
-//  "errcode": 0,
-//  "errmsg": "getuserriskrank succ",
-//  "resultcode": "",
-//  "resultmsg": "",
-//  "risk_rank": 0,
-//  "unoin_id": 18069982401
-//}
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/safety-control-capability/riskControl.getUserRiskRank.html)

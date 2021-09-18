@@ -6,7 +6,7 @@ date: 2021-09-14
 
 
 
-## 登录
+## 小程序登录
 
 登录凭证校验。通过 [wx.login](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/login/wx.login.html) 接口获得临时登录凭证 code 后传到开发者服务器调用此接口完成登录流程。更多使用方法详见 [小程序登录](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/login.html)。
 
@@ -14,7 +14,7 @@ date: 2021-09-14
 MiniProgramApp.Auth.Session(code)
 ```
 
-## 检查加密信息是否由微信生成
+## 加密信息是否由微信生成
 
 检查加密信息是否由微信生成（当前只支持手机号加密数据），只能检测最近3天生成的加密数据
 

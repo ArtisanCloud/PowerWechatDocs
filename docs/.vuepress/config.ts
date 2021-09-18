@@ -53,10 +53,15 @@ export default defineUserConfig<DefaultThemeOptions>({
   // site-level locales config
   locales: {
     '/': {
-      lang: 'en-US',
+      // lang: 'en-US',
+      // title: 'PowerWeChat',
+      // description: 'An easy-to-use Golang WeChat SDK',
+      // bannerNote: 'Start Golang WeChat development now',
+      // bannerCodeBlock: 'go get -u github.com/ArtisanCloud/power-wechat',
+      lang: 'zh-CN',
       title: 'PowerWeChat',
-      description: 'An easy-to-use Golang WeChat SDK',
-      bannerNote: 'Start Golang WeChat development now',
+      description: '一款简单易用的Golang微信SDK',
+      bannerNote: '立即开启Golang微信开发之路',
       bannerCodeBlock: 'go get -u github.com/ArtisanCloud/power-wechat',
     },
     '/zh/': {

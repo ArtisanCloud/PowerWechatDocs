@@ -8,7 +8,6 @@ date: 2021-09-13
 获取客服消息内的临时素材。
 
 ```go
-
 mediaID, exist := c.GetQuery("mediaID")
 if !exist {
   panic("parameter media id expected")
@@ -25,8 +24,6 @@ content, _ := ioutil.ReadAll(rs.Body)
 c.Header("Content-Type", rs.Header.Get("Content-Type"))
 c.Header("Content-Disposition", rs.Header.Get("attachment;filename=\""+rs.Header.Get("filename")+"\""))
 c.Data(http.StatusOK, rs.Header.Get("Content-Type"), content)
-
-
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/customer-message/customerServiceMessage.getTempMedia.html)

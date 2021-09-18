@@ -20,14 +20,6 @@ MiniProgramApp.URLScheme.Generate(
   1606737600, // 到期失效的 scheme 码的失效时间，为 Unix 时间戳。
   30, // 到期失效的 scheme 码的失效间隔天数。
 )
-
-// output:
-//{
-//  "errcode": 0,
-//  "errmsg": "ok",
-//  "openlink": "weixin://dl/business/?t=NdQL2LeEQum"
-//}
-
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/url-scheme/urlscheme.generate.html)

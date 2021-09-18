@@ -17,7 +17,6 @@ MiniProgramApp.Soter.VerifySignature("[openID]", "[json_string]", "[json_signatu
 // {
 //    "is_ok": true
 // }
-
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/soter/soter.verifySignature.html)
