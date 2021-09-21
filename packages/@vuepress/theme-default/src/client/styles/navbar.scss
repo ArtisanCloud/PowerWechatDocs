@@ -42,6 +42,10 @@
   .navbar {
     padding-left: 4rem;
 
+    &.no-sidebar {
+      padding: 2rem;
+    }
+
     .can-hide {
       display: none;
     }
@@ -114,10 +118,11 @@
  */
 .toggle-sidebar-button {
   position: absolute;
-  top: 0.6rem;
+  top: 50%;
   left: 1rem;
   display: none;
   padding: 0.6rem;
+  transform: translate(0, -50%);
   cursor: pointer;
 }
 

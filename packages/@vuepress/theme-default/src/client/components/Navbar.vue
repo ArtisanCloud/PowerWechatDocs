@@ -3,23 +3,28 @@
     id="topnav"
     ref="navbar"
     class="navbar"
-    :class="{ 'nav-sticky': navSticky }"
+    :class="{ 'nav-sticky': navSticky, 'no-sidebar': isHome }"
   >
-    <ToggleSidebarButton @toggle="$emit('toggle-sidebar')" />
+    <ToggleSidebarButton v-if="!isHome" @toggle="$emit('toggle-sidebar')" />
 
     <span ref="siteBrand">
       <RouterLink class="logo" :to="siteBrandLink">
         <span class="logo-light-mode">
-          <img src="/images/logo-dark.png" class="l-dark" height="22" alt="" />
           <img
-            src="/images/logo-light.png"
+            src="/images/at-logo-2-slim.svg"
+            class="l-dark"
+            height="40"
+            alt=""
+          />
+          <img
+            src="/images/at-logo-2-slim-light.svg"
             class="l-light"
-            height="22"
+            height="40"
             alt=""
           />
         </span>
         <img
-          src="/images/logo-light.png"
+          src="/images/at-logo-2-slim-light.png"
           height="22"
           class="logo-dark-mode"
           alt=""

@@ -81,13 +81,13 @@
 }
 
 .sidebar-item:not(.sidebar-heading) {
-  font-size: 1em;
+  font-size: 0.95em;
   font-weight: 400;
   display: inline-block;
   color: var(--c-text);
   border-left: 0.25rem solid transparent;
   margin: 0;
-  padding: 0.6rem 1rem 0.6rem 2rem;
+  padding: 0.4rem 1rem 0.4rem 2rem;
   line-height: 1.4;
   width: 100%;
   box-sizing: border-box;

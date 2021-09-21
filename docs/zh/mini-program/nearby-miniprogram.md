@@ -8,7 +8,7 @@ date: 2021-07-06
 ## 添加地点
 
 ``` go
-MiniprogramApp.NearbyPoi.Add(&power.HashMap{
+MiniProgramApp.NearbyPoi.Add(&power.HashMap{
   "is_comm_nearby":     "1", //值固定
   "kf_info":            "{\"open_kf\":true,\"kf_headimg\":\"http://mmbiz.qpic.cn/mmbiz_jpg/kKMgNtnEfQzDKpLXYhgo3W3Gndl34gITqmP914zSwhajIEJzUPpx40P7R8fRe1QmicneQMhFzpZNhSLjrvU1pIA/0?wx_fmt=jpeg\",\"kf_name\":\"Harden\"}",
   "pic_list":           "{\"list\":[\"http://mmbiz.qpic.cn/mmbiz_jpg/kKMgNtnEfQzDKpLXYhgo3W3Gndl34gITqmP914zSwhajIEJzUPpx40P7R8fRe1QmicneQMhFzpZNhSLjrvU1pIA/0?wx_fmt=jpeg\",\"http://mmbiz.qpic.cn/mmbiz_jpg/kKMgNtnEfQzDKpLXYhgo3W3Gndl34gITRneE5FS9uYruXGMmrtmhsBySwddEWUGOibG8Ze2NT5E3Dyt79I0htNg/0?wx_fmt=jpeg\"]}",
@@ -31,7 +31,7 @@ MiniprogramApp.NearbyPoi.Add(&power.HashMap{
 ## 删除地点
 
 ``` go
-MiniprogramApp.NearbyPoi.Delete("[poi_id]")
+MiniProgramApp.NearbyPoi.Delete("[poi_id]")
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/nearby-poi/nearbyPoi.delete.html)
@@ -43,7 +43,7 @@ MiniprogramApp.NearbyPoi.Delete("[poi_id]")
 ``` go
 page := 1
 pageRows := 100
-services.MiniprogramApp.NearbyPoi.GetList(page, pageRows)
+services.MiniProgramApp.NearbyPoi.GetList(page, pageRows)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/nearby-poi/nearbyPoi.getList.html)
@@ -53,8 +53,7 @@ services.MiniprogramApp.NearbyPoi.GetList(page, pageRows)
 ## 展示/取消展示附近小程序
 
 ``` go
-MiniprogramApp.NearbyPoi.SetShowStatus("[poi_id]", 1) // 0: 不展示 1: 展示
+MiniProgramApp.NearbyPoi.SetShowStatus("[poi_id]", 1) // 0: 不展示 1: 展示
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/nearby-poi/nearbyPoi.setShowStatus.html)
-

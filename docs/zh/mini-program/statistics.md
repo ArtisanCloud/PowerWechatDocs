@@ -10,9 +10,9 @@ date: 2021-09-12
 ```go
 
 import (
-	"github.com/ArtisanCloud/power-wechat/src/kernel/power"
-	"github.com/golang-module/carbon"
-	"net/http"
+  "github.com/ArtisanCloud/power-wechat/src/kernel/power"
+  "github.com/golang-module/carbon"
+  "net/http"
 )
 
 const TIMEZONE = "asia/shanghai"
@@ -25,13 +25,11 @@ const DATETIME_FORMAT = "20060102"
 ### 小程序日留存
 
 ```go
-
 now := time.Now().Add(-5 * 24 * time.Hour)
 from := now.Format(services.DATETIME_FORMAT)
 to := now.Format(services.DATETIME_FORMAT)
 
-MiniprogramApp.DataCube.GetDailyRetainInfo(from, to)
-
+MiniProgramApp.DataCube.GetDailyRetainInfo(from, to)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/visit-retain/analysis.getDailyRetain.html)
@@ -44,7 +42,7 @@ MiniprogramApp.DataCube.GetDailyRetainInfo(from, to)
 from := "20210906"
 to := "20210912"
 
-MiniprogramApp.DataCube.GetMonthlyRetainInfo(from, to)
+MiniProgramApp.DataCube.GetMonthlyRetainInfo(from, to)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/visit-retain/analysis.getMonthlyRetain.html)
@@ -57,7 +55,7 @@ MiniprogramApp.DataCube.GetMonthlyRetainInfo(from, to)
 from := "20170201"
 to := "20170228"
 
-MiniprogramApp.DataCube.GetWeeklyRetainInfo(from, to)
+MiniProgramApp.DataCube.GetWeeklyRetainInfo(from, to)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/visit-retain/analysis.getWeeklyRetain.html)
@@ -73,7 +71,7 @@ now := time.Now().Add(-5 * 24 * time.Hour)
 from := now.Format(services.DATETIME_FORMAT)
 to := now.Format(services.DATETIME_FORMAT)
 
-MiniprogramApp.DataCube.GetDailySummary(from, to)
+MiniProgramApp.DataCube.GetDailySummary(from, to)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/analysis.getDailySummary.html)
@@ -88,7 +86,7 @@ now := time.Now().Add(-5 * 24 * time.Hour)
 from := now.Format(services.DATETIME_FORMAT)
 to := now.Format(services.DATETIME_FORMAT)
 
-MiniprogramApp.DataCube.GetDailyVisitTrend(from, to)
+MiniProgramApp.DataCube.GetDailyVisitTrend(from, to)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/visit-trend/analysis.getDailyVisitTrend.html)
@@ -103,7 +101,7 @@ MiniprogramApp.DataCube.GetDailyVisitTrend(from, to)
 from := "20210831"
 to := "20210930"
 
-MiniprogramApp.DataCube.GetMonthlyVisitTrend(from, to)
+MiniProgramApp.DataCube.GetMonthlyVisitTrend(from, to)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/visit-trend/analysis.getMonthlyVisitTrend.html)
@@ -116,7 +114,7 @@ MiniprogramApp.DataCube.GetMonthlyVisitTrend(from, to)
 from := "20210906"
 to := "20210912"
 
-rs, err := MiniprogramApp.DataCube.GetWeeklyVisitTrend(from, to)
+rs, err := MiniProgramApp.DataCube.GetWeeklyVisitTrend(from, to)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/visit-trend/analysis.getWeeklyVisitTrend.html)
@@ -151,7 +149,7 @@ options := &power.HashMap{
   },
 }
 
-MiniprogramApp.DataCube.GetPerformanceData(options)
+MiniProgramApp.DataCube.GetPerformanceData(options)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/analysis.getPerformanceData.html)
@@ -164,7 +162,7 @@ MiniprogramApp.DataCube.GetPerformanceData(options)
 from := "20210906"
 to := "20210912"
 
-MiniprogramApp.DataCube.GetUserPortrait(from, to)
+MiniProgramApp.DataCube.GetUserPortrait(from, to)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/analysis.getUserPortrait.html)
@@ -177,7 +175,7 @@ MiniprogramApp.DataCube.GetUserPortrait(from, to)
 from := "20210906"
 to := "20210906"
 
-MiniprogramApp.DataCube.GetVisitDistribution(from, to)
+MiniProgramApp.DataCube.GetVisitDistribution(from, to)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/analysis.getVisitDistribution.html)
@@ -188,7 +186,7 @@ MiniprogramApp.DataCube.GetVisitDistribution(from, to)
 from := "20210906"
 to := "20210912"
 
-MiniprogramApp.DataCube.GetVisitPage(from, to)
+MiniProgramApp.DataCube.GetVisitPage(from, to)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/analysis.getUserPortrait.html)

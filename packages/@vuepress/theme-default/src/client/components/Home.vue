@@ -56,15 +56,14 @@
                   >{{ actions[0].text }}</RouterLink
                 >
                 <p class="text-white-50 mb-0 mt-3">
-                  <i class="uil uil-exclamation-circle"></i>
+                  <i class="uil uil-auto-flash"></i>
                   {{ siteLocale.bannerNote }}
                 </p>
                 <code
                   class="code-block"
                   :data-clipboard-text="siteLocale.bannerCodeBlock"
                 >
-                  {{ siteLocale.bannerCodeBlock }}
-                  <i class="uil uil-copy"></i>
+                  {{ siteLocale.bannerCodeBlock }}<i class="uil uil-copy"></i>
                 </code>
               </div>
             </div>
@@ -183,6 +182,22 @@ onMounted(() => {
     console.info('Action:', e.action)
     console.info('Text:', e.text)
     console.info('Trigger:', e.trigger)
+
+    window
+      .Toastify?.({
+        text: '复制成功',
+        duration: 1500,
+        gravity: 'top', // `top` or `bottom`
+        position: 'center', // `left`, `center` or `right`
+        backgroundColor: 'white',
+        style: {
+          color: '#1f1e1e',
+          borderRadius: '10px',
+          fontSize: '13px',
+        },
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+      })
+      .showToast()
 
     e.clearSelection()
   })

@@ -19,7 +19,7 @@ date: 2021-07-06
 
 ``` go
 mediaPath := "./resource/cloud.jpg"
-services.MiniprogramApp.Security.ImgSecCheck(mediaPath, nil)
+services.MiniProgramApp.Security.ImgSecCheck(mediaPath, nil)
 ```
 
 ### 手动读取路径文件
@@ -28,7 +28,7 @@ services.MiniprogramApp.Security.ImgSecCheck(mediaPath, nil)
 mediaPath := "./resource/cloud.jpg"
 value, err := ioutil.ReadFile(mediaPath)
 
-services.MiniprogramApp.Security.ImgSecCheck("", &power.HashMap{
+services.MiniProgramApp.Security.ImgSecCheck("", &power.HashMap{
   "name":  "cloud.jpg", // 请确保文件名有准确的文件类型
   "value": value,
 })
@@ -49,7 +49,7 @@ services.MiniprogramApp.Security.ImgSecCheck("", &power.HashMap{
 3. 敏感人脸识别：用户头像；媒体类用户文章里的图片检测；社交类用户上传的图片检测等。 **频率限制：单个 appId 调用上限为 2000 次/分钟，200,000 次/天；文件大小限制：单个文件大小不超过10M**
 
 ``` go
-services.MiniprogramApp.Security.MediaCheckAsync(
+services.MiniProgramApp.Security.MediaCheckAsync(
   "https://inews.gtimg.com/newsapp_ls/0/13978118573_640330/0", // 图片或者音频的在线地址
   2, // 1:音频;2:图片
   2, // 接口版本号，2.0版本为固定值2
@@ -73,7 +73,7 @@ services.MiniprogramApp.Security.MediaCheckAsync(
 3. 游戏类用户编辑上传的素材(如答题类小游戏用户上传的问题及答案)检测等。 *频率限制：单个 appId 调用上限为 4000 次/分钟，2,000,000 次/天**
 
 ``` go
-services.MiniprogramApp.Security.MsgSecCheck(
+services.MiniProgramApp.Security.MsgSecCheck(
   "[openid]",
   1, // 场景枚举值（1 资料；2 评论；3 论坛；4 社交日志）
   2, // 接口版本号，2.0版本为固定值2
@@ -85,4 +85,3 @@ services.MiniprogramApp.Security.MsgSecCheck(
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/sec-check/security.msgSecCheck.html)
-

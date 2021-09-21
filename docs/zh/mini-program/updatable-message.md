@@ -22,7 +22,7 @@ services.AppMiniProgram.UpdatableMessage.CreateActivityID(unionID, openID)
 ```go
 activityID := "activityID"
 
-MiniprogramApp.UpdatableMessage.SetUpdatableMsg(activityID, 0, &power.HashMap{
+MiniProgramApp.UpdatableMessage.SetUpdatableMsg(activityID, 0, &power.HashMap{
   "parameter_list": []power.StringMap{
     power.StringMap{
       "name": "member_count",

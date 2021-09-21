@@ -8,13 +8,12 @@ date: 2021-09-13
 获取客服消息内的临时素材。
 
 ```go
-
 mediaID, exist := c.GetQuery("mediaID")
 if !exist {
   panic("parameter media id expected")
 }
 
-rs, err := MiniprogramApp.CustomerServiceMessage.GetTempMedia(mediaID)
+rs, err := MiniProgramApp.CustomerServiceMessage.GetTempMedia(mediaID)
 
 if err != nil {
   panic(err)
@@ -25,8 +24,6 @@ content, _ := ioutil.ReadAll(rs.Body)
 c.Header("Content-Type", rs.Header.Get("Content-Type"))
 c.Header("Content-Disposition", rs.Header.Get("attachment;filename=\""+rs.Header.Get("filename")+"\""))
 c.Data(http.StatusOK, rs.Header.Get("Content-Type"), content)
-
-
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/customer-message/customerServiceMessage.getTempMedia.html)
@@ -39,7 +36,7 @@ c.Data(http.StatusOK, rs.Header.Get("Content-Type"), content)
 
 ```go
 openID := "openID"
-MiniprogramApp.CustomerServiceMessage.Send(openID, "text", &power.HashMap{
+MiniProgramApp.CustomerServiceMessage.Send(openID, "text", &power.HashMap{
   "content": "Hello World",
 })
 ```
@@ -54,8 +51,8 @@ MiniprogramApp.CustomerServiceMessage.Send(openID, "text", &power.HashMap{
 下发客服当前输入状态给用户。
 
 ```go
-openID := "OPENID"			// 
-command := "Typing" 		// Typing or CancelTyping
+openID := "OPENID"      // 
+command := "Typing"     // Typing or CancelTyping
 
 services.AppMiniProgram.CustomerServiceMessage.SetTyping(openID, command)
 ```

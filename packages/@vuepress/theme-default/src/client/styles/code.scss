@@ -8,7 +8,7 @@ pre[class*='language-'] {
   color: #ccc;
   background: none;
   font-family: var(--font-family-code);
-  font-size: 1em;
+  font-size: 1em !important;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -226,7 +226,7 @@ div[class*='language-'] {
         position: relative;
         z-index: 3;
         user-select: none;
-        font-size: 0.85em;
+        font-size: 0.85rem;
       }
     }
 
