@@ -78,6 +78,10 @@ export const zh: SidebarConfig = {
         'profit-share.md',
       ],
     }),
+    concatData('/zh/official-account/', {
+      text: '公众号', // 必要的
+      children: ['README.md', 'media.md'],
+    }),
     concatData('/zh/open-platform/', {
       text: '开放平台', // 必要的
       children: [
