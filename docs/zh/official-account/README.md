@@ -1,24 +1,27 @@
 ---
 title: 入门
-date: 2021-08-12
+date: 2021-09-21
 
 ---
 
 ## 使用之前
 
-在调用小程序相应的API接口之前，我们需要将初始化一个`MiniProgramApp`实例，后面调用全部都会通过`MiniProgramApp`提供的方法来完成。
+在调用公众号相应的API接口之前，我们需要将初始化一个`MiniProgramApp`实例，后面调用全部都会通过`MiniProgramApp`提供的方法来完成。
 
 具体如下：
 
 ``` go
-MiniProgramApp, err := miniProgram.NewMiniProgram(&miniProgram.UserConfig{
-  AppID:  "[miniprogram_app_id]", // 小程序appid
-  Secret: "[miniprogram_secret]", // 小程序app secret
-  Log: miniProgram.Log{
+officialAccount.NewOfficialAccount(&officialAccount.UserConfig{
+  AppID:  "[appid]", // 公众号、小程序的appid
+  Secret: "[app secret]", // 
+
+  Log: officialAccount.Log{
     Level: "debug",
     File:  "./wechat.log",
   },
+
   HttpDebug: true,
+  Debug:     false,
 })
 ```
 
@@ -63,4 +66,4 @@ miniProgram.Log{
 
 是否开启打印SDK调用微信API接口时候的日志，开启之后会显示出提交的参数和微信详情的数据，对于排查问题时候非常有帮助。
 
-[微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/access-token/auth.getAccessToken.html)
+[微信官方文档](
