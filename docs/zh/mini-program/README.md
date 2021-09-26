@@ -32,8 +32,6 @@ MiniProgramApp, err := miniProgram.NewMiniProgram(&miniProgram.UserConfig{
 
 小程序唯一凭证，即 AppID，可在「[微信公众平台](https://mp.weixin.qq.com/) - 设置 - 开发设置」页中获得。（需要已经成为开发者，且帐号没有异常状态）
 
-
-
 ### Secret
 
 - 类型: `string`

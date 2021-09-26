@@ -11,31 +11,36 @@ date: 2021-08-29
 
 在PowerWechat里，处理通知只需要调用一个`PaymentService.HandlePaidNotify`即可。 至于~~证书签名验证~~、~~RSA解密~~等，通通不需要。
 ``` go
-import "log"
+res, err := services.PaymentApp.HandlePaidNotify(
+  c.Request,
+  func(message *request.RequestNotify, transaction *models.Transaction, fail func(message string)) interface{} {
 
-_, err = PaymentService.HandlePaidNotify(func(message *object.HashMap, content *object.HashMap, fail string) interface{} {
-  if content == nil || (*content)["out_trade_no"] == nil {
-    return "no content notify"
-  }
-  // 看下支付通知事件状态
-  if (*message)["event_type"].(string) != TRANSACTION_SUCCESS {
+    // 看下支付通知事件状态
     // 这里可能是微信支付失败的通知，所以可能需要在数据库做一些记录，然后告诉微信我处理完成了。
+    if message.EventType != "TRANSACTION.SUCCESS" {
+      return true
+    }
+
+    if *transaction.OutTradeNo != "" {
+      // 这里对照自有数据库里面的订单做查询以及支付状态改变
+      log.Printf("订单号：%s 支付成功", *transaction.OutTradeNo)
+    } else {
+      // 因为微信这个回调不存在订单号，所以可以告诉微信我还没处理成功，等会它会重新发起通知
+      // 如果不需要，直接返回true即可
+      fail("payment fail")
+      return nil
+    }
     return true
-  }
+  },
+)
 
-  // 查询商户订单号
-  orderNO := (*content)["out_trade_no"].(string)
-  if orderNO != "" {
-    // 这里对照自有数据库里面的订单做查询以及支付状态改变
-    log.Printf("订单号：%s 支付成功", orderNO)
-  } else {
-    // 告诉微信我还没处理成功，等会它会重新发起通知
-    // 如果不需要，直接返回true即可
-    return "payment fail"
-  }
+// 这里可能是因为不是微信官方调用的，无法正常解析出transaction和message，所以直接抛错。
+if err != nil {
+  panic(err)
+}
 
-  return true
-})
+// 这里根据之前返回的是true或者fail，框架这边自动会帮你回复微信
+err = res.Write(c.Writer)
 
 if err != nil {
   panic(err)
