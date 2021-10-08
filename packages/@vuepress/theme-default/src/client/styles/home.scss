@@ -140,12 +140,12 @@
   }
 
   .footer {
-    position: fixed;
-    bottom: 0;
     width: 100%;
     border: none;
     color: #fff;
     padding: 15px;
+    color: var(--c-text-lighter);
+    background: white;
   }
 }
 

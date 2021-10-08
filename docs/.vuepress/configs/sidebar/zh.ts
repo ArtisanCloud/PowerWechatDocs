@@ -26,6 +26,7 @@ export const zh: SidebarConfig = {
         'contacts.md',
         'web-auth.md',
         'external-contact.md',
+        'customer-service.md',
         'custom-menu.md',
         'media.md',
         'oa.md',

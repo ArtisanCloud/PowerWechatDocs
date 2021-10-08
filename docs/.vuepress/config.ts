@@ -63,6 +63,47 @@ export default defineUserConfig<DefaultThemeOptions>({
       description: '一款简单易用的Golang微信SDK',
       bannerNote: '立即开启Golang微信开发之路',
       bannerCodeBlock: 'go get -u github.com/ArtisanCloud/power-wechat',
+      featureMainTitle: '为什么选择PowerWeChat？',
+      featureMainDesc:
+        '我们是以Golang技术栈为主的团队。在我们原有的微信生态产品上，封装出了能够高效易用的Golang微信SDK，方便广大开发者快速迭代微信生态功能',
+      features: [
+        {
+          icon: ['uil', 'uil-bitcoin'],
+          title: '完整的SDK文档',
+          desc:
+            '我们几乎每个接口都写了SDK使用文档，同时又保留了原微信官方的文档',
+        },
+        {
+          icon: ['uil', 'uil-bitcoin'],
+          title: '完整的Tutorial',
+          desc:
+            '我们针对把SDK的每个API使用整理成一个Git仓库，方便使用者调试以及测试功能',
+        },
+        {
+          icon: ['uil', 'uil-bitcoin'],
+          title: 'Risk-Free Trade',
+          desc:
+            'Composed in a pseudo-Latin language which more or less pseudo-Latin language corresponds.',
+        },
+        {
+          icon: ['uil', 'uil-bitcoin'],
+          title: 'Risk-Free Trade',
+          desc:
+            'Composed in a pseudo-Latin language which more or less pseudo-Latin language corresponds.',
+        },
+        {
+          icon: ['uil', 'uil-bitcoin'],
+          title: 'Risk-Free Trade',
+          desc:
+            'Composed in a pseudo-Latin language which more or less pseudo-Latin language corresponds.',
+        },
+        {
+          icon: ['uil', 'uil-bitcoin'],
+          title: 'Risk-Free Trade',
+          desc:
+            'Composed in a pseudo-Latin language which more or less pseudo-Latin language corresponds.',
+        },
+      ],
     },
     '/zh/': {
       lang: 'zh-CN',
@@ -70,6 +111,47 @@ export default defineUserConfig<DefaultThemeOptions>({
       description: '一款简单易用的Golang微信SDK',
       bannerNote: '立即开启Golang微信开发之路',
       bannerCodeBlock: 'go get -u github.com/ArtisanCloud/power-wechat',
+      featureMainTitle: '为什么选择PowerWeChat？',
+      featureMainDesc:
+        '我们是以Golang技术栈为主的团队。在我们原有的微信生态产品上，封装出了能够高效易用的Golang微信SDK，方便广大开发者快速迭代微信生态功能',
+      features: [
+        {
+          icon: ['uil', 'uil-bitcoin'],
+          title: '完整的SDK文档',
+          desc:
+            '我们几乎每个接口都写了SDK使用文档，同时又保留了原微信官方的文档',
+        },
+        {
+          icon: ['uil', 'uil-bitcoin'],
+          title: '完整的Tutorial',
+          desc:
+            '我们针对把SDK的每个API使用整理成一个Git仓库，方便使用者调试以及测试功能',
+        },
+        {
+          icon: ['uil', 'uil-bitcoin'],
+          title: 'Risk-Free Trade',
+          desc:
+            'Composed in a pseudo-Latin language which more or less pseudo-Latin language corresponds.',
+        },
+        {
+          icon: ['uil', 'uil-bitcoin'],
+          title: 'Risk-Free Trade',
+          desc:
+            'Composed in a pseudo-Latin language which more or less pseudo-Latin language corresponds.',
+        },
+        {
+          icon: ['uil', 'uil-bitcoin'],
+          title: 'Risk-Free Trade',
+          desc:
+            'Composed in a pseudo-Latin language which more or less pseudo-Latin language corresponds.',
+        },
+        {
+          icon: ['uil', 'uil-bitcoin'],
+          title: 'Risk-Free Trade',
+          desc:
+            'Composed in a pseudo-Latin language which more or less pseudo-Latin language corresponds.',
+        },
+      ],
     },
   },
 

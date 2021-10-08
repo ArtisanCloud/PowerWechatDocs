@@ -22,13 +22,6 @@
       </p>
     </header>
 
-    <div v-if="false && features.length" class="features">
-      <div v-for="feature in features" :key="feature.title" class="feature">
-        <h2>{{ feature.title }}</h2>
-        <p>{{ feature.details }}</p>
-      </div>
-    </div>
-
     <div v-if="false" class="theme-default-content custom">
       <Content />
     </div>
@@ -69,12 +62,13 @@
             </div>
           </div>
           <!--end col-->
-          <div v-if="false" class="home-shape-arrow">
+
+          <div class="home-shape-arrow">
             <a
-              href="#roadmap"
+              href="#features"
               class="btn btn-icon btn-pills btn-lg btn-footer scroll-down"
             >
-              <!--              <i data-feather="arrow-down" class="icons"></i>-->
+              <i data-feather="arrow-down" class="icons"></i>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -98,6 +92,51 @@
       <!--end container-->
     </section>
     <!--end section-->
+
+    <!-- features -->
+    <section v-if="features && features.length" id="features" class="section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="section-title text-center mb-4 pb-2">
+              <h4 class="title mb-4">{{ siteLocale.featureMainTitle }}</h4>
+              <p class="text-muted mx-auto para-desc mb-0">
+                {{ siteLocale.featureMainDesc }}
+              </p>
+            </div>
+          </div>
+          <!--end col-->
+        </div>
+        <!--end row-->
+
+        <div class="row">
+          <div
+            v-for="feature in features"
+            :key="feature.title"
+            class="col-lg-4 col-md-6 mt-4 pt-2"
+          >
+            <div
+              class="card features feature-primary core-feature shadow rounded p-4 text-center border-0"
+            >
+              <div class="icon text-center rounded-circle mx-auto">
+                <h3 class="mb-0"><i :class="feature.icon"></i></h3>
+              </div>
+              <div class="card-body p-0 mt-4">
+                <a href="javascript:void(0)" class="title text-dark h5">{{
+                  feature.title
+                }}</a>
+                <p class="text-muted mt-2 mb-0">{{ feature.desc }}</p>
+              </div>
+            </div>
+          </div>
+          <!--end col-->
+        </div>
+        <!--end row-->
+      </div>
+      <!--end container-->
+    </section>
+    <!--end section-->
+
     <!-- End -->
 
     <template v-if="footer">
@@ -117,6 +156,7 @@ import {
 import { isArray } from '@vuepress/shared'
 import { computed, onMounted } from 'vue'
 import type { DefaultThemeHomePageFrontmatter } from '../../shared'
+import NavLink from './NavLink.vue'
 
 const frontmatter = usePageFrontmatter<DefaultThemeHomePageFrontmatter>()
 const siteLocale = useSiteLocaleData()
@@ -165,8 +205,8 @@ const actions = computed(() => {
 
 // feature list
 const features = computed(() => {
-  if (isArray(frontmatter.value.features)) {
-    return frontmatter.value.features
+  if (isArray(siteLocale.value.features)) {
+    return siteLocale.value.features
   }
   return []
 })
