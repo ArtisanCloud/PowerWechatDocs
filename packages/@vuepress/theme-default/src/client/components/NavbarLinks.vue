@@ -151,7 +151,7 @@ const navbarSelectLanguage = useNavbarSelectLanguage()
 const navbarRepo = useNavbarRepo()
 const navbarLinks = computed(() => [
   ...navbarConfig.value,
-  ...navbarSelectLanguage.value,
+  // ...navbarSelectLanguage.value, // 暂时隐藏语言选择
   ...navbarRepo.value,
 ])
 </script>
