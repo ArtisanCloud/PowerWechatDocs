@@ -249,10 +249,10 @@ export default defineUserConfig<DefaultThemeOptions>({
     [
       '@vuepress/plugin-docsearch',
       {
-        apiKey: '3a539aab83105f01761a137c61004d85',
-        indexName: 'vuepress',
+        apiKey: '98bbc4ef3e5b7b551e751f85f85cc405',
+        indexName: 'powerwechat',
         searchParameters: {
-          facetFilters: ['tags:v2'],
+          facetFilters: ['lang:zh-CN'],
         },
         locales: {
           '/zh/': {
