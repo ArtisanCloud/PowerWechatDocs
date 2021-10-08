@@ -11,29 +11,25 @@ date: 2021-07-06
 package main
 
 import (
-  "github.com/ArtisanCloud/go-libs/fmt"
-  "github.com/ArtisanCloud/go-libs/object"
+  "log"
 )
 
 func main() {
-
-    config := &object.HashMap{
-    "corp_id":       "xxxxxx",
-    "agent_id":      "xxxxx",
-    "secret":        "xxxxxx",
-    "response_type": "array",
-
-    "debug":      false,
-    "http_debug": false,
-  }
-
-  app, err := work.NewWork(config, nil)
+  WeComApp, err := work.NewWork(&work.UserConfig{
+    CorpID:  "app_id",       // 企业微信的app id，所有企业微信共用一个。
+    AgentID: 100001,                   // 内部应用的app id
+    Secret:  "wecom_secret", // 内部应用的app secret
+    OAuth: work.OAuth{
+      Callback: "https://wecom.artisan-cloud.com/callback",
+      Scopes:   nil,
+    },
+    HttpDebug: true,
+  })
   if err != nil {
-    fmt.Dump(err.Error())
+    panic(err)
   }
-  response := app.Base.GetCallbackIp()
-  fmt.Dump(response)
-
+  response := WeComApp.Base.GetCallbackIp()
+  log.Println(response)
 }
 ```
 
@@ -45,15 +41,3 @@ func main() {
 ```
 
 
-
-> ⚠️ 
-> 
-> "github.com/ArtisanCloud/go-libs/fmt"
->
-> fmt.Dump() 可以换成 golang标准的fmt.print函数打印
-> 
->  ---
-> 
-> "github.com/ArtisanCloud/go-libs/object"
->
-> type HashMap map[string]interface{}

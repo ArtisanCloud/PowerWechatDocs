@@ -10,13 +10,3 @@ PowerWechat由[Artisan Cloud](https://github.com/ArtisanCloud)团队潜心研发
 由于手上的项目是基于Golang，而又在市面上无法找到比较顺手的SDK，比如像easywechat这样基于php的开源微信SDK。所以我们希望能够给大家提供一个比较方便易用的golang wechat sdk。
 
 
-
-``` go
-import "github.com/ArtisanCloud/power-wechat"
-
-func main() {
-
-  log.Println("hello power wechat")
-
-}
-```
