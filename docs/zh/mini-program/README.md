@@ -1,7 +1,6 @@
 ---
 title: 入门
 date: 2021-08-12
-
 ---
 
 ## 使用之前
@@ -12,13 +11,13 @@ date: 2021-08-12
 
 ``` go
 MiniProgramApp, err := miniProgram.NewMiniProgram(&miniProgram.UserConfig{
-  AppID:  "[miniprogram_app_id]", // 小程序appid
-  Secret: "[miniprogram_secret]", // 小程序app secret
+  AppID:     "[miniprogram_app_id]", // 小程序appid
+  Secret:    "[miniprogram_secret]", // 小程序app secret
+  HttpDebug: true,
   Log: miniProgram.Log{
     Level: "debug",
     File:  "./wechat.log",
   },
-  HttpDebug: true,
 })
 ```
 

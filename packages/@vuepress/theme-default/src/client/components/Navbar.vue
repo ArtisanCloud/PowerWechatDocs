@@ -24,7 +24,7 @@
           />
         </span>
         <img
-          src="/images/at-logo-2-slim-light.png"
+          src="/images/at-logo-2-slim-light.svg"
           height="22"
           class="logo-dark-mode"
           alt=""

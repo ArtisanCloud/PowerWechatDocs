@@ -11,20 +11,19 @@ date: 2021-07-06
 
 ``` go
 import (
-  "github.com/ArtisanCloud/go-libs/object"
   "github.com/ArtisanCloud/power-wechat/src/payment"
 )
 
 PaymentService, err := payment.NewPayment(&payment.UserConfig{
-  AppID:       os.Getenv("app_id"),  // 小程序、公众号或者企业微信的appid
-  MchID:       os.Getenv("mch_id"),  // 商户号 appID
-  MchApiV3Key: os.Getenv("mch_api_v3_key"), //
-  Key:         os.Getenv("key"),
-  CertPath:    os.Getenv("wx_cert_path"),
-  KeyPath:     os.Getenv("wx_key_path"),
-  SerialNo:    os.Getenv("serial_no"),
-
-  ResponseType: os.Getenv("array"),
+  AppID:       "[app_id]",         // 小程序、公众号或者企业微信的appid
+  MchID:       "[mch_id]",         // 商户号 appID
+  MchApiV3Key: "[mch_api_v3_key]", //
+  Key:         "[key]",
+  CertPath:    "[wx_cert_path]",
+  KeyPath:     "[wx_key_path]",
+  SerialNo:    "[serial_no]",
+  NotifyURL:   "[notify_url]",
+  HttpDebug:   true,
   Log: payment.Log{
     Level: "debug",
     File:  "./wechat.log",
@@ -33,9 +32,6 @@ PaymentService, err := payment.NewPayment(&payment.UserConfig{
     Timeout: 30.0,
     BaseURI: "https://api.mch.weixin.qq.com",
   },
-
-  NotifyURL: os.Getenv("notify_url"),
-  HttpDebug: true,
 })
 ```
 
