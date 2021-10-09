@@ -9,9 +9,9 @@ date: 2020-05-29
 
 ``` go
 WeComApp, err := work.NewWork(&work.UserConfig{
-  CorpID:  os.Getenv("app_id"),       // 企业微信的app id，所有企业微信共用一个。
+  CorpID:  "[app_id]",       // 企业微信的app id，所有企业微信共用一个。
   AgentID: AgentID,                   // 内部应用的app id
-  Secret:  os.Getenv("wecom_secret"), // 内部应用的app secret
+  Secret:  "[wecom_secret]", // 内部应用的app secret
   OAuth: work.OAuth{
     Callback: "https://wecom.artisan-cloud.com/callback", //
     Scopes:   nil,

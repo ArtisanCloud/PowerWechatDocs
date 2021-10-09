@@ -121,7 +121,7 @@
               <div class="icon text-center rounded-circle mx-auto">
                 <h3 class="mb-0"><i :class="feature.icon"></i></h3>
               </div>
-              <div class="card-body p-0 mt-4">
+              <div class="card-body p-0 mt-4 mx-auto">
                 <a href="javascript:void(0)" class="title text-dark h5">{{
                   feature.title
                 }}</a>
