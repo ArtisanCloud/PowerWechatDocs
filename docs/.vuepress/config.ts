@@ -70,7 +70,7 @@ export default defineUserConfig<DefaultThemeOptions>({
         {
           icon: ['uil', 'uil-suitcase'],
           title: '完整的微信生态支持',
-          desc: '支持小程序、企业微信、支付等全功能模块',
+          desc: '支持小程序、企业微信、微信支付等模块',
         },
         {
           icon: ['uil', 'uil-document-info'],
@@ -85,18 +85,17 @@ export default defineUserConfig<DefaultThemeOptions>({
         {
           icon: ['uil', 'uil-plug'],
           title: '发挥Golang的语言基因',
-          desc: '对应微信的接口，定义强类型参数',
+          desc: '出入参覆盖强类型，智能提示助你编码如飞',
         },
         {
           icon: ['uil', 'uil-bookmark-full'],
           title: '提供完整的测试接口功能',
-          desc:
-            '我们针对把SDK的每个API使用整理成一个Git仓库，方便使用者调试以及测试功能',
+          desc: '每个SDK API都有tutorial demo使用参考',
         },
         {
           icon: ['uil', 'uil-coffee'],
           title: 'MIT版权使用',
-          desc: 'github开源项目，长期维护',
+          desc: '在Github上开源，完全免费',
         },
       ],
     },
