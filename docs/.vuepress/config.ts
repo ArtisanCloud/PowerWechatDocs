@@ -68,40 +68,35 @@ export default defineUserConfig<DefaultThemeOptions>({
         '我们是以Golang技术栈为主的团队。在我们原有的微信生态产品上，封装出了能够高效易用的Golang微信SDK，方便广大开发者快速迭代微信生态功能',
       features: [
         {
-          icon: ['uil', 'uil-bitcoin'],
-          title: '完整的SDK文档',
-          desc:
-            '我们几乎每个接口都写了SDK使用文档，同时又保留了原微信官方的文档',
+          icon: ['uil', 'uil-suitcase'],
+          title: '完整的微信生态支持',
+          desc: '完全覆盖小程序，企业微信，支付等微信生态的功能模块',
         },
         {
-          icon: ['uil', 'uil-bitcoin'],
-          title: '完整的Tutorial',
+          icon: ['uil', 'uil:document-info'],
+          title: '完整的SDK文档',
+          desc: '几乎每个接口都写了SDK使用文档，同时映射到原微信官方文档',
+        },
+        {
+          icon: ['uil', 'uil-cell'],
+          title: '统一接口风格',
+          desc: '组建模块化设计，统一对象调用',
+        },
+        {
+          icon: ['uil', 'uil-plug'],
+          title: '发挥Golang的语言基因',
+          desc: '对应微信的接口，定义强类型参数',
+        },
+        {
+          icon: ['uil', 'uil-bookmark-full'],
+          title: '提供完整的测试接口功能',
           desc:
             '我们针对把SDK的每个API使用整理成一个Git仓库，方便使用者调试以及测试功能',
         },
         {
-          icon: ['uil', 'uil-bitcoin'],
-          title: 'Risk-Free Trade',
-          desc:
-            'Composed in a pseudo-Latin language which more or less pseudo-Latin language corresponds.',
-        },
-        {
-          icon: ['uil', 'uil-bitcoin'],
-          title: 'Risk-Free Trade',
-          desc:
-            'Composed in a pseudo-Latin language which more or less pseudo-Latin language corresponds.',
-        },
-        {
-          icon: ['uil', 'uil-bitcoin'],
-          title: 'Risk-Free Trade',
-          desc:
-            'Composed in a pseudo-Latin language which more or less pseudo-Latin language corresponds.',
-        },
-        {
-          icon: ['uil', 'uil-bitcoin'],
-          title: 'Risk-Free Trade',
-          desc:
-            'Composed in a pseudo-Latin language which more or less pseudo-Latin language corresponds.',
+          icon: ['uil', 'uil-coffee'],
+          title: 'MIT版权使用',
+          desc: 'github开源项目，长期维护',
         },
       ],
     },
@@ -116,40 +111,35 @@ export default defineUserConfig<DefaultThemeOptions>({
         '我们是以Golang技术栈为主的团队。在我们原有的微信生态产品上，封装出了能够高效易用的Golang微信SDK，方便广大开发者快速迭代微信生态功能',
       features: [
         {
-          icon: ['uil', 'uil-bitcoin'],
-          title: '完整的SDK文档',
-          desc:
-            '我们几乎每个接口都写了SDK使用文档，同时又保留了原微信官方的文档',
+          icon: ['uil', 'uil-suitcase'],
+          title: '完整的微信生态支持',
+          desc: '完全覆盖小程序，企业微信，支付等微信生态的功能模块',
         },
         {
-          icon: ['uil', 'uil-bitcoin'],
-          title: '完整的Tutorial',
+          icon: ['uil', 'uil:document-info'],
+          title: '完整的SDK文档',
+          desc: '几乎每个接口都写了SDK使用文档，同时映射到原微信官方文档',
+        },
+        {
+          icon: ['uil', 'uil-cell'],
+          title: '统一接口风格',
+          desc: '组建模块化设计，统一对象调用',
+        },
+        {
+          icon: ['uil', 'uil-plug'],
+          title: '发挥Golang的语言基因',
+          desc: '对应微信的接口，定义强类型参数',
+        },
+        {
+          icon: ['uil', 'uil-bookmark-full'],
+          title: '提供完整的测试接口功能',
           desc:
             '我们针对把SDK的每个API使用整理成一个Git仓库，方便使用者调试以及测试功能',
         },
         {
-          icon: ['uil', 'uil-bitcoin'],
-          title: 'Risk-Free Trade',
-          desc:
-            'Composed in a pseudo-Latin language which more or less pseudo-Latin language corresponds.',
-        },
-        {
-          icon: ['uil', 'uil-bitcoin'],
-          title: 'Risk-Free Trade',
-          desc:
-            'Composed in a pseudo-Latin language which more or less pseudo-Latin language corresponds.',
-        },
-        {
-          icon: ['uil', 'uil-bitcoin'],
-          title: 'Risk-Free Trade',
-          desc:
-            'Composed in a pseudo-Latin language which more or less pseudo-Latin language corresponds.',
-        },
-        {
-          icon: ['uil', 'uil-bitcoin'],
-          title: 'Risk-Free Trade',
-          desc:
-            'Composed in a pseudo-Latin language which more or less pseudo-Latin language corresponds.',
+          icon: ['uil', 'uil-coffee'],
+          title: 'MIT版权使用',
+          desc: 'github开源项目，长期维护',
         },
       ],
     },
