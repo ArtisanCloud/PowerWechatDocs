@@ -14,8 +14,8 @@ date: 2021-07-06
 ``` go
 PaymentService, err := payment.NewPayment(&payment.UserConfig{
   // ...
-  CertPath:    os.Getenv("wx_cert_path"),
-  KeyPath:     os.Getenv("wx_key_path"),
+  CertPath:    "[wx_cert_path]",
+  KeyPath:     "[wx_key_path]",
   // ...
 })
 ```
