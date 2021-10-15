@@ -1,5 +1,17 @@
 ---
 title: 移动端
-date: 2021-07-06
+date: 2021-10-11
+description: 企业微信移动端App登录获得一次性Code之后，通过服务端换取用户的信息
 ---
+
+
+
+## 通过code获取用户信息 [TODO]
+
+获取用户信息的一次性code，第三方app需要继续使用此code通过后端服务器换取用户的信息。
+
+``` go
+```
+
+[微信官方文档](https://work.weixin.qq.com/api/doc/90000/90136/91193)
 
