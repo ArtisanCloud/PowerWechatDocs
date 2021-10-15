@@ -17,7 +17,7 @@ import (
 func main() {
   WeComApp, err := work.NewWork(&work.UserConfig{
     CorpID:  "app_id",       // 企业微信的app id，所有企业微信共用一个。
-    AgentID: 100001,                   // 内部应用的app id
+    AgentID: 100001,         // 内部应用的app id
     Secret:  "wecom_secret", // 内部应用的app secret
     OAuth: work.OAuth{
       Callback: "https://wecom.artisan-cloud.com/callback",
@@ -39,5 +39,4 @@ func main() {
     "ip_list": ["101.226.103.*", "101.226.62.*"]
 }
 ```
-
 
