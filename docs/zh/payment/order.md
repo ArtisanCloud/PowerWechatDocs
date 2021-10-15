@@ -5,31 +5,110 @@ date: 2021-07-06
 
 H5支付、公众号支付、扫码支付、支付中签约都是使用这个接口。
 
-## 统一下单
-下面可以获取到微信返回的prepay_id，如果需要给前端的JSSDK使用，请参考[JSSDK](jssdk.html)部分
+## 下单
+
+### JSAPI支付
+
 ``` go
-response, err := PaymentService.Order.Unify(&object.HashMap{
-  "amount": &object.HashMap{
-    "total":    1, // 单位是分。 当前支付金额是1分
-    "currency": "CNY",
+options := &request.RequestJSAPIPrepay{
+  Amount: &request.JSAPIAmount{
+    Total:    1,
+    Currency: "CNY",
   },
-  "attach":       "自定义数据说明",
-  "description":  "Image形象店-深圳腾大-QQ公仔",
-  "mchid":        "1611854986",
-  "notify_url":   "https://pay.example.com/wx/notify",
-  "out_trade_no": "5519778939773395659222199398", // 这里是商户订单号，不能重复提交给微信
-  "payer": &object.HashMap{
-    "openid": "oAuaP0TRUMwP169nQfg7XCEAw3HQ",  // 用户的openid， 记得也是动态的。
+  Attach:      "自定义数据说明",
+  Description: "Image形象店-深圳腾大-QQ公仔",
+  OutTradeNo:  "5519778939773395659222498001", // 这里是商户订单号，不能重复提交给微信
+  Payer: &request.JSAPIPayer{
+    OpenID: "oAuaP0TRUMwP169nQfg7XCEAw3HQ", // 用户的openid， 记得也是动态的。
   },
-}, false)
+}
+
+// 如果需要覆盖掉全局的notify_url
+//options.SetNotifyUrl("https://pay.xxx.com/wx/notify")
+
+// 下单
+response, err := services.PaymentApp.Order.JSAPITransaction(options)
 
 if err != nil {
-  log.Fatalf("error: %s", err)
+  panic(err)
 }
+
+// payConf大致如下：
+// {
+//   "appId": "ww16143ea0101327c7",
+//   "nonceStr": "jcMfo7lsfM3LPWkLRJb7rQU6WeatStEU",
+//   "package": "prepay_id=xxxxx",
+//   "paySign": "hSPF2wU0aYeTq+DJ14ELM...省略部分数据...RrOmlEkZXVxqCdZmniLdA==",
+//   "signType": "RSA",
+//   "timeStamp": "1634305101"
+//  }
+payConf, err := services.PaymentApp.JSSDK.BridgeConfig(response.PrepayID, true)
+
 ```
-TODO： 目前遗漏了支付中签约的接口。
+
+[微信官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_1_1.shtml)
+
+### App支付
+
+``` go
+options := &request2.RequestAppPrepay{
+  Amount: &request2.AppAmount{
+    Total:    1,
+    Currency: "CNY",
+  },
+  Attach:      "自定义数据说明",
+  Description: "Image形象店-深圳腾大-QQ公仔",
+  OutTradeNo:  "5519778939773395659222498001", // 这里是商户订单号，不能重复提交给微信
+}
+
+// 如果需要覆盖掉全局的notify_url
+//options.SetNotifyUrl("https://pay.xxx.com/wx/notify")
+
+// 下单
+response, err := services.PaymentApp.Order.TransactionApp(options)
+
+if err != nil {
+  panic(err)
+}
+
+// 因为PrepayID签名方式都一样，所以这个和App是一样的。
+payConf, err := services.PaymentApp.JSSDK.BridgeConfig(response.PrepayID, true)
+```
+
+[微信官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_2_1.shtml)
+
+### Native支付
+
+``` go
+options := &request2.RequestNativePrepay{
+  Amount: &request2.NativeAmount{
+    Total:    1,
+    Currency: "CNY",
+  },
+  Attach:      "自定义数据说明",
+  Description: "Image形象店-深圳腾大-QQ公仔",
+  OutTradeNo:  "5519778939773395659222598001", // 这里是商户订单号，不能重复提交给微信
+}
+
+// reponse成功后返回结果
+// {
+//   "code_url": "weixin://wxpay/bizpayurl?pr=OZdex6kzz"
+// }
+response, err := services.PaymentApp.Order.TransactionNative(options)
+```
+
+[微信官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_4_1.shtml)
+
+### 小程序支付
+
+小程序支付和JSAPI支付接口一样，参考上方**[JSAPI支付](#JSAPI支付)**
+
+[微信官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_5_1.shtml)
+
+
 
 ## 查询订单
+
 商户可以通过查询订单接口主动查询订单状态，完成下一步的业务逻辑。查询订单状态可通过微信支付订单号或商户订单号两种方式查询，两种查询方式返回结果相同。
 
 ::: tip
