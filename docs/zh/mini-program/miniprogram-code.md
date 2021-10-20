@@ -1,7 +1,7 @@
 ---
 title: 小程序码
 date: 2021-07-06
-description: 使用PowerWeChat生成小程序二维码、永久小程序码、临时小程序码等等
+description: 使用PowerWeChat生成小程序二维码、永久小程序码、临时小程序码等
 ---
 
 

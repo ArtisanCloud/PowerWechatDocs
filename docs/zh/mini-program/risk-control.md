@@ -1,6 +1,7 @@
 ---
 title: 安全风控
 date: 2021-07-06
+description: 使用PowerWeChat获取用户的安全等级，无需用户授权。
 ---
 
 

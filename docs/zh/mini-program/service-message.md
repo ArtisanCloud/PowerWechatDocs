@@ -1,6 +1,7 @@
 ---
 title: 客服消息
 date: 2021-09-13
+description: 使用PowerWeChat处理小程序客服消息，回复用户文本、图片、链接等消息
 ---
 
 ## 临时素材

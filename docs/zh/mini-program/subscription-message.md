@@ -1,29 +1,37 @@
 ---
 title: 订阅消息
 date: 2021-07-06
+description: 使用PowerWeChat发送订阅消息、对小程序模版增删改查等等
 ---
-
-
 
 ## 发送订阅消息
 
 ``` go
 data := &power.HashMap{
-  "number01": power.StringMap{
-    "value": "339208499",
+  "phrase1": power.StringMap{
+    "value": "已预约",
   },
-  "date01": power.StringMap{
-    "value": "2015年01月05日",
+  "thing2": power.StringMap{
+    "value": "Cycle",
   },
-  "site01": power.StringMap{
-    "value": "TIT创意园",
+  "time3": power.StringMap{
+    "value": "15:30",
   },
-  "site02": power.StringMap{
-    "value": "广州市新港中路397号",
+  "thing4": power.StringMap{
+    "value": "兴业太古汇",
+  },
+  "thing5": power.StringMap{
+    "value": "开课3小时前",
   },
 }
-
-MiniProgramApp.SubscribeMessage.Send("[touser]", "[templateId]", "[page]", "[miniprogramState]", "[lang]", data)
+MiniProgramApp.SubscribeMessage.Send(&request.RequestSubscribeMessageSend{
+  ToUser:           "OPENID",
+  TemplateID:       "Y1471771tIQyEogSHjqCgD1P7iy52N_JYH-q0Sw7EvQ",
+  Page:             "/pages/index/index",
+  MiniProgramState: "developer",
+  Lang:             "zh_CN",
+  Data:             data,
+})
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/subscribe-message/subscribeMessage.send.html)

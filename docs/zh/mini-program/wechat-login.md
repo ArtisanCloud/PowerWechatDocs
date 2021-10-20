@@ -8,7 +8,7 @@ description: 通过PowerWechat可以方便的完成小程序登录以及获取�
 将获取的jscode ，换取用户的session信息
 
 ``` go
-rs := MiniProgramApp.Auth.Session(code)
+MiniProgramApp.Auth.Session("[code]")
 ```
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/login/auth.code2Session.html)
 
@@ -19,7 +19,7 @@ rs := MiniProgramApp.Auth.Session(code)
 
 
 ``` go
-rs := MiniProgramApp.Base.CheckEncryptedData("hsSuSUsePBqSQw2rYMtf9Nvha603xX8f2BMQBcYRoJiMNwOqt/UEhrqekebG5ar0LFNAm5MD4Uz6zorRwiXJwbySJ/FEJHav4NsobBIU1PwdjbJWVQLFy7+YFkHB32OnQXWMh6ugW7Dyk2KS5BXp1f5lniKPp1KNLyNLlFlNZ2mgJCJmWvHj5AI7BLpWwoRvqRyZvVXo+9FsWqvBdxmAPA==")
+MiniProgramApp.Base.CheckEncryptedData("hsSuSUsePBqSQw2rYMtf9Nvha603xX8f2BMQBcYRoJiMNwOqt/UEhrqekebG5ar0LFNAm5MD4Uz6zorRwiXJwbySJ/FEJHav4NsobBIU1PwdjbJWVQLFy7+YFkHB32OnQXWMh6ugW7Dyk2KS5BXp1f5lniKPp1KNLyNLlFlNZ2mgJCJmWvHj5AI7BLpWwoRvqRyZvVXo+9FsWqvBdxmAPA==")
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/login/auth.code2Session.html)
@@ -30,8 +30,12 @@ rs := MiniProgramApp.Base.CheckEncryptedData("hsSuSUsePBqSQw2rYMtf9Nvha603xX8f2B
 
 
 ``` go
-var rs *ResponseAuthGetPaidUnionID
-rs := MiniProgramApp.Base.GetPaidUnionID("", nil)
+MiniProgramApp.Base.GetPaidUnionID(&request.RequestGetPaidUnionID{
+  OpenID:        openid,
+  // TransactionID: "",
+  // MchID:         "",
+  // OutTradeNo:    "",
+})
 ```
 
 
