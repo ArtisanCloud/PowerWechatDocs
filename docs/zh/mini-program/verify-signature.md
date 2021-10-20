@@ -1,13 +1,11 @@
 ---
 title: 生物认证
-date: 2021-07-06
+date: 使用PowerWechat完成TouchID(指纹认证)、FaceID(面容)、声纹等认证。
 ---
 
 
 
 ## SOTER 生物认证秘钥签名验证
-
-
 
 生物认证是可以支持`TouchID(指纹认证)`、`FaceID(面容)`、`声纹`等认证。
 
