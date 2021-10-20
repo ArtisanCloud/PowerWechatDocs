@@ -1,6 +1,6 @@
 ---
 home: true
-title: Home
+title: PowerWeChat - 一个 Golang 微信开发 SDK
 heroImage: /images/hero.png
 actions:
   - text: Get Started

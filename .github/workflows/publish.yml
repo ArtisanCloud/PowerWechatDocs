@@ -1,0 +1,40 @@
+name: scp publish
+on:
+  push:
+    branches:
+      - release/*
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ['16']
+    name: Build and publish
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+          cache: 'yarn'
+      - run: yarn install && yarn build && yarn copy
+      - run: yarn docs:build
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install coscmd
+        run: |
+          pip install coscmd
+
+      - name: Config coscmd
+        run: |
+          coscmd config \
+              -a ${{ secrets.COS_SH_APP_ID }} \
+              -s ${{ secrets.COS_SH_APP_KEY }} \
+              -b ${{ secrets.COS_SH_BUCKET }} \
+              -r ap-shanghai
+      - name: Upload docs
+        run: |
+          coscmd upload -r docs/.vuepress/dist/ /

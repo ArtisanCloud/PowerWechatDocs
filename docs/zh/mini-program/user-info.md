@@ -1,7 +1,7 @@
 ---
 title: 用户信息
 date: 2021-09-14
-
+description: 使用PowerWeChat完成小程序服务端登录、检查加密信息是否微信生成、获取用户UnionId等
 ---
 
 
@@ -20,7 +20,6 @@ MiniProgramApp.Auth.Session(code)
 
 ``` go
 hash =:"f0419b903ec2b01fb2bf4f1944f91db0cd1f298bf9758de8f1fe5b63bc85eff7"
-
 MiniProgramApp.Base.CheckEncryptedData(hash)
 ```
 
@@ -30,7 +29,6 @@ MiniProgramApp.Base.CheckEncryptedData(hash)
 
 ``` go
 import "crypto/sha256"
-
 hashByte := sha256.Sum256([]byte("uo1yB3bOOuIfDu6neHV3D158CofGB9m7TxFQ8A/JcauWzhvmEAPygfFaqCgDTEmluLu7S8wMA=="))
 hash := hashByte[:]
 // output hash: f0419b903ec2b01fb2bf4f1944f91db0cd1f298bf9758de8f1fe5b63bc85eff7
@@ -45,7 +43,12 @@ hash := hashByte[:]
 用户支付完成后，获取该用户的 [UnionId](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/union-id.html)，无需用户授权。本接口支持[第三方平台代理查询](https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=215453152075Ry2s&token=&lang=zh_CN)。
 
 ``` go
-MiniProgramApp.Base.GetPaidUnionID("[openid]", nil)
+MiniProgramApp.Base.GetPaidUnionID(&request.RequestGetPaidUnionID{
+  OpenID:        openid,
+  // TransactionID: "",
+  // MchID:         "",
+  // OutTradeNo:    "",
+})
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/user-info/auth.getPaidUnionId.html)

@@ -37,6 +37,15 @@ export interface SiteLocaleData {
   // home banner install command
   bannerCodeBlock?: string
 
+  // home feature
+  featureMainTitle?: string
+  featureMainDesc?: string
+  features?: {
+    icon: string[]
+    title: string
+    desc: string
+  }[]
+
   // tags in site <head>
   head: HeadConfig[]
 }

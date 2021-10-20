@@ -46,11 +46,11 @@ pageClass: custom-page-class
 - 参考：
   - [默认主题 > 样式 > Style 文件](./styles.md#style-文件)
 
-## 首页
+## PowerWeChat首页
 
 本章节中的 Frontmatter 只会在首页中生效。
 
-### home
+### PowerWeChat首页
 
 - 类型： `boolean`
 

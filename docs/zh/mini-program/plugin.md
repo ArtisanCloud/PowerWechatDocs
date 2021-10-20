@@ -1,6 +1,7 @@
 ---
 title: 插件管理
 date: 2021-09-13
+description: 使用PowerWeChat对申请、取消、审批插件使用
 ---
 
 

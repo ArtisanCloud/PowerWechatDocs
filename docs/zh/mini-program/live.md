@@ -1,11 +1,10 @@
 ---
 title: 直播
 date: 2021-07-06
+description: 使用PowerWeChat可以方便的管理小程序直播，包含直播间、商品、主播、副手等管理
 ---
 
 ## 直播间接口
-
-
 
 ### 创建直播间
 
@@ -306,9 +305,9 @@ MiniProgramApp.Broadcast.GoodsAdd(&request.RequestBroadcastGoodsAdd{
   GoodsInfo: &request.RequestBroadcastGoodsAddInfo{
     CoverImgUrl: "PZjGoGn7b27AahidBpD-UwJ9823ayNlJ2qliDcU9uQMFSpYkRLxmx_RK0F-iBKj5",
     Name:        "TIT茶杯",
-    PriceType:       1,
+    PriceType:   1,
     Price:       99.5,
-    //Price2: 150.5, // priceType为2或3时必填
+    //Price2:    150.5, // priceType为2或3时必填
     Url:             "pages/index/index",
   },
 })
@@ -351,11 +350,11 @@ MiniProgramApp.Broadcast.GoodsDelete(1) // goodsId
 MiniProgramApp.Broadcast.GoodsUpdate(&request.RequestBroadcastGoodsUpdate{
   GoodsInfo: &request.RequestBroadcastGoodsUpdateInfo{
     GoodsId:         1,
-    CoverImgUrl: "PZjGoGn7b27AahidBpD-UwJ9823ayNlJ2qliDcU9uQMFSpYkRLxmx_RK0F-iBKj5",
-    Name:        "TIT茶杯",
+    CoverImgUrl:     "PZjGoGn7b27AahidBpD-UwJ9823ayNlJ2qliDcU9uQMFSpYkRLxmx_RK0F-iBKj5",
+    Name:            "TIT茶杯",
     PriceType:       1,
-    Price:       99.5,
-    //Price2: 150.5, // priceType为2或3时必填
+    Price:           99.5,
+    //Price2:        150.5, // priceType为2或3时必填
     Url:             "pages/index/index",
   },
 })

@@ -51,7 +51,7 @@ export const zh: SidebarConfig = {
         'miniprogram-code.md',
         'decode-message.md',
         'content-security.md',
-        'logistics.md',
+        // 'logistics.md', // 物流助手待做
         'verify-signature.md',
         'nearby-miniprogram.md',
         'subscription-message.md',

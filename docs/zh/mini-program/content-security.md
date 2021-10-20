@@ -1,7 +1,7 @@
 ---
-
 title: 内容安全
 date: 2021-07-06
+description: 使用PowerWeChat可以方便的进行文本、图片是否含有违法违规内容
 ---
 
 
@@ -28,9 +28,9 @@ services.MiniProgramApp.Security.ImgSecCheck(mediaPath, nil)
 mediaPath := "./resource/cloud.jpg"
 value, err := ioutil.ReadFile(mediaPath)
 
-services.MiniProgramApp.Security.ImgSecCheck("", &power.HashMap{
-  "name":  "cloud.jpg", // 请确保文件名有准确的文件类型
-  "value": value,
+services.MiniProgramApp.Security.ImgSecCheck("", &request.RequestSecurityFormData{
+  Name:  "cloud.jpg", // 请确保文件名有准确的文件类型
+  Value: value,
 })
 ```
 
@@ -49,13 +49,13 @@ services.MiniProgramApp.Security.ImgSecCheck("", &power.HashMap{
 3. 敏感人脸识别：用户头像；媒体类用户文章里的图片检测；社交类用户上传的图片检测等。 **频率限制：单个 appId 调用上限为 2000 次/分钟，200,000 次/天；文件大小限制：单个文件大小不超过10M**
 
 ``` go
-services.MiniProgramApp.Security.MediaCheckAsync(
-  "https://inews.gtimg.com/newsapp_ls/0/13978118573_640330/0", // 图片或者音频的在线地址
-  2, // 1:音频;2:图片
-  2, // 接口版本号，2.0版本为固定值2
-  openID, // 用户的openid（用户需在近两小时访问过小程序）
-  1, // 场景枚举值（1 资料；2 评论；3 论坛；4 社交日志）
-)
+services.MiniProgramApp.Security.MediaCheckAsync(request.RequestSecurityMediaCheckAsync{
+  MediaUrl: mediaURL,
+  MediaType: 1,
+  Version: 2,
+  OpenID: openID,
+  Scene: 1,
+})
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/sec-check/security.mediaCheckAsync.html)
@@ -73,15 +73,15 @@ services.MiniProgramApp.Security.MediaCheckAsync(
 3. 游戏类用户编辑上传的素材(如答题类小游戏用户上传的问题及答案)检测等。 *频率限制：单个 appId 调用上限为 4000 次/分钟，2,000,000 次/天**
 
 ``` go
-services.MiniProgramApp.Security.MsgSecCheck(
-  "[openid]",
-  1, // 场景枚举值（1 资料；2 评论；3 论坛；4 社交日志）
-  2, // 接口版本号，2.0版本为固定值2
-  "[content]", // 需检测的文本内容，文本字数的上限为2500字
-  "[nickname]", // 非必传。 用户昵称
-  "[title]", //  非必传。 文本标题
-  "[signature]", //  非必传。 个性签名，该参数仅在资料类场景有效(scene=1)
-)
+services.MiniProgramApp.Security.MsgSecCheck(&request.RequestSecurityMsgSecCheck{
+  OpenID:    openID,
+  Scene:     1,
+  Version:   2,
+  Content:   content,
+  Nickname:  "test name",
+  Title:     "test title",
+  Signature: "test sign",
+})
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/sec-check/security.msgSecCheck.html)

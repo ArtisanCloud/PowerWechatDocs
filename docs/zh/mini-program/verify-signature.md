@@ -1,25 +1,28 @@
 ---
 title: 生物认证
-date: 2021-07-06
+date: 2021-10-21
+description: 使用PowerWechat完成TouchID(指纹认证)、FaceID(面容)、声纹等认证。
 ---
 
 
 
 ## SOTER 生物认证秘钥签名验证
 
-
-
 生物认证是可以支持`TouchID(指纹认证)`、`FaceID(面容)`、`声纹`等认证。
 
 ``` go
-MiniProgramApp.Soter.VerifySignature("[openID]", "[json_string]", "[json_signature]")
-// output:
-// {
-//    "is_ok": true
-// }
+MiniProgramApp.Soter.VerifySignature(&request.RequestSoter{
+  OpenID:        openID,
+  JsonString:    jsonString,
+  JsonSignature: jsonSignature,
+})
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/soter/soter.verifySignature.html)
+
+
+
+
 
 下面附上获取`json_string`和`json_signature`的一段小程序代码，需要的自取.
 
@@ -27,8 +30,8 @@ MiniProgramApp.Soter.VerifySignature("[openID]", "[json_string]", "[json_signatu
 // https://developers.weixin.qq.com/miniprogram/dev/api/open-api/soter/wx.startSoterAuthentication.html
 wx.startSoterAuthentication({
   requestAuthModes: ['fingerPrint', 'facial'],
-  challenge: '123456',
-  authContent: '请用指纹解锁',
+  challenge:        '123456',
+  authContent:      '请用指纹解锁',
   success(res) {
     console.log(res);
     // output:
