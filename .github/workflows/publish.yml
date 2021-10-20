@@ -2,7 +2,7 @@ name: scp publish
 on:
   push:
     branches:
-      - feature/mini-program-cs
+      - release/*
 jobs:
   build:
     runs-on: ubuntu-latest
