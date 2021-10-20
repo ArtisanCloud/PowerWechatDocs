@@ -8,22 +8,10 @@ date: 2021-09-13
 获取客服消息内的临时素材。
 
 ```go
-mediaID, exist := c.GetQuery("mediaID")
-if !exist {
-  panic("parameter media id expected")
-}
-
-rs, err := MiniProgramApp.CustomerServiceMessage.GetTempMedia(mediaID)
-
-if err != nil {
-  panic(err)
-}
-
-content, _ := ioutil.ReadAll(rs.Body)
-
-c.Header("Content-Type", rs.Header.Get("Content-Type"))
-c.Header("Content-Disposition", rs.Header.Get("attachment;filename=\""+rs.Header.Get("filename")+"\""))
-c.Data(http.StatusOK, rs.Header.Get("Content-Type"), content)
+// rs已经是一个标准的*http.Response，您可以直接使用流转发的形式给到浏览器
+rs, err := MiniProgramApp.CustomerServiceMessage.GetTempMedia("[mediaID]")
+// 例如： gin里面使用io.Copy
+io.Copy(ctx.Writer, rs.Body)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/customer-message/customerServiceMessage.getTempMedia.html)
@@ -32,13 +20,53 @@ c.Data(http.StatusOK, rs.Header.Get("Content-Type"), content)
 
 ## 发送消息
 
-发送客服消息给用户。
+### 文本消息
+
+``` go
+MiniProgramApp.CustomerServiceMessage.SendText(
+  "[openID]",
+  &request.CustomerServiceMsgText{
+    Content: "Hello PowerWeChat",
+  },
+)
+```
+
+### 图片消息
+
+``` go
+MiniProgramApp.CustomerServiceMessage.SendImage(
+  "[openID]",
+  &request.CustomerServiceMsgImage{
+    MediaID: "MEDIA_ID",
+  },
+)
+```
+
+### 图文链接
 
 ```go
-openID := "openID"
-MiniProgramApp.CustomerServiceMessage.Send(openID, "text", &power.HashMap{
-  "content": "Hello World",
-})
+MiniProgramApp.CustomerServiceMessage.SendLink(
+  "[openID]",
+  &request.CustomerServiceMsgLink{
+    Title:       "PowerWechat",
+    Description: "PowerWechat description",
+    Url:         "https://powerwechat.artisan-cloud.com",
+    ThumbUrl:    "https://xxx.com/x.png",
+  },
+)
+```
+
+### 小程序卡片
+
+``` go
+MiniProgramApp.CustomerServiceMessage.SendMiniProgramPage(
+  "[openID]",
+  &request.CustomerServiceMsgMpPage{
+    Title:        "Hello PowerWechat",
+    PagePath:     "/pages/index/index",
+    ThumbMediaID: "thumb_media_id",
+  },
+)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/customer-message/customerServiceMessage.send.html)
