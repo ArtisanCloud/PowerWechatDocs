@@ -3,7 +3,7 @@ title: 代授权方实现业务
 date: 2021-07-29
 ---
 
-[PowerWechat](https://github.com/ArtisanCloud/power-wechat)是一款，基于[Golang](https://golang.org)语言的微信SDK，该项目开源在[Gihub](https://github.com/ArtisanCloud/power-wechat)上，欢迎使用。
+[PowerWechat](https://github.com/ArtisanCloud/PowerWeChat)是一款，基于[Golang](https://golang.org)语言的微信SDK，该项目开源在[Gihub](https://github.com/ArtisanCloud/PowerWeChat)上，欢迎使用。
 
 PowerWechat由[Artisan Cloud](https://github.com/ArtisanCloud)团队专心研发。
 
@@ -12,7 +12,7 @@ PowerWechat由[Artisan Cloud](https://github.com/ArtisanCloud)团队专心研发
 
 
 ``` go
-import "github.com/ArtisanCloud/power-wechat"
+import "github.com/ArtisanCloud/PowerWeChat"
 
 func main() {
 
