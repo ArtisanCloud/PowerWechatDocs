@@ -19,5 +19,5 @@ date: 2021-07-06
 安装 PowerWeChat sdk
 
 ``` shell
-> go get -u https://github.com/ArtisanCloud/PowerWeChat
+> go get -u github.com/ArtisanCloud/PowerWeChat
 ```
