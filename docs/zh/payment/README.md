@@ -11,7 +11,7 @@ date: 2021-07-06
 
 ``` go
 import (
-  "github.com/ArtisanCloud/power-wechat/src/payment"
+  "github.com/ArtisanCloud/PowerWeChat/src/payment"
 )
 
 PaymentService, err := payment.NewPayment(&payment.UserConfig{
@@ -145,4 +145,3 @@ payment.Http{
 - 默认值：`false`
 
 是否开启打印SDK调用微信API接口时候的日志，开启之后会显示出提交的参数和微信详情的数据，对于排查问题时候非常有帮助。
-
