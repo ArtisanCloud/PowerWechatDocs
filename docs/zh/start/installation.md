@@ -16,8 +16,8 @@ date: 2021-07-06
 > cd {your_project_location}/{project-name}/
 ```
 
-安装 power-wechat sdk
+安装 PowerWeChat sdk
 
 ``` shell
-> go get -u https://github.com/ArtisanCloud/power-wechat
+> go get -u https://github.com/ArtisanCloud/PowerWeChat
 ```

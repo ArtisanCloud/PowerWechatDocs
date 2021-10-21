@@ -57,12 +57,12 @@ export default defineUserConfig<DefaultThemeOptions>({
       // title: 'PowerWeChat',
       // description: 'An easy-to-use Golang WeChat SDK',
       // bannerNote: 'Start Golang WeChat development now',
-      // bannerCodeBlock: 'go get -u github.com/ArtisanCloud/power-wechat',
+      // bannerCodeBlock: 'go get -u github.com/ArtisanCloud/PowerWechat',
       lang: 'zh-CN',
       title: 'PowerWeChat',
       description: '一款简单易用的Golang微信SDK',
       bannerNote: '立即开启Golang微信开发之路',
-      bannerCodeBlock: 'go get -u github.com/ArtisanCloud/power-wechat',
+      bannerCodeBlock: 'go get -u github.com/ArtisanCloud/PowerWeChat',
       featureMainTitle: '为什么选择PowerWeChat？',
       featureMainDesc:
         '我们是以Golang技术栈为主的团队。在我们原有的微信生态产品上，封装出了能够高效易用的Golang微信SDK，方便广大开发者快速迭代微信生态功能',
@@ -104,7 +104,7 @@ export default defineUserConfig<DefaultThemeOptions>({
       title: 'PowerWeChat',
       description: '一款简单易用的Golang微信SDK',
       bannerNote: '立即开启Golang微信开发之路',
-      bannerCodeBlock: 'go get -u github.com/ArtisanCloud/power-wechat',
+      bannerCodeBlock: 'go get -u github.com/ArtisanCloud/PowerWeChat',
       featureMainTitle: '为什么选择PowerWeChat？',
       featureMainDesc:
         '我们是以Golang技术栈为主的团队。在我们原有的微信生态产品上，封装出了能够高效易用的Golang微信SDK，方便广大开发者快速迭代微信生态功能',
@@ -152,7 +152,7 @@ export default defineUserConfig<DefaultThemeOptions>({
   themeConfig: {
     logo: '/images/hero.png',
 
-    repo: 'ArtisanCloud/power-wechat',
+    repo: 'ArtisanCloud/PowerWeChat',
 
     docsDir: 'docs',
 

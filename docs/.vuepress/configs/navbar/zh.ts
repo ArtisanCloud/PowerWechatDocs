@@ -31,7 +31,7 @@ export const zh: NavbarConfig = [
   //   children: [
   //     {
   //       text: 'Github',
-  //       link: 'https://github.com/ArtisanCloud/power-wechat',
+  //       link: 'https://github.com/ArtisanCloud/PowerWeChat',
   //     },
   //   ],
   // },
