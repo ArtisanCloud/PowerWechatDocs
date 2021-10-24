@@ -6,13 +6,15 @@ date: 2021-09-25
 
 
 ## 企业服务人员管理
-### 获取配置了客户联系功能的成员列表 (TODO)
+
+### 获取配置了客户联系功能的成员列表 
+
 ``` go
 WeComContactApp.ExternalContact.GetFollowUsers()
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/92571)
 
-### 客户联系「联系我」管理 (TODO)
+### 客户联系「联系我」管理 
 
 #### 配置客户联系「联系我」方式
 
@@ -137,7 +139,7 @@ WeComContactApp.ExternalContactContactWay.CloseTempChat("[userid]", "[external_u
 
 ## 客户管理
 
-### 获取客户列表 (TODO)
+### 获取客户列表 
 
 企业可通过此接口获取指定成员添加的客户列表。客户是指[配置了客户联系功能的成员](https://work.weixin.qq.com/api/doc/90000/90135/92113#13473/配置可使用客户联系功能的成员)所添加的外部联系人。没有配置客户联系功能的成员，所添加的外部联系人将不会作为客户返回。
 
@@ -146,7 +148,7 @@ WeComContactApp.ExternalContact.List("[userid]")
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/92113)
 
-### 获取客户详情 (TODO)
+### 获取客户详情 
 
 企业可通过此接口，根据外部联系人的userid（[如何获取?](https://work.weixin.qq.com/api/doc/90000/90135/92114#15445)），拉取客户详情。
 
@@ -156,7 +158,7 @@ WeComContactApp.ExternalContact.Get("[userid]", cursor)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/92114)
 
-### 批量获取客户详情 (TODO)
+### 批量获取客户详情 
 ``` go
 userIDs := []string{c.DefaultQuery("walle", "matrix-x")}
 cursor := "" // 上次请求返回的next_cursor
@@ -164,7 +166,7 @@ WeComContactApp.ExternalContact.BatchGet(userIDs, cursor, 100)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/92994)
 
-### 修改客户备注信息 (TODO)
+### 修改客户备注信息 
 ``` go
 options := &request.RequestExternalContactRemark{
   UserID:         "matrix-x",
@@ -183,7 +185,7 @@ WeComContactApp.ExternalContact.Remark(options)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/92115)
 
-### 客户联系规则组管理 (TODO)
+### 客户联系规则组管理 
 
 #### 获取规则组列表
 
@@ -321,7 +323,7 @@ WeComContactApp.ExternalContactCustomerStrategy.Del(1) // strategy_id
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/94883)
 
 ## 客户标签管理
-### 管理企业标签 (TODO)
+### 管理企业标签 
 
 #### 获取企业标签库
 
@@ -385,7 +387,7 @@ WeComContactApp.ExternalContactTag.DelCorpTag(options)
 
 
 
-### 管理企业规则组下的客户标签 (TODO)
+### 管理企业规则组下的客户标签 
 
 #### 获取指定规则组下的企业客户标签
 
@@ -458,7 +460,7 @@ WeComContactApp.ExternalContactTag.DelStrategyTag(options)
 
 
 
-### 编辑客户企业标签 (TODO)
+### 编辑客户企业标签 
 
 ``` go
 options := &request.RequestTagMarkTag{
@@ -479,7 +481,7 @@ WeComContactApp.ExternalContactTag.MarkTag(options)
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/92118)
 
 ## 在职继承
-### 分配在职成员的客户 (TODO)
+### 分配在职成员的客户 
 ``` go
 options := &request.RequestTransferCustomer{
   HandoverUserID:     "walle", // 原跟进成员的userid
@@ -491,7 +493,7 @@ WeComContactApp.ExternalContactTransfer.TransferCustomer(options)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/92125)
 
-### 查询客户接替状态 (TODO)
+### 查询客户接替状态 
 ``` go
 options := &request.RequestTransferResult{
   HandoverUserID: "walle",
@@ -503,7 +505,7 @@ WeComContactApp.ExternalContactTransfer.TransferResult(options)
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/94088)
 
 ## 离职继承
-### 获取待分配的离职成员列表 (TODO)
+### 获取待分配的离职成员列表 
 ``` go
 pageID := 1
 pageSize := 1000
@@ -512,7 +514,7 @@ WeComContactApp.ExternalContactTransfer.GetUnassignedList(pageID, cursor, pageSi
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/92124)
 
-### 分配离职成员的客户 (TODO)
+### 分配离职成员的客户 
 ``` go
 options := &request.RequestResignedTransferCustomer{
   HandoverUserID: "walle",
@@ -523,7 +525,7 @@ WeComContactApp.ExternalContactTransfer.ResignedTransferCustomer(options)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/94081)
 
-### 查询客户接替状态 (TODO)
+### 查询客户接替状态 
 ``` go
 options := &request.RequestResignedTransferResult{
   HandoverUserID: "walle",
@@ -534,7 +536,7 @@ WeComContactApp.ExternalContactTransfer.ResignedTransferResult(options)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/94082)
 
-### 分配离职成员的客户群 (TODO)
+### 分配离职成员的客户群 
 ``` go
 options := &request.RequestGroupChatTransfer{
   ChatIDList: []string{
@@ -548,7 +550,7 @@ WeComContactApp.ExternalContactTransfer.GroupChatTransfer(options)
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/92127)
 
 ## 客户群管理
-### 获取客户群列表 (TODO)
+### 获取客户群列表 
 
 ``` go
 options := &request.RequestGroupChatList{
@@ -563,7 +565,7 @@ WeComContactApp.ExternalContactGroupChat.List(options)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/92120)
 
-### 获取客户群详情 (TODO)
+### 获取客户群详情 
 ``` go
 chatID := "wrOgQhDgAAMYQiS5ol9G7gK9JVAAAA"
 bNeedName := true
@@ -571,7 +573,7 @@ WeComContactApp.ExternalContactGroupChat.Get(chatID, bNeedName)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/92122)
 
-### 客户群opengid转换 (TODO)
+### 客户群opengid转换 
 ``` go
 openID := "oAAAAAAA"
 WeComContactApp.ExternalContactGroupChat.OpenGIDToChatID(openID)
@@ -583,7 +585,7 @@ WeComContactApp.ExternalContactGroupChat.OpenGIDToChatID(openID)
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/93506)
 
-### 获取客户朋友圈全部的发表记录 (TODO)
+### 获取客户朋友圈全部的发表记录 
 
 #### 获取企业全部的发表列表
 
@@ -637,7 +639,7 @@ WeComContactApp.ExternalContactMoment.GetMomentComments(momentID, userID)
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/93333)
 
-### 客户朋友圈规则组管理 (TODO)
+### 客户朋友圈规则组管理 
 
 #### 获取规则组列表
 
@@ -743,7 +745,7 @@ WeComContactApp.ExternalContactMomentStrategy.Del(strategyID)
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/94890)
 
 ## 消息推送
-### 创建企业群发 (TODO)
+### 创建企业群发 
 ``` go
 options := &request.RequestSendWelcomeMsg{
   WelcomeCode: c.DefaultQuery("welcomeCode", "CALLBACK_CODE"),
@@ -791,7 +793,7 @@ WeComContactApp.ExternalContactMessageTemplate.SendWelcomeMsg(options)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/92135)
 
-### 获取企业的全部群发记录 (TODO)
+### 获取企业的全部群发记录 
 
 #### 获取群发记录列表
 
@@ -832,7 +834,7 @@ WeComContactApp.ExternalContactMessageTemplate.GetGroupMsgSendResult(msgID, user
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/93338)
 
-### 发送新客户欢迎语 (TODO)
+### 发送新客户欢迎语 
 ``` go
 options := &request.RequestSendWelcomeMsg{
   WelcomeCode: c.DefaultQuery("welcomeCode", "CALLBACK_CODE"),
@@ -880,7 +882,7 @@ WeComContactApp.ExternalContactMessageTemplate.SendWelcomeMsg(options)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/92137)
 
-### 入群欢迎语素材管理 (TODO)
+### 入群欢迎语素材管理 
 
 #### 添加入群欢迎语素材
 
@@ -971,26 +973,26 @@ services.WeComContactApp.ExternalContactGroupWelcomeTemplate.DelGroupWelcomeTemp
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/92366)
 
 ## 统计管理
-### 获取「联系客户统计」数据 (TODO)
+### 获取「联系客户统计」数据 
 ``` go
 
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/92132)
 
-### 获取「群聊数据统计」数据 (TODO)
+### 获取「群聊数据统计」数据 
 ``` go
 
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/92133)
 
 ## 变更回调
-### 概述 (TODO)
+### 概述 
 ``` go
 
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/92129)
 
-### 事件格式 (TODO)
+### 事件格式 
 ``` go
 
 ```

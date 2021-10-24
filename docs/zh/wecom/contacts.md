@@ -21,7 +21,7 @@ WeComContactApp, err := work.NewWork(&work.UserConfig{
 
 ## 成员管理
 
-### 创建成员 (TODO)
+### 创建成员 
 
 ``` go
 WeComApp.User.Create(&request.RequestUserDetail{
@@ -34,7 +34,7 @@ WeComApp.User.Create(&request.RequestUserDetail{
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90195)
 
-### 读取成员 (TODO)
+### 读取成员 
 
 ``` go
 WeComApp.User.Get("[userId]")
@@ -42,7 +42,7 @@ WeComApp.User.Get("[userId]")
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90196)
 
-### 更新成员 (TODO)
+### 更新成员 
 
 ``` go
 WeComApp.User.Update(&request.RequestUserDetail{
@@ -53,7 +53,7 @@ WeComApp.User.Update(&request.RequestUserDetail{
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90197)
 
-### 删除成员 (TODO)
+### 删除成员 
 
 ``` go
 WeComApp.User.Delete("[userId]")
@@ -61,7 +61,7 @@ WeComApp.User.Delete("[userId]")
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90198)
 
-### 批量删除成员 (TODO)
+### 批量删除成员 
 
 ``` go
 WeComApp.User.BatchDelete([]string{"[userId1]", "[userId2]"})
@@ -69,7 +69,7 @@ WeComApp.User.BatchDelete([]string{"[userId1]", "[userId2]"})
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90199)
 
-###  获取部门成员 （TODO）
+###  获取部门成员
 
 ``` go
 departmentId := 1
@@ -79,7 +79,7 @@ WeComApp.User.GetDepartmentUsers(departmentId, fetchChild)
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90200)
 
-### 获取部门成员详情 (TODO)
+### 获取部门成员详情 
 
 ``` go
 departmentId := 1
@@ -89,7 +89,7 @@ WeComApp.User.GetDetailedDepartmentUsers(departmentId, fetchChild)
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90201)
 
-### userid和openid互转 (TODO)
+### userid和openid互转 
 
 userid转opened
 
@@ -105,7 +105,7 @@ WeComApp.User.OpenIDToUserID("[openid]")
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90202)
 
-### 二次验证 (TODO)
+### 二次验证 
 
 ``` go
 WeComApp.User.Accept("[userId]")
@@ -113,7 +113,7 @@ WeComApp.User.Accept("[userId]")
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90203)
 
-### 邀请成员 (TODO)
+### 邀请成员 
 
 ``` go
 WeComApp.User.Invite(&power.HashMap{
@@ -123,7 +123,7 @@ WeComApp.User.Invite(&power.HashMap{
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90975)
 
-### 获取加入企业二维码 (TODO)
+### 获取加入企业二维码 
 
 ``` go
 size := 3
@@ -132,7 +132,7 @@ WeComApp.User.GetJoinQrCode(size)
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/91714)
 
-### 获取企业活跃成员数 (TODO)
+### 获取企业活跃成员数 
 
 ``` go
 WeComApp.User.GetActiveStat("2021-09-13")
@@ -193,7 +193,7 @@ services.WeComContactApp.Department.Delete(id)
 
 这里为了方便文档展示，使用了`const defaultTagId = 100`，实际应用中请自行改成合适的`tagId`
 
-### 创建标签 (TODO)
+### 创建标签 
 
 ```go
 WeComApp.UserTag.Create("TestTag", defaultTagId)
@@ -201,7 +201,7 @@ WeComApp.UserTag.Create("TestTag", defaultTagId)
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90210)
 
-### 更新标签名字 (TODO)
+### 更新标签名字 
 
 ```go
 WeComApp.UserTag.Update("TestTag1", defaultTagId)
@@ -209,7 +209,7 @@ WeComApp.UserTag.Update("TestTag1", defaultTagId)
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90211)
 
-### 删除标签 (TODO)
+### 删除标签 
 
 ```go
 WeComApp.UserTag.Delete(defaultDepartmentId)
@@ -217,7 +217,7 @@ WeComApp.UserTag.Delete(defaultDepartmentId)
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90212)
 
-### 获取标签列表 (TODO)
+### 获取标签列表 
 
 ```go
 WeComApp.UserTag.List()
@@ -225,7 +225,7 @@ WeComApp.UserTag.List()
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90216)
 
-### 获取标签成员 (TODO)
+### 获取标签成员 
 
 ```go
 WeComApp.UserTag.Get(defaultTagId)
@@ -233,7 +233,7 @@ WeComApp.UserTag.Get(defaultTagId)
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90213)
 
-### 增加标签成员 (TODO)
+### 增加标签成员 
 
 ```go
 WeComApp.UserTag.TagUsers(defaultTagId, []string{"[userId]"})
@@ -241,7 +241,7 @@ WeComApp.UserTag.TagUsers(defaultTagId, []string{"[userId]"})
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90214)
 
-### 删除标签成员 (TODO)
+### 删除标签成员 
 
 ```go
 WeComApp.UserTag.TagUsers(defaultTagId, []string{"[userId]"})
@@ -253,7 +253,7 @@ WeComApp.UserTag.TagUsers(defaultTagId, []string{"[userId]"})
 
 ## 异步批量接口
 
-### 增量更新成员 (TODO)
+### 增量更新成员 
 
 ```go
 callback := &power.StringMap{
@@ -266,7 +266,7 @@ WeComApp.UserBatchJobs.SyncUser("[mediaID]", true, callback)
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/90980)
 
-### 全量覆盖成员 (TODO)
+### 全量覆盖成员 
 
 ```go
 callback := &power.StringMap{
@@ -279,7 +279,7 @@ WeComApp.UserBatchJobs.ReplaceUser("[mediaID]", true, callback)
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/90981)
 
-### 全量覆盖部门 (TODO)
+### 全量覆盖部门 
 
 ```go
 WeComApp.UserLinkedCorp.GetDepartmentList("[departmentID]")
@@ -287,7 +287,7 @@ WeComApp.UserLinkedCorp.GetDepartmentList("[departmentID]")
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/90982)
 
-## 获取异步任务结果 (TODO)
+## 获取异步任务结果 
 
 ``` go
 WeComApp.UserBatchJobs.GetBatchResult("[jobID]")
@@ -297,13 +297,13 @@ WeComApp.UserBatchJobs.GetBatchResult("[jobID]")
 
 
 
-## 通讯录回调通知 (TODO)
+## 通讯录回调通知 
 
 
 
 ## 互联企业
 
-### 获取应用的可见范围 (TODO)
+### 获取应用的可见范围 
 
 ```go
 WeComApp.UserLinkedCorp.GetPermList()
@@ -313,7 +313,7 @@ WeComApp.UserLinkedCorp.GetPermList()
 
 
 
-### 获取互联企业成员详细信息 (TODO)
+### 获取互联企业成员详细信息 
 
 ```go
 WeComApp.UserLinkedCorp.GetUser("[userID]")
@@ -323,7 +323,7 @@ WeComApp.UserLinkedCorp.GetUser("[userID]")
 
 
 
-### 获取互联企业部门成员 (TODO)
+### 获取互联企业部门成员 
 
 ```go
 departmentID := "10001"
@@ -335,7 +335,7 @@ WeComApp.UserLinkedCorp.GetUserSimpleList(departmentID, fetchChild)
 
 
 
-### 获取互联企业部门成员详情 (TODO)
+### 获取互联企业部门成员详情 
 
 ```go
 departmentID := "10001"
@@ -347,7 +347,7 @@ WeComApp.UserLinkedCorp.GetUserList(departmentID, true)
 
 
 
-### 获取互联企业部门列表 (TODO)
+### 获取互联企业部门列表 
 
 ```go
 departmentID := "10001"
@@ -362,7 +362,7 @@ WeComApp.UserLinkedCorp.GetDepartmentList(departmentID)
 
 
 
-### 导出成员 (TODO)
+### 导出成员 
 
 ``` go
 encodingAESKey := ""
@@ -372,7 +372,7 @@ WeComApp.UserExportJobs.SimpleUser(encodingAESKey, blockSize)
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/94849)
 
-### 导出成员详情 (TODO)
+### 导出成员详情 
 
 ``` go
 encodingAESKey := ""
@@ -382,7 +382,7 @@ WeComApp.UserExportJobs.User(encodingAESKey, blockSize)
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/94851)
 
-### 导出部门 (TODO)
+### 导出部门 
 
 ``` go
 encodingAESKey := ""
@@ -392,7 +392,7 @@ WeComApp.UserExportJobs.Department(encodingAESKey, blockSize)
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/94852)
 
-### 导出标签成员 (TODO)
+### 导出标签成员 
 
 ``` go
 encodingAESKey := ""
@@ -403,7 +403,7 @@ WeComApp.UserExportJobs.TagUser(tagID, encodingAESKey, blockSize)
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/94853)
 
-### 获取导出结果 (TODO)
+### 获取导出结果 
 
 ``` go
 WeComApp.UserExportJobs.GetExportResult("[jobID]")
@@ -411,7 +411,6 @@ WeComApp.UserExportJobs.GetExportResult("[jobID]")
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/94854)
 
-### 导出任务完成异步通知 (TODO)
+### 导出任务完成异步通知 
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/90983)
-

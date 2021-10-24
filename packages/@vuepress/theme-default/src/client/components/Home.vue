@@ -143,6 +143,9 @@
       <!-- eslint-disable-next-line vue/no-v-html -->
       <div v-if="footerHtml" class="footer" v-html="footer" />
       <div v-else class="footer" v-text="footer" />
+      <div v-if="beian" class="beian">
+        <a :href="beian.link">{{ beian.text }}</a>
+      </div>
     </template>
   </main>
 </template>
@@ -210,6 +213,8 @@ const features = computed(() => {
   }
   return []
 })
+
+const beian = computed(() => siteLocale.value.beian || null)
 
 // footer
 const footer = computed(() => frontmatter.value.footer)

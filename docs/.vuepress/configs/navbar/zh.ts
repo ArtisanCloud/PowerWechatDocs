@@ -26,13 +26,14 @@ export const zh: NavbarConfig = [
       },
     ],
   },
-  // {
-  //   text: '联系我们',
-  //   children: [
-  //     {
-  //       text: 'Github',
-  //       link: 'https://github.com/ArtisanCloud/PowerWeChat',
-  //     },
-  //   ],
-  // },
+  {
+    text: '联系我们',
+    link: '/zh/start/qa.html',
+    // children: [
+    //   {
+    //     text: 'Github',
+    //     link: 'https://github.com/ArtisanCloud/PowerWeChat',
+    //   },
+    // ],
+  },
 ]
