@@ -1,5 +1,5 @@
 ---
-title: 电子发票 [TOTEST]
+title: 电子发票
 date: 2021-07-06
 description: PowerWechat可以支持报销发票接口，及jsapi用于在应用中选择微信卡包中的电子发票实现电子化报销
 ---

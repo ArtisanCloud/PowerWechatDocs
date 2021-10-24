@@ -98,6 +98,10 @@ export default defineUserConfig<DefaultThemeOptions>({
           desc: '在Github上开源，完全免费',
         },
       ],
+      beian: {
+        text: '沪ICP备2021029387号-1',
+        link: 'https://beian.miit.gov.cn',
+      },
     },
     '/zh/': {
       lang: 'zh-CN',
@@ -140,6 +144,10 @@ export default defineUserConfig<DefaultThemeOptions>({
           desc: '在Github上开源，完全免费',
         },
       ],
+      beian: {
+        text: '沪ICP备2021029387号-1',
+        link: 'https://beian.miit.gov.cn',
+      },
     },
   },
 

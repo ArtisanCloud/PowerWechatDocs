@@ -6,11 +6,17 @@ description: 企业微信移动端App登录获得一次性Code之后，通过服
 
 
 
-## 通过code获取用户信息 [TODO]
+## 通过code获取用户信息
 
 获取用户信息的一次性code，第三方app需要继续使用此code通过后端服务器换取用户的信息。
 
 ``` go
+user, err := WeComApp.OAuth.Provider.Detailed().UserFromCode("[code]")
+if err != nil {
+  panic(err)
+}
+deviceID := user.GetDeviceID()
+userID :=   user.GetID()
 ```
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90136/91193)

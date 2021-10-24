@@ -135,6 +135,16 @@
     }
   }
 
+  .beian {
+    font-size: 12px;
+
+    text-align: center;
+    padding: 0 0 10px 0;
+    a {
+      color: #ccc !important;
+    }
+  }
+
   .heading-title {
     transform: translate(0, -40px);
   }

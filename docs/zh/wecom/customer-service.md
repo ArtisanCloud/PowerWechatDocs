@@ -5,21 +5,21 @@ date: 2021-09-27
 
 ## 概述
 ## 客服帐号管理
-### 添加客服帐号 (TODO)
+### 添加客服帐号 
 ``` go
-mediaID := "294DpAog3YA5b9rTK4PjjfRfYLO0L5qpDHAJIzhhQ2jAEWjb9i661Q4lk8oFnPtmj"
+mediaID := "294DpAog3YA5b9rT`K4PjjfRfYLO0L5qpDHAJIzhhQ2jAEWjb9i661Q4lk8oFnPtmj"
 WeComApp.AccountService.Add("新建的客服帐号", mediaID)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/94662)
 
-### 删除客服帐号 (TODO)
+### 删除客服帐号 
 ``` go
 openKFID := "wkAJ2GCAAAZSfhHCt7IFSvLKtMPxyJTw"
 WeComApp.AccountService.Del(openKFID)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/94663)
 
-### 修改客服帐号 (TODO)
+### 修改客服帐号 
 ``` go
 options := &request.RequestAccountUpdate{
   OpenKFID: "wkAJ2GCAAAZSfhHCt7IFSvLKtMPxyJTw",
@@ -30,13 +30,13 @@ WeComApp.AccountService.Update(options)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/94664)
 
-### 获取客服帐号列表 (TODO)
+### 获取客服帐号列表 
 ``` go
 WeComApp.AccountService.List()
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/94661)
 
-### 获取客服帐号链接 (TODO)
+### 获取客服帐号链接 
 ``` go
 openKFID := "wkAJ2GCAAAZSfhHCt7IFSvLKtMPxyJTw"
 scene := "1234"
@@ -45,7 +45,7 @@ WeComApp.AccountService.AddContactWay(openKFID, scene)
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/94665)
 
 ## 接待人员管理
-### 添加接待人员 (TODO)
+### 添加接待人员 
 ``` go
 openKFID := "kfxxxxxxxxxxxxxx"
 userIDList := []string{"zhangsan", "lisi"}
@@ -53,7 +53,7 @@ WeComApp.AccountServiceServicer.Add(openKFID, userIDList)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/94646)
 
-### 删除接待人员 (TODO)
+### 删除接待人员 
 ``` go
 openKFID := "kfxxxxxxxxxxxxxx"
 userIDList := []string{"zhangsan", "lisi"}
@@ -61,7 +61,7 @@ WeComApp.AccountServiceServicer.Del(openKFID, userIDList)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/94647)
 
-### 获取接待人员列表 (TODO)
+### 获取接待人员列表 
 ``` go
 openKFID := "kfxxxxxxxxxxxxxx"
 WeComApp.AccountServiceServicer.List(openKFID)
@@ -69,7 +69,7 @@ WeComApp.AccountServiceServicer.List(openKFID)
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/94645)
 
 ## 会话分配与消息收发
-### 分配客服会话 (TODO)
+### 分配客服会话 
 
 #### 获取会话状态
 
@@ -91,15 +91,15 @@ WeComApp.AccountServiceState.Trans(openKFID, externalUserID,serviceState,service
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/94669)
 
-### 接收消息和事件 (TODO)
+### 接收消息和事件 
 
 当微信客户、接待人员发消息或有行为动作时，企业微信后台会将事件的回调数据包发送到企业指定URL；企业收到请求后，再通过读取消息接口主动读取具体的消息内容。
 
-#### 回调事件 (TODO)
+#### 回调事件 
 
 接收并解析事件的方法见：[接收事件](https://work.weixin.qq.com/api/doc/90000/90135/94670#12977) （TODO: 这里需要改成docs的连接）。
 
-#### 读取消息 (TODO)
+#### 读取消息 
 
 ``` go
 cursor := "4gw7MepFLfgF2VC5npN"
@@ -110,7 +110,7 @@ WeComApp.AccountServiceMessage.SyncMsg(cursor, token, limit)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/94670)
 
-### 发送消息 (TODO)
+### 发送消息 
 ``` go
 options := &request.RequestAccountServiceSendMsg{
   ToUser:    "EXTERNAL_USERID",
@@ -125,7 +125,7 @@ WeComApp.AccountServiceMessage.SendMsg(options)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/94677)
 
-### 发送事件响应消息 (TODO)
+### 发送事件响应消息 
 ``` go
 options := &request.RequestAccountServiceSendMsgOnEvent{
   Code:    "CODE",
@@ -139,15 +139,15 @@ WeComApp.AccountServiceMessage.SendMsgOnEvent(options)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/95122)
 
-## 「升级服务」配置 (TODO)
+## 「升级服务」配置 
 
-### 获取配置的专员与客户群 (TODO)
+### 获取配置的专员与客户群 
 
 ``` go
 WeComApp.AccountServiceCustomer.GetUpgradeServiceConfig()
 ```
 
-### 为客户升级为专员或客户群服务 (TODO)
+### 为客户升级为专员或客户群服务 
 
 ``` go
 options := &request.RequestUpgradeService{
@@ -178,7 +178,7 @@ WeComApp.AccountServiceCustomer.CancelUpgradeService(openKFID, externalUserID)
 
 ## 其他基础信息获取
 
-### 获取客户基础信息 (TODO)
+### 获取客户基础信息 
 ``` go
 externalUserIDList := []string{"externalUserIDList", "matrix-x"}
 WeComApp.AccountServiceCustomer.BatchGet(externalUserIDList)
