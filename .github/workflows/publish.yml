@@ -45,7 +45,7 @@ jobs:
               -a ${{ secrets.COS_SH_APP_ID }} \
               -s ${{ secrets.COS_SH_APP_KEY }} \
               -b ${{ secrets.COS_SG_BUCKET }} \
-              -r ap-shanghai
+              -r ap-singapore
       - name: Upload docs to SG
         run: |
           coscmd upload -r docs/.vuepress/dist/ /
