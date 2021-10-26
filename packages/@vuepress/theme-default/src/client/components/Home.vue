@@ -98,9 +98,11 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12">
-            <div class="section-title text-center mb-4 pb-2">
-              <h4 class="title mb-4">{{ siteLocale.featureMainTitle }}</h4>
-              <p class="text-muted mx-auto para-desc mb-0">
+            <div class="section-title mb-4">
+              <h4 class="title mb-4 text-center">
+                {{ siteLocale.featureMainTitle }}
+              </h4>
+              <p class="text-muted mx-auto features-desc mb-0">
                 {{ siteLocale.featureMainDesc }}
               </p>
             </div>
@@ -113,7 +115,7 @@
           <div
             v-for="feature in features"
             :key="feature.title"
-            class="col-lg-4 col-md-6 mt-4 pt-2"
+            class="col-lg-4 col-md-6"
           >
             <div
               class="card features feature-primary core-feature shadow rounded p-4 text-center border-0"
@@ -121,7 +123,7 @@
               <div class="icon text-center rounded-circle mx-auto">
                 <h3 class="mb-0"><i :class="feature.icon"></i></h3>
               </div>
-              <div class="card-body p-0 mt-4 mx-auto">
+              <div class="card-body p-0 mx-auto">
                 <a href="javascript:void(0)" class="title text-dark h5">{{
                   feature.title
                 }}</a>
@@ -144,7 +146,9 @@
       <div v-if="footerHtml" class="footer" v-html="footer" />
       <div v-else class="footer" v-text="footer" />
       <div v-if="beian" class="beian">
-        <a :href="beian.link">{{ beian.text }}</a>
+        <a :href="beian.link" target="_blank" rel="noopener noreferrer">{{
+          beian.text
+        }}</a>
       </div>
     </template>
   </main>

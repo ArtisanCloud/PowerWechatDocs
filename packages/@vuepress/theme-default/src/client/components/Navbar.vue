@@ -112,7 +112,8 @@ const navSticky = computed(() => {
   if (!isHome.value) {
     return true
   }
-  if (scrollY.value > 70) {
+  // 滚动超过一个全屏之后再进行固定变色
+  if (scrollY.value > window.innerHeight - 70) {
     return true
   }
   return false

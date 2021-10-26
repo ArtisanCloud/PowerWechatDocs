@@ -60,54 +60,9 @@ export default defineUserConfig<DefaultThemeOptions>({
       // bannerCodeBlock: 'go get -u github.com/ArtisanCloud/PowerWechat',
       lang: 'zh-CN',
       title: 'PowerWeChat',
-      description: '一款简单易用的Golang微信SDK',
-      bannerNote: '立即开启Golang微信开发之路',
-      bannerCodeBlock: 'go get -u github.com/ArtisanCloud/PowerWeChat',
-      featureMainTitle: '为什么选择PowerWeChat？',
-      featureMainDesc:
-        '我们是以Golang技术栈为主的团队。在我们原有的微信生态产品上，封装出了能够高效易用的Golang微信SDK，方便广大开发者快速迭代微信生态功能',
-      features: [
-        {
-          icon: ['uil', 'uil-suitcase'],
-          title: '完整的微信生态支持',
-          desc: '支持小程序、企业微信、微信支付等模块',
-        },
-        {
-          icon: ['uil', 'uil-document-info'],
-          title: '完整的SDK文档',
-          desc: '每个接口描述都映射到原微信官方文档',
-        },
-        {
-          icon: ['uil', 'uil-cell'],
-          title: '统一接口风格',
-          desc: '组建模块化设计，统一对象调用',
-        },
-        {
-          icon: ['uil', 'uil-plug'],
-          title: '发挥Golang的语言基因',
-          desc: '出入参覆盖强类型，智能提示助你编码如飞',
-        },
-        {
-          icon: ['uil', 'uil-bookmark-full'],
-          title: '提供完整的测试接口功能',
-          desc: '每个SDK API都有tutorial demo使用参考',
-        },
-        {
-          icon: ['uil', 'uil-coffee'],
-          title: 'MIT版权使用',
-          desc: '在Github上开源，完全免费',
-        },
-      ],
-      beian: {
-        text: '沪ICP备2021029387号-1',
-        link: 'https://beian.miit.gov.cn',
-      },
-    },
-    '/zh/': {
-      lang: 'zh-CN',
-      title: 'PowerWeChat',
-      description: '一款简单易用的Golang微信SDK',
-      bannerNote: '立即开启Golang微信开发之路',
+      description:
+        'PowerWeChat是一款简单易用的Golang微信开发SDK，目前已经支持微信小程序、微信支付、企业微信、微信公众平台(即将推出)',
+      bannerNote: '点击一下，开启Golang微信开发之旅',
       bannerCodeBlock: 'go get -u github.com/ArtisanCloud/PowerWeChat',
       featureMainTitle: '为什么选择PowerWeChat？',
       featureMainDesc:
@@ -183,6 +138,7 @@ export default defineUserConfig<DefaultThemeOptions>({
 
         // page meta
         editLinkText: 'Edit this page on GitHub',
+        editLink: false,
       },
 
       /**
@@ -200,6 +156,7 @@ export default defineUserConfig<DefaultThemeOptions>({
 
         // page meta
         editLinkText: '在 GitHub 上编辑此页',
+        editLink: false,
         lastUpdatedText: '上次更新',
         contributorsText: '贡献者',
 

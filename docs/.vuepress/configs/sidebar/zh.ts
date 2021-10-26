@@ -82,23 +82,23 @@ export const zh: SidebarConfig = {
       text: '公众号', // 必要的
       children: ['README.md', 'media.md'],
     }),
-    concatData('/zh/open-platform/', {
-      text: '开放平台', // 必要的
-      children: [
-        'README.md', // 指向intro.md
-        'server.md', // 指向server.md
-        'oauth-agent.md', // 指向oauth-agent.md
-      ],
-    }),
-    concatData('/zh/work-open-platform/', {
-      text: '企业微信开放平台', // 必要的
-      children: [
-        'README.md', // 指向intro.md
-        'provider-api.md', // 指向provider-api.md
-        'server.md', // 指向server.md
-        'third-part-api.md', // 指向third-part-api.md
-        'work.md', // 指向work.md
-      ],
-    }),
+    // concatData('/zh/open-platform/', {
+    //   text: '开放平台', // 必要的
+    //   children: [
+    //     'README.md', // 指向intro.md
+    //     'server.md', // 指向server.md
+    //     'oauth-agent.md', // 指向oauth-agent.md
+    //   ],
+    // }),
+    // concatData('/zh/work-open-platform/', {
+    //   text: '企业微信开放平台', // 必要的
+    //   children: [
+    //     'README.md', // 指向intro.md
+    //     'provider-api.md', // 指向provider-api.md
+    //     'server.md', // 指向server.md
+    //     'third-part-api.md', // 指向third-part-api.md
+    //     'work.md', // 指向work.md
+    //   ],
+    // }),
   ],
 }
