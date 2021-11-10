@@ -6,6 +6,8 @@ on:
 jobs:
   publish-cos:
     runs-on: ubuntu-latest
+    env:
+      DOCS_GA_ID: G-GPRCVYSQSG
     strategy:
       matrix:
         node: ['16']
