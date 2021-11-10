@@ -84,7 +84,6 @@ const themeLocale = useThemeLocaleData()
 const isDarkMode = useDarkMode()
 const frontmatter = usePageFrontmatter<DefaultThemeHomePageFrontmatter>()
 
-const winHeight = ref(0)
 const scrollY = ref(0)
 const navbar = ref<HTMLElement | null>(null)
 const siteBrand = ref<HTMLElement | null>(null)
@@ -114,7 +113,7 @@ const navSticky = computed(() => {
     return true
   }
   // 滚动超过一个全屏之后再进行固定变色
-  if (scrollY.value > winHeight.value - 70) {
+  if (scrollY.value > window.innerHeight - 70) {
     return true
   }
   return false
@@ -122,7 +121,6 @@ const navSticky = computed(() => {
 
 // avoid overlapping of long title and long navbar links
 onMounted(() => {
-  winHeight.value = window.innerHeight
   // TODO: migrate to css var
   // refer to _variables.scss
   const MOBILE_DESKTOP_BREAKPOINT = 719
@@ -138,8 +136,6 @@ onMounted(() => {
         navbarHorizontalPadding -
         (siteBrand.value?.offsetWidth || 0)
     }
-
-    winHeight.value = window.innerHeight
   }
   handleLinksWrapWidth()
   window.addEventListener('resize', handleLinksWrapWidth, false)
