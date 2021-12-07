@@ -18,6 +18,12 @@ MiniProgramApp, err := miniProgram.NewMiniProgram(&miniProgram.UserConfig{
     Level: "debug",
     File:  "./wechat.log",
   },
+  // 可选，不传默认走程序内存
+  Cache: kernel.NewRedisClient(&kernel.RedisOptions{
+    Addr:     "127.0.0.1:6379",
+    Password: "",
+    DB:       0,
+  }),
 })
 ```
 
@@ -63,3 +69,18 @@ miniProgram.Log{
 是否开启打印SDK调用微信API接口时候的日志，开启之后会显示出提交的参数和微信详情的数据，对于排查问题时候非常有帮助。
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/access-token/auth.getAccessToken.html)
+
+### Cache
+
+- 类型: `CacheInterface`
+- 必传: `否`
+- 默认值：`nil`
+
+如果需要实现Token中控，例如多个应用实例共享或者和其他应用共享Token。
+
+更多详细内容请参考： [Cache配置](/zh/start/common.md#cache配置)
+
+
+
+
+

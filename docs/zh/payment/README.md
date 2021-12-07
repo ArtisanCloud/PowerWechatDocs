@@ -32,6 +32,12 @@ PaymentService, err := payment.NewPayment(&payment.UserConfig{
     Timeout: 30.0,
     BaseURI: "https://api.mch.weixin.qq.com",
   },
+  // 可选，不传默认走程序内存
+  Cache: kernel.NewRedisClient(&kernel.RedisOptions{
+    Addr:     "127.0.0.1:6379",
+    Password: "",
+    DB:       0,
+  }),
 })
 ```
 
@@ -95,7 +101,7 @@ API V3私钥。
 微信支付V3证书的序列号。
 获取证书调用方法：
 ``` bash
-openssl x509 -in /Users/.../apiclient_cert.pem -noout -serial
+openssl x509 -noout -serial -in /.../apiclient_cert.pem
 ```
 正常的情况下会输出：
 ```
@@ -145,3 +151,14 @@ payment.Http{
 - 默认值：`false`
 
 是否开启打印SDK调用微信API接口时候的日志，开启之后会显示出提交的参数和微信详情的数据，对于排查问题时候非常有帮助。
+
+### Cache
+
+- 类型: `CacheInterface`
+- 必传: `否`
+- 默认值：`nil`
+
+如果需要实现Token中控，例如多个应用实例共享或者和其他应用共享Token。
+
+更多详细内容请参考： [Cache配置](/zh/start/common.md#cache配置)
+
