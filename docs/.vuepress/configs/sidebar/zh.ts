@@ -14,7 +14,13 @@ export const zh: SidebarConfig = {
   '/zh/': [
     concatData('/zh/start/', {
       text: '开始',
-      children: ['README.md', 'installation.md', 'quick-start.md', 'qa.md'],
+      children: [
+        'README.md',
+        'installation.md',
+        'quick-start.md',
+        'common.md',
+        'qa.md',
+      ],
     }),
     concatData('/zh/mini-program/', {
       text: '小程序', // 必要的
