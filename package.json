@@ -1,19 +1,13 @@
 {
-  "private": true,
-  "workspaces": [
-    "packages/vuepress",
-    "packages/vuepress-vite",
-    "packages/@vuepress/*"
-  ],
   "scripts": {
     "build": "tsc --build",
     "clean": "lerna run clean --stream",
     "copy": "lerna run copy --stream",
     "copy-watch": "lerna run copy --parallel -- --watch",
     "dev": "yarn copy-watch & yarn build --watch",
-    "docs:build": "vuepress build docs --clean-cache",
+    "docs:build": "DOCS_BUNDLER=@vuepress/webpack vuepress build docs --clean-cache",
     "docs:clean": "rimraf docs/.vuepress/.temp docs/.vuepress/.cache docs/.vuepress/dist",
-    "docs:dev": "vuepress dev docs --clean-cache",
+    "docs:dev": "DOCS_BUNDLER=@vuepress/webpack vuepress dev docs --clean-cache",
     "docs:serve": "anywhere -h localhost -d docs/.vuepress/dist",
     "docs:release": "yarn copy && yarn build && yarn docs:build",
     "lint": "eslint --ext .js,.ts,.vue .",
@@ -49,5 +43,17 @@
     "sort-package-json": "^1.50.0",
     "ts-jest": "^27.0.4",
     "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "@artisancloud/vuepress-theme-docs": "^1.0.0-beta1",
+    "@vuepress/client": "2.0.0-beta.27",
+    "@vuepress/plugin-debug": "2.0.0-beta.27",
+    "@vuepress/plugin-docsearch": "2.0.0-beta.27",
+    "@vuepress/plugin-google-analytics": "2.0.0-beta.27",
+    "@vuepress/plugin-register-components": "2.0.0-beta.27",
+    "@vuepress/plugin-shiki": "2.0.0-beta.27",
+    "postcss-loader": "^6.2.1",
+    "vuepress": "2.0.0-beta.27",
+    "vuepress-vite": "2.0.0-beta.27"
   }
 }

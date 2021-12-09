@@ -7,7 +7,7 @@ const isProd = process.env.NODE_ENV === 'production'
 
 export default defineUserConfig<DefaultThemeOptions>({
   base: '/',
-
+  theme: '@artisancloud/vuepress-theme-docs',
   head: [
     [
       'link',
@@ -27,7 +27,48 @@ export default defineUserConfig<DefaultThemeOptions>({
         href: `/images/icons/favicon-32x32.png`,
       },
     ],
-    ['link', { rel: 'manifest', href: '/manifest.webmanifest' }],
+
+    // 公共样式
+    [
+      'link',
+      {
+        rel: 'stylesheet',
+        href:
+          'https://cdn.jsdelivr.net/npm/@iconscout/unicons@4.0.0/css/line.css',
+      },
+    ],
+    // [
+    //   'link',
+    //   {
+    //     rel: 'stylesheet',
+    //     href:
+    //       'https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css',
+    //   },
+    // ],
+    [
+      'link',
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: 'https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css',
+      },
+    ],
+    [
+      'script',
+      {
+        rel: 'src',
+        href:
+          'https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js',
+      },
+    ],
+    [
+      'script',
+      {
+        rel: 'src',
+        href: 'https://cdn.jsdelivr.net/npm/toastify-js',
+      },
+    ],
+    // ['link', { rel: 'manifest', href: '/manifest.webmanifest' }],
     ['meta', { name: 'application-name', content: 'VuePress' }],
     ['meta', { name: 'apple-mobile-web-app-title', content: 'VuePress' }],
     [
@@ -188,13 +229,13 @@ export default defineUserConfig<DefaultThemeOptions>({
   },
 
   markdown: {
-    importCode: {
-      handleImportPath: (str) =>
-        str.replace(
-          /^@vuepress/,
-          path.resolve(__dirname, '../../packages/@vuepress')
-        ),
-    },
+    // importCode: {
+    //   handleImportPath: (str) =>
+    //     str.replace(
+    //       /^@vuepress/,
+    //       path.resolve(__dirname, '../../packages/@vuepress')
+    //     ),
+    // },
   },
 
   plugins: [
