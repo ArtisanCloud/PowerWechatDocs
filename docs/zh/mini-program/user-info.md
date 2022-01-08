@@ -14,6 +14,28 @@ description: 使用PowerWeChat完成小程序服务端登录、检查加密信�
 MiniProgramApp.Auth.Session(code)
 ```
 
+## 获取用户手机号
+
+适用于小程序基础库**2.21.2** 
+
+``` go
+MiniProgramApp.PhoneNumber.GetUserPhoneNumber(code)
+```
+
+[微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/phonenumber/phonenumber.getPhoneNumber.html)
+
+适用于**2.21.2**以前版本，这个可以用于[服务端获取开放数据](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/signature.html)，例如：[getUserInfo](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/user-info/wx.getUserInfo.html)、getPhoneNumber等。
+
+同时因为接口是通用的，所以这里返回的是[]byte类型，需要使用者自己去做json解析成结构体。
+
+``` go
+data, err := MiniProgramApp.Encryptor.DecryptData(encryptData, sessionKey, iv)
+// string(data) 示例
+// {"phoneNumber":"13900000000","purePhoneNumber":"13900000000","countryCode":"86","watermark":{"timestamp":1641571004,"appid":"wxc1ebbc8236ffae2b"}}
+```
+
+
+
 ## 加密信息是否由微信生成
 
 检查加密信息是否由微信生成（当前只支持手机号加密数据），只能检测最近3天生成的加密数据

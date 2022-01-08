@@ -10,19 +10,19 @@ export const zh: NavbarConfig = [
     children: [
       {
         text: '开始',
-        link: '/zh/start/',
+        link: '/zh/start/index.html',
       },
       {
         text: '小程序',
-        link: '/zh/mini-program/',
+        link: '/zh/mini-program/index.html',
       },
       {
         text: '微信支付',
-        link: '/zh/payment/',
+        link: '/zh/payment/index.html',
       },
       {
         text: '企业微信',
-        link: '/zh/wecom/',
+        link: '/zh/wecom/index.html',
       },
     ],
   },
