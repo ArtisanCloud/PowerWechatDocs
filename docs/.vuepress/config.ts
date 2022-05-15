@@ -34,7 +34,7 @@ export default defineUserConfig<DefaultThemeOptions>({
       {
         rel: 'stylesheet',
         href:
-          'https://cdn.jsdelivr.net/npm/@iconscout/unicons@4.0.0/css/line.css',
+          'https://cdn.artisancloud.cn/npm/@iconscout/unicons@4.0.1/css/line.css',
       },
     ],
     // [
@@ -50,7 +50,7 @@ export default defineUserConfig<DefaultThemeOptions>({
       {
         rel: 'stylesheet',
         type: 'text/css',
-        href: 'https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css',
+        href: 'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/toastify-js/1.11.2/toastify.min.css',
       },
     ],
     [
@@ -58,14 +58,14 @@ export default defineUserConfig<DefaultThemeOptions>({
       {
         rel: 'src',
         href:
-          'https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js',
+          'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/clipboard.js/2.0.10/clipboard.min.js',
       },
     ],
     [
       'script',
       {
         rel: 'src',
-        href: 'https://cdn.jsdelivr.net/npm/toastify-js',
+        href: 'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/toastify-js/1.11.2/toastify.min.js',
       },
     ],
     // ['link', { rel: 'manifest', href: '/manifest.webmanifest' }],
