@@ -1,23 +1,19 @@
 <script setup lang="ts">
-import NewsLetter from './NewsLetter.vue'
-import SponsorsGroup from './SponsorsGroup.vue';
-import VueMasteryModal from './VueMasteryModal.vue';
+
 </script>
 
 <template>
   <section id="hero">
     <h1 class="tagline">
-      The
-      <span class="accent">Progressive</span>
-      <br />JavaScript Framework
+      Go
+      <span class="accent">PowerWeChat</span>
+      <br />Golang WeChatSDK
     </h1>
     <p class="description">
-      An approachable, performant and versatile framework for building web
-      user interfaces.
+      PowerWeChat是一款简单易用的Golang微信开发SDK，目前已经支持微信小程序、微信支付、企业微信、微信公众平台(即将推出)
     </p>
     <p class="actions">
-      <vue-mastery-modal />
-      <a class="get-started" href="/guide/introduction.html">
+      <a class="get-started" href="/zh/start/index.html">
         Get Started
         <svg
           class="icon"
@@ -31,59 +27,31 @@ import VueMasteryModal from './VueMasteryModal.vue';
           />
         </svg>
       </a>
-      <a class="setup" href="/guide/quick-start.html">Install</a>
+      <a class="setup" href="/zh/start/index.html">Install</a>
     </p>
-  </section>
-
-  <!-- TODO make dynamic based on data -->
-  <section id="special-sponsor">
-    <span>Special Sponsor</span>
-    <a href="https://www.dcloud.io/hbuilderx.html?hmsr=vue-en&hmpl=&hmcu=&hmkw=&hmci=">
-      <picture>
-        <source type="image/avif" srcset="/images/sponsors/hbuilder.avif" />
-        <img
-          alt="hbuilder logo"
-          width="97"
-          height="36"
-          src="/images/sponsors/hbuilder.png"
-        />
-      </picture>
-    </a>
-    <span>Advanced IDE for Vue</span>
   </section>
 
   <section id="highlights" class="vt-box-container">
     <div class="vt-box">
-      <h2>Approachable</h2>
+      <h2>完整的微信生态覆盖</h2>
       <p>
-        Builds on top of standard HTML, CSS and JavaScript with intuitive
-        API and world-class documentation.
+        支持小程序、企业微信、微信支付等模块，公众号（即将上线）
       </p>
     </div>
     <div class="vt-box">
-      <h2>Performant</h2>
+      <h2>基于Golang</h2>
       <p>
-        Truly reactive, compiler-optimized rendering system that rarely
-        requires manual optimization.
+        ArtisanCloud团队在业务基础上开源了Golang版本的WeChatSDK。
       </p>
     </div>
     <div class="vt-box">
-      <h2>Versatile</h2>
+      <h2>MIT开源</h2>
       <p>
-        A rich, incrementally adoptable ecosystem that scales between a
-        library and a full-featured framework.
+        在Github上开源，免费商用，欢迎Star。
       </p>
     </div>
   </section>
 
-  <section id="sponsors">
-    <h2>Platinum Sponsors</h2>
-    <SponsorsGroup tier="platinum" placement="landing" />
-    <h2>Gold Sponsors</h2>
-    <SponsorsGroup tier="gold" placement="landing" />
-  </section>
-
-  <NewsLetter />
 </template>
 
 <style scoped>
@@ -94,6 +62,8 @@ section {
 #hero {
   padding: 96px 32px;
   text-align: center;
+  background: url(./images/bg-developer.png) no-repeat center center;
+  background-size: cover;
 }
 
 .tagline {

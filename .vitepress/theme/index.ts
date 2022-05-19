@@ -10,6 +10,9 @@ import {
 import SponsorsAside from './components/SponsorsAside.vue'
 import VueSchoolLink from './components/VueSchoolLink.vue'
 import VueJobs from './components/VueJobs.vue'
+import NavbarTitle from './components/NavbarTitle.vue'
+
+import './styles/override.css'
 
 export default Object.assign({}, VPTheme, {
   Layout: () => {
@@ -17,7 +20,8 @@ export default Object.assign({}, VPTheme, {
     return h(VPTheme.Layout, null, {
       'sidebar-top': () => h(PreferenceSwitch),
       'aside-mid': () => h(SponsorsAside),
-      'aside-bottom': () => h(VueJobs)
+      'aside-bottom': () => h(VueJobs),
+      'navbar-title': () => h(NavbarTitle),
     })
   },
   enhanceApp({ app }: { app: App }) {
