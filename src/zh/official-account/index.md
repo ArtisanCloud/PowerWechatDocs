@@ -6,12 +6,12 @@ date: 2021-09-21
 
 # 公众号入门
 
-在调用公众号相应的API接口之前，我们需要将初始化一个`MiniProgramApp`实例，后面调用全部都会通过`MiniProgramApp`提供的方法来完成。
+在调用公众号相应的API接口之前，我们需要将初始化一个`OfficialAccountApp`实例，后面调用全部都会通过`OfficialAccountApp`提供的方法来完成。
 
 具体如下：
 
 ``` go
-officialAccount.NewOfficialAccount(&officialAccount.UserConfig{
+OfficialAccountApp, err := officialAccount.NewOfficialAccount(&officialAccount.UserConfig{
   AppID:  "[appid]", // 公众号、小程序的appid
   Secret: "[app secret]", // 
 

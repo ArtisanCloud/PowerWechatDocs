@@ -5,12 +5,10 @@
 <template>
   <section id="hero">
     <h1 class="tagline">
-      Go
       <span class="accent">PowerWeChat</span>
-      <br />Golang WeChatSDK
     </h1>
     <p class="description">
-      PowerWeChat是一款简单易用的Golang微信开发SDK，目前已经支持微信小程序、微信支付、企业微信、微信公众平台(即将推出)
+      PowerWeChat是一款简单易用的Golang微信开发SDK，目前已经支持微信小程序、微信支付、企业微信、微信公众平台
     </p>
     <p class="actions">
       <a class="get-started" href="/zh/start/index.html">
@@ -27,7 +25,7 @@
           />
         </svg>
       </a>
-      <a class="setup" href="/zh/start/index.html">Install</a>
+      <!-- <a class="setup" href="/zh/start/index.html">Install</a> -->
     </p>
   </section>
 
