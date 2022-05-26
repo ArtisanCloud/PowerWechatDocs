@@ -11,6 +11,6 @@ date: 2021-07-06
     * 或者直接发送邮箱地址，和我们取得联系: <contact@artisan-cloud.com>
     * 您可以点击文档右上角官网的联系我们
 
-<img src="images/contact-qr-matrix-x.png" alt="请扫我" style="display:inline; width: 150px;"/>
+<img src="./images/contact-qr-matrix-x.png" alt="请扫我" style="display:inline; width: 150px;"/>
 
-<img src="images/contact-qr-walle.png" alt="请扫我" style="display: inline; width: 150px; margin-left: 50px"/>
+<img src="./images/contact-qr-walle.png" alt="请扫我" style="display: inline; width: 150px; margin-left: 50px"/>

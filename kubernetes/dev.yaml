@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: powerwechat-dev
+  labels:
+    app: powerwechat-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: powerwechat-dev
+  template:
+    metadata:
+      labels:
+        app: powerwechat-dev
+    spec:
+      containers:
+        - name: nginx
+          image: ghcr.io/artisancloud/powerwechatdocs:develop
+          ports:
+            - containerPort: 80
+      imagePullSecrets:
+        - name: ghcr
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: powerwechat-dev
+spec:
+  selector:
+    app: powerwechat-dev
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: powerwechat-dev
+  namespace: default
+
+spec:
+  rules:
+    - host: powerwechat-dev.artisan-cloud.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: powerwechat-dev
+                port:
+                  number: 80
+

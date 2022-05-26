@@ -7,7 +7,7 @@ date: 2021-07-06
 
 ## 基本配置
 
-PowerWechat配置参考： [入门](README.md)， 唯一的区别就是`Secret`变成了通讯录secret。
+PowerWechat配置参考： [入门](./index)， 唯一的区别就是`Secret`变成了通讯录secret。
 
 `Secret`原则上需要使用 [通讯录管理secret](https://open.work.weixin.qq.com/api/doc/90000/90135/90193#10013/术语介绍)，也可以使用 [应用secret](https://open.work.weixin.qq.com/api/doc/90000/90135/90193#10013/术语介绍)。
 

@@ -5,7 +5,7 @@ date: 2021-09-24
 
 # 素材管理
 
-在使用素材管理之前，请确定你已经[入门](README.md)初始化好了`OfficialAccountApp`实例。
+在使用素材管理之前，请确定你已经[入门](./index)初始化好了`OfficialAccountApp`实例。
 
 这里的路径都是本地文件路径，可以是go程序相对路径或者是绝对路径
 

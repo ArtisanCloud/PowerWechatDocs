@@ -21,7 +21,7 @@ export default {
   watch: './*.md',
   // read from fs and generate the data
   load(): APIGroup[] {
-    return sidebar['/api/'].map((group) => ({
+    return sidebar['/zh/start/'].map((group) => ({
       text: group.text,
       items: group.items.map((item) => ({
         ...item,

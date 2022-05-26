@@ -5,7 +5,7 @@ date: 2021-07-06
 
 # JSSDK
 
-调用JSSDK方法之前，请先参考[入门](intro.html)
+调用JSSDK方法之前，请先参考[入门](./index)
 
 ``` go
 // 下单，获取到微信返回的prepay_id

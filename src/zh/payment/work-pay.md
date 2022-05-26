@@ -9,7 +9,7 @@ date: 2021-07-06
 
 
 
-在使用前，请确认`payment.UserConfig`里面配置了的`CertPath`和`KeyPath`，比较完整的配置参考[介绍](README.md)
+在使用前，请确认`payment.UserConfig`里面配置了的`CertPath`和`KeyPath`，比较完整的配置参考[介绍](./index)
 
 ``` go
 PaymentService, err := payment.NewPayment(&payment.UserConfig{
