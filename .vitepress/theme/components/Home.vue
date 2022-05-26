@@ -3,52 +3,54 @@
 </script>
 
 <template>
-  <section id="hero">
-    <h1 class="tagline">
-      <span class="accent">PowerWeChat</span>
-    </h1>
-    <p class="description">
-      PowerWeChat是一款简单易用的Golang微信开发SDK，目前已经支持微信小程序、微信支付、企业微信、微信公众平台
-    </p>
-    <p class="actions">
-      <a class="get-started" href="/zh/start/index.html">
-        Get Started
-        <svg
-          class="icon"
-          xmlns="http://www.w3.org/2000/svg"
-          width="10"
-          height="10"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"
-          />
-        </svg>
-      </a>
-      <!-- <a class="setup" href="/zh/start/index.html">Install</a> -->
-    </p>
-  </section>
+  <div>
+    <section id="hero">
+      <h1 class="tagline">
+        <span class="accent">PowerWeChat</span>
+      </h1>
+      <p class="description">
+        PowerWeChat是一款简单易用的Golang微信开发SDK，目前已经支持微信小程序、微信支付、企业微信、微信公众平台
+      </p>
+      <p class="actions">
+        <a class="get-started" href="/zh/start/index.html">
+          Get Started
+          <svg
+            class="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="10"
+            height="10"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"
+            />
+          </svg>
+        </a>
+        <a class="setup" href="/zh/start/index.html">Install</a>
+      </p>
+    </section>
 
-  <section id="highlights" class="vt-box-container">
-    <div class="vt-box">
-      <h2>完整的微信生态覆盖</h2>
-      <p>
-        支持小程序、企业微信、微信支付等模块，公众号（即将上线）
-      </p>
-    </div>
-    <div class="vt-box">
-      <h2>基于Golang</h2>
-      <p>
-        ArtisanCloud团队在业务基础上开源了Golang版本的WeChatSDK。
-      </p>
-    </div>
-    <div class="vt-box">
-      <h2>MIT开源</h2>
-      <p>
-        在Github上开源，免费商用，欢迎Star。
-      </p>
-    </div>
-  </section>
+    <section id="highlights" class="vt-box-container">
+      <div class="vt-box">
+        <h2>完整的微信生态覆盖</h2>
+        <p>
+          支持小程序、企业微信、微信支付等模块，公众号（即将上线）
+        </p>
+      </div>
+      <div class="vt-box">
+        <h2>基于Golang</h2>
+        <p>
+          ArtisanCloud团队在业务基础上开源了Golang版本的WeChatSDK。
+        </p>
+      </div>
+      <div class="vt-box">
+        <h2>MIT开源</h2>
+        <p>
+          在Github上开源，免费商用，欢迎Star。
+        </p>
+      </div>
+    </section>
+  </div>
 
 </template>
 
