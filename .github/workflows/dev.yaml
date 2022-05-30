@@ -3,10 +3,7 @@ name: Release Dev
 on:
   push:
     tags:
-      - dev*
-    branches:
-      - develop
-
+      - v*
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
@@ -18,6 +15,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@master
+
+      - name: Tailscale
+        uses: tailscale/github-action@v1
+        with:
+          authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
 
       - name: Setup node env 🏗
         uses: actions/setup-node@v2.1.5
@@ -61,4 +63,20 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+      - id: coscli
+        uses: wangchaoyi/qcloud-cos-deploy-action@main
+        with:
+          secret_id: ${{ secrets.COS_SH_APP_ID }}
+          secret_key: ${{ secrets.COS_SH_APP_KEY }}
+          token: ""
+          buckets: ${{ secrets.COS_SH_BUCKET }}
+          region: ap-shanghai
+      - name: Upload docs to SH
+        run: |
+          export https_proxy=http://100.80.124.100:1089
+          export http_proxy=http://100.80.124.100:1089
+          export all_proxy=socks5://100.80.124.100:1089
+          coscli cp .vitepress/dist/ cos://power-wechat-docs-1307679408/ -r --thread-num 20
+
 
