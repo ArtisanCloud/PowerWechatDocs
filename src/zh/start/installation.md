@@ -11,12 +11,23 @@ date: 2021-07-06
 > cd {your_project_location}/{project-name}/
 ```
 
-安装 PowerWeChat sdk
+## 安装 PowerWeChat v2（推荐）
+
+v2版本已经推出，目前公众号在v2版本提供支持，其他部分V1接口有字段有重新统一风格。
+
+如果有遇到问题，欢迎点击右上角联系我们。
+
+``` bash
+> go get -u github.com/ArtisanCloud/PowerWeChat/v2@v2.0.0-beta
+```
+
+## 安装 PowerWeChat v1
+
+V1版本只包含了小程序、公众号、企业微信、微信支付等模块。除了紧急bug修复，不会再往里面增加新功能，请尽快迁移到V2版本
 
 ``` bash
 > go get -u github.com/ArtisanCloud/PowerWeChat
 ```
-
 
 ::: tip
 

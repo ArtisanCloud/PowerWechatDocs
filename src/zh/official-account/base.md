@@ -1,5 +1,9 @@
 # 基础接口
 
+## 使用示例
+
+参考: [PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/blob/master/controllers/official-account/base.go)
+
 ## 清理接口调用次数 
 ```go
 OfficialAccountApp.Base.ClearQuota()

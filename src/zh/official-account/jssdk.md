@@ -1,5 +1,8 @@
 # JSSDK配置
 
+## 使用示例
+
+参考: [PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/blob/master/controllers/official-account/jssdk.go)
 
 ## 获取JSSDK配置
 ```go

@@ -1,6 +1,6 @@
 ---
 page: true
-title: Vue.js - The Progressive JavaScript Framework
+title: PowerWeChat - 全覆盖微信开发的Golang SDK 
 ---
 
 <script setup>

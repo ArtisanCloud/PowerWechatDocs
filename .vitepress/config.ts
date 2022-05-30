@@ -9,7 +9,12 @@ const nav = [
   {
     text: '快速开始',
     link: '/zh/start/index',
-    activeMatch: `^/zh/(start)/`,
+    activeMatch: `^\/zh\/(start)\/(?!qa)`,
+  },
+  {
+    text: '公众号',
+    link: '/zh/official-account/index',
+    activeMatch: `^/zh/(official-account)/`,
   },
   {
     text: '小程序',
@@ -25,11 +30,6 @@ const nav = [
     text: '企业微信',
     link: '/zh/wecom/index',
     activeMatch: `^/zh/(wecom)/`,
-  },
-  {
-    text: '公众号',
-    link: '/zh/official-account/index',
-    activeMatch: `^/zh/(official-account)/`,
   },
   {
     text: '联系我们',
@@ -110,10 +110,10 @@ export const sidebar = {
       items: [
         { text: '入门', link: '/zh/official-account/index' },
         { text: '基础接口', link: '/zh/official-account/base' },
-        { text: '服务端(TODO)', link: '/zh/official-account/server' },
+        { text: '服务端', link: '/zh/official-account/server' },
         { text: '消息', link: '/zh/official-account/messages' },
-        { text: '多客服消息转发(TODO)', link: '/zh/official-account/message-transfer' },
-        { text: '消息群发(TODO)', link: '/zh/official-account/broadcasting' },
+        { text: '多客服消息转发', link: '/zh/official-account/message-transfer' },
+        { text: '消息群发', link: '/zh/official-account/broadcasting' },
         { text: '用户', link: '/zh/official-account/user' },
         { text: '用户标签', link: '/zh/official-account/user-tag' },
         { text: '网页授权', link: '/zh/official-account/oauth' },
@@ -122,16 +122,16 @@ export const sidebar = {
         { text: '短Key托管', link: '/zh/official-account/shorten' },
         { text: '临时素材', link: '/zh/official-account/media' },
         { text: '素材管理', link: '/zh/official-account/material' },
-        { text: '菜单 (TODO)', link: '/zh/official-account/menu' },
-        { text: '卡券 (TODO)', link: '/zh/official-account/card' },
+        { text: '菜单', link: '/zh/official-account/menu' },
+        { text: '卡券', link: '/zh/official-account/card' },
         { text: '客服', link: '/zh/official-account/customer-service' },
-        { text: '摇一摇周边(TODO)', link: '/zh/official-account/shake-around' },
+        { text: '摇一摇周边', link: '/zh/official-account/shake-around' },
         { text: '数据统计', link: '/zh/official-account/data-cube' },
         // 微信语义理解已经下线，现在是一个单独的产品。
 	//{ text: '语义理解(TODO)', link: '/zh/official-account/semantic' },
         { text: '自动回复', link: '/zh/official-account/reply' },
-        { text: '评论数据管理(TODO)', link: '/zh/official-account/comment' },
-        { text: '返佣商品(TODO)', link: '/zh/official-account/goods' },
+        { text: '评论数据管理', link: '/zh/official-account/comment' },
+        { text: '返佣商品', link: '/zh/official-account/goods' },
       ]
     }
   ],
@@ -142,7 +142,7 @@ export default defineConfigWithTheme<ThemeConfig>({
 
   lang: 'zh-CN',
   title: 'PowerWeChat',
-  description: 'PowerWeChat是一款简单易用的Golang微信开发SDK，目前已经支持微信小程序、微信支付、企业微信、微信公众平台(即将推出)',
+  description: 'PowerWeChat是一款简单易用的Golang微信开发SDK。目前已经支持微信公众平台、微信小程序、微信支付、企业微信等',
   srcDir: 'src',
   srcExclude: ['tutorial/**/description.md'],
   scrollOffset: 'header',
