@@ -3,10 +3,7 @@ name: Release Dev
 on:
   push:
     tags:
-      - dev*
-    branches:
-      - develop
-
+      - v*
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
@@ -61,4 +58,20 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+      - id: coscli
+        uses: wangchaoyi/qcloud-cos-deploy-action@main
+        with:
+          secret_id: ${{ secrets.COS_SH_APP_ID }}
+          secret_key: ${{ secrets.COS_SH_APP_KEY }}
+          token: ""
+          buckets: ${{ secrets.COS_SH_BUCKET }}
+          region: ap-shanghai
+      - name: Upload docs to SH
+        run: |
+          ./coscli cp docs/.vuepress/dist/ cos://power-wechat-docs-1307679408/ -r --thread-num 20
+      - name: Upload docs to SG
+        run: |
+          ./coscli cp docs/.vuepress/dist/ cos://power-wechat-docs-s-1307679408/ -r --thread-num 20
+
 
