@@ -60,3 +60,8 @@ OfficialAccountApp.UserTag.UntagUsers([]string{"[openID1]", "[openID2]"}, "[tagI
 OfficialAccountApp.UserTag.UserTags("[openID]")
 ``` 
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/User_Management/User_Tag_Management.html)
+
+
+## 使用示例
+
+参考: [PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/blob/master/controllers/official-account/user-tag.go)

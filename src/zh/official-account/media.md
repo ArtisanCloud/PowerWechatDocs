@@ -34,3 +34,7 @@ OfficialAccountApp.Media.UploadThumb("/resource/cloud.jpg")
 OfficialAccountApp.Media.Get("[mediaID]")
 ```
 
+
+## 使用示例
+
+参考: [PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/blob/master/controllers/official-account/asset.go)

@@ -119,3 +119,8 @@ OfficialAccountApp.DataCube.UpstreamMessageDistMonthly("2020-01-01", "2020-01-02
 
 ```
 [微信官方文档]()
+
+
+## 使用示例
+
+参考: [PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/blob/master/controllers/official-account/data-cube.go)

@@ -65,3 +65,7 @@ oldAppId := ctx.Query("oldAppId")
 OfficialAccountApp.User.ChangeOpenID(oldAppId, []string{"[openID1]", "[openID2]"})
 ``` 
 [微信官方文档](https://kf.qq.com/faq/1901177NrqMr190117nqYJze.html)
+
+## 使用示例
+
+参考: [PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/blob/master/controllers/official-account/user.go)
