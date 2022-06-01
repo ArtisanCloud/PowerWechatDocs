@@ -90,3 +90,8 @@ OfficialAccountApp.CustomerServiceSession.List("[account]")
 OfficialAccountApp.CustomerServiceSession.Waiting()
 ``` 
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/Customer_Service/Session_control.html)
+
+
+## 使用示例
+
+参考: [PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/blob/master/controllers/official-account/customer-service.go)

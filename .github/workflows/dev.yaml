@@ -16,6 +16,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@master
 
+      - name: Tailscale
+        uses: tailscale/github-action@v1
+        with:
+          authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
+
       - name: Setup node env 🏗
         uses: actions/setup-node@v2.1.5
         with:
@@ -69,9 +74,9 @@ jobs:
           region: ap-shanghai
       - name: Upload docs to SH
         run: |
+          export https_proxy=http://100.80.124.100:1089
+          export http_proxy=http://100.80.124.100:1089
+          export all_proxy=socks5://100.80.124.100:1089
           coscli cp .vitepress/dist/ cos://power-wechat-docs-1307679408/ -r --thread-num 20
-      - name: Upload docs to SG
-        run: |
-          coscli cp .vitepress/dist/ cos://power-wechat-docs-s-1307679408/ -r --thread-num 20
 
 

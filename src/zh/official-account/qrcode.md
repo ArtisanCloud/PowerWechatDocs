@@ -23,3 +23,8 @@ OfficialAccountApp.QRCode.Forever(1, 30*24*3600)
 OfficialAccountApp.QRCode.URL("[ticket]")
 ```
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/Account_Management/Generating_a_Parametric_QR_Code.html)
+
+
+## 使用示例
+
+参考: [PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/blob/master/controllers/official-account/qrcode.go)

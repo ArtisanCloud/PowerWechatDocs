@@ -3,7 +3,7 @@
 
 ## 读取（查询）已设置菜单 
 ``` go
-OfficialAccountApp.Menu.Get()
+OfficialAccountApp.Menu.Get(https://developers.weixin.qq.com/doc/offiaccount/Custom_Menus/Querying_Custom_Menus.html)
 ```
 [微信官方文档]()
 
@@ -12,7 +12,7 @@ OfficialAccountApp.Menu.Get()
 ``` go
 OfficialAccountApp.Menu.CurrentSelfMenu()
 ```
-[微信官方文档]()
+[微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/Custom_Menus/Querying_Custom_Menus.html)
 
 ## 添加菜单
 
@@ -50,6 +50,10 @@ OfficialAccountApp.Menu.CurrentSelfMenu()
     },
   })
 ```
+[微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/Custom_Menus/Creating_Custom-Defined_Menu.html)
+
+
+
 ### 添加个性化菜单
 ``` go
 OfficialAccountApp.Menu.CreateConditional(&request.RequestMenuCreate{
@@ -68,21 +72,30 @@ OfficialAccountApp.Menu.CreateConditional(&request.RequestMenuCreate{
     ClientPlatformType: "2",
   })
 ```
-[微信官方文档]()
+[微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/Custom_Menus/Personalized_menu_interface.html)
+
 
 ## 删除菜单 
 
 ``` go
 OfficialAccountApp.Menu.Delete()
 ```
+[微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/Custom_Menus/Deleting_Custom-Defined_Menu.html)
+
 ``` go
 menuID := 1
 OfficialAccountApp.Menu.DeleteConditional(menuID)
 ```
-[微信官方文档]()
+[微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/Custom_Menus/Personalized_menu_interface.html)
 
 ## 测试个性化菜单 
 ``` go
 OfficialAccountApp.Menu.TryMatch("[userID]")
 ```
-[微信官方文档]()
+[微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/Custom_Menus/Personalized_menu_interface.html)
+
+
+
+## 使用示例
+
+参考: [PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/blob/master/controllers/official-account/menu.go)
