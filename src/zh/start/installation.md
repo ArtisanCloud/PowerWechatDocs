@@ -18,7 +18,7 @@ v2版本已经推出，目前公众号在v2版本提供支持，其他部分V1�
 如果有遇到问题，欢迎点击右上角联系我们。
 
 ``` bash
-> go get -u github.com/ArtisanCloud/PowerWeChat/v2@v2.0.0-beta
+> go get -u github.com/ArtisanCloud/PowerWeChat/v2
 ```
 
 ## 安装 PowerWeChat v1
