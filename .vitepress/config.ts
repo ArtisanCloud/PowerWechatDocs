@@ -125,10 +125,11 @@ export const sidebar = {
         { text: '菜单', link: '/zh/official-account/menu' },
         { text: '卡券', link: '/zh/official-account/card' },
         { text: '客服', link: '/zh/official-account/customer-service' },
-        { text: '摇一摇周边', link: '/zh/official-account/shake-around' },
+        // 微信在2021年5月1号已经关闭摇一摇功能
+        // { text: '摇一摇周边', link: '/zh/official-account/shake-around' },
         { text: '数据统计', link: '/zh/official-account/data-cube' },
         // 微信语义理解已经下线，现在是一个单独的产品。
-	//{ text: '语义理解(TODO)', link: '/zh/official-account/semantic' },
+	    //{ text: '语义理解(TODO)', link: '/zh/official-account/semantic' },
         { text: '自动回复', link: '/zh/official-account/reply' },
         { text: '评论数据管理', link: '/zh/official-account/comment' },
         { text: '返佣商品', link: '/zh/official-account/goods' },
