@@ -67,6 +67,8 @@ export const sidebar = {
       { text: "服务市场", link: '/zh/mini-program/service-market' },
       { text: "安全风控", link: '/zh/mini-program/risk-control' },
       { text: "URL Scheme", link: '/zh/mini-program/url-scheme' },
+      { text: "URL Link", link: '/zh/mini-program/url-link' },
+      { text: "Short Link", link: '/zh/mini-program/short-link' },
     ]
   }],
   '/zh/payment': [{
@@ -125,10 +127,11 @@ export const sidebar = {
         { text: '菜单', link: '/zh/official-account/menu' },
         { text: '卡券', link: '/zh/official-account/card' },
         { text: '客服', link: '/zh/official-account/customer-service' },
-        { text: '摇一摇周边', link: '/zh/official-account/shake-around' },
+        // 微信在2021年5月1号已经关闭摇一摇功能
+        // { text: '摇一摇周边', link: '/zh/official-account/shake-around' },
         { text: '数据统计', link: '/zh/official-account/data-cube' },
         // 微信语义理解已经下线，现在是一个单独的产品。
-	//{ text: '语义理解(TODO)', link: '/zh/official-account/semantic' },
+	    //{ text: '语义理解(TODO)', link: '/zh/official-account/semantic' },
         { text: '自动回复', link: '/zh/official-account/reply' },
         { text: '评论数据管理', link: '/zh/official-account/comment' },
         { text: '返佣商品', link: '/zh/official-account/goods' },
@@ -142,21 +145,21 @@ export default defineConfigWithTheme<ThemeConfig>({
 
   lang: 'zh-CN',
   title: 'PowerWeChat',
-  description: 'PowerWeChat是一款简单易用的Golang微信开发SDK。目前已经支持微信公众平台、微信小程序、微信支付、企业微信等',
+  description: 'PowerWeChat是一款简单易用的WeChat SDK for Golang。目前已经支持微信公众号、微信小程序、微信支付、企业微信等',
   srcDir: 'src',
   srcExclude: ['tutorial/**/description.md'],
   scrollOffset: 'header',
 
   head: [
-    ['meta', { name: 'twitter:site', content: '@vuejs' }],
-    ['meta', { name: 'twitter:card', content: 'summary' }],
-    [
-      'meta',
-      {
-        name: 'twitter:image',
-        content: 'https://vuejs.org/images/logo.png'
-      }
-    ],
+    // ['meta', { name: 'twitter:site', content: '@vuejs' }],
+    // ['meta', { name: 'twitter:card', content: 'summary' }],
+    // [
+    //   'meta',
+    //   {
+    //     name: 'twitter:image',
+    //     content: 'https://vuejs.org/images/logo.png'
+    //   }
+    // ],
     // [
     //   'link',
     //   {
