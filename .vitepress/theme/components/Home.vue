@@ -9,7 +9,7 @@
         <span class="accent">PowerWeChat</span>
       </h1>
       <p class="description">
-        PowerWeChat是一款简单易用的Golang微信开发SDK<br/>
+        PowerWeChat是一款简单易用的WeChat SDK for Golang。目前已经支持微信公众号、微信小程序、微信支付、企业微信等<br/>
         目前已经支持<b>微信公众号</b>、<b>微信小程序</b>、<b>微信支付</b>、<b>企业微信</b>
       </p>
       <p class="actions">
@@ -34,7 +34,7 @@
       <div class="vt-box">
         <h2>完整的微信生态覆盖</h2>
         <p>
-          支持小程序、企业微信、微信支付等模块，公众号（即将上线）
+          支持小程序、企业微信、微信支付等模块，公众号(v2版本已经支持)
         </p>
       </div>
       <div class="vt-box">

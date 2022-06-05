@@ -1,10 +1,4 @@
----
-title: URL Scheme
-date: 2022-07-06
-description: 使用PowerWeChat生成小程序scheme码用于短信、邮件、外部网页等场景。
----
-
-# URL Scheme
+# URL Link
 
 ## 小程序 scheme 码
 
@@ -21,5 +15,6 @@ MiniProgramApp.URLLink.Generate(&request.URLLinkGenerate{
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/url-scheme/urlscheme.generate.html)
 
-## 使用示例 
-参考：[PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/blob/master/controllers/miniprogram/url-scheme.go)
+## 使用示例
+ 
+参考：[PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/blob/master/controllers/miniprogram/url-link.go)

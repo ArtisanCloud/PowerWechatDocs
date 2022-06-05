@@ -67,6 +67,8 @@ export const sidebar = {
       { text: "服务市场", link: '/zh/mini-program/service-market' },
       { text: "安全风控", link: '/zh/mini-program/risk-control' },
       { text: "URL Scheme", link: '/zh/mini-program/url-scheme' },
+      { text: "URL Link", link: '/zh/mini-program/url-link' },
+      { text: "Short Link", link: '/zh/mini-program/short-link' },
     ]
   }],
   '/zh/payment': [{
@@ -143,21 +145,21 @@ export default defineConfigWithTheme<ThemeConfig>({
 
   lang: 'zh-CN',
   title: 'PowerWeChat',
-  description: 'PowerWeChat是一款简单易用的Golang微信开发SDK。目前已经支持微信公众平台、微信小程序、微信支付、企业微信等',
+  description: 'PowerWeChat是一款简单易用的WeChat SDK for Golang。目前已经支持微信公众号、微信小程序、微信支付、企业微信等',
   srcDir: 'src',
   srcExclude: ['tutorial/**/description.md'],
   scrollOffset: 'header',
 
   head: [
-    ['meta', { name: 'twitter:site', content: '@vuejs' }],
-    ['meta', { name: 'twitter:card', content: 'summary' }],
-    [
-      'meta',
-      {
-        name: 'twitter:image',
-        content: 'https://vuejs.org/images/logo.png'
-      }
-    ],
+    // ['meta', { name: 'twitter:site', content: '@vuejs' }],
+    // ['meta', { name: 'twitter:card', content: 'summary' }],
+    // [
+    //   'meta',
+    //   {
+    //     name: 'twitter:image',
+    //     content: 'https://vuejs.org/images/logo.png'
+    //   }
+    // ],
     // [
     //   'link',
     //   {
