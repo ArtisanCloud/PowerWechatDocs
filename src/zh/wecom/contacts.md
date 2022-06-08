@@ -416,3 +416,8 @@ WeComApp.UserExportJobs.GetExportResult("[jobID]")
 ### 导出任务完成异步通知 
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/90983)
+
+
+## 使用示例
+ 
+参考：[PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/blob/master/controllers/wecom/user/user.go)

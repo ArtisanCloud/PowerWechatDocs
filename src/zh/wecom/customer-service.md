@@ -186,3 +186,8 @@ externalUserIDList := []string{"externalUserIDList", "matrix-x"}
 WeComApp.AccountServiceCustomer.BatchGet(externalUserIDList)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/95159)
+
+
+## 使用示例
+ 
+参考：[PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/tree/master/controllers/wecom/account-service)
