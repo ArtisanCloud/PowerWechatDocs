@@ -22,3 +22,7 @@ userID :=   user.GetID()
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90136/91193)
 
+
+## 使用示例
+ 
+参考：[PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/blob/853d9ad066ff2623126070dbefe9061889442c59/controllers/wecom/oauth-controller.go)

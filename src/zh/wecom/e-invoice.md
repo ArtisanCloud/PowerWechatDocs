@@ -60,3 +60,7 @@ WeComApp.Invoice.GetInvoiceInfoBatch(invoiceList)
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/90287)
 
+
+## 使用示例
+ 
+参考：[PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/blob/master/controllers/wecom/invoice.go)

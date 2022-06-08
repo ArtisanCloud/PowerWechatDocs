@@ -58,6 +58,10 @@ log.Println("avatar", user.GetAvatar())
 log.Println("userID", user.GetRaw()["userID"])
 ```
 
-
-
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/91437)
+
+
+
+## 使用示例
+ 
+参考：[PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/blob/master/controllers/wecom/oauth-controller.go)

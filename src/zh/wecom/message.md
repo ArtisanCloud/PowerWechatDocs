@@ -13,7 +13,7 @@ description: 使用PowerWeChat可以很方便的发送企业微信应用消息�
 ### 文本消息
 
 ``` go
-import "github.com/ArtisanCloud/PowerWeChat/src/work/message/request"
+import "github.com/ArtisanCloud/PowerWeChat/v2/src/work/message/request"
 
 messages := &request.RequestMessageSendText{
   RequestMessageSend: request.RequestMessageSend{
@@ -413,3 +413,8 @@ resRecall, err := WeComApp.Message.Recall(msgID)
 ## 消息回调
 
 由于篇幅问题，放在了[服务端](server.html)
+
+
+## 使用示例
+ 
+参考：[PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/blob/master/controllers/wecom/message/message.go)

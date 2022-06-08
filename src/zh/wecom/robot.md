@@ -158,3 +158,8 @@ WeComApp.GroupRobot.SendTemplateCard(key, msg)
 > 素材上传得到media_id，该media_id仅三天内有效
 > media_id只能是对应上传文件的机器人可以使用
 
+
+
+## 使用示例
+ 
+参考：[PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/blob/master/controllers/wecom/group-robot.go)

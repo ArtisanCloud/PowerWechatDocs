@@ -2,7 +2,7 @@
 
 因为有些动态字段需要使用`power.HashMap`来描述，本质上和`gin.H{}`这类对象是一样的。
 ``` go
-import "github.com/ArtisanCloud/PowerWeChat/src/kernel/power"
+import "github.com/ArtisanCloud/PowerWeChat/v2/src/kernel/power"
 ```
 
 ## 文本消息

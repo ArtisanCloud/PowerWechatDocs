@@ -7,14 +7,14 @@ date: 2021-09-29
 
 ## 获取应用
 
-### 获取指令的应用详情 （TODO）
+### 获取指令的应用详情
 
 ``` go
 agentID := 100003
 WeComApp.Agent.Get(agentID)
 ```
 
-### 获取access_token对应的应用列表 （TODO）
+### 获取access_token对应的应用列表
 
 ``` go
 WeComApp.Agent.List()
@@ -22,7 +22,7 @@ WeComApp.Agent.List()
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90227)
 
-## 设置应用 （TODO）
+## 设置应用
 
 ``` go
 options := &request.RequestAgentSet{
@@ -40,9 +40,9 @@ WeComApp.Agent.Set(options)
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90227)
 
-## 自定义菜单 （TODO）
+## 自定义菜单
 
-### 创建菜单 （TODO）
+### 创建菜单
 
 ``` go
 options := &request.RequestMenuSet{
@@ -73,14 +73,14 @@ WeComApp.Menu.Create(options)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/90231)
 
-### 获取菜单 （TODO）
+### 获取菜单
 
 ``` go
 WeComApp.Menu.Get()
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/90232)
 
-### 删除菜单 （TODO）
+### 删除菜单
 
 ``` go
 agentID := 100003
@@ -90,7 +90,7 @@ WeComApp.Menu.Delete(agentID)
 
 ## 设置工作台自定义展示
 
-### 设置应用在工作台展示的模版 （TODO）
+### 设置应用在工作台展示的模版
 
 ``` go
 options := &request.RequestSetWorkbenchTemplate{
@@ -108,7 +108,7 @@ WeComApp.AgentWorkbench.SetWorkbenchTemplate(options)
 
 
 
-### 获取应用在工作台展示的模版 （TODO）
+### 获取应用在工作台展示的模版
 
 ``` go
 agentID := 1000005
@@ -117,7 +117,7 @@ WeComApp.AgentWorkbench.GetWorkbenchTemplate(agentID)
 
 
 
-### 设置应用在用户工作台展示的数据 （TODO）
+### 设置应用在用户工作台展示的数据
 
 ``` go
 options := &request.RequestSetWorkBenchData{
@@ -158,8 +158,13 @@ WeComApp.AgentWorkbench.SetWorkbenchData(options)
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/92535)
 
-### 修改设置工作台自定义开关事件推送 （TODO）
+### 修改设置工作台自定义开关事件推送
 
 管理员在管理端应用详情页的自定义工作台页面启用或者停用自定义工作台模式时，会推送接收修改设置工作台自定义开关事件推送到应用的回调url上（如果是第三方应用为数据回调url）。事件推送处理过程详见[接收消息与事件](https://work.weixin.qq.com/api/doc/90000/90135/92535#90000/90135/90237)。(TODO：需要修改成docs url)
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/92535)
+
+
+## 使用示例
+ 
+参考：[PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/blob/master/controllers/wecom/agent.go)

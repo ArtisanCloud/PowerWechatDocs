@@ -12,9 +12,6 @@ date: 2021-07-06
 ## Payment实例初始化
 
 ``` go
-import (
-  "github.com/ArtisanCloud/PowerWeChat/src/payment"
-)
 
 PaymentService, err := payment.NewPayment(&payment.UserConfig{
   AppID:       "[app_id]",         // 小程序、公众号或者企业微信的appid
