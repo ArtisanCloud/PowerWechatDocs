@@ -9,7 +9,7 @@ git clone https://github.com/ArtisanCloud/PowerWechatTutorial.git
 
 ### 项目配置
 在项目根目录下，新建一个`config.yaml`, 把下面字段内容复制进去， 然后执行`go run main.go`。
-如果程序正常启动，访问 [http://localhost:8888](http://localhost:8888)会返回一个`Hello, PowerWechat`
+如果程序正常启动，访问http://localhost:8888会返回一个`Hello, PowerWechat`
 
 
 ```yaml
