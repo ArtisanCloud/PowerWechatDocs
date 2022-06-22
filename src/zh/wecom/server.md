@@ -1,8 +1,3 @@
----
-title: 服务端
-date: 2021-07-06
----
-
 # 服务端
 
 消息回调用于自建应用和企业微信进行双向通信。例如：用户发送消息到应用、自定义菜单操作、上报地理位置、上报进入应用事件、审批状态通知事件、外部联系人变更回调等等。
@@ -46,10 +41,8 @@ text, _ := ioutil.ReadAll(rs.Body)
 终于，我们到了消息接收这一步，微信在一些事件变更的时候会推送消息过来。
 
 ``` go
-
-
 	rs, err := services.WeComContactApp.Server.Notify(c.Request, func(event contract.EventInterface) interface{} {
-		fmt.Dump("event", event)
+		fmt.Println("event", event)
 		//return  "handle callback"
 
 		// event output:
@@ -101,6 +94,23 @@ text, _ := ioutil.ReadAll(rs.Body)
 	//text, _ := ioutil.ReadAll(rs.Body)
 	//c.String(http.StatusOK, string(text))
 ```
+
+
+## 事件和消息结构体
+
+由于微信事件太多难以通过文档形式全部展现出来，所以请自行看源码文件里面的定义。
+
+如果有什么使用相关问题，欢迎联系我们或者提交PR。
+
+* [应用事件](https://github.com/ArtisanCloud/PowerWeChat/blob/master/src/work/server/handlers/models/event.go)
+* [外部联系人](https://github.com/ArtisanCloud/PowerWeChat/blob/master/src/work/server/handlers/models/externalContact.go)
+* [Live](https://github.com/ArtisanCloud/PowerWeChat/blob/master/src/work/server/handlers/models/living.go)
+* [Message](https://github.com/ArtisanCloud/PowerWeChat/blob/master/src/work/server/handlers/models/message.go)
+* [Message Audit](https://github.com/ArtisanCloud/PowerWeChat/blob/master/src/work/server/handlers/models/msgAudit.go)
+* [Party](https://github.com/ArtisanCloud/PowerWeChat/blob/master/src/work/server/handlers/models/party.go)
+* [Tag](https://github.com/ArtisanCloud/PowerWeChat/blob/master/src/work/server/handlers/models/tag.go)
+* [User](https://github.com/ArtisanCloud/PowerWeChat/blob/master/src/work/server/handlers/models/user.go)
+
 
 ## 参考示例
 
