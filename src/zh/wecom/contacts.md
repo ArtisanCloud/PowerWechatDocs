@@ -149,10 +149,20 @@ WeComApp.User.GetActiveStat("2021-09-13")
 ### 获取部门列表
 
 ``` go
-services.WeComContactApp.Department.List()
+// 0 表示获取企业所有部门
+id := 0
+WeComContactApp.Department.List(id)
 ```
-
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90208)
+
+### 获取子部门ID列表 
+
+``` go
+// 0 表示获取企业所有部门
+id := 0
+WeComContactApp.Department.SimpleList(id)
+```
+[微信官方文档](https://developer.work.weixin.qq.com/document/path/95350)
 
 ### 创建部门
 
