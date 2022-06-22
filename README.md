@@ -1,25 +1,10 @@
-# vuejs.org
+# PowerWeChat文档
 
-## Contributing
+PowerWeChat是一款WeChat SDK for Golang。目前已经覆盖了微信小程序、企业微信、微信支付、公众号等全微信生态。
 
-This site is built with [VitePress](https://github.com/vuejs/vitepress) and depends on [@vue/theme](https://github.com/vuejs/vue-theme). Site content is written in Markdown format located in `src`. For simple edits, you can directly edit the file on GitHub and generate a Pull Request.
+这里是文档网站地址，在线预览请点击：
 
-For local development, [pnpm](https://pnpm.io/) is preferred as package manager:
+* [https://powerwechat.artisan-cloud.com/](https://powerwechat.artisan-cloud.com/)
 
-```bash
-pnpm i
-pnpm run dev
-```
+如果文档中存在错误，欢迎提交PR帮助我们进行改进。
 
-This project requires Node.js to be `v14.0.0` or higher, because we use new JavaScript features in our code, such as optional chaining.
-
-
-## Working on the content
-
-- See VitePress docs on supported [Markdown Extensions](https://vitepress.vuejs.org/guide/markdown.html) and the ability to [use Vue syntax inside markdown](https://vitepress.vuejs.org/guide/using-vue.html).
-
-- See the [Writing Guide](https://github.com/vuejs/docs/blob/main/.github/contributing/writing-guide.md) for our rules and recommendations on writing and maintaining documentation content.
-
-## Working on the theme
-
-If changes need to made for the theme, check out the [instructions for developing the theme alongside the docs](https://github.com/vuejs/vue-theme#developing-with-real-content).

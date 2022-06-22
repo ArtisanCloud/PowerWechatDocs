@@ -11,6 +11,7 @@ git clone https://github.com/ArtisanCloud/PowerWechatTutorial.git
 在项目根目录下，新建一个`config.yaml`, 把下面字段内容复制进去， 然后执行`go run main.go`。
 如果程序正常启动，访问 [http://localhost:8888](http://localhost:8888)会返回一个`Hello, PowerWechat`
 
+
 ```yaml
 # 微信支付配置文档： https://powerwechat.artisan-cloud.com/zh/payment/index.html#userconfig%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E%EF%BC%9A
 payment:
