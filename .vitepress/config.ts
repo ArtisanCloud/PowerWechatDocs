@@ -192,8 +192,8 @@ export default defineConfigWithTheme<ThemeConfig>({
 
     algolia: {
       indexName: 'powerwechat',
-      appId: 'BH4D9OD16A',
-      apiKey: '98bbc4ef3e5b7b551e751f85f85cc405',
+      appId: 'WWQJSAUFP5',
+      apiKey: '970f2d4ae17f79ae0d27d842c330474f',
       searchParameters: {
         facetFilters: ['lang:zh-CN']
       }
