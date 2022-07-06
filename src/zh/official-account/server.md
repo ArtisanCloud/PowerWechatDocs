@@ -1,6 +1,15 @@
 # 服务端
 
-消息回调用于自建应用和企业微信进行双向通信。例如：用户发送消息到应用、自定义菜单操作、上报地理位置、上报进入应用事件、审批状态通知事件、外部联系人变更回调等等。
+消息回调用于自建服务器和微信公众号进行双向通信.
+
+例如:
+ * 接收和自动回复用户消息
+ * 接口地理位置
+ * 关注/取消关注事件
+ * 扫描带参数二维码事件
+ * 自定义菜单事件
+ * 点击菜单拉取消息时的事件推送
+ * 点击菜单跳转链接时的事件推送
 
 ## 设置接收消息的参数
 
@@ -123,3 +132,5 @@ import (
 ## 参考示例
 
 参考：[PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/blob/master/controllers/official-account/server.go)
+
+微信官方文档： [https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Receiving_standard_messages.html](https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Receiving_standard_messages.html)
