@@ -568,7 +568,8 @@ WeComContactApp.ExternalContactGroupChat.List(options)
 ### 获取客户群详情 
 ``` go
 chatID := "wrOgQhDgAAMYQiS5ol9G7gK9JVAAAA"
-bNeedName := true
+// 是否需要返回群成员的名字group_chat.member_list.name。0-不返回；1-返回。默认不返回
+bNeedName := 1
 WeComContactApp.ExternalContactGroupChat.Get(chatID, bNeedName)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/92122)
