@@ -74,9 +74,9 @@ jobs:
           region: ap-shanghai
       - name: Upload docs to SH
         run: |
-          export https_proxy=http://100.80.124.100:1089
-          export http_proxy=http://100.80.124.100:1089
-          export all_proxy=socks5://100.80.124.100:1089
+          export https_proxy=http://100.91.137.50:1089
+          export http_proxy=http://100.91.137.50:1089
+          export all_proxy=socks5://100.91.137.50:1089
           coscli cp .vitepress/dist/ cos://power-wechat-docs-1307679408/ -r --thread-num 20
 
 
