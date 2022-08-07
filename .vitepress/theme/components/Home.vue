@@ -1,5 +1,22 @@
 <script setup lang="ts">
+import { onMounted } from 'vue';
 
+onMounted(() => {
+  if (typeof window !== 'undefined') {
+    import('github-buttons').then(({ render }) => {
+      render({
+        "href": 'https://github.com/ArtisanCloud/PowerWechat',
+        "data-icon": "octicon-star",
+        // "data-color-scheme": "no-preference: light; light: light; dark: dark;",
+        "data-show-count": "true",
+        "aria-label": "Star ArtisanCloud/PowerWeChat on GitHub"
+      }, (el) => {
+        document.body.appendChild(el)
+        document.querySelector('.github-button')?.appendChild(el);
+      });
+    });
+  }
+})
 </script>
 
 <template>
@@ -28,6 +45,13 @@
           </svg>
         </a>
       </p>
+      <div class="star-note">
+        <!-- Place this tag where you want the button to render. -->
+        <a class="github-button" href="https://github.com/ArtisanCloud/PowerWechat" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub"></a>
+        <p>
+          欢迎Star支持，有问题可以<a href="https://github.com/ArtisanCloud/PowerWeChat/issues">GitHub issues</a>或企业微信<a href="/zh/start/qa.html">联系我们</a>
+        </p>
+      </div>
     </section>
 
     <section id="highlights" class="vt-box-container">
@@ -249,4 +273,13 @@ html:not(.dark) .accent,
     font-size: 36px;
   }
 }
+
+.star-note {
+  padding-top: 30px;
+  font-size: 12px;
+}
+.star-note a {
+  text-decoration: underline;
+}
+
 </style>

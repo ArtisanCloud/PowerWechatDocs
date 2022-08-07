@@ -7,9 +7,17 @@ date: 2021-07-06
 问题汇总
 
 * 使用PowerWechat过程中，碰到bug，功能受限，功能不足怎么办？
-    * 欢迎扫我们的企业微信号，客户二维码：
-    * 或者直接发送邮箱地址，和我们取得联系: <contact@artisan-cloud.com>
-    * 您可以点击文档右上角官网的联系我们
+    * 通过[Github Issues](https://github.com/ArtisanCloud/PowerWeChat/issues)反馈问题
+    * 扫下方我们的企业微信群二维码
+
+## PowerWeChat社区交流群
+
+<img src="./images/contact_me_qr.png" alt="请扫我" style="display:inline; width: 150px;"/>
+
+
+## 企业微信主要维护者
+
+Matrix, Walle的企业微信
 
 <img src="./images/contact-qr-matrix-x.png" alt="请扫我" style="display:inline; width: 150px;"/>
 
