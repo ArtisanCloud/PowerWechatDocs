@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { defineConfigWithTheme } from 'vitepress'
+import {googleAnalyticsPlugin} from '@vuepress/plugin-google-analytics'
 import type { Config as ThemeConfig } from '@vue/theme'
 import baseConfig from '@vue/theme/config'
 import { headerPlugin } from './headerMdPlugin'
@@ -199,10 +200,10 @@ export default defineConfigWithTheme<ThemeConfig>({
       }
     },
 
-    carbonAds: {
-      code: 'CEBDT27Y',
-      placement: 'vuejsorg'
-    },
+    // carbonAds: {
+    //   code: 'CEBDT27Y',
+    //   placement: 'vuejsorg'
+    // },
 
     socialLinks: [
       // { icon: 'languages', link: '/translations/' },
@@ -259,5 +260,11 @@ export default defineConfigWithTheme<ThemeConfig>({
 
   vue: {
     reactivityTransform: true
-  }
+  },
+
+  plugins: [
+    googleAnalyticsPlugin({
+      id: 'G-GPRCVYSQSG',
+    }),
+  ],
 })
