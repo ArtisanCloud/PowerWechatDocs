@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { defineConfigWithTheme } from 'vitepress'
-import {googleAnalyticsPlugin} from '@vuepress/plugin-google-analytics'
+// import {googleAnalyticsPlugin} from '@vuepress/plugin-google-analytics'
 import type { Config as ThemeConfig } from '@vue/theme'
 import baseConfig from '@vue/theme/config'
 import { headerPlugin } from './headerMdPlugin'
@@ -176,6 +176,15 @@ export default defineConfigWithTheme<ThemeConfig>({
         'utf-8'
       )
     ],
+    [
+      'script',
+      { async: 'true', src: 'https://www.googletagmanager.com/gtag/js?id=G-GPRCVYSQSG' }
+    ],
+    [
+      'script',
+      {},
+      "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-GPRCVYSQSG');"
+    ]
     // [
     //   'script',
     //   {
@@ -263,8 +272,8 @@ export default defineConfigWithTheme<ThemeConfig>({
   },
 
   plugins: [
-    googleAnalyticsPlugin({
-      id: 'G-GPRCVYSQSG',
-    }),
+    // googleAnalyticsPlugin({
+    //   id: 'G-GPRCVYSQSG',
+    // }),
   ],
 })

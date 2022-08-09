@@ -1,5 +1,5 @@
 import './styles/index.css'
-import { h, App } from 'vue'
+import { h, App, watch } from 'vue'
 import { VPTheme } from '@vue/theme'
 import PreferenceSwitch from './components/PreferenceSwitch.vue'
 import {
@@ -13,6 +13,7 @@ import VueJobs from './components/VueJobs.vue'
 import NavbarTitle from './components/NavbarTitle.vue'
 
 import './styles/override.css'
+import type { Router } from 'vitepress'
 
 export default Object.assign({}, VPTheme, {
   Layout: () => {
@@ -24,10 +25,18 @@ export default Object.assign({}, VPTheme, {
       'navbar-title': () => h(NavbarTitle),
     })
   },
-  enhanceApp({ app }: { app: App }) {
+  enhanceApp({ app, router }: { app: App, router: Router }) {
     app.provide('prefer-composition', preferComposition)
     app.provide('prefer-sfc', preferSFC)
     app.provide('filter-headers', filterHeadersByPreference)
     app.component('VueSchoolLink', VueSchoolLink)
+
+    // Only run this on the client. Not during build.
+    if (typeof window !== 'undefined' && (window as any).ga) {
+      watch(() => router.route.data.relativePath, (path) => {
+        console.log('route changed: ', path);
+        (window as any).ga('send', 'pageview', path);
+      }, { immediate: true });
+    }
   }
 })
