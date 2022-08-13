@@ -220,7 +220,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     ],
 
     editLink: {
-      repo: 'ArtisanCloud/PowerWeChatDocs',
+      repo: 'ArtisanCloud/PowerWeChatDocs#master',
       text: 'Edit this page on GitHub'
     },
 
