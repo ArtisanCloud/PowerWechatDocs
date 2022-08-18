@@ -16,10 +16,10 @@ options := &request.RequestRefund{
   Reason:        "",
   //NotifyUrl:     "", // 异步接收微信支付退款结果通知的回调地址
   FundsAccount:  "",
-  Amount: &request3.RefundAmount{
+  Amount: &request.RefundAmount{
     Refund: 1, // 退款金额，单位：分
     Total:  1, // 订单总金额，单位：分
-    From:   []*request3.RefundAmountFrom{},  // 退款出资账户及金额。不传仍然需要这个空数组防止微信报错
+    From:   []*request.RefundAmountFrom{},  // 退款出资账户及金额。不传仍然需要这个空数组防止微信报错
   },
   GoodsDetail:   nil,
 }
