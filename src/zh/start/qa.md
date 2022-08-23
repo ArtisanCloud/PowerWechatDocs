@@ -19,6 +19,6 @@ date: 2021-07-06
 
 Matrix, Walle的企业微信
 
-<img src="./images/contact-qr-matrix-x.png" alt="请扫我" style="display:inline; width: 150px;"/>
+<img src="./images/contact-qr-matrix-x.jpg" alt="请扫我" style="display:inline; width: 150px;"/>
 
 <img src="./images/contact-qr-walle.png" alt="请扫我" style="display: inline; width: 150px; margin-left: 50px"/>
