@@ -42,7 +42,7 @@ import GithubStar from './GithubStar.vue';
       <div class="vt-box">
         <h2>完整的微信生态覆盖</h2>
         <p>
-          支持小程序、企业微信、微信支付等模块，公众号(v2版本已经支持)
+          支持小程序、企业微信、微信支付、公众号、开放平台
         </p>
       </div>
       <div class="vt-box">

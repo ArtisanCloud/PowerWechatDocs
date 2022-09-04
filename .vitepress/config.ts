@@ -13,11 +13,6 @@ const nav = [
     activeMatch: `^\/zh\/(start)\/(?!qa)`,
   },
   {
-    text: '公众号',
-    link: '/zh/official-account/index',
-    activeMatch: `^/zh/(official-account)/`,
-  },
-  {
     text: '小程序',
     link: '/zh/mini-program/index',
     activeMatch: `^/zh/(mini-program)/`,
@@ -33,13 +28,23 @@ const nav = [
     activeMatch: `^/zh/(wecom)/`,
   },
   {
+    text: '开放平台',
+    link: '/zh/open-platform/index',
+    activeMatch: `^/zh/(open-platform)/`,
+  },
+  {
+    text: '公众号',
+    link: '/zh/official-account/index',
+    activeMatch: `^/zh/(official-account)/`,
+  },
+  {
     text: '联系我们',
     link: '/zh/start/qa',
   }
 ]
 
 export const sidebar = {
-  '/zh/start/': [{
+  '/zh/': [{
     text: '开始',
     items: [
       { text: "概述", link: '/zh/start/index' },
@@ -49,8 +54,7 @@ export const sidebar = {
       { text: "使用示例", link: '/zh/start/tutorial' },
       { text: "Q&A", link: '/zh/start/qa' },
     ]
-  }],
-  '/zh/mini-program': [{
+  }, {
     text: '小程序',
     items: [
       { text: "入门", link: '/zh/mini-program/index' },
@@ -71,8 +75,7 @@ export const sidebar = {
       { text: "URL Link", link: '/zh/mini-program/url-link' },
       { text: "Short Link", link: '/zh/mini-program/short-link' },
     ]
-  }],
-  '/zh/payment': [{
+  }, {
     text: '微信支付',
     items: [
       { text: '入门', link: '/zh/payment/index' },
@@ -86,8 +89,7 @@ export const sidebar = {
       { text: '撤销订单', link: '/zh/payment/retrieve-order' },
       { text: '分账', link: '/zh/payment/profit-share' },
     ]
-  }],
-  '/zh/wecom': [{
+  }, {
     text: '企业微信',
     items: [
       { text: '入门', link: '/zh/wecom/index' },
@@ -106,8 +108,15 @@ export const sidebar = {
       { text: '群机器人', link: '/zh/wecom/robot' },
       { text: '移动端', link: '/zh/wecom/mobile' },
     ]
-  }],
-  '/zh/official-account': [
+  },
+  {
+    text: '开放平台',
+    items: [
+      { text: '入门', link: '/zh/open-platform/index' },
+      { text: '服务端', link: '/zh/open-platform/server' },
+      { text: '代授权', link: '/zh/open-platform/authorizer-delegate' },
+    ]
+  },
     {
       text: '公众号',
       items: [
@@ -138,7 +147,7 @@ export const sidebar = {
         { text: '返佣商品', link: '/zh/official-account/goods' },
       ]
     }
-  ],
+  ]
 }
 
 export default defineConfigWithTheme<ThemeConfig>({
