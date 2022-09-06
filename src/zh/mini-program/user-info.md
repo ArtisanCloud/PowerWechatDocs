@@ -74,3 +74,10 @@ MiniProgramApp.Base.GetPaidUnionID(&request.RequestGetPaidUnionID{
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/user-info/auth.getPaidUnionId.html)
+
+
+
+## 使用示例
+
+参考: [PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/blob/master/controllers/miniprogram/phone-number.go)
+

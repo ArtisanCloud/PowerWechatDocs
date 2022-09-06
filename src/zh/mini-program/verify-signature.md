@@ -48,3 +48,10 @@ wx.startSoterAuthentication({
   }
 })
 ```
+
+
+## 使用示例
+
+参考: [PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/blob/master/controllers/miniprogram/soter.go)
+
+

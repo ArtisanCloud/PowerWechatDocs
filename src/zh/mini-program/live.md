@@ -460,3 +460,10 @@ MiniProgramApp.Broadcast.PushMessage(2, []string{"oC-vT5KfvgxATPoVl88oeTE-hnfE"}
 【mp.weixin.qq.com】->【小程序】->【开发】->【开发管理】->【开发设置】->【消息推送】
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/liveplayer/subscribe-api.html#3)
+
+
+
+## 使用示例
+
+参考: [PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/blob/master/controllers/miniprogram/live-broadcast.go)
+

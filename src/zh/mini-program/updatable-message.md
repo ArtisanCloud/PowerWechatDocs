@@ -40,3 +40,10 @@ MiniProgramApp.UpdatableMessage.SetUpdatableMsg(&request.RequestSetUpdatableMsg{
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/updatable-message/updatableMessage.setUpdatableMsg.html)
+
+
+
+## 使用示例
+
+参考: [PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/blob/master/controllers/miniprogram/updatable-message.go)
+

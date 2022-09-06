@@ -26,3 +26,10 @@ MiniProgramApp.RiskControl.GetUserRiskRank(options)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/safety-control-capability/riskControl.getUserRiskRank.html)
+
+
+
+## 使用示例
+
+参考: [PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/blob/master/controllers/miniprogram/risk-control.go)
+

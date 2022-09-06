@@ -66,3 +66,12 @@ MiniProgramApp.UniformMessage.Send(&request.RequestUniformMessageSend{
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/uniform-message/uniformMessage.send.html)
+
+
+
+## 使用示例
+
+参考: [PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/blob/master/controllers/miniprogram/uniform-message.go)
+
+
+

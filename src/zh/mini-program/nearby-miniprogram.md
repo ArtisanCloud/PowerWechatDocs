@@ -56,3 +56,10 @@ MiniProgramApp.NearbyPoi.SetShowStatus("[poi_id]", 1) // 0: 不展示 1: 展示
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/nearby-poi/nearbyPoi.setShowStatus.html)
+
+
+
+## 使用示例
+
+参考: [PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/blob/master/controllers/miniprogram/near-by-poi.go)
+
