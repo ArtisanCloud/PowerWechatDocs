@@ -122,3 +122,10 @@ services.AppMiniProgram.CustomerServiceMessage.UploadTempMedia("image", "", &pow
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/customer-message/customerServiceMessage.uploadTempMedia.html)
+
+
+
+## 使用示例
+
+参考: [PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/blob/master/controllers/miniprogram/customer-service-sessage.go)
+

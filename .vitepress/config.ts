@@ -28,14 +28,14 @@ const nav = [
     activeMatch: `^/zh/(wecom)/`,
   },
   {
-    text: '开放平台',
-    link: '/zh/open-platform/index',
-    activeMatch: `^/zh/(open-platform)/`,
-  },
-  {
     text: '公众号',
     link: '/zh/official-account/index',
     activeMatch: `^/zh/(official-account)/`,
+  },
+  {
+    text: '开放平台',
+    link: '/zh/open-platform/index',
+    activeMatch: `^/zh/(open-platform)/`,
   },
   {
     text: '联系我们',
@@ -126,6 +126,7 @@ export const sidebar = {
         { text: '消息', link: '/zh/official-account/messages' },
         { text: '多客服消息转发', link: '/zh/official-account/message-transfer' },
         { text: '消息群发', link: '/zh/official-account/broadcasting' },
+        { text: '模版消息', link: '/zh/official-account/template-message' },
         { text: '用户', link: '/zh/official-account/user' },
         { text: '用户标签', link: '/zh/official-account/user-tag' },
         { text: '网页授权', link: '/zh/official-account/oauth' },

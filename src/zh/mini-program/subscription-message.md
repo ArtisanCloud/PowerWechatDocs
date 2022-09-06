@@ -99,3 +99,10 @@ MiniProgramApp.SubscribeMessage.GetPubTemplateKeyWordsByID("[tid]")
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/subscribe-message/subscribeMessage.getPubTemplateKeyWordsById.html)
+
+
+
+## 使用示例
+
+参考: [PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/blob/master/controllers/miniprogram/subscribe-message.go)
+

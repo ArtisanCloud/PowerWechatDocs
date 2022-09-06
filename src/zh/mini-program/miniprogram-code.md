@@ -50,3 +50,10 @@ MiniProgramApp.WXACode.GetUnlimited(&request.RequestQRCodeGetUnlimited{
   IsHyaLine: false,
 })
 ```
+
+
+
+## 使用示例
+
+参考: [PowerWechatTutorial](https://github.com/ArtisanCloud/PowerWechatTutorial/blob/master/controllers/miniprogram/wxacode.go)
+
