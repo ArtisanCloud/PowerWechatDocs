@@ -85,7 +85,12 @@ log.Println("avatar", user.GetAvatar())
 
 // 由于我们的user接口可能遗漏某些字段的获取方法，所以你可以通过 user.GetRaw() 获取一个HashMap，
 // 这个和之前的user.GetID()效果是一样的
-log.Println("userID", user.GetRaw()["userID"])
+rawData, err := user.GetRaw()
+log.Println("position", (*rawData))["position"])
+
+// 也可以使用collection的属性
+log.Println("position", user.Attributes["position"]))
+
 ```
 
 ::: tip
