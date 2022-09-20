@@ -23,7 +23,7 @@ PowerWeChat考虑到大家存在集群部署或者和其他应用环境共享Tok
 
 #### 方式二、powerwechat提供redis中控
 
-我们找了一个企业微信的初始化代码代码作为参考。具体用法可以打开[PowerWeChat Toturial](https://github.com/ArtisanCloud/power-wechat-tutorial/blob/develop/services/payment-service.go)。
+我们找了一个企业微信的初始化代码代码作为参考。具体用法可以打开[PowerWeChat Toturial](https://github.com/ArtisanCloud/power-wechat-tutorial/blob/master/services/payment-service.go)。
 
 ``` go
 import (  
