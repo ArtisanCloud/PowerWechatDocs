@@ -1,61 +1,80 @@
-<script setup lang="ts">
-import GithubStar from './GithubStar.vue';
+<script setup lang='ts'>
+import GithubStar from './GithubStar.vue'
 
 </script>
 
 <template>
   <div>
-    <section id="hero">
-      <h1 class="tagline">
-        <span class="accent">PowerWeChat</span>
+    <section id='hero'>
+      <h1 class='tagline'>
+        <span class='accent'>PowerWeChat</span>
       </h1>
-      <p class="description">
-        PowerWeChat是一款简单易用的WeChat SDK for Golang<br/>
+      <p class='description'>
+        PowerWeChat是一款简单易用的WeChat SDK for Golang<br />
         目前已经覆盖<b>微信公众号</b>、<b>微信小程序</b>、<b>微信支付</b>、<b>企业微信</b>
       </p>
-      <p class="actions">
-        <a class="get-started" href="/zh/start/installation.html">
+      <p class='actions'>
+        <a class='get-started' href='/zh/start/installation.html'>
           Get Started
           <svg
-            class="icon"
-            xmlns="http://www.w3.org/2000/svg"
-            width="10"
-            height="10"
-            viewBox="0 0 24 24"
+            class='icon'
+            xmlns='http://www.w3.org/2000/svg'
+            width='10'
+            height='10'
+            viewBox='0 0 24 24'
           >
             <path
-              d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"
+              d='M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z'
             />
           </svg>
         </a>
       </p>
-      <div class="star-note">
+      <div class='star-note'>
         <!-- Place this tag where you want the button to render. -->
-        <GithubStar href="https://github.com/ArtisanCloud/PowerWeChat" api="https://powerwechat.artisan-cloud.com/github-star.txt" />
+        <GithubStar href='https://github.com/ArtisanCloud/PowerWeChat'
+                    api='https://powerwechat.artisan-cloud.com/github-star.txt' />
         <p>
-          欢迎Star支持，有问题可以<a href="https://github.com/ArtisanCloud/PowerWeChat/issues">GitHub issues</a>或企业微信<a href="/zh/start/qa.html">联系我们</a>
+          欢迎Star支持，有问题可以<a href='https://github.com/ArtisanCloud/PowerWeChat/issues'>GitHub issues</a>或企业微信<a
+          href='/zh/start/qa.html'>联系我们</a>
         </p>
       </div>
     </section>
 
-    <section id="highlights" class="vt-box-container">
-      <div class="vt-box">
+    <section id='highlights' class='vt-box-container'>
+      <div class='vt-box'>
         <h2>完整的微信生态覆盖</h2>
         <p>
           支持小程序、企业微信、微信支付、公众号、开放平台
         </p>
       </div>
-      <div class="vt-box">
+      <div class='vt-box'>
         <h2>基于Golang</h2>
         <p>
           ArtisanCloud团队在业务基础上开源了Golang版本的WeChatSDK。
         </p>
       </div>
-      <div class="vt-box">
+      <div class='vt-box'>
         <h2>MIT开源</h2>
         <p>
           在Github上开源，免费商用，欢迎Star。
         </p>
+      </div>
+    </section>
+
+
+    <section id='sponsors'>
+      <div>
+        <h1>使用者案例：欢迎提供你们的案例</h1>
+        <br>
+        <div style='text-align: center; border: 0px black solid; padding-left:  380px'>
+          <a href='https://www.yuque.com/okwvip/to6810/esu7xc' target='_blank'
+             title='题库云SaaS平台是一个，专做线上答题、线上视频教学、线上阅读等多功能智能应用平台。'>
+            <img width='64'
+                 src='/public/images/case-tiku.jpg'
+                 alt='Logo'>
+          </a>
+        </div>
+
       </div>
     </section>
   </div>
@@ -199,6 +218,7 @@ html:not(.dark) .accent,
 #sponsors {
   max-width: 900px;
   margin: 0px auto;
+  text-align: center;
 }
 
 #sponsors h2 {
@@ -211,11 +231,13 @@ html:not(.dark) .accent,
   margin-bottom: 3em;
 }
 
+
 @media (max-width: 960px) {
   .tagline {
     font-size: 64px;
     letter-spacing: -0.5px;
   }
+
   .description {
     font-size: 18px;
     margin-bottom: 48px;
@@ -233,20 +255,25 @@ html:not(.dark) .accent,
   #hero {
     padding: 64px 32px;
   }
+
   .description {
     font-size: 16px;
     margin: 18px 0 30px;
   }
+
   #special-sponsor img {
     display: block;
     margin: 2px auto 1px;
   }
+
   #highlights h3 {
     margin-bottom: 0.6em;
   }
+
   #highlights .vt-box {
     padding: 20px 36px;
   }
+
   .actions a {
     margin: 0.5em 0;
   }
@@ -262,6 +289,7 @@ html:not(.dark) .accent,
   padding-top: 30px;
   font-size: 12px;
 }
+
 .star-note a {
   text-decoration: underline;
 }
