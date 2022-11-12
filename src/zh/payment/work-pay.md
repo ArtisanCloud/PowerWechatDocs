@@ -41,11 +41,9 @@ paymentService.Transfer.ToBalance(&power.HashMap{
 
 ## 企业付款到银行卡
 
-
-
 ``` go
 paymentService.Transfer.ToBankCard(&request.RequestToBankCard{
-  Amount: 100",
+  Amount: 100,
   BankCode: "xxxxx",
   Desc: "xxxxx",
   EncBankNO: "xxxxx",
@@ -56,6 +54,9 @@ paymentService.Transfer.ToBankCard(&request.RequestToBankCard{
 })
 ```
 
+### RSA加密生成公钥
+企业付款到银行卡需要对银行卡号与姓名进行 RSA 加密，所以这里需要先下载 RSA 公钥到本地
+(服务器），可以使用openssl工具，请按照[微信的方式](https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay_yhk.php?chapter=25_7&index=4)，生成公钥
 
 
 
