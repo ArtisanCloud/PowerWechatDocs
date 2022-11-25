@@ -12,6 +12,22 @@ date: 2021-07-06
 `EncodingAESKey(消息加密密钥)`。
 
 ``` go
+// 回调配置
+func CallbackVerify(c *gin.Context) {
+	rs, err := services.MiniProgramApp.Server.VerifyURL(c.Request)
+	if err != nil {
+		panic(err)
+	}
+
+	// 选择1
+	//text, _ := ioutil.ReadAll(rs.Body)
+	//c.String(http.StatusOK, string(text))
+
+	// 选择2
+	rs.Send(c.Writer)
+
+}
+
 ```
 
 
@@ -21,6 +37,37 @@ date: 2021-07-06
 在配置完成保存的时候，微信会发送一条HTTP GET请求，来确保服务器配置正确，能够正常处理微信消息。
 
 ``` go
+// 回调配置
+func CallbackNotify(c *gin.Context) {
+
+	rs, err := services.MiniProgramApp.Server.Notify(c.Request, func(event contract.EventInterface) interface{} {
+		fmt.Dump("event", event)
+
+		switch event.GetMsgType() {
+		case models2.CALLBACK_MSG_TYPE_TEXT:
+			msg := models.MessageText{}
+			err := event.ReadMessage(&msg)
+			if err != nil {
+				println(err.Error())
+				return "error"
+			}
+			fmt.Dump(msg)
+		}
+
+		return kernel.SUCCESS_EMPTY_RESPONSE
+
+	})
+	if err != nil {
+		panic(err)
+	}
+
+	err = rs.Send(c.Writer)
+
+	if err != nil {
+		panic(err)
+	}
+
+}
 ```
 
 
