@@ -12,10 +12,7 @@ description: 使用PowerWeChat生成小程序二维码、永久小程序码、�
 获取小程序二维码，适用于需要的码数量较少的业务场景。**通过该接口生成的小程序码，永久有效，有数量限制**，详见[获取二维码](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/qr-code.html)。
 
 ``` go
-services.MiniProgramApp.WXACode.CreateQRCode(&request.RequestQRCodeCreate{
-  Path: "/page/index/index",
-  Width: 300,
-})
+services.MiniProgramApp.WXACode.CreateQRCode("/page/index/index", 300)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/qr-code/wxacode.createQRCode.html)
