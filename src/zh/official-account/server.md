@@ -102,6 +102,10 @@ import (
 
 		// 这里回复success告诉微信我收到了，后续需要回复用户信息可以主动调发消息接口
 		return kernel.SUCCESS_EMPTY_RESPONSE
+		
+		// 如果要返回xml，也可以返回message对象
+		return messages.NewText("返回消息内容")
+		
 	})
 	
 	if err != nil {
