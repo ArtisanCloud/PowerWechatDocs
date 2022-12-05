@@ -116,7 +116,7 @@ openssl x509 -noout -serial -in /.../apiclient_cert.pem
 微信支付完成后的通知回调地址。参考官方文档: [支付通知API](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_1_5.shtml)
 
 
-### Log （TODO）
+### Log 
 
 - 类型: `payment.Log`
 - 必传: `否`

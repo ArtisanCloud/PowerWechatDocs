@@ -56,6 +56,6 @@ if err != nil {
 >   * 如果已处理，则直接返回结果成功。在对业务数据进行状态检查和处理之前，要采用数据锁进行并发控制，以避免函数重入造成的数据混乱。
 > * 如果在所有通知频率后没有收到微信侧回调，商户应调用查询订单接口确认订单状态。
 
-至于官方文档中提到的签名验证， PowerWechat已经帮你做好了签名验证的工作（TODO），确保回调是来自微信官方的合法签名。
+至于官方文档中提到的签名验证， PowerWechat已经帮你做好了签名验证的工作，确保回调是来自微信官方的合法签名。
 
 官方文档： [https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_1_5.shtml](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_1_5.shtml)

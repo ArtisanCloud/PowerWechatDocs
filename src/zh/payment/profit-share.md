@@ -69,6 +69,18 @@ paymentService.ProfitSharing.Query("[transaction_id]", "[out_trade_no]")
 ## 分帐回退(TODO)
 
 ```go
+paymentService.ProfitSharing.Return(&request.RequestShareReturn{
+  AppID: "[app_id]",
+  MchID: "[mch_id]"
+  OutOrderNo: "[transaction_id]",
+  OutReturnNo: "[out_trade_no]"
+  ReturnAccountType: "[return_account_type]"
+  ReturnAccount: "[return_account]"
+  ReturnAmount: "[return_amount]"
+  Description: "[description]"
+   
+  
+})
 ```
 
 微信官方文档： https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_7&index=8
