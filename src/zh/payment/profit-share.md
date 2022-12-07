@@ -66,7 +66,7 @@ paymentService.ProfitSharing.Query("[transaction_id]", "[out_trade_no]")
 
 
 
-## 分帐回退(TODO)
+## 分帐回退
 
 ```go
 paymentService.ProfitSharing.Return(&request.RequestShareReturn{

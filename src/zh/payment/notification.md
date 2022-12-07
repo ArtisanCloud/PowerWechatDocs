@@ -49,6 +49,23 @@ if err != nil {
 }
 ```
 
+
+``` go
+// 其他支付通知的回调通知
+func (app *Payment) HandlePaidNotify(request *http.Request, closure func(message *request.RequestNotify, transaction *models.Transaction, fail func(message string)) interface{}) (*response.HttpResponse, error) {
+	return notify.NewPaidNotify(app, request).Handle(closure)
+}
+
+func (app *Payment) HandleRefundedNotify(request *http.Request, closure func(message *request.RequestNotify, transaction *models.Refund, fail func(message string)) interface{}) (*response.HttpResponse, error) {
+	return notify.NewRefundNotify(app, request).Handle(closure)
+}
+
+func (app *Payment) HandleScannedNotify(request *http.Request, closure func(message *request.RequestNotify, fail func(message string), alert func(message string)) interface{}) (*response.HttpResponse, error) {
+	return notify.NewScannedNotify(app, request).Handle(closure)
+}
+
+```
+
 > **注意:** 
 > * 同样的通知可能会多次发送给商户系统。商户系统必须能够正确处理重复的通知。
 > * 推荐的做法是，当商户系统收到通知进行处理时，先检查对应业务数据的状态，并判断该通知是否已经处理。
