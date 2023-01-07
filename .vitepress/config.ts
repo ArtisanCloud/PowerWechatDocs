@@ -86,6 +86,7 @@ export const sidebar = {
       { text: '红包', link: '/zh/payment/red-pack' },
       { text: 'JSSDK', link: '/zh/payment/jssdk' },
       { text: '企业付款', link: '/zh/payment/work-pay' },
+      { text: '商户培训', link: '/zh/payment/merchant-pay' },
       { text: '撤销订单', link: '/zh/payment/retrieve-order' },
       { text: '分账', link: '/zh/payment/profit-share' },
     ]
