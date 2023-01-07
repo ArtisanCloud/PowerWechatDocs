@@ -16,10 +16,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@master
 
-      - name: Tailscale
-        uses: tailscale/github-action@main
-        with:
-          authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
+#      - name: Tailscale
+#        uses: tailscale/github-action@main
+#        with:
+#          authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
 
       - name: Setup node env 🏗
         uses: actions/setup-node@v2.1.5
