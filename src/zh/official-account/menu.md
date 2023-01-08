@@ -18,7 +18,7 @@ OfficialAccountApp.Menu.CurrentSelfMenu()
 
 ### 添加普通菜单 
 ``` go
-  OfficialAccountApp.Menu.Create(&request.RequestMenuCreate{
+  OfficialAccountApp.Menu.Create(ctx, &request.RequestMenuCreate{
     Buttons: []*request.Button{
       {
         Type: "click",
@@ -56,7 +56,7 @@ OfficialAccountApp.Menu.CurrentSelfMenu()
 
 ### 添加个性化菜单
 ``` go
-OfficialAccountApp.Menu.CreateConditional(&request.RequestMenuCreate{
+OfficialAccountApp.Menu.CreateConditional(ctx, &request.RequestMenuCreate{
     Buttons: []*request.Button{
       {
         Type: "click",

@@ -7,11 +7,11 @@
 
 获取单个：
 ``` go
-OfficialAccountApp.User.Get("[openID]", "zh_CN")
+OfficialAccountApp.User.Get(ctx,"[openID]", "zh_CN")
 ```
 获取多个：
 ``` go
-OfficialAccountApp.User.BatchGet(&request.RequestBatchGetUserInfo{
+OfficialAccountApp.User.BatchGet(ctx, &request.RequestBatchGetUserInfo{
   UserList: []*request.UserList{
     {
       Openid: "[openID]",
@@ -25,14 +25,14 @@ OfficialAccountApp.User.BatchGet(&request.RequestBatchGetUserInfo{
 
 ``` go
 nextOpenId := ""
-OfficialAccountApp.User.List(nextOpenId)
+OfficialAccountApp.User.List(ctx,nextOpenId)
 ```
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/User_Management/Getting_a_User_List.html)
 
 ## 修改用户备注 
 
 ``` go
-OfficialAccountApp.User.Remark("[openID]", "[remark]")
+OfficialAccountApp.User.Remark(ctx,"[openID]", "[remark]")
 ``` 
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/User_Management/Configuring_user_notes.html)
 
@@ -42,26 +42,26 @@ OfficialAccountApp.User.Remark("[openID]", "[remark]")
 ### 获取公众号的黑名单列表
 ``` go
 beginOpenid := ""
-OfficialAccountApp.User.Blacklist(beginOpenid)
+OfficialAccountApp.User.Blacklist(ctx,beginOpenid)
 ``` 
 
 ### 拉黑用户
 
 ``` go
-OfficialAccountApp.User.Block([]string{"[openID1]", "[openID2]"})
+OfficialAccountApp.User.Block(ctx,[]string{"[openID1]", "[openID2]"})
 ``` 
 
 ### 取消拉黑用户
 
 ``` go
-OfficialAccountApp.User.Unblock([]string{"[openID1]", "[openID2]"})
+OfficialAccountApp.User.Unblock(ctx,[]string{"[openID1]", "[openID2]"})
 ``` 
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/User_Management/Manage_blacklist.html)
 
 ## 账号迁移 openid 转换
 
 ``` go
-oldAppId := ctx.Query("oldAppId")
+oldAppId := ctx.Query(ctx,"oldAppId")
 OfficialAccountApp.User.ChangeOpenID(oldAppId, []string{"[openID1]", "[openID2]"})
 ``` 
 [微信官方文档](https://kf.qq.com/faq/1901177NrqMr190117nqYJze.html)

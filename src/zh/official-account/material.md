@@ -11,27 +11,27 @@ date: 2021-09-24
 
 ## 上传永久图片
 ``` go
-OfficialAccountApp.Material.UploadImage("./resource/cloud.jpg")
+OfficialAccountApp.Material.UploadImage(ctx,"./resource/cloud.jpg")
 ```
 
 ## 上传永久语音
 ``` go
-OfficialAccountApp.Material.UploadVoice("./resource/cha-cha-ender.mp3")
+OfficialAccountApp.Material.UploadVoice(ctx,"./resource/cha-cha-ender.mp3")
 ```
 
 ## 上传永久视频
 ``` go
-OfficialAccountApp.Material.UploadVideo("./resource/3d_ocean_1590675653.mp4", "test title", "test description")
+OfficialAccountApp.Material.UploadVideo(ctx,"./resource/3d_ocean_1590675653.mp4", "test title", "test description")
 ```
 
 ## 上传永久缩略图
 ``` go
-OfficialAccountApp.Material.UploadThumb("./resource/cloud.jpg")
+OfficialAccountApp.Material.UploadThumb(ctx,"./resource/cloud.jpg")
 ```
 
 ## 获取永久素材
 ``` go
-OfficialAccountApp.Material.Get("[mediaID]")
+OfficialAccountApp.Material.Get(ctx,"[mediaID]")
 ```
 
 ## 使用示例

@@ -14,7 +14,7 @@ date: 2021-07-06
 ## 通过微信订单号来撤销订单
 
 ``` go
-paymentService.Reverse.ByTransactionId("[transaction_id]")
+paymentService.Reverse.ByTransactionId(ctx,"[transaction_id]")
 ```
 
 
@@ -22,7 +22,7 @@ paymentService.Reverse.ByTransactionId("[transaction_id]")
 ## 通过商户订单号来撤销订单
 
 ``` go
-paymentService.Reverse.ByOutTradeNumber("[out_trade_no]")
+paymentService.Reverse.ByOutTradeNumber(ctx,"[out_trade_no]")
 ```
 
 

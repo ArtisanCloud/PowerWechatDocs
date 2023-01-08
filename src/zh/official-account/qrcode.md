@@ -4,23 +4,23 @@
 
 ## 创建临时二维码
 ```go
-OfficialAccountApp.QRCode.Temporary("val1", 30*24*3600)
+OfficialAccountApp.QRCode.Temporary(ctx,"val1", 30*24*3600)
 
-OfficialAccountApp.QRCode.Temporary(1, 30*24*3600)
+OfficialAccountApp.QRCode.Temporary(ctx,1, 30*24*3600)
 ```
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/Account_Management/Generating_a_Parametric_QR_Code.html)
 
 ## 创建永久二维码
 ```go
-OfficialAccountApp.QRCode.Forever("val1", 30*24*3600)
+OfficialAccountApp.QRCode.Forever(ctx,"val1", 30*24*3600)
 
-OfficialAccountApp.QRCode.Forever(1, 30*24*3600)
+OfficialAccountApp.QRCode.Forever(ctx,1, 30*24*3600)
 ```
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/Account_Management/Generating_a_Parametric_QR_Code.html)
 
 ## 获取二维码网址
 ```go
-OfficialAccountApp.QRCode.URL("[ticket]")
+OfficialAccountApp.QRCode.URL(ctx,"[ticket]")
 ```
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/Account_Management/Generating_a_Parametric_QR_Code.html)
 

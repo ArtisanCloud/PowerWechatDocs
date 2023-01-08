@@ -11,13 +11,13 @@ date: 2021-09-29
 
 ``` go
 agentID := 100003
-WeComApp.Agent.Get(agentID)
+WeComApp.Agent.Get(ctx,agentID)
 ```
 
 ### 获取access_token对应的应用列表
 
 ``` go
-WeComApp.Agent.List()
+WeComApp.Agent.List(ctx)
 ```
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90227)
@@ -35,7 +35,7 @@ options := &request.RequestAgentSet{
   IsReportEnter:        0,
   HomeUrl:             "https://open.work.weixin.qq.com",
 }
-WeComApp.Agent.Set(options)
+WeComApp.Agent.Set(ctx,options)
 ```
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90227)
@@ -69,14 +69,14 @@ options := &request.RequestMenuSet{
     },
   },
 }
-WeComApp.Menu.Create(options)
+WeComApp.Menu.Create(ctx,options)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/90231)
 
 ### 获取菜单
 
 ``` go
-WeComApp.Menu.Get()
+WeComApp.Menu.Get(ctx)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/90232)
 
@@ -84,7 +84,7 @@ WeComApp.Menu.Get()
 
 ``` go
 agentID := 100003
-WeComApp.Menu.Delete(agentID)
+WeComApp.Menu.Delete(ctx,agentID)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/90233)
 
@@ -103,7 +103,7 @@ options := &request.RequestSetWorkbenchTemplate{
   },
   ReplaceUserData: true,
 }
-WeComApp.AgentWorkbench.SetWorkbenchTemplate(options)
+WeComApp.AgentWorkbench.SetWorkbenchTemplate(ctx,options)
 ```
 
 
@@ -112,7 +112,7 @@ WeComApp.AgentWorkbench.SetWorkbenchTemplate(options)
 
 ``` go
 agentID := 1000005
-WeComApp.AgentWorkbench.GetWorkbenchTemplate(agentID)
+WeComApp.AgentWorkbench.GetWorkbenchTemplate(ctx,agentID)
 ```
 
 
@@ -153,7 +153,7 @@ options := &request.RequestSetWorkBenchData{
     },
   },
 }
-WeComApp.AgentWorkbench.SetWorkbenchData(options)
+WeComApp.AgentWorkbench.SetWorkbenchData(ctx,options)
 ```
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/92535)

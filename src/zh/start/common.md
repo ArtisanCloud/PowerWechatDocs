@@ -27,8 +27,8 @@ PowerWeChat考虑到大家存在集群部署或者和其他应用环境共享Tok
 
 ``` go
 import (  
- "github.com/ArtisanCloud/PowerWeChat/v2/src/kernel"  
- "github.com/ArtisanCloud/PowerWeChat/v2/src/work"
+ "github.com/ArtisanCloud/PowerWeChat/v3/src/kernel"  
+ "github.com/ArtisanCloud/PowerWeChat/v3/src/work"
  "power-wechat-tutorial/config"
 )
 func NewWeComContactService(conf *config.Configuration) (*work.Work, error) {

@@ -22,7 +22,7 @@ services.MiniProgramApp.WXACode.CreateQRCode("/page/index/index", 300)
 获取小程序码，适用于需要的码数量较少的业务场景。**通过该接口生成的小程序码，永久有效，有数量限制**，详见[获取二维码](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/qr-code.html)。
 
 ``` go
-MiniProgramApp.WXACode.Get(&request.RequestQRCodeGet{
+MiniProgramApp.WXACode.Get(ctx, &request.RequestQRCodeGet{
   Path:      path,
   Width:     300,
   AutoColor: false,
@@ -38,7 +38,7 @@ MiniProgramApp.WXACode.Get(&request.RequestQRCodeGet{
 获取小程序码，适用于需要的码数量极多的业务场景。**通过该接口生成的小程序码，永久有效，数量暂无限制。** 更多用法详见 [获取二维码](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/qr-code.html)。
 
 ``` go
-MiniProgramApp.WXACode.GetUnlimited(&request.RequestQRCodeGetUnlimited{
+MiniProgramApp.WXACode.GetUnlimited(ctx, &request.RequestQRCodeGetUnlimited{
   Scene: "a=1",
   Page: page,
   Width: 430,

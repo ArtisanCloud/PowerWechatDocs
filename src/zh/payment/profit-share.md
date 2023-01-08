@@ -10,6 +10,7 @@ date: 2021-07-06
 ```go
 // 添加接收方。多次调用表示添加多个接收方
 paymentService.ProfitSharing.AddReceiver(
+  ctx,
   "[type]",
   "[account]",
   "[name]",
@@ -23,7 +24,7 @@ paymentService.ProfitSharing.AddReceiver(
 ## 删除接收方
 
 ```go
-paymentService.ProfitSharing.DeleteReceiver("[type]", "[account]")
+paymentService.ProfitSharing.DeleteReceiver(ctx,"[type]", "[account]")
 ```
 
 微信官方文档：https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_1_9.shtml
@@ -32,6 +33,7 @@ paymentService.ProfitSharing.DeleteReceiver("[type]", "[account]")
 
 ```go
 paymentService.ProfitSharing.Share(
+  ctx,
   "[transaction_id]",
   "[out_order_no]",
   []*power.HashMap{
@@ -59,7 +61,7 @@ paymentService.ProfitSharing.Share(
 ## 分账查询
 
 ```go
-paymentService.ProfitSharing.Query("[transaction_id]", "[out_trade_no]")
+paymentService.ProfitSharing.Query(ctx,"[transaction_id]", "[out_trade_no]")
 ```
 
 微信官方文档： https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_2&index=3
@@ -69,7 +71,7 @@ paymentService.ProfitSharing.Query("[transaction_id]", "[out_trade_no]")
 ## 分帐回退
 
 ```go
-paymentService.ProfitSharing.Return(&request.RequestShareReturn{
+paymentService.ProfitSharing.Return(ctx, &request.RequestShareReturn{
   AppID: "[app_id]",
   MchID: "[mch_id]"
   OutOrderNo: "[transaction_id]",

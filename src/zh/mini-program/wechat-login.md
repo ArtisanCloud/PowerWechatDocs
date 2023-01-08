@@ -32,7 +32,7 @@ MiniProgramApp.Base.CheckEncryptedData("hsSuSUsePBqSQw2rYMtf9Nvha603xX8f2BMQBcYR
 
 
 ``` go
-MiniProgramApp.Base.GetPaidUnionID(&request.RequestGetPaidUnionID{
+MiniProgramApp.Base.GetPaidUnionID(ctx, &request.RequestGetPaidUnionID{
   OpenID:        openid,
   // TransactionID: "",
   // MchID:         "",

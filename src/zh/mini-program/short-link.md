@@ -7,7 +7,7 @@ pageUrl := "/pages/index/index?query1=q1"
 pageTitle := "Homework title"
 isPermanent := false
 
-MiniProgramApp.ShortLink.Generate(pageUrl, pageTitle, isPermanent)
+MiniProgramApp.ShortLink.Generate(ctx,pageUrl, pageTitle, isPermanent)
 ```
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/short-link/shortlink.generate.html)
 

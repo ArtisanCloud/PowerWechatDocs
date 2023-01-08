@@ -6,27 +6,27 @@
 ## 获取标签列表
 
 ``` go
-OfficialAccountApp.UserTag.List()
+OfficialAccountApp.UserTag.List(ctx)
 ``` 
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/User_Management/User_Tag_Management.html)
 ## 创建标签
 
 ``` go
-OfficialAccountApp.UserTag.Create("[tagName]")
+OfficialAccountApp.UserTag.Create(ctx,"[tagName]")
 ``` 
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/User_Management/User_Tag_Management.html)
 
 ## 编辑标签
 
 ``` go
-OfficialAccountApp.UserTag.Update("[tagID]", "[tagName]")
+OfficialAccountApp.UserTag.Update(ctx,"[tagID]", "[tagName]")
 ``` 
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/User_Management/User_Tag_Management.html)
 
 ## 删除标签
 
 ``` go
-OfficialAccountApp.UserTag.Delete("[tagID]")
+OfficialAccountApp.UserTag.Delete(ctx,"[tagID]")
 ``` 
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/User_Management/User_Tag_Management.html)
 
@@ -34,14 +34,14 @@ OfficialAccountApp.UserTag.Delete("[tagID]")
 
 ``` go
 nextOpenID := ""
-OfficialAccountApp.UserTag.UsersOfTag("[tagID]", nextOpenID)
+OfficialAccountApp.UserTag.UsersOfTag(ctx,"[tagID]", nextOpenID)
 ``` 
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/User_Management/User_Tag_Management.html)
 
 ## 批量为用户打标签
 
 ``` go
-OfficialAccountApp.UserTag.TagUsers([]string{"[openID1]", "[openID2]"}, "[tagID]")
+OfficialAccountApp.UserTag.TagUsers(ctx,[]string{"[openID1]", "[openID2]"}, "[tagID]")
 ``` 
 
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/User_Management/User_Tag_Management.html)
@@ -49,7 +49,7 @@ OfficialAccountApp.UserTag.TagUsers([]string{"[openID1]", "[openID2]"}, "[tagID]
 ## 批量为用户取消标签
 
 ``` go
-OfficialAccountApp.UserTag.UntagUsers([]string{"[openID1]", "[openID2]"}, "[tagID]")
+OfficialAccountApp.UserTag.UntagUsers(ctx,[]string{"[openID1]", "[openID2]"}, "[tagID]")
 ``` 
 
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/User_Management/User_Tag_Management.html)
@@ -57,7 +57,7 @@ OfficialAccountApp.UserTag.UntagUsers([]string{"[openID1]", "[openID2]"}, "[tagI
 ## 获取用户身上的标签列表
 
 ``` go
-OfficialAccountApp.UserTag.UserTags("[openID]")
+OfficialAccountApp.UserTag.UserTags(ctx,"[openID]")
 ``` 
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/User_Management/User_Tag_Management.html)
 

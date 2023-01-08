@@ -3,7 +3,7 @@
 ## 小程序 URL Link
 
 ``` go
-MiniProgramApp.URLLink.Generate(&request.URLLinkGenerate{
+MiniProgramApp.URLLink.Generate(ctx, &request.URLLinkGenerate{
 	EnvVersion:     "release",
 	ExpireInterval: 1606737600,
 	Path:           "pages/index/index",

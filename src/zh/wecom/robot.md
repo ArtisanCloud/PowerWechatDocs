@@ -34,7 +34,7 @@ msg := &request.GroupRobotMsgMarkdown{
     >普通用户反馈:<font color=\"comment\">117例</font>
     >VIP用户反馈:<font color=\"comment\">15例</font>`,
 }
-WeComApp.GroupRobot.SendMarkdown(key, msg)
+WeComApp.GroupRobot.SendMarkdown(ctx,key, msg)
 ```
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90136/91770#markdown类型)
@@ -47,7 +47,7 @@ msg := &request.GroupRobotMsgImage{
   Base64: "DATA",
   Md5:    "MD5",
 }
-WeComApp.GroupRobot.SendImage(key, msg)
+WeComApp.GroupRobot.SendImage(ctx,key, msg)
 ```
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90136/91770#图片类型)
@@ -64,7 +64,7 @@ msg := []*request.GroupRobotMsgNewsArticles{
     PicUrl:      "https://res.mail.qq.com/node/ww/wwopenmng/images/independent/doc/test_pic_msg1.png",
   },
 }
-WeComApp.GroupRobot.SendNewsArticles(key, msg)
+WeComApp.GroupRobot.SendNewsArticles(ctx,key, msg)
 ```
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90136/91770#图片类型)
@@ -76,7 +76,7 @@ key := "693axxx6-7aoc-4bc4-97a0-0ec2sifa5aaa"
 msg := &request.GroupRobotMsgFile{
   MediaID: "3a8asd892asd8asd",
 }
-WeComApp.GroupRobot.SendFile(key, msg)
+WeComApp.GroupRobot.SendFile(ctx,key, msg)
 ```
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90136/91770#文件类型)
@@ -138,7 +138,7 @@ msg := &request.GroupRobotMsgTemplateCard{
     PagePath: "PAGEPATH",
   },
 }
-WeComApp.GroupRobot.SendTemplateCard(key, msg)
+WeComApp.GroupRobot.SendTemplateCard(ctx,key, msg)
 ```
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90136/91770#模版卡片类型)

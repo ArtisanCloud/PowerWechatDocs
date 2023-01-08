@@ -7,7 +7,7 @@ OfficialAccountApp.Base.ClearQuota()
 
 ## 获取微信服务器 IP (或IP段) 
 ```go
-OfficialAccountApp.Base.GetCallbackIP()
+OfficialAccountApp.Base.GetCallbackIP(ctx)
 ```
 
 ## 使用示例

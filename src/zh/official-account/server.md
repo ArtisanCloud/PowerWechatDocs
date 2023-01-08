@@ -60,8 +60,8 @@ text, _ := ioutil.ReadAll(rs.Body)
 
 ``` go
 import (
-	models2 "github.com/ArtisanCloud/PowerWeChat/v2/src/kernel/models"
-	"github.com/ArtisanCloud/PowerWeChat/v2/src/officialAccount/server/handlers/models"
+	models2 "github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/models"
+	"github.com/ArtisanCloud/PowerWeChat/v3/src/officialAccount/server/handlers/models"
 )
 	rs, err := services.OfficialAccountApp.Server.Notify(c.Request, func(event contract.EventInterface) interface{} {
 		fmt.Println("event", event)
@@ -85,7 +85,7 @@ import (
 // 
 
 		// 这里需要获取到事件类型，然后把对应的结构体传递进去进一步解析
-		// 所有包含的结构体请参考： https://github.com/ArtisanCloud/PowerWeChat/v2/src/officialAccount/server/handlers/models
+		// 所有包含的结构体请参考： https://github.com/ArtisanCloud/PowerWeChat/v3/src/officialAccount/server/handlers/models
 		switch event.GetMsgType() {
 		case models2.CALLBACK_MSG_TYPE_TEXT:
 			msg := models.MessageText{}

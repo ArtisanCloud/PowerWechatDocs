@@ -65,7 +65,7 @@ hash := hashByte[:]
 用户支付完成后，获取该用户的 [UnionId](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/union-id.html)，无需用户授权。本接口支持[第三方平台代理查询](https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=215453152075Ry2s&token=&lang=zh_CN)。
 
 ``` go
-MiniProgramApp.Base.GetPaidUnionID(&request.RequestGetPaidUnionID{
+MiniProgramApp.Base.GetPaidUnionID(ctx, &request.RequestGetPaidUnionID{
   OpenID:        openid,
   // TransactionID: "",
   // MchID:         "",

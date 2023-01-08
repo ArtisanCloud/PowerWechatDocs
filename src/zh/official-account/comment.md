@@ -2,47 +2,47 @@
 
 ## 打开已群发文章评论
 ``` go
-OfficialAccountApp.Comment.Open("[msgID]", 0)
+OfficialAccountApp.Comment.Open(ctx,"[msgID]", 0)
 ```
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/Comments_management/Image_Comments_Management_Interface.html)
 
 ## 关闭已群发文章评论
 ``` go
-OfficialAccountApp.Comment.Close("[msgID]", 0)
+OfficialAccountApp.Comment.Close(ctx,"[msgID]", 0)
 ```
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/Comments_management/Image_Comments_Management_Interface.html)
 
 ## 将评论标记精选
 ``` go
 commentID := 0
-OfficialAccountApp.Comment.MarkElect("[msgID]", 0, commentID)
+OfficialAccountApp.Comment.MarkElect(ctx,"[msgID]", 0, commentID)
 ```
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/Comments_management/Image_Comments_Management_Interface.html)
 
 ## 将评论取消精选
 ``` go
 commentID := 0
-OfficialAccountApp.Comment.UnmarkElect("[msgID]", 0, commentID)
+OfficialAccountApp.Comment.UnmarkElect(ctx,"[msgID]", 0, commentID)
 ```
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/Comments_management/Image_Comments_Management_Interface.html)
 
 ## 删除评论
 ``` go
 commentID := 0
-OfficialAccountApp.Comment.Delete("[msgID]", 0, commentID)
+OfficialAccountApp.Comment.Delete(ctx,"[msgID]", 0, commentID)
 ```
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/Comments_management/Image_Comments_Management_Interface.html)
 
 ## 回复评论
 ``` go
 commentID := 0
-OfficialAccountApp.Comment.Delete("[msgID]", 0, commentID, "[content]")
+OfficialAccountApp.Comment.Delete(ctx,"[msgID]", 0, commentID, "[content]")
 ```
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/Comments_management/Image_Comments_Management_Interface.html)
 
 ## 删除回复评论
 ``` go
-OfficialAccountApp.Comment.DeleteReply("[msgID]", 0, commentID)
+OfficialAccountApp.Comment.DeleteReply(ctx,"[msgID]", 0, commentID)
 ```
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/Comments_management/Image_Comments_Management_Interface.html)
 

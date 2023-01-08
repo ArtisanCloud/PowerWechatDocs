@@ -12,7 +12,7 @@ description: 使用PowerWeChat处理小程序客服消息，回复用户文本�
 
 ```go
 // rs已经是一个标准的*http.Response，您可以直接使用流转发的形式给到浏览器
-rs, err := MiniProgramApp.CustomerServiceMessage.GetTempMedia("[mediaID]")
+rs, err := MiniProgramApp.CustomerServiceMessage.GetTempMedia(ctx,"[mediaID]")
 // 例如： gin里面使用io.Copy
 io.Copy(ctx.Writer, rs.Body)
 ```

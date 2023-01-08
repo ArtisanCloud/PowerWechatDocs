@@ -13,6 +13,7 @@ H5支付、公众号支付、扫码支付、支付中签约都是使用这个接
 
 ``` go
 options := &request.RequestJSAPIPrepay{
+  ctx,
   Amount: &request.JSAPIAmount{
     Total:    1,
     Currency: "CNY",
@@ -64,17 +65,17 @@ options := &request2.RequestAppPrepay{
 }
 
 // 如果需要覆盖掉全局的notify_url
-//options.SetNotifyUrl("https://pay.xxx.com/wx/notify")
+//options.SetNotifyUrl(ctx,"https://pay.xxx.com/wx/notify")
 
 // 下单
-response, err := services.PaymentApp.Order.TransactionApp(options)
+response, err := services.PaymentApp.Order.TransactionApp(ctx,options)
 
 if err != nil {
   panic(err)
 }
 
 // 因为PrepayID签名方式都一样，所以这个和App是一样的。
-payConf, err := services.PaymentApp.JSSDK.BridgeConfig(response.PrepayID, true)
+payConf, err := services.PaymentApp.JSSDK.BridgeConfig(ctx,response.PrepayID, true)
 ```
 
 [微信官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_2_1.shtml)

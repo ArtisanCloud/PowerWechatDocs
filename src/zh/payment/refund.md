@@ -11,6 +11,7 @@ date: 2021-07-06
 
 ``` go
 options := &request.RequestRefund{
+  ctx,
   TransactionID: transactionID,
   OutRefundNo:   outRefundNo,
   Reason:        "",

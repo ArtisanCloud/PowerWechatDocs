@@ -9,7 +9,7 @@ description: 使用PowerWeChat对附近的小程序进行地点添加、删除�
 ## 添加地点
 
 ``` go
-MiniProgramApp.NearbyPoi.Add(&request.RequestNearbyPoiAdd{
+MiniProgramApp.NearbyPoi.Add(ctx, &request.RequestNearbyPoiAdd{
   IsCommNearby:      "1", //值固定
   KfInfo:            "{\"open_kf\":true,\"kf_headimg\":\"http://mmbiz.qpic.cn/mmbiz_jpg/kKMgNtnEfQzDKpLXYhgo3W3Gndl34gITqmP914zSwhajIEJzUPpx40P7R8fRe1QmicneQMhFzpZNhSLjrvU1pIA/0?wx_fmt=jpeg\",\"kf_name\":\"Harden\"}",
   PicList:           "{\"list\":[\"http://mmbiz.qpic.cn/mmbiz_jpg/kKMgNtnEfQzDKpLXYhgo3W3Gndl34gITqmP914zSwhajIEJzUPpx40P7R8fRe1QmicneQMhFzpZNhSLjrvU1pIA/0?wx_fmt=jpeg\",\"http://mmbiz.qpic.cn/mmbiz_jpg/kKMgNtnEfQzDKpLXYhgo3W3Gndl34gITRneE5FS9uYruXGMmrtmhsBySwddEWUGOibG8Ze2NT5E3Dyt79I0htNg/0?wx_fmt=jpeg\"]}",

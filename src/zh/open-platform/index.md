@@ -26,7 +26,7 @@ OpenPlatformApp, err := openPlatform.NewOpenPlatform(&openPlatform.UserConfig{
 ## 获取用户授权页 URL
 
 ``` go
-OpenPlatformApp.GetFastRegistrationURL("https://powerwechat.artisan-cloud.com", &object.StringMap{
+OpenPlatformApp.GetFastRegistrationURL(ctx,"https://powerwechat.artisan-cloud.com", &object.StringMap{
   "auth_type": "1",
 });
 ```
@@ -38,30 +38,30 @@ OpenPlatformApp.GetFastRegistrationURL("https://powerwechat.artisan-cloud.com", 
 > eg: https://powerwechat.artisan-cloud.com/callback?auth_code=xxx&expires_in=600)
 
 ``` go
-OpenPlatformApp.Base.HandleAuthorize("[authCode]")
+OpenPlatformApp.Base.HandleAuthorize(ctx,"[authCode]")
 ```
 
 ## 获取授权方的帐号基本信息 
 
 ``` go
-OpenPlatformApp.Base.GetAuthorizer("[appID]")
+OpenPlatformApp.Base.GetAuthorizer(ctx,"[appID]")
 ```
 
 ## 获取授权方的选项设置信息
 ``` go
-OpenPlatformApp.Base.GetAuthorizerOption("[appID]", "[name]")
+OpenPlatformApp.Base.GetAuthorizerOption(ctx,"[appID]", "[name]")
 ```
 
 ## 设置授权方的选项信息
 ``` go
-OpenPlatformApp.Base.SetAuthorizerOption("[appID]", "[name]", "[value]")
+OpenPlatformApp.Base.SetAuthorizerOption(ctx,"[appID]", "[name]", "[value]")
 ```
 
 ## 获取已授权的授权方列表
 ``` go
 offset := 0
 count := 100
-res, err := services.OpenPlatformApp.Base.GetAuthorizers(offset, count)
+res, err := services.OpenPlatformApp.Base.GetAuthorizers(ctx,offset, count)
 ```
 
 ## 使用示例

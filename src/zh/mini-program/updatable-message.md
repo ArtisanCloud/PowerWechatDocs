@@ -21,7 +21,7 @@ services.AppMiniProgram.UpdatableMessage.CreateActivityID("[unionID]", "[openID]
 修改被分享的动态消息。
 
 ```go
-MiniProgramApp.UpdatableMessage.SetUpdatableMsg(&request.RequestSetUpdatableMsg{
+MiniProgramApp.UpdatableMessage.SetUpdatableMsg(ctx, &request.RequestSetUpdatableMsg{
   ActivityID:  "[activityID]",
   TargetState: 0,
   TemplateInfo: &request.TemplateInfo{

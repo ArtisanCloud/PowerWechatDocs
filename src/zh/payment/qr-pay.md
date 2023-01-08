@@ -13,7 +13,7 @@ date: 2021-07-06
 ### 生成产品二维码内容
 
 ``` go
-qrcodeContent := paymentService.Scheme("[productId]")
+qrcodeContent := paymentService.Scheme(ctx,"[productId]")
 // 结果示例: weixin://wxpay/bizpayurl?sign=XXXXX&appid=XXXXX&mch_id=XXXXX&product_id=XXXXXX&time_stamp=XXXXXX&nonce_str=XXXXX
 ```
 
