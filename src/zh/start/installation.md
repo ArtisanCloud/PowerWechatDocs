@@ -22,6 +22,8 @@ v3版本已经推出。
 * 接口添加context参数
 * 解决v2的自动refresh token问题
 
+
+
 如果有遇到问题，欢迎点击右上角联系我们。
 
 ## 安装 PowerWeChat v2

@@ -113,6 +113,9 @@ export const sidebar = {
   {
     text: '开放平台',
     items: [
+      { text: '导读', link: '/zh/open-platform/intro' },
+      { text: '基本概念', link: '/zh/open-platform/basic' },
+      { text: '应用场景', link: '/zh/open-platform/scene' },
       { text: '入门', link: '/zh/open-platform/index' },
       { text: '服务端', link: '/zh/open-platform/server' },
       { text: '代授权', link: '/zh/open-platform/authorizer-delegate' },
