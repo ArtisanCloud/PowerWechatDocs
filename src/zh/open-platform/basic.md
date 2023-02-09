@@ -7,18 +7,25 @@
 商家 指拥有有自己的品牌，自己的客户数据，以及自己的产品服务，注册在微信生态上的机构。
 
 ### 服务商
-服务商 指能够提帮助商家，供微信代运营服务的机构。
+服务商 指能够提帮助商家，供微信代运营服务应用的机构。
 
 [如何成为服务商](https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/getting_started/how_to_be.html)
 
-### 第三方开放平台
-服务商相对商家的角度，就是一个第三方平台的角色，
+### 开放平台账号
+如果要打通多个微信应用（小程序，公众号等），必须通过开通开放平台账号，才能达成这个统一管理机制。
 
-第三方平台的服务商可以为多个商家提供微信的业务服务
+> 商家可以有开放平台账号，服务商也需要开放平台账号。
 
 [注册开放平台账号](https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/operation/open/create.html)
 
+
+### 第三方平台账号
+可以理解为一个服务商和不同商户之间的对应关系，所开设的关系对象。  
+它是开放平台下的子集。
+
 [创建与配置第三方平台准备工作](https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/operation/thirdparty/prepare.html)
+
+服务商在开放平台后台，可以创建第三方平台账号，该第三方平台账号，就可以和商家开放平台所绑定的应用，进行授权和应用。
 
 
 ## 应用类型说明
@@ -39,19 +46,17 @@
 ### 绑定
 “绑定”指的是将商家的公众号或者小程序帐号绑定到商家的开放平台下
 
-它只发生在同一个开放平台账户下
-
 #### - 授权小程序的绑定
   将帐号绑定到开放平台帐号 - 这通常是商家侧的行为，目的是将同一开放平台下的应用的用户身份打通；
 
-[绑定授权公众号和小程序](https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/operation/open/bind.html)
+[如何绑定授权公众号和小程序](https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/operation/open/bind.html)
 
 
 #### - 开发小程序的绑定
   将帐号绑定到第三方开发平台帐号 - 这通常是服务商侧的行为，目的是使用“开发小程序”为商家提供代开发小程序服务
 
 
-[绑定开发小程序](https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/operation/thirdparty/dev.html)
+[如何绑定开发小程序](https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/operation/thirdparty/dev.html)
 
 ### 授权
 “授权”是指商家将其公众号或者小程序扫码授权给服务商的第三方平台帐号
