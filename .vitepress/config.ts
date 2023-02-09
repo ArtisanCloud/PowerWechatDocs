@@ -34,7 +34,7 @@ const nav = [
   },
   {
     text: '开放平台',
-    link: '/zh/open-platform/index',
+    link: '/zh/open-platform/intro',
     activeMatch: `^/zh/(open-platform)/`,
   },
   {

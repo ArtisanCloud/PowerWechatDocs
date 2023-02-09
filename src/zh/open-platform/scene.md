@@ -23,7 +23,7 @@
 
 ### 授权流程
 
-![](images/开放平台授权.png)
+![](images/authFlow.png)
 
 ### 自建授权链接
 
