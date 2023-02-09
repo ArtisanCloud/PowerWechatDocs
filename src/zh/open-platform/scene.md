@@ -78,12 +78,13 @@ redirect_url?auth_code=xxx&expires_in=600)。
 调用接口生成[authorizer_access_token](https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ticket-token/getAuthorizerAccessToken.html)，然后以该 token 调用公众号或小程序的相关 API。
 1. [使用授权码获取授权信息](https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/ThirdParty/token/authorization_info.html)  
 当用户在第三方平台授权页中完成授权流程后，第三方平台开发者可以在回调 URI 中通过 URL 参数获取授权码。使用以下接口可以换取公众号/小程序的授权信息。  
-建议保存授权信息中的刷新令牌(authorizer_refresh_token)
+> 建议保存授权信息中的刷新令牌(authorizer_refresh_token)
 2. [获取授权帐号调用令牌](https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ticket-token/getAuthorizerAccessToken.html)
 该接口用于获取授权帐号的authorizer_access_token。  
-authorizer_access_token 有效期为 2 小时，authorizer_access_token 失效时，可以使用 authorizer_refresh_token 获取新的 authorizer_access_token。
+authorizer_access_token 有效期为 2 小时，authorizer_access_token 失效时，可以使用 authorizer_refresh_token 
+> 获取新的 authorizer_access_token，并且缓存。
 
-[查看官方使用API生成授权token的流程文档](https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/Before_Develop/creat_token.html)
+[查看官方生成授权token的流程文档](https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/Before_Develop/creat_token.html)
 
 ## 场景二：商家自己开设多个开放平台账号，统一运营多个小程序和公众号业务
 
