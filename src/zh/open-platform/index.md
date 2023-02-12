@@ -3,25 +3,6 @@
 
 > 在使用之前，你需要先了解微信官方的授权流程： [授权流程技术说明](https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1453779503&token=&lang=)
 
-## 初始化实例
-
-``` go
-OpenPlatformApp, err := openPlatform.NewOpenPlatform(&openPlatform.UserConfig{
-  AppID:  "", // 开放平台第三方平台 APPID
-  Secret: "", // 开放平台第三方平台 Secret
-
-  Token:  "", // 开放平台第三方平台 Token
-  AESKey: "", // 开放平台第三方平台 AES Key
-
-  Log: openPlatform.Log{
-    Level: "debug",
-    File:  "./wechat.log",
-  }, // 日志输出位置
-  Cache:     cache, // token缓存
-  HttpDebug: true, // 打开后会显示PowerWeChat调用微信API的请求参数和响应结果
-  Debug:     false,
-})
-```
 
 ## 获取用户授权页 URL
 

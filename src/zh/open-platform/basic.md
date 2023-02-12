@@ -20,7 +20,7 @@
 
 
 ### 第三方平台账号
-可以理解为一个服务商和不同商户之间的对应关系，所开设的关系对象。  
+可以理解为一个服务商和不同商户应用之间的对应关系，所开设的关系对象。  
 它是开放平台下的子集。
 
 [创建与配置第三方平台准备工作](https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/operation/thirdparty/prepare.html)
