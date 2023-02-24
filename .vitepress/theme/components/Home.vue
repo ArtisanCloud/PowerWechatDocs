@@ -66,13 +66,19 @@ import GithubStar from './GithubStar.vue'
       <div>
         <h1>使用者案例：欢迎提供你们的案例</h1>
         <br>
-        <div style='text-align: center; border: 0px black solid; padding-left:  380px'>
-          <a href='https://www.yuque.com/okwvip/to6810/esu7xc' target='_blank'
-             title='题库云SaaS平台是一个，专做线上答题、线上视频教学、线上阅读等多功能智能应用平台。'>
-            <img width='64'
-                 src='/public/images/case-tiku.jpg'
-                 alt='Logo'>
-          </a>
+        <div style='text-align: justify; display: flex; border: 0px black solid; padding-left: 340px'>
+            <a href='https://www.yuque.com/okwvip/to6810/esu7xc' target='_blank'
+               title='题库云SaaS平台是一个，专做线上答题、线上视频教学、线上阅读等多功能智能应用平台。'>
+              <img width='64'
+                   src='/public/images/case-tiku.jpg'
+                   alt='Logo'>
+            </a>
+            <a  href='https://v1zz.10huisp.com/bazaar/#/index' target='_blank'
+                title='广西建设教育服务共享课件超市'>
+              <img width='64'
+                   src='/public/images/case-gxkj.jpg'
+                   alt='Logo'>
+            </a>
         </div>
 
       </div>
