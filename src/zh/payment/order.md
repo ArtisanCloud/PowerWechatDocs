@@ -30,7 +30,7 @@ options := &request.RequestJSAPIPrepay{
 //options.SetNotifyUrl("https://pay.xxx.com/wx/notify")
 
 // 下单
-response, err := services.PaymentApp.Order.JSAPITransaction(options)
+response, err := services.PaymentApp.Order.JSAPITransaction(ctx,options)
 
 if err != nil {
   panic(err)

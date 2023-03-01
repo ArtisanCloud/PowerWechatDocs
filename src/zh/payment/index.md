@@ -16,11 +16,11 @@ date: 2021-07-06
 PaymentService, err := payment.NewPayment(&payment.UserConfig{
   AppID:       "[app_id]",         // 小程序、公众号或者企业微信的appid
   MchID:       "[mch_id]",         // 商户号 appID
-  MchApiV3Key: "[mch_api_v3_key]", //
-  Key:         "[key]",
-  CertPath:    "[wx_cert_path]",
-  KeyPath:     "[wx_key_path]",
-  SerialNo:    "[serial_no]",
+  MchApiV3Key: "[mch_api_v3_key]", // 微信V3接口调用必填
+  Key:         "[key]",            // 微信V2接口调用必填
+  CertPath:    "[wx_cert_path]",   // 商户后台支付的Cert证书路径
+  KeyPath:     "[wx_key_path]",    // 商户后台支付的Key证书路径
+  SerialNo:    "[serial_no]",      // 商户支付证书序列号
   NotifyURL:   "[notify_url]",
   HttpDebug:   true,
   Log: payment.Log{

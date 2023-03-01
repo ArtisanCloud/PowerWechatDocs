@@ -9,20 +9,18 @@ date: 2021-07-06
 
 ``` go
 // 下单，获取到微信返回的prepay_id
-response, err := PaymentService.Order.Unify(&object.HashMap{
-  "amount": &object.HashMap{
-    "total":    1, // 单位是分。 当前支付金额是1分
-    "currency": "CNY",
-  },
-  "attach":       "自定义数据说明",
-  "description":  "Image形象店-深圳腾大-QQ公仔",
-  "mchid":        "1611854986",
-  "notify_url":   "https://pay.example.com/wx/notify",
-  "out_trade_no": "5519778939773395659222199398", // 这里是商户订单号，不能重复提交给微信
-  "payer": &object.HashMap{
-    "openid": "oAuaP0TRUMwP169nQfg7XCEAw3HQ",  // 用户的openid， 记得也是动态的。
-  },
-}, false)
+response, err := PaymentService.Order.JSAPITransaction(ctx, &request2.RequestJSAPIPrepay{
+		Amount: &request2.JSAPIAmount{
+			Total:    1,
+			Currency: "CNY",
+		},
+		Attach:      "自定义数据说明",
+		Description: "Image形象店-深圳腾大-QQ公仔",
+		OutTradeNo:  "5519778939773395659222498002", // 这里是商户订单号，不能重复提交给微信
+		Payer: &request2.JSAPIPayer{
+			OpenID: "o4QEk5Mf1Do7utS7-SF5Go30s8i4", // 用户的openid， 记得也是动态的。
+		},
+})
 
 if err != nil {
   log.Fatalf("error: %s", err)
