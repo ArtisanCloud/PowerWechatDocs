@@ -35,7 +35,24 @@ OfficialAccountApp.OAuth.UserFromToken("[token]")
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_webpage_authorization.html)
 
 
+## 以下是群里的用户总结使用的场景，可以参考：
 
+1. snsapi_base，TokenFromCode 可以获取到 token 和 openid，再通过公众号的【用户信息】接口去获取 unionid （需要已关注公众号，否则为空）
+
+2. snsapi_userinfo，code 可直接换取拿到 openId, unionId, token，需要头像昵称，若通过 accessToken 去获取更详细的用户信息（UserFromToken）。
+
+```go
+// 拉取用户信息（需scope为snsapi userinfo)
+tokenResponse, err := officialAccountApp.OAuth.TokenFromCode(authCode)
+if err != nil {
+  return
+}
+accessToken := (*tokenResponse)["access_token"].(string)
+unionID := (*tokenResponse) ["unionid"].(string)
+openID := (*tokenResponse) ["openid"].(string)
+user,_ := officialAccountApp.0Auth.UserFromToken(accessToken,openID)
+
+```
 
 ## 使用示例
 

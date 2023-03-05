@@ -19,7 +19,7 @@ MiniProgramApp.Auth.Session(code)
 适用于小程序基础库**2.21.2** 
 
 ``` go
-MiniProgramApp.PhoneNumber.GetUserPhoneNumber(code)
+MiniProgramApp.PhoneNumber.GetUserPhoneNumber(ctx, code)
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/phonenumber/phonenumber.getPhoneNumber.html)
@@ -42,7 +42,7 @@ data, err := MiniProgramApp.Encryptor.DecryptData(encryptData, sessionKey, iv)
 
 ``` go
 hash =:"f0419b903ec2b01fb2bf4f1944f91db0cd1f298bf9758de8f1fe5b63bc85eff7"
-MiniProgramApp.Base.CheckEncryptedData(hash)
+MiniProgramApp.Base.CheckEncryptedData(ctx, hash)
 ```
 
 ::: tip
