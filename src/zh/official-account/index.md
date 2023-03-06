@@ -11,7 +11,7 @@ date: 2021-09-21
 具体如下：
 
 ``` go
-OfficialAccountApp, err := officialAccount.NewOfficialAccount(ctx,&officialAccount.UserConfig{
+OfficialAccountApp, err := officialAccount.NewOfficialAccount(&officialAccount.UserConfig{
   AppID:  "[appid]", // 公众号、小程序的appid
   Secret: "[app secret]", // 
 
