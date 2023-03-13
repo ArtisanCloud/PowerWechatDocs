@@ -13,7 +13,6 @@ H5支付、公众号支付、扫码支付、支付中签约都是使用这个接
 
 ``` go
 options := &request.RequestJSAPIPrepay{
-  ctx,
   Amount: &request.JSAPIAmount{
     Total:    1,
     Currency: "CNY",
