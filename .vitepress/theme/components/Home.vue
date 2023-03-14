@@ -79,6 +79,12 @@ import GithubStar from './GithubStar.vue'
                    src='/public/images/case-gxkj.jpg'
                    alt='Logo'>
             </a>
+            <a  href='https://courier.hanhaojie.top/' target='_blank'
+                title='辛达快递小程序'>
+              <img width='64'
+                   src='https://courier.hanhaojie.top/api/uploads/file/96d6f2e7e1f705ab5e59c84a6dc009b2_20221116010620.jpg'
+                   alt='Logo'>
+            </a>
         </div>
 
       </div>
