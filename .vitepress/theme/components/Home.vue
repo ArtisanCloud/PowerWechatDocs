@@ -66,25 +66,31 @@ import GithubStar from './GithubStar.vue'
       <div>
         <h1>使用者案例：欢迎提供你们的案例</h1>
         <br>
-        <div style='text-align: justify; display: flex; border: 0px black solid; padding-left: 340px'>
-            <a href='https://www.yuque.com/okwvip/to6810/esu7xc' target='_blank'
+        <div class='case-view'>
+          <div class='case-style'>
+            <a href='https://www.tiku-cloud.com' target='_blank'
                title='题库云SaaS平台是一个，专做线上答题、线上视频教学、线上阅读等多功能智能应用平台。'>
               <img width='64'
                    src='/public/images/case-tiku.jpg'
                    alt='Logo'>
             </a>
-            <a  href='https://v1zz.10huisp.com/bazaar/#/index' target='_blank'
-                title='广西建设教育服务共享课件超市'>
+          </div>
+          <div class='case-style'>
+            <a href='https://v1zz.10huisp.com/bazaar/#/index' target='_blank'
+               title='广西建设教育服务共享课件超市'>
               <img width='64'
                    src='/public/images/case-gxkj.jpg'
                    alt='Logo'>
             </a>
-            <a  href='https://courier.hanhaojie.top/' target='_blank'
-                title='辛达快递小程序'>
+          </div>
+          <div class='case-style'>
+            <a href='https://courier.hanhaojie.top/' target='_blank'
+               title='辛达快递小程序'>
               <img width='64'
                    src='https://courier.hanhaojie.top/api/uploads/file/96d6f2e7e1f705ab5e59c84a6dc009b2_20221116010620.jpg'
                    alt='Logo'>
             </a>
+          </div>
         </div>
 
       </div>
@@ -304,6 +310,22 @@ html:not(.dark) .accent,
 
 .star-note a {
   text-decoration: underline;
+}
+
+
+.case-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0px black solid;
+  /*padding-left: 340px*/
+}
+
+.case-style {
+  margin: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10%;
+
 }
 
 </style>
