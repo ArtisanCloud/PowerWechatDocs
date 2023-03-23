@@ -91,6 +91,14 @@ import GithubStar from './GithubStar.vue'
                    alt='Logo'>
             </a>
           </div>
+          <div class='case-style'>
+            <a href='https://aibb.linktmd.com/' target='_blank'
+               title='AIBB'>
+              <img width='64'
+                   src='https://aibb.linktmd.com/assets/images/app.jpg'
+                   alt='Logo'>
+            </a>
+          </div>
         </div>
 
       </div>

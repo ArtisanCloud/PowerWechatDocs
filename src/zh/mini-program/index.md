@@ -40,6 +40,26 @@ MiniProgramApp, err := miniProgram.NewMiniProgram(&miniProgram.UserConfig{
 
 小程序唯一凭证密钥，即 AppSecret，获取方式同 AppID 
 
+### Token
+
+- 类型: `string`
+- 必传: `是`
+- 示例: `vlhkaO8PW6UYyRgWCgb3UwF`
+
+微信回调消息的Token，请到微信后台获取。
+
+
+### AESKey
+
+- 类型: `string`
+- 必传: `是`
+- 示例: `Q8gQF7Lob3q4XTECnslZir8I99UbX`
+
+微信回调消息的密钥，即 AESKey，请到微信后台获取。
+> 如果暂时没有Token和AESKey，可以随机给予一个初始化的字符串，如上案例。
+> 否则会出现报错"初始化报错 illegal base64 data at input byte 0"
+
+
 ### Log （TODO）
 
 - 类型: `miniProgram.Log`
