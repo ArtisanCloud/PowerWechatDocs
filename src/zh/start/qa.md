@@ -12,9 +12,9 @@ date: 2021-07-06
 * 如果使用sdk中，没有及时更新到微信到功能变更怎么办？
   * 可以试着按照你到需求，修改代码，然后提交Pull Request，我们很欢迎你们来做贡献
   * 你也可以添加我们的联系方式，直接寻求帮助
-  * 如果太紧急，也可以试着用我们提供的对象到http请求函数，来访问微信到接口,比如下面企业微信服务对象中，就可以通过BaseClient.HttpPostJson
+  * 如果太紧急，也可以试着用我们提供的对象到http请求函数，来访问微信到接口,比如下面企业微信服务对象中，就可以通过BaseClient.Request
   ```go
-   rs, err := services.WeComApp.Base.BaseClient.HttpPostJson(
+   rs, err := services.WeComApp.Base.BaseClient.Request(
 		{ctx},    // 通用的context
 		{url},    // baseURI已经在对象中存在，只需要提供URI，比如 "cgi-bin/corpgroup/corp/list_app_share_info"
 		{method}, //  http.MethodPost / http.MethodGet

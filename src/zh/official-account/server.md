@@ -23,7 +23,7 @@ OfficialAccountApp, err := officialAccount.NewOfficialAccount(&officialAccount.U
 	Token:  conf.OffiAccount.MessageToken,
 	AESKey: conf.OffiAccount.MessageAesKey,
 
-	ResponseType: os.Getenv("response_type"),
+	// ResponseType: os.Getenv("response_type"),
 	Log: officialAccount.Log{
 		Level: "debug",
 		File:  "./wechat.log",
@@ -113,14 +113,16 @@ import (
 	}
 
 	// 选择1： 直接把gin context writer传入，会自动回复。
-	err = rs.Send(c.Writer)
+	err = helper.HttpResponseSend(rs, c.Writer)
 	if err != nil {
 		panic(err)
 	}
+	return
 
 	// 选择2： 或者是把内容读取出来
-	//text, _ := ioutil.ReadAll(rs.Body)
-	//c.String(http.StatusOK, string(text))
+	text, _ := ioutil.ReadAll(rs.Body)
+	c.String(http.StatusOK, string(text))
+	return
 ```
 
 

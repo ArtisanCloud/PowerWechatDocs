@@ -14,13 +14,16 @@ date: 2021-07-06
 ``` go
 
 PaymentService, err := payment.NewPayment(&payment.UserConfig{
-  AppID:       "[app_id]",         // 小程序、公众号或者企业微信的appid
-  MchID:       "[mch_id]",         // 商户号 appID
-  MchApiV3Key: "[mch_api_v3_key]", // 微信V3接口调用必填
-  Key:         "[key]",            // 微信V2接口调用必填
-  CertPath:    "[wx_cert_path]",   // 商户后台支付的Cert证书路径
-  KeyPath:     "[wx_key_path]",    // 商户后台支付的Key证书路径
-  SerialNo:    "[serial_no]",      // 商户支付证书序列号
+  AppID:              "[app_id]",                 // 小程序、公众号或者企业微信的appid
+  MchID:              "[mch_id]",                 // 商户号 appID
+  MchApiV3Key:        "[mch_api_v3_key]",         // 微信V3接口调用必填
+  Key:                "[key]",                    // 微信V2接口调用必填
+  CertPath:           "[wx_cert_path]",           // 商户后台支付的Cert证书路径
+  KeyPath:            "[wx_key_path]",            // 商户后台支付的Key证书路径
+  SerialNo:           "[serial_no]",              // 商户支付证书序列号
+  CertificateKeyPath: "[certificate_key_path]",   // 微信支付平台证书的Key证书路径,m微信V3,[选填]
+  WechatPaySerial:    "[wechat_pay_serial]",      // 微信支付平台证书序列号,微信V3，[选填]
+  RSAPublicKeyPath:   "[wx_rsa_public_key_path]", // 商户支付证书序列号,微信V2，[选填]
   NotifyURL:   "[notify_url]",
   HttpDebug:   true,
   Log: payment.Log{
@@ -90,14 +93,14 @@ PaymentService, err := payment.NewPayment(&payment.UserConfig{
 - 必传: `是`
 - 示例: `/.../apiclient_key.pem` 
 
-API V3私钥。
+商户API V3私钥。
 
 ### SerialNo
 - 类型: `string`
 - 必传: `是`
 - 示例: `2655A2CD634B06C2A86B28780228A997D047B01A` 
 
-微信支付V3证书的序列号。
+商户号API V3证书的序列号。
 获取证书调用方法：
 ``` bash
 openssl x509 -noout -serial -in /.../apiclient_cert.pem
@@ -106,6 +109,42 @@ openssl x509 -noout -serial -in /.../apiclient_cert.pem
 ```
 > serial=2655A2CD634B06C2A86B28780228A997D047B01A
 ```
+
+
+
+
+### CertificateKeyPath
+
+- 类型: `string`
+- 必传: `否`
+- 示例: `/.../wx_rsa_public_key.pem`
+
+微信支付API v3使用微信支付 的平台公钥（不是商户私钥 ）进行应答签名。
+[获取请详见](./security.md)
+[官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/wechatpay5_1.shtml)
+
+
+### WechatPaySerial
+
+- 类型: `string`
+- 必传: `否`
+- 示例: `5157F09EFDC096DE15EBE81A47057A7232F1B8E1`
+ 
+[获取请详见](./security.md)，获取微信支付V3平台证书接口时，微信会一并返回  
+[官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/wechatpay5_1.shtml)
+
+### RSAPublicKeyPath
+
+- 类型: `string`
+- 必传: `否`
+- 示例: `/.../wx_rsa_public_key.pem`
+
+微信支付API v2使用微信支付 的平台公钥（不是商户私钥 ）进行应答签名。
+[获取请详见](https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay_yhk.php?chapter=25_7&index=4)
+[官方文档](https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay_yhk.php?chapter=25_7&index=4)
+
+
+WechatPaySerial
 
 ### NotifyURL
 

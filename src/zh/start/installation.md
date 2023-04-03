@@ -14,7 +14,7 @@ date: 2021-07-06
 ## 安装 PowerWeChat v3（推荐）
 
 ``` bash
-> go get -u github.com/ArtisanCloud/PowerWeChat/v3/
+> go get -u github.com/ArtisanCloud/PowerWeChat/v3
 ```
 
 v3版本已经推出。

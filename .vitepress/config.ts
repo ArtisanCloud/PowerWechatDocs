@@ -79,6 +79,7 @@ export const sidebar = {
     text: '微信支付',
     items: [
       { text: '入门', link: '/zh/payment/index' },
+      { text: '安全', link: '/zh/payment/security' },
       { text: '订单', link: '/zh/payment/order' },
       { text: '退款', link: '/zh/payment/refund' },
       { text: '对账单', link: '/zh/payment/bill' },
