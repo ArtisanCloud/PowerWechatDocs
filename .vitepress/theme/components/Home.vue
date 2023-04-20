@@ -99,6 +99,14 @@ import GithubStar from './GithubStar.vue'
                    alt='Logo'>
             </a>
           </div>
+          <div class='case-style'>
+            <a href='https://aiapp.cc/' target='_blank'
+               title='创作王是一个全能型智能创作平台，可以智能回答、智能创作、智能编写、智能翻译、智能写代码等，帮助您解决各种创作难题。我们提供小红书创作、今日头条创作、知乎问答创作、微博创作、公众号创作等多种场景下不同风格的文章创作，以及视频口播稿、SWOT分析法、英文写作、节日祝福、夸夸神器、塔罗牌预测、解梦神器等多种创作工具。AIBB'>
+              <img width='64'
+                   src='https://aiapp.oss-cn-hangzhou.aliyuncs.com/uploads/20230407/3e8e4766-ca51-4192-bca2-4a0c02f4c0e8_Logo.png'
+                   alt='Logo'>
+            </a>
+          </div>
         </div>
 
       </div>

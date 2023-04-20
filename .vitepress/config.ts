@@ -89,7 +89,8 @@ export const sidebar = {
       { text: '企业付款', link: '/zh/payment/work-pay' },
       { text: '商户付款', link: '/zh/payment/merchant-pay' },
       { text: '撤销订单', link: '/zh/payment/retrieve-order' },
-      { text: '分账', link: '/zh/payment/profit-share' }
+      { text: '分账', link: '/zh/payment/profit-share' },
+      { text: '服务商支付', link: '/zh/payment/partner' }
     ]
   }, {
     text: '企业微信',

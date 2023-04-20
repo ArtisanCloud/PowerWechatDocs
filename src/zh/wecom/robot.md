@@ -151,9 +151,16 @@ WeComApp.GroupRobot.SendTemplateCard(ctx,key, msg)
 
 :::
 
-##  文件上传接口（TODO）
+##  文件上传接口
 
-功能还未做
+```go 
+
+path:="D:/test.jpg"
+WeComApp.GroupRobot.UploadMedia(ctx,key, path)
+
+```
+
+
 
 > 素材上传得到media_id，该media_id仅三天内有效
 > media_id只能是对应上传文件的机器人可以使用
