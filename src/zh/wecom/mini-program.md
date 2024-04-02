@@ -14,7 +14,7 @@ miniProgramApp, err := WeComApp.MiniProgram()
 if err != nil {
 	panic(err)
 }
-res, err := miniProgramApp.Auth.Session("[code]")
+res, err := miniProgramApp.Auth.Session(ctx,"[code]")
 if err != nil {
 	panic(err)
 }

@@ -27,7 +27,7 @@ PaymentService, err := payment.NewPayment(&payment.UserConfig{
 
 
 ``` go
-paymentService.Transfer.ToBalance(&power.HashMap{
+paymentService.Transfer.ToBalance(ctx,&power.HashMap{
   "partner_trade_no": "1233455", // 商户订单号，需保持唯一性(只能是字母或者数字，不能包含有符号)
   "openid": "oxTWIuGaIt6gTKsQRLau2M0yL16E", //   商户appid下，某用户的openid
   "check_name": "FORCE_CHECK", // NO_CHECK：不校验真实姓名; FORCE_CHECK：强校验真实姓名
@@ -42,7 +42,7 @@ paymentService.Transfer.ToBalance(&power.HashMap{
 ## 企业付款到银行卡
 
 ``` go
-paymentService.Transfer.ToBankCard(&request.RequestToBankCard{
+paymentService.Transfer.ToBankCard(ctx, &request.RequestToBankCard{
   Amount: 100,
   BankCode: "xxxxx",
   Desc: "xxxxx",
@@ -64,7 +64,7 @@ paymentService.Transfer.ToBankCard(&request.RequestToBankCard{
 ## 查询付款到零钱的订单
 
 ```go
-paymentService.Transfer.QueryBalanceOrder("[partnerTradeNo]")
+paymentService.Transfer.QueryBalanceOrder(ctx,"[partnerTradeNo]")
 ```
 
 ### partnerTradeNo
@@ -82,7 +82,7 @@ paymentService.Transfer.QueryBalanceOrder("[partnerTradeNo]")
 ## 查询付款到银行卡的订单
 
 ```go
-paymentService.Transfer.QueryBankCardOrder("[partnerTradeNo]")
+paymentService.Transfer.QueryBankCardOrder(ctx,"[partnerTradeNo]")
 ```
 
 ### partnerTradeNo

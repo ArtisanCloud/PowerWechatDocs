@@ -14,7 +14,7 @@ date: 2021-07-06
 在使用前，请确认`payment.UserConfig`里面配置了的`CertPath`和`KeyPath`，比较完整的配置参考[介绍](./index)
 
 ``` go
-PaymentService, err := payment.NewPayment(&payment.UserConfig{
+PaymentService, err := payment.NewPayment(ctx,&payment.UserConfig{
   // ...
   CertPath: "[your cert path]",
   KeyPath:  "[your key path]",
@@ -33,7 +33,7 @@ paymentService.SetSubMerchant("[sub_mch_id]", "")
 ### 普通红包
 
 ```go
-paymentService.RedPack.SendNormal(&power.HashMap{
+paymentService.RedPack.SendNormal(ctx,&power.HashMap{
   "mch_billno": "10000098201411111234567890", // 商户订单号（每个订单号必须唯一）接口根据商户订单号支持重入，如出现超时可再调用。
   "send_name": "天虹百货", // 红包发送者名称
   "re_openid": "oxTWIuGaIt6gTKsQRLau2M0yL16E", // 接受红包的用户openid
@@ -54,7 +54,7 @@ paymentService.RedPack.SendNormal(&power.HashMap{
 ## 小程序红包
 
 ``` go
-paymentService.RedPack.SendMiniProgramNormal(&power.HashMap{
+paymentService.RedPack.SendMiniProgramNormal(ctx,&power.HashMap{
   "mch_billno": "10000098201411111234567890", // 商户订单号（每个订单号必须唯一）接口根据商户订单号支持重入，如出现超时可再调用。
   "send_name": "天虹百货", // 红包发送者名称
   "re_openid": "oxTWIuGaIt6gTKsQRLau2M0yL16E", // 接受红包的用户openid
@@ -75,7 +75,7 @@ paymentService.RedPack.SendMiniProgramNormal(&power.HashMap{
 裂变红包：一次可以发放一组红包。首先领取的用户为种子用户，种子用户领取一组红包当中的一个，并可以通过社交分享将剩下的红包给其他用户。裂变红包充分利用了人际传播的优势。
 
 ``` go
-paymentService.RedPack.SendGroup(&power.HashMap{
+paymentService.RedPack.SendGroup(ctx,&power.HashMap{
   "mch_billno": "10000098201411111234567890", // 商户订单号（每个订单号必须唯一）接口根据商户订单号支持重入，如出现超时可再调用。
   "send_name": "天虹百货", // 红包发送者名称
   "re_openid": "oxTWIuGaIt6gTKsQRLau2M0yL16E", // 接受红包的用户openid

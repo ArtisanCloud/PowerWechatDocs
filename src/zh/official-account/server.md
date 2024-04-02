@@ -23,7 +23,7 @@ OfficialAccountApp, err := officialAccount.NewOfficialAccount(&officialAccount.U
 	Token:  conf.OffiAccount.MessageToken,
 	AESKey: conf.OffiAccount.MessageAesKey,
 
-	ResponseType: os.Getenv("response_type"),
+	// ResponseType: os.Getenv("response_type"),
 	Log: officialAccount.Log{
 		Level: "debug",
 		File:  "./wechat.log",
@@ -60,8 +60,8 @@ text, _ := ioutil.ReadAll(rs.Body)
 
 ``` go
 import (
-	models2 "github.com/ArtisanCloud/PowerWeChat/v2/src/kernel/models"
-	"github.com/ArtisanCloud/PowerWeChat/v2/src/officialAccount/server/handlers/models"
+	models2 "github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/models"
+	"github.com/ArtisanCloud/PowerWeChat/v3/src/officialAccount/server/handlers/models"
 )
 	rs, err := services.OfficialAccountApp.Server.Notify(c.Request, func(event contract.EventInterface) interface{} {
 		fmt.Println("event", event)
@@ -85,7 +85,7 @@ import (
 // 
 
 		// 这里需要获取到事件类型，然后把对应的结构体传递进去进一步解析
-		// 所有包含的结构体请参考： https://github.com/ArtisanCloud/PowerWeChat/v2/src/officialAccount/server/handlers/models
+		// 所有包含的结构体请参考： https://github.com/ArtisanCloud/PowerWeChat/v3/src/officialAccount/server/handlers/models
 		switch event.GetMsgType() {
 		case models2.CALLBACK_MSG_TYPE_TEXT:
 			msg := models.MessageText{}
@@ -113,14 +113,16 @@ import (
 	}
 
 	// 选择1： 直接把gin context writer传入，会自动回复。
-	err = rs.Send(c.Writer)
+	err = helper.HttpResponseSend(rs, c.Writer)
 	if err != nil {
 		panic(err)
 	}
+	return
 
 	// 选择2： 或者是把内容读取出来
-	//text, _ := ioutil.ReadAll(rs.Body)
-	//c.String(http.StatusOK, string(text))
+	text, _ := ioutil.ReadAll(rs.Body)
+	c.String(http.StatusOK, string(text))
+	return
 ```
 
 

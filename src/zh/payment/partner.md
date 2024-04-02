@@ -1,6 +1,6 @@
 ---
-title: 订单
-date: 2021-07-06
+title: 服务商平台支付
+date: 2023-04-12
 ---
 
 # 订单
@@ -29,7 +29,7 @@ options := &request.RequestJSAPIPrepay{
 //options.SetNotifyUrl("https://pay.xxx.com/wx/notify")
 
 // 下单
-response, err := services.PaymentApp.Order.JSAPITransaction(ctx,options)
+response, err := services.PaymentApp.Partner.JSAPITransaction(ctx,options)
 
 if err != nil {
   panic(err)
@@ -67,7 +67,7 @@ options := &request2.RequestAppPrepay{
 //options.SetNotifyUrl(ctx,"https://pay.xxx.com/wx/notify")
 
 // 下单
-response, err := services.PaymentApp.Order.TransactionApp(ctx,options)
+response, err := services.PaymentApp.Partner.TransactionApp(ctx,options)
 
 if err != nil {
   panic(err)
@@ -96,7 +96,7 @@ options := &request2.RequestNativePrepay{
 // {
 //   "code_url": "weixin://wxpay/bizpayurl?pr=OZdex6kzz"
 // }
-response, err := services.PaymentApp.Order.TransactionNative(options)
+response, err := services.PaymentApp.Partner.TransactionNative(options)
 ```
 
 [微信官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_4_1.shtml)
@@ -126,12 +126,12 @@ response, err := services.PaymentApp.Order.TransactionNative(options)
 
 ### 根据商户订单号查询
 ```go
-paymentService.Order.QueryByOutTradeNumber("商户系统的内部订单号 [out_trade_no]")
+paymentService.Partner.QueryByOutTradeNumber("商户系统的内部订单号 [out_trade_no]")
 ```
 
 ### 根据微信支付单号查询
 ``` go
-paymentService.Order.QueryByTransactionId("微信支付单号 [transaction_id]")
+paymentService.Partner.QueryByTransactionId("微信支付单号 [transaction_id]")
 ```
 
 查询订单返回结果：

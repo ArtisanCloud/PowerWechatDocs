@@ -26,7 +26,7 @@ WeComContactApp, err := work.NewWork(&work.UserConfig{
 ### 创建成员 
 
 ``` go
-WeComApp.User.Create(&request.RequestUserDetail{
+WeComApp.User.Create(ctx, &request.RequestUserDetail{
   UserID:     "[userId]",
   Name:       "[name]",
   Mobile:     "[mobile]",
@@ -47,7 +47,7 @@ WeComApp.User.Get("[userId]")
 ### 更新成员 
 
 ``` go
-WeComApp.User.Update(&request.RequestUserDetail{
+WeComApp.User.Update(ctx, &request.RequestUserDetail{
   UserID: "[userId]",
   Name:   "[name]",
 })

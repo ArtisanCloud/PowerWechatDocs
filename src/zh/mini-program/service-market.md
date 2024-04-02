@@ -14,7 +14,7 @@ serviceData := &power.HashMap{
   "data_type": 3,
   "ocr_type":  1,
 }
-services.AppMiniProgram.ServiceMarket.InvokeService(&request.RequestServiceMarket{
+services.AppMiniProgram.ServiceMarket.InvokeService(ctx, &request.RequestServiceMarket{
   Service:     "SERVICEID",
   Api:         "APINAME",
   ClientMsgID: "CLIENTMSGID",

@@ -66,13 +66,47 @@ import GithubStar from './GithubStar.vue'
       <div>
         <h1>使用者案例：欢迎提供你们的案例</h1>
         <br>
-        <div style='text-align: center; border: 0px black solid; padding-left:  380px'>
-          <a href='https://www.yuque.com/okwvip/to6810/esu7xc' target='_blank'
-             title='题库云SaaS平台是一个，专做线上答题、线上视频教学、线上阅读等多功能智能应用平台。'>
-            <img width='64'
-                 src='/public/images/case-tiku.jpg'
-                 alt='Logo'>
-          </a>
+        <div class='case-view'>
+          <div class='case-style'>
+            <a href='https://www.tiku-cloud.com' target='_blank'
+               title='题库云SaaS平台是一个，专做线上答题、线上视频教学、线上阅读等多功能智能应用平台。'>
+              <img width='64'
+                   src='/public/images/case-tiku.jpg'
+                   alt='Logo'>
+            </a>
+          </div>
+          <div class='case-style'>
+            <a href='https://v1zz.10huisp.com/bazaar/#/index' target='_blank'
+               title='广西建设教育服务共享课件超市'>
+              <img width='64'
+                   src='/public/images/case-gxkj.jpg'
+                   alt='Logo'>
+            </a>
+          </div>
+          <div class='case-style'>
+            <a href='https://courier.hanhaojie.top/' target='_blank'
+               title='辛达快递小程序'>
+              <img width='64'
+                   src='https://courier.hanhaojie.top/api/uploads/file/96d6f2e7e1f705ab5e59c84a6dc009b2_20221116010620.jpg'
+                   alt='Logo'>
+            </a>
+          </div>
+          <div class='case-style'>
+            <a href='https://aibb.linktmd.com/' target='_blank'
+               title='AIBB'>
+              <img width='64'
+                   src='https://aibb.linktmd.com/assets/images/app.jpg'
+                   alt='Logo'>
+            </a>
+          </div>
+          <div class='case-style'>
+            <a href='https://aiapp.cc/' target='_blank'
+               title='创作王是一个全能型智能创作平台，可以智能回答、智能创作、智能编写、智能翻译、智能写代码等，帮助您解决各种创作难题。我们提供小红书创作、今日头条创作、知乎问答创作、微博创作、公众号创作等多种场景下不同风格的文章创作，以及视频口播稿、SWOT分析法、英文写作、节日祝福、夸夸神器、塔罗牌预测、解梦神器等多种创作工具。AIBB'>
+              <img width='64'
+                   src='http://aiapp.oss-cn-hangzhou.aliyuncs.com/home/czw_rwm_img.jpg'
+                   alt='Logo'>
+            </a>
+          </div>
         </div>
 
       </div>
@@ -292,6 +326,22 @@ html:not(.dark) .accent,
 
 .star-note a {
   text-decoration: underline;
+}
+
+
+.case-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0px black solid;
+  /*padding-left: 340px*/
+}
+
+.case-style {
+  margin: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10%;
+
 }
 
 </style>

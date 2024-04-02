@@ -11,7 +11,7 @@ description: 使用PowerWeChat可以方便的管理小程序直播，包含直�
 ### 创建直播间
 
 ``` go
-MiniProgramApp.Broadcast.CreateRoom(&request.RequestBroadcastCreateRoom{
+MiniProgramApp.Broadcast.CreateRoom(ctx,&request.RequestBroadcastCreateRoom{
     Name:          "直播测试3",
     CoverImg:      "xisnqd5vEly5mjX9r3VjW1XGinnZjyEHcv0czEKYw8SBff7lixnbCIrE0QkgStj4",
     StartTime:     1631923200,
@@ -34,7 +34,7 @@ MiniProgramApp.Broadcast.CreateRoom(&request.RequestBroadcastCreateRoom{
 ### 直播间列表
 
 ```go
-MiniProgramApp.Broadcast.GetLiveInfo(&request.RequestBroadcastGetLiveInfo{
+MiniProgramApp.Broadcast.GetLiveInfo(ctx,&request.RequestBroadcastGetLiveInfo{
   Start: 0,
   Limit: 0,
 })
@@ -47,7 +47,7 @@ MiniProgramApp.Broadcast.GetLiveInfo(&request.RequestBroadcastGetLiveInfo{
 ### 获取直播间回放
 
 ``` go
-MiniProgramApp.Broadcast.GetLiveReplay(&request.RequestBroadcastGetLiveReplay{
+MiniProgramApp.Broadcast.GetLiveReplay(ctx,&request.RequestBroadcastGetLiveReplay{
   Action: "get_replay",
   RoomID: 4,
   Start: 0,
@@ -62,7 +62,7 @@ MiniProgramApp.Broadcast.GetLiveReplay(&request.RequestBroadcastGetLiveReplay{
 ### 直播间导入商品
 
 ``` go
-MiniProgramApp.Broadcast.AddGoods(&request.RequestBroadcastAddGoods{
+MiniProgramApp.Broadcast.AddGoods(ctx, &request.RequestBroadcastAddGoods{
   IDs:    []int{6, 7},
   RoomID: 3,
 })
@@ -83,7 +83,7 @@ MiniProgramApp.Broadcast.DeleteRoom(1)
 ### 编辑直播间
 
 ``` go
-MiniProgramApp.Broadcast.EditRoom(&request.RequestBroadcastEditRoom{
+MiniProgramApp.Broadcast.EditRoom(ctx, &request.RequestBroadcastEditRoom{
     Id:            2,
     Name:          "直播测试",
     CoverImg:      "xisnqd5vEly5mjX9r3VjW1XGinnZjyEHcv0czEKYw8SBff7lixnbCIrE0QkgStj4",
@@ -134,7 +134,7 @@ MiniProgramApp.Broadcast.GetSharedCode(2, "a=1&b=2")
 ### 添加管理直播间小助手
 
 ``` go
-MiniProgramApp.Broadcast.AddAssistant(&request.RequestBroadcastAddAssistant{
+MiniProgramApp.Broadcast.AddAssistant(ctx, &request.RequestBroadcastAddAssistant{
   RoomID: 4,
   Users: []request.RequestBroadcastAddAssistantUser{
     {
@@ -154,7 +154,7 @@ MiniProgramApp.Broadcast.AddAssistant(&request.RequestBroadcastAddAssistant{
 ## 修改管理直播间小助手
 
 ``` go
-MiniProgramApp.Broadcast.ModifyAssistant(&request.RequestBroadcastModifyAssistant{
+MiniProgramApp.Broadcast.ModifyAssistant(ctx, &request.RequestBroadcastModifyAssistant{
   RoomID:   4,
   UserName: "walle1",
   NickName: "robot3",
@@ -166,7 +166,7 @@ MiniProgramApp.Broadcast.ModifyAssistant(&request.RequestBroadcastModifyAssistan
 ## 删除管理直播间小助手
 
 ``` go
-MiniProgramApp.Broadcast.RemoveAssistant(&request.RequestBroadcastRemoveAssistant{
+MiniProgramApp.Broadcast.RemoveAssistant(ctx, &request.RequestBroadcastRemoveAssistant{
   RoomID:   4,
   UserName: "walle1",
 })
@@ -303,7 +303,7 @@ MiniProgramApp.Broadcast.GoodsVideo(1, 1) // roomId, goodsId
 ### 商品添加并提审
 
 ``` go
-MiniProgramApp.Broadcast.GoodsAdd(&request.RequestBroadcastGoodsAdd{
+MiniProgramApp.Broadcast.GoodsAdd(ctx, &request.RequestBroadcastGoodsAdd{
   GoodsInfo: &request.RequestBroadcastGoodsAddInfo{
     CoverImgUrl: "PZjGoGn7b27AahidBpD-UwJ9823ayNlJ2qliDcU9uQMFSpYkRLxmx_RK0F-iBKj5",
     Name:        "TIT茶杯",
@@ -320,7 +320,7 @@ MiniProgramApp.Broadcast.GoodsAdd(&request.RequestBroadcastGoodsAdd{
 ### 撤回商品审核
 
 ``` go
-MiniProgramApp.Broadcast.GoodsResetAudit(&request.RequestBroadcastGoodsResetAudit{
+MiniProgramApp.Broadcast.GoodsResetAudit(ctx, &request.RequestBroadcastGoodsResetAudit{
   AuditID: 450889673,
   GoodsID: 7,
 })
@@ -349,7 +349,7 @@ MiniProgramApp.Broadcast.GoodsDelete(1) // goodsId
 调用此接口可以更新商品信息，审核通过的商品仅允许更新价格类型与价格，审核中的商品不允许更新，未审核的商品允许更新所有字段， 只传入需要更新的字段。
 
 ``` go
-MiniProgramApp.Broadcast.GoodsUpdate(&request.RequestBroadcastGoodsUpdate{
+MiniProgramApp.Broadcast.GoodsUpdate(ctx, &request.RequestBroadcastGoodsUpdate{
   GoodsInfo: &request.RequestBroadcastGoodsUpdateInfo{
     GoodsId:         1,
     CoverImgUrl:     "PZjGoGn7b27AahidBpD-UwJ9823ayNlJ2qliDcU9uQMFSpYkRLxmx_RK0F-iBKj5",
@@ -406,7 +406,7 @@ MiniProgramApp.Broadcast.DeleteRole("Walle1", 1) // username, role
 ### 查询成员列表
 
 ``` go
-MiniProgramApp.Broadcast.GetRoleList(&request.RequestBroadcastGetRoleList{
+MiniProgramApp.Broadcast.GetRoleList(ctx, &request.RequestBroadcastGetRoleList{
   Role:    1,
   Offset:  0,
   Limit:   10,

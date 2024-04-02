@@ -11,6 +11,7 @@ date: 2021-07-06
 
 ``` go
 options := &request.RequestRefund{
+  ctx,
   TransactionID: transactionID,
   OutRefundNo:   outRefundNo,
   Reason:        "",
@@ -24,7 +25,7 @@ options := &request.RequestRefund{
   GoodsDetail:   nil,
 }
 
-PaymentApp.Refund.Refund(options)
+PaymentApp.Refund.Refund(ctx, options)
 ```
 
 ## 微信支付返回示例

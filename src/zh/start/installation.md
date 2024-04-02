@@ -11,14 +11,30 @@ date: 2021-07-06
 > cd {your_project_location}/{project-name}/
 ```
 
-## 安装 PowerWeChat v2（推荐）
+## 安装 PowerWeChat v3（推荐）
 
-v2版本已经推出，目前公众号在v2版本提供支持，其他部分V1接口有字段有重新统一风格。
+``` bash
+> go get -u github.com/ArtisanCloud/PowerWeChat/v3
+```
+
+v3版本已经推出。
+
+* 接口添加context参数
+* 解决v2的自动refresh token问题
+
+
 
 如果有遇到问题，欢迎点击右上角联系我们。
 
+## 安装 PowerWeChat v2
+
+* 公众号在v2版本提供支持，其他部分V1接口有字段有重新统一风格
+* v2版本稳定版本在v2.0.40
+
+
+
 ``` bash
-> go get -u github.com/ArtisanCloud/PowerWeChat/v2
+> go get -u github.com/ArtisanCloud/PowerWeChat/v2/
 ```
 
 ## 安装 PowerWeChat v1

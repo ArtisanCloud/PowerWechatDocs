@@ -30,7 +30,7 @@ func main() {
   if err != nil {
     panic(err)
   }
-  response := WeComApp.Base.GetCallbackIp()
+  response := WeComApp.Base.GetCallbackIp(nil)
   log.Println(response)
 }
 ```
@@ -41,4 +41,3 @@ func main() {
     "ip_list": ["101.226.103.*", "101.226.62.*"]
 }
 ```
-

@@ -44,7 +44,7 @@ OfficialAccountApp.TemplateMessage.DeletePrivateTemplate("[templateID]")
 ## 发送模板消息
 
 ```go
-OfficialAccountApp.TemplateMessage.Send(&request.RequestTemlateMessage{
+OfficialAccountApp.TemplateMessage.Send(ctx, &request.RequestTemlateMessage{
   ToUser:     toUser,
   TemplateID: templateID,
   URL:        "https://www.artisan-cloud.com/",
@@ -78,7 +78,7 @@ OfficialAccountApp.TemplateMessage.Send(&request.RequestTemlateMessage{
 ## 发送一次性订阅消息
 
 ```go
-OfficialAccountApp.TemplateMessage.SendSubscription(&request.RequestTemlateMessageSubscribe{
+OfficialAccountApp.TemplateMessage.SendSubscription(ctx, &request.RequestTemlateMessageSubscribe{
   ToUser:     toUser,
   TemplateID: templateID,
   URL:        "https://www.artisan-cloud.com/",

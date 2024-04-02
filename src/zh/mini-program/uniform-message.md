@@ -9,7 +9,7 @@ description: 下发小程序和公众号统一的服务消息
 下发小程序和公众号统一的服务消息。
 
 ```go
-MiniProgramApp.UniformMessage.Send(&request.RequestUniformMessageSend{
+MiniProgramApp.UniformMessage.Send(ctx, &request.RequestUniformMessageSend{
   ToUser: "openID",
   WeAppTemplateMsg: &request.WeAppTemplateMsg{
     TemplateID: "TEMPLATE_ID",

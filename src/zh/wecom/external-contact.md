@@ -10,7 +10,7 @@ date: 2021-09-25
 ### 获取配置了客户联系功能的成员列表 
 
 ``` go
-WeComContactApp.ExternalContact.GetFollowUsers()
+WeComContactApp.ExternalContact.GetFollowUsers(ctx)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/92571)
 
@@ -54,12 +54,12 @@ options := &request.RequestAddContactWay{
   },
 }
 
-WeComContactApp.ExternalContactContactWay.Add(options)
+WeComContactApp.ExternalContactContactWay.Add(ctx,options)
 ```
 #### 获取企业已配置的「联系我」方式
 
 ``` go
-WeComContactApp.ExternalContactContactWay.Get("[config_id]")
+WeComContactApp.ExternalContactContactWay.Get(ctx,"[config_id]")
 ```
 
 #### 获取企业已配置的「联系我」列表
@@ -71,7 +71,7 @@ options := &request.RequestListContactWay{
   "CURSOR",
   1000,
 }
-WeComContactApp.ExternalContactContactWay.List(options)
+WeComContactApp.ExternalContactContactWay.List(ctx,options)
 ```
 
 #### 更新企业已配置的「联系我」方式
@@ -116,19 +116,19 @@ options := &request.RequestUpdateContactWay{
   },
 }
 
-WeComContactApp.ExternalContactContactWay.Update(options)
+WeComContactApp.ExternalContactContactWay.Update(ctx,options)
 ```
 
 #### 删除企业已配置的「联系我」方式
 
 ``` go
-WeComContactApp.ExternalContactContactWay.Delete("[configID]")
+WeComContactApp.ExternalContactContactWay.Delete(ctx,"[configID]")
 ```
 
 #### 结束临时会话
 
 ``` go
-WeComContactApp.ExternalContactContactWay.CloseTempChat("[userid]", "[external_userid]")
+WeComContactApp.ExternalContactContactWay.CloseTempChat(ctx,"[userid]", "[external_userid]")
 ```
 
 **客户联系「联系我」管理**的官方文档是同一页面
@@ -144,7 +144,7 @@ WeComContactApp.ExternalContactContactWay.CloseTempChat("[userid]", "[external_u
 企业可通过此接口获取指定成员添加的客户列表。客户是指[配置了客户联系功能的成员](https://work.weixin.qq.com/api/doc/90000/90135/92113#13473/配置可使用客户联系功能的成员)所添加的外部联系人。没有配置客户联系功能的成员，所添加的外部联系人将不会作为客户返回。
 
 ``` go
-WeComContactApp.ExternalContact.List("[userid]")
+WeComContactApp.ExternalContact.List(ctx,"[userid]")
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/92113)
 
@@ -154,13 +154,13 @@ WeComContactApp.ExternalContact.List("[userid]")
 
 ``` go
 cursor := "" // 上次请求返回的next_cursor
-WeComContactApp.ExternalContact.Get("[userid]", cursor)
+WeComContactApp.ExternalContact.Get(ctx,"[userid]", cursor)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/92114)
 
 ### 批量获取客户详情 
 ``` go
-userIDs := []string{c.DefaultQuery("walle", "matrix-x")}
+userIDs := []string{c.DefaultQuery(ctx,"walle", "matrix-x")}
 cursor := "" // 上次请求返回的next_cursor
 WeComContactApp.ExternalContact.BatchGet(userIDs, cursor, 100)
 ```
@@ -181,7 +181,7 @@ options := &request.RequestExternalContactRemark{
   RemarkPicMediaID: "MEDIAID",
 }
 
-WeComContactApp.ExternalContact.Remark(options)
+WeComContactApp.ExternalContact.Remark(ctx,options)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/92115)
 
@@ -192,12 +192,12 @@ WeComContactApp.ExternalContact.Remark(options)
 ``` go
 cursor := "" // 上次请求返回的next_cursor
 limit  := 1000
-WeComContactApp.ExternalContactCustomerStrategy.List(cursor, limit)
+WeComContactApp.ExternalContactCustomerStrategy.List(ctx,cursor, limit)
 ```
 #### 获取规则组详情
 
 ``` go
-WeComContactApp.ExternalContactCustomerStrategy.Get(1) // strategy_id: 规则组id
+WeComContactApp.ExternalContactCustomerStrategy.Get(ctx,1) // strategy_id: 规则组id
 ```
 
 #### 获取规则组管理范围
@@ -206,7 +206,7 @@ WeComContactApp.ExternalContactCustomerStrategy.Get(1) // strategy_id: 规则组
 // strategy_id: 规则组id
 // cursor: 分页游标，可为空
 // limit: 每个分页的成员/部门节点数，默认为1000，最大为1000
-WeComContactApp.ExternalContactCustomerStrategy.GetRange(1, cursor, 1000)
+WeComContactApp.ExternalContactCustomerStrategy.GetRange(ctx,1, cursor, 1000)
 ```
 
 #### 创建新的规则组
@@ -252,7 +252,7 @@ options := &request2.RequestCustomerStrategyCreate{
     },
   },
 }
-WeComContactApp.ExternalContactCustomerStrategy.Create(options)
+WeComContactApp.ExternalContactCustomerStrategy.Create(ctx,options)
 ```
 
 #### 编辑规则组及其管理范围
@@ -309,13 +309,13 @@ options := &request2.RequestCustomerStrategyEdit{
   },
 }
 
-WeComContactApp.ExternalContactCustomerStrategy.Edit(options)
+WeComContactApp.ExternalContactCustomerStrategy.Edit(ctx,options)
 ```
 
 #### 删除规则组
 
 ``` go
-WeComContactApp.ExternalContactCustomerStrategy.Del(1) // strategy_id
+WeComContactApp.ExternalContactCustomerStrategy.Del(ctx,1) // strategy_id
 ```
 
 客户联系规则组的官方文档都在同一页面

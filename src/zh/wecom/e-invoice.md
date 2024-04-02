@@ -19,7 +19,7 @@ description: PowerWechat可以支持报销发票接口，及jsapi用于在应用
 ## 查询电子发票
 
 ``` go
-WeComApp.Invoice.GetInvoiceInfo("[card_id]", "[encrypt_code]")
+WeComApp.Invoice.GetInvoiceInfo(ctx,"[card_id]", "[encrypt_code]")
 ```
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/90284)
@@ -27,7 +27,7 @@ WeComApp.Invoice.GetInvoiceInfo("[card_id]", "[encrypt_code]")
 ## 更新发票状态
 
 ``` go
-WeComApp.Invoice.UpdateInvoiceStatus("[card_id]", "[encrypt_code]", "[reimburse_status]")
+WeComApp.Invoice.UpdateInvoiceStatus(ctx,"[card_id]", "[encrypt_code]", "[reimburse_status]")
 ```
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/90285)
@@ -43,7 +43,7 @@ invoiceList := []*request.RequestCardInvoice{
   {CardID: "cardid_1", EncryptCode: "encrypt_code_1"},
   {CardID: "cardid_2", EncryptCode: "encrypt_code_2"},
 }
-WeComApp.Invoice.UpdateStatusBatch(openID, reimburseStatus, invoiceList)
+WeComApp.Invoice.UpdateStatusBatch(ctx,openID, reimburseStatus, invoiceList)
 ```
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/90286)
@@ -52,6 +52,7 @@ WeComApp.Invoice.UpdateStatusBatch(openID, reimburseStatus, invoiceList)
 
 ``` go
 invoiceList := []*request.RequestCardInvoice{
+  ctx,
   {CardID: "CARDID1", EncryptCode: "ENCRYPTCODE1"},
   {CardID: "CARDID2", EncryptCode: "ENCRYPTCODE2"},
 }

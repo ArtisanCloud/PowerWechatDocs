@@ -8,7 +8,7 @@ date: 2021-07-06
 ## 申请交易账单
 
 ``` go
-paymentService.Bill.GetTradeBill("[bill_date]", "[bill_type]", "[tar_type]")
+paymentService.Bill.GetTradeBill(ctx,"[bill_date]", "[bill_type]", "[tar_type]")
 ```
 
 微信官方文档： https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_1_6.shtml
@@ -16,7 +16,7 @@ paymentService.Bill.GetTradeBill("[bill_date]", "[bill_type]", "[tar_type]")
 ## 申请资金账单
 
 ``` go
-paymentService.Bill.GetFlowBill("[bill_date]", "[account_type]", "[tar_type]")
+paymentService.Bill.GetFlowBill(ctx,"[bill_date]", "[account_type]", "[tar_type]")
 ```
 
 微信官方文档：https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_1_7.shtml

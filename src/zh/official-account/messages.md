@@ -2,24 +2,24 @@
 
 因为有些动态字段需要使用`power.HashMap`来描述，本质上和`gin.H{}`这类对象是一样的。
 ``` go
-import "github.com/ArtisanCloud/PowerWeChat/v2/src/kernel/power"
+import "github.com/ArtisanCloud/PowerWeChat/v3/src/kernel/power"
 ```
 
 ## 文本消息
 ``` go
-messages.NewText("[content]")
+messages.NewText(ctx,"[content]")
 ``` 
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Service_Center_messages.html#%E5%AE%A2%E6%9C%8D%E6%8E%A5%E5%8F%A3-%E5%8F%91%E6%B6%88%E6%81%AF)
 
 ## 图片消息
 ``` go
-messages.NewImage("[mediaID]", &power.HashMap{})
+messages.NewImage(ctx,"[mediaID]", &power.HashMap{})
 ``` 
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Service_Center_messages.html#%E5%AE%A2%E6%9C%8D%E6%8E%A5%E5%8F%A3-%E5%8F%91%E6%B6%88%E6%81%AF)
 
 ## 视频消息
 ``` go
-messages.NewVideo("[mediaID]", &power.HashMap{
+messages.NewVideo(ctx,"[mediaID]", &power.HashMap{
   "title": "test title",
   "description": "test desc...",
   "thumb_media_id": "test thumb media id",
@@ -29,13 +29,14 @@ messages.NewVideo("[mediaID]", &power.HashMap{
 
 ## 声音消息
 ``` go
-messages.NewVoice(mediaID, &power.HashMap{})
+messages.NewVoice(ctx,mediaID, &power.HashMap{})
 ``` 
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Service_Center_messages.html#%E5%AE%A2%E6%9C%8D%E6%8E%A5%E5%8F%A3-%E5%8F%91%E6%B6%88%E6%81%AF)
 
 ## 链接消息
 ``` go
-messages.NewLink(&power.HashMap{
+messages.NewLink(ctx,&power.HashMap{
+  ctx,
   "title":       "ArtisanCloud",
   "description": "desc...",
   "url":         "https://www.artisan-cloud.com",

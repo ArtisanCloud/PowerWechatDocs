@@ -73,7 +73,7 @@ services.MiniProgramApp.Security.MediaCheckAsync(request.RequestSecurityMediaChe
 3. 游戏类用户编辑上传的素材(如答题类小游戏用户上传的问题及答案)检测等。 *频率限制：单个 appId 调用上限为 4000 次/分钟，2,000,000 次/天**
 
 ``` go
-services.MiniProgramApp.Security.MsgSecCheck(&request.RequestSecurityMsgSecCheck{
+services.MiniProgramApp.Security.MsgSecCheck(ctx,&request.RequestSecurityMsgSecCheck{
   OpenID:    openID,
   Scene:     1,
   Version:   2,

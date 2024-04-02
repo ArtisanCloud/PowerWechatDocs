@@ -10,31 +10,32 @@ date: 2021-09-27
 ### 添加客服帐号 
 ``` go
 mediaID := "294DpAog3YA5b9rT`K4PjjfRfYLO0L5qpDHAJIzhhQ2jAEWjb9i661Q4lk8oFnPtmj"
-WeComApp.AccountService.Add("新建的客服帐号", mediaID)
+WeComApp.AccountService.Add(ctx,"新建的客服帐号", mediaID)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/94662)
 
 ### 删除客服帐号 
 ``` go
 openKFID := "wkAJ2GCAAAZSfhHCt7IFSvLKtMPxyJTw"
-WeComApp.AccountService.Del(openKFID)
+WeComApp.AccountService.Del(ctx,openKFID)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/94663)
 
 ### 修改客服帐号 
 ``` go
 options := &request.RequestAccountUpdate{
+  ctx,
   OpenKFID: "wkAJ2GCAAAZSfhHCt7IFSvLKtMPxyJTw",
   Name:     "修改客服名",
   MediaID:  "294DpAog3YA5b9rTK4PjjfRfYLO0L5qpDHAJIzhhQ2jAEWjb9i661Q4lk8oFnPtmj",
 }
-WeComApp.AccountService.Update(options)
+WeComApp.AccountService.Update(ctx,options)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/94664)
 
 ### 获取客服帐号列表 
 ``` go
-WeComApp.AccountService.List()
+WeComApp.AccountService.List(ctx)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/94661)
 
@@ -51,7 +52,7 @@ WeComApp.AccountService.AddContactWay(openKFID, scene)
 ``` go
 openKFID := "kfxxxxxxxxxxxxxx"
 userIDList := []string{"zhangsan", "lisi"}
-WeComApp.AccountServiceServicer.Add(openKFID, userIDList)
+WeComApp.AccountServiceServicer.Add(ctx,openKFID, userIDList)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/94646)
 
@@ -59,14 +60,14 @@ WeComApp.AccountServiceServicer.Add(openKFID, userIDList)
 ``` go
 openKFID := "kfxxxxxxxxxxxxxx"
 userIDList := []string{"zhangsan", "lisi"}
-WeComApp.AccountServiceServicer.Del(openKFID, userIDList)
+WeComApp.AccountServiceServicer.Del(ctx,openKFID, userIDList)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/94647)
 
 ### 获取接待人员列表 
 ``` go
 openKFID := "kfxxxxxxxxxxxxxx"
-WeComApp.AccountServiceServicer.List(openKFID)
+WeComApp.AccountServiceServicer.List(ctx,openKFID)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/94645)
 
@@ -78,7 +79,7 @@ WeComApp.AccountServiceServicer.List(openKFID)
 ``` go
 openKFID := "kfxxxxxxxxxxxxxx"
 externalUserID := "wmxxxxxxxxxxxxxxxxxx"
-WeComApp.AccountServiceState.Get(openKFID, externalUserID)
+WeComApp.AccountServiceState.Get(ctx,openKFID, externalUserID)
 ```
 #### 变更会话状态
 
@@ -88,7 +89,7 @@ externalUserID := "wmxxxxxxxxxxxxxxxxxx"
 serviceState := 3
 servicerUserID := "zhangsan"
 
-WeComApp.AccountServiceState.Trans(openKFID, externalUserID,serviceState,servicerUserID)
+WeComApp.AccountServiceState.Trans(ctx,openKFID, externalUserID,serviceState,servicerUserID)
 ```
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/94669)
@@ -108,13 +109,14 @@ cursor := "4gw7MepFLfgF2VC5npN"
 token := "ENCApHxnGDNAVNY4AaSJKj4Tb5mwsEMzxhFmHVGcra996NR"
 limit := 1000
 
-WeComApp.AccountServiceMessage.SyncMsg(cursor, token, limit)
+WeComApp.AccountServiceMessage.SyncMsg(ctx,cursor, token, limit)
 ```
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/94670)
 
 ### 发送消息 
 ``` go
 options := &request.RequestAccountServiceSendMsg{
+  ctx,
   ToUser:    "EXTERNAL_USERID",
   OpenKfid:  "kfxxxxxxxxxxxxxx",
   MsgID:     "MSGID",
@@ -130,6 +132,7 @@ WeComApp.AccountServiceMessage.SendMsg(options)
 ### 发送事件响应消息 
 ``` go
 options := &request.RequestAccountServiceSendMsgOnEvent{
+  ctx,
   Code:    "CODE",
   MsgID:   "MSG_ID",
   MsgType: "text", // 对应的消息体字段，目前支持文本与菜单消息，详见下文
@@ -146,13 +149,14 @@ WeComApp.AccountServiceMessage.SendMsgOnEvent(options)
 ### 获取配置的专员与客户群 
 
 ``` go
-WeComApp.AccountServiceCustomer.GetUpgradeServiceConfig()
+WeComApp.AccountServiceCustomer.GetUpgradeServiceConfig(ctx)
 ```
 
 ### 为客户升级为专员或客户群服务 
 
 ``` go
 options := &request.RequestUpgradeService{
+  ctx,
   OpenKFID:       c.DefaultQuery("openKFID", "kfxxxxxxxxxxxxxx"),
   ExternalUserID: c.DefaultQuery("externalUserID", "wmxxxxxxxxxxxxxxxxxx"),
   Type:           2, 

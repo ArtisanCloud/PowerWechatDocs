@@ -13,7 +13,7 @@ description: 使用PowerWeChat可以很方便的发送企业微信应用消息�
 ### 文本消息
 
 ``` go
-import "github.com/ArtisanCloud/PowerWeChat/v2/src/work/message/request"
+import "github.com/ArtisanCloud/PowerWeChat/v3/src/work/message/request"
 
 messages := &request.RequestMessageSendText{
   RequestMessageSend: request.RequestMessageSend{
@@ -31,7 +31,7 @@ messages := &request.RequestMessageSendText{
     Content: "你的快递已到，请携带工卡前往邮件中心领取。\n出发前可查看<a href=\"http://work.weixin.qq.com\">邮件中心视频实况</a>，聪明避开排队。",
   },
 }
-WeComApp.Message.SendText(messages)
+WeComApp.Message.SendText(ctx,messages)
 ```
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90236#%E6%96%87%E6%9C%AC%E6%B6%88%E6%81%AF)
@@ -54,7 +54,7 @@ messages := &request.RequestMessageSendImage{
     MediaID: "MEDIA_ID",
   },
 }
-WeComApp.Message.SendImage(messages)
+WeComApp.Message.SendImage(ctx,messages)
 ```
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90236#%E5%9B%BE%E7%89%87%E6%B6%88%E6%81%AF)
@@ -76,7 +76,7 @@ messages := &request.RequestMessageSendVoice{
     MediaId: "MEDIA_ID",
   },
 }
-WeComApp.Message.SendVoice(messages)
+WeComApp.Message.SendVoice(ctx,messages)
 ```
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90236#%E8%AF%AD%E9%9F%B3%E6%B6%88%E6%81%AF)
@@ -101,7 +101,7 @@ messages := &request.RequestMessageSendVideo{
     Description: "Description",
   },
 }
-WeComApp.Message.SendVideo(messages)
+WeComApp.Message.SendVideo(ctx,messages)
 ```
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90236#%E8%A7%86%E9%A2%91%E6%B6%88%E6%81%AF)
@@ -124,7 +124,7 @@ messages := &request.RequestMessageSendFile{
     MediaID: "1Yv-zXfHjSjU-7LH-GwtYqDGS-zz6w22KmWAT5COgP7o",
   },
 }
-WeComApp.Message.SendFile(messages)
+WeComApp.Message.SendFile(ctx,messages)
 ```
 
 [微信官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90236#%E6%96%87%E4%BB%B6%E6%B6%88%E6%81%AF)
@@ -150,7 +150,7 @@ messages := &request.RequestMessageSendTextCard{
     BtnTXT:      "更多",
   },
 }
-WeComApp.Message.SendTextCard(messages)
+WeComApp.Message.SendTextCard(ctx,messages)
 ```
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/90236#%E6%96%87%E6%9C%AC%E5%8D%A1%E7%89%87%E6%B6%88%E6%81%AF)
@@ -183,7 +183,7 @@ messages := &request.RequestMessageSendNews{
     },
   },
 }
-WeComApp.Message.SendNews(messages)
+WeComApp.Message.SendNews(ctx,messages)
 ```
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/90236#%E5%9B%BE%E6%96%87%E6%B6%88%E6%81%AF)
@@ -216,7 +216,7 @@ messages := &request.RequestMessageSendMPNews{
     },
   },
 }
-WeComApp.Message.SendMpNews(messages)
+WeComApp.Message.SendMpNews(ctx,messages)
 ```
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/90236#%E5%9B%BE%E6%96%87%E6%B6%88%E6%81%AF%EF%BC%88mpnews%EF%BC%89)
@@ -250,7 +250,7 @@ messages := &request.RequestMessageSendMarkdown{
       >如需修改会议信息，请点击：[修改会议信息](https://work.weixin.qq.com)"`,
   },
 }
-WeComApp.Message.SendMarkdown(messages)
+WeComApp.Message.SendMarkdown(ctx,messages)
 ```
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/90236#markdown%E6%B6%88%E6%81%AF)
@@ -294,7 +294,7 @@ messages := &request.RequestMessageSendMiniProgramNotice{
     },
   },
 }
-WeComApp.Message.SendMiniProgramNotice(messages)
+WeComApp.Message.SendMiniProgramNotice(ctx,messages)
 ```
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/90236#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%80%9A%E7%9F%A5%E6%B6%88%E6%81%AF)
@@ -391,7 +391,7 @@ messages := &request.RequestMessageSendTemplateCard{
   },
 }
 
-WeComApp.Message.SendTemplateCard(messages)
+WeComApp.Message.SendTemplateCard(ctx,messages)
 ```
 
 [微信官方文档](https://work.weixin.qq.com/api/doc/90000/90135/90236#%E6%96%87%E6%9C%AC%E9%80%9A%E7%9F%A5%E5%9E%8B)
@@ -401,7 +401,7 @@ PowerWeChat还支持`图文展示型`、`按钮交互型`、`投票选择型`、
 ## 撤回应用消息
 
 ``` go
-resRecall, err := WeComApp.Message.Recall(msgID)
+resRecall, err := WeComApp.Message.Recall(ctx,msgID)
 ```
 
 `msgID`是发送消息成功之后得到的，例如: `resSend.MsgID`

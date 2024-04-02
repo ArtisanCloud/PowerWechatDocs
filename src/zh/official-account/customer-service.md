@@ -36,7 +36,7 @@ OfficialAccountApp.CustomerService.SetAvatar("[account]", avatarPath)
 [微信官方文档]()
 ## 获取客服与客户聊天记录 
 ``` go
-OfficialAccountApp.CustomerService.Messages(&request.RequestMessages{
+OfficialAccountApp.CustomerService.Messages(ctx, &request.RequestMessages{
   StartTime: 987654321,
   EndTime:   987654321,
   MsgID:     1,

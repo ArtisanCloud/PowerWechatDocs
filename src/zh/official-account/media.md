@@ -11,27 +11,27 @@ date: 2021-09-24
 
 ## 上传临时图片
 ``` go
-OfficialAccountApp.Media.UploadImage("/resource/cloud.jpg")
+OfficialAccountApp.Media.UploadImage(ctx,"/resource/cloud.jpg")
 ```
 
 ## 上传临时语音
 ``` go
-OfficialAccountApp.Media.UploadVoice("./resource/cha-cha-ender.mp3")
+OfficialAccountApp.Media.UploadVoice(ctx,"./resource/cha-cha-ender.mp3")
 ```
 
 ## 上传临时视频
 ``` go
-OfficialAccountApp.Media.UploadVideo("./resource/3d_ocean_1590675653.mp4")
+OfficialAccountApp.Media.UploadVideo(ctx,"./resource/3d_ocean_1590675653.mp4")
 ```
 
 ## 上传临时缩略图
 ``` go
-OfficialAccountApp.Media.UploadThumb("/resource/cloud.jpg")
+OfficialAccountApp.Media.UploadThumb(ctx,"/resource/cloud.jpg")
 ```
 
 ## 获取临时素材
 ``` go
-OfficialAccountApp.Media.Get("[mediaID]")
+OfficialAccountApp.Media.Get(ctx,"[mediaID]")
 ```
 
 

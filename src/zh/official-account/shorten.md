@@ -9,13 +9,13 @@
 + expire_seconds: 过期秒数，最大值为2592000（即30天)
 
 ```go
-OfficialAccountApp.URL.ShortGenKey("[longData]", 30*24*3600)
+OfficialAccountApp.URL.ShortGenKey(ctx,"[longData]", 30*24*3600)
 ```
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/Account_Management/KEY_Shortener.html)
 
 ## 短key还原
 ```go
-OfficialAccountApp.URL.FetchShorten("[shortKey]")
+OfficialAccountApp.URL.FetchShorten(ctx,"[shortKey]")
 ```
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/Account_Management/KEY_Shortener.html)
 

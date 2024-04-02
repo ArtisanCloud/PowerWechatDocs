@@ -127,7 +127,7 @@ OfficialAccountApp.Goods.Status("[statusTicket]")
 
 ## 获取单个商品信息
 ``` go
-OfficialAccountApp.Goods.Get(&request.RequestProductGet{
+OfficialAccountApp.Goods.Get(ctx, &request.RequestProductGet{
 	Product: &request.ProductID{
 		PID: "[pid]",
 	},

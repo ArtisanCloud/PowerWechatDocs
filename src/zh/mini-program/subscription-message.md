@@ -26,7 +26,7 @@ data := &power.HashMap{
     "value": "开课3小时前",
   },
 }
-MiniProgramApp.SubscribeMessage.Send(&request.RequestSubscribeMessageSend{
+MiniProgramApp.SubscribeMessage.Send(ctx, &request.RequestSubscribeMessageSend{
   ToUser:           "OPENID",
   TemplateID:       "Y1471771tIQyEogSHjqCgD1P7iy52N_JYH-q0Sw7EvQ",
   Page:             "/pages/index/index",

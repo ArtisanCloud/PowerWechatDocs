@@ -11,7 +11,7 @@ description: 使用PowerWechat完成TouchID(指纹认证)、FaceID(面容)、声
 生物认证是可以支持`TouchID(指纹认证)`、`FaceID(面容)`、`声纹`等认证。
 
 ``` go
-MiniProgramApp.Soter.VerifySignature(&request.RequestSoter{
+MiniProgramApp.Soter.VerifySignature(ctx, &request.RequestSoter{
   OpenID:        openID,
   JsonString:    jsonString,
   JsonSignature: jsonSignature,

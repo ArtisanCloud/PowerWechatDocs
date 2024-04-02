@@ -11,7 +11,7 @@ description: 通过PowerWeChat查询小程序的访问留存、访问趋势、�
 ### 小程序日留存
 
 ```go
-MiniProgramApp.DataCube.GetDailyRetainInfo("20170313", "20170313")
+MiniProgramApp.DataCube.GetDailyRetainInfo(ctx,"20170313", "20170313")
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/visit-retain/analysis.getDailyRetain.html)
@@ -21,7 +21,7 @@ MiniProgramApp.DataCube.GetDailyRetainInfo("20170313", "20170313")
 ### 小程序月留存
 
 ```go
-MiniProgramApp.DataCube.GetMonthlyRetainInfo("20210906", "20210912")
+MiniProgramApp.DataCube.GetMonthlyRetainInfo(ctx,"20210906", "20210912")
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/visit-retain/analysis.getMonthlyRetain.html)
@@ -31,7 +31,7 @@ MiniProgramApp.DataCube.GetMonthlyRetainInfo("20210906", "20210912")
 ### 小程序周留存
 
 ```go
-MiniProgramApp.DataCube.GetWeeklyRetainInfo("20170201", "20170228")
+MiniProgramApp.DataCube.GetWeeklyRetainInfo(ctx,"20170201", "20170228")
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/visit-retain/analysis.getWeeklyRetain.html)
@@ -41,7 +41,7 @@ MiniProgramApp.DataCube.GetWeeklyRetainInfo("20170201", "20170228")
 ### 小程序数据概况
 
 ```go
-MiniProgramApp.DataCube.GetDailySummary("20170313", "20170313")
+MiniProgramApp.DataCube.GetDailySummary(ctx,"20170313", "20170313")
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/analysis.getDailySummary.html)
@@ -51,7 +51,7 @@ MiniProgramApp.DataCube.GetDailySummary("20170313", "20170313")
 ### 小程序数据日趋势
 
 ```go
-MiniProgramApp.DataCube.GetDailyVisitTrend("20170313", "20170313")
+MiniProgramApp.DataCube.GetDailyVisitTrend(ctx,"20170313", "20170313")
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/visit-trend/analysis.getDailyVisitTrend.html)
@@ -63,7 +63,7 @@ MiniProgramApp.DataCube.GetDailyVisitTrend("20170313", "20170313")
 注：(能查询到的最新数据为上一个自然月的数据)
 
 ```go
-MiniProgramApp.DataCube.GetMonthlyVisitTrend("20170301", "20170301")
+MiniProgramApp.DataCube.GetMonthlyVisitTrend(ctx,"20170301", "20170301")
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/visit-trend/analysis.getMonthlyVisitTrend.html)
@@ -73,7 +73,7 @@ MiniProgramApp.DataCube.GetMonthlyVisitTrend("20170301", "20170301")
 ### 小程序数据周趋势
 
 ```go
-MiniProgramApp.DataCube.GetWeeklyVisitTrend("20170306", "20170312")
+MiniProgramApp.DataCube.GetWeeklyVisitTrend(ctx,"20170306", "20170312")
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/visit-trend/analysis.getWeeklyVisitTrend.html)
@@ -115,7 +115,7 @@ MiniProgramApp.DataCube.GetPerformanceData(options)
 from := "20210906"
 to := "20210912"
 
-MiniProgramApp.DataCube.GetUserPortrait("20170611", "20170617")
+MiniProgramApp.DataCube.GetUserPortrait(ctx,"20170611", "20170617")
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/analysis.getUserPortrait.html)
@@ -123,7 +123,7 @@ MiniProgramApp.DataCube.GetUserPortrait("20170611", "20170617")
 ## 访问分布数据
 
 ```go
-MiniProgramApp.DataCube.GetVisitDistribution("20170313", "20170313")
+MiniProgramApp.DataCube.GetVisitDistribution(ctx,"20170313", "20170313")
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/analysis.getVisitDistribution.html)
@@ -131,7 +131,7 @@ MiniProgramApp.DataCube.GetVisitDistribution("20170313", "20170313")
 ## 访问页面数据
 
 ```go
-MiniProgramApp.DataCube.GetVisitPage("20170313", "20170313")
+MiniProgramApp.DataCube.GetVisitPage(ctx,"20170313", "20170313")
 ```
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/analysis.getUserPortrait.html)
