@@ -3,6 +3,12 @@ title: 快速开始
 date: 2021-07-06
 ---
 
+# 观看视频
+
+## 快速上手
+<iframe src="//player.bilibili.com/player.html?aid=493543766&bvid=BV1tN411u7pV&cid=1334895408&p=1" scrolling="no" border="1" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<br><br>
+
 # 快速开始
 
 安装完 PowerWechat，就可以按照以下方式使用了
@@ -30,7 +36,7 @@ func main() {
   if err != nil {
     panic(err)
   }
-  response := WeComApp.Base.GetCallbackIp(nil)
+  response,_ := WeComApp.Base.GetCallbackIp(context.Background())
   log.Println(response)
 }
 ```

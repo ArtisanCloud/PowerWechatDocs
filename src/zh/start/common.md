@@ -34,8 +34,8 @@ import (
 func NewWeComContactService(conf *config.Configuration) (*work.Work, error) {
   app, err := work.NewWork(&work.UserConfig{
     // ...
-    Cache: kernel.NewRedisClient(&kernel.RedisOptions{
-      Addr:     "127.0.0.1:6379",
+    Cache: kernel.NewRedisClient(&kernel.UniversalOptions{
+      Addrs:     []string{"127.0.0.1:6379"},
       Password: "",
       DB:       0,
     }),

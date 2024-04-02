@@ -41,6 +41,8 @@ MiniProgramApp.WXACode.Get(ctx, &request.RequestQRCodeGet{
 MiniProgramApp.WXACode.GetUnlimited(ctx, &request.RequestQRCodeGetUnlimited{
   Scene: "a=1",
   Page: page,
+  checkPath: false, 
+  envVersion: "develop",
   Width: 430,
   AutoColor: false,
   LineColor: []int{0, 0, 0},

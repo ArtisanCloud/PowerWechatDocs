@@ -13,6 +13,11 @@ const nav = [
     activeMatch: `^\/zh\/(start)\/(?!qa)`
   },
   {
+    text: '视频介绍',
+    link: '/zh/video/index',
+    activeMatch: `^/zh/(video)/`
+  },
+  {
     text: '小程序',
     link: '/zh/mini-program/index',
     activeMatch: `^/zh/(mini-program)/`

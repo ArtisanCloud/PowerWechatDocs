@@ -30,15 +30,11 @@ date: 2021-07-06
   ```
   
 
-## PowerWeChat社区交流群
+## 项目主要维护者
 
-<img src="./images/contact_me_qr.png" alt="请扫我" style="display:inline; width: 150px;"/>
-
-
-## 企业微信主要维护者
-
-Matrix, Walle的企业微信
+Michael Hu
 
 <img src="./images/contact-qr-matrix-x.jpg" alt="请扫我" style="display:inline; width: 150px;"/>
 
-<img src="./images/contact-qr-walle.png" alt="请扫我" style="display: inline; width: 150px; margin-left: 50px"/>
+### 如果你觉得这个项目对你有帮助，可以请作者喝杯咖啡
+<img src="./images/receive_code.jpg" alt="请扫我" style="display:inline; width: 150px;"/>

@@ -19,8 +19,8 @@ WeComApp, err := work.NewWork(&work.UserConfig{
   },
   HttpDebug: true,
   // 可选，不传默认走程序内存
-  Cache: kernel.NewRedisClient(&kernel.RedisOptions{
-    Addr:     "127.0.0.1:6379",
+  Cache: kernel.NewRedisClient(&kernel.UniversalOptions{
+    Addrs:     []string{"127.0.0.1:6379"},
     Password: "",
     DB:       0,
   }),
