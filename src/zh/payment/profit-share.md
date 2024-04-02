@@ -10,11 +10,12 @@ date: 2021-07-06
 ```go
 // 添加接收方。多次调用表示添加多个接收方
 paymentService.ProfitSharing.AddReceiver(
+  context,
   "[type]",
   "[account]",
   "[name]",
   "[relation_type]",
-  "[relation_type]",
+  "[custom_relation]",
 )
 ```
 
@@ -23,7 +24,7 @@ paymentService.ProfitSharing.AddReceiver(
 ## 删除接收方
 
 ```go
-paymentService.ProfitSharing.DeleteReceiver("[type]", "[account]")
+paymentService.ProfitSharing.DeleteReceiver(context, "[type]", "[account]")
 ```
 
 微信官方文档：https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_1_9.shtml
@@ -32,24 +33,23 @@ paymentService.ProfitSharing.DeleteReceiver("[type]", "[account]")
 
 ```go
 paymentService.ProfitSharing.Share(
-  "[transaction_id]",
-  "[out_order_no]",
-  []*power.HashMap{
-  {
-    "type": "MERCHANT_ID",
-    "account": "86693852",
-    "name": "hu89ohu89ohu89o",
-    "amount": 888,
-    "description": "分给商户A",
-  },
-  {
-    "type": "MERCHANT_ID",
-    "account": "86693852",
-    "name": "hu89ohu89ohu89o",
-    "amount": 888,
-    "description": "分给商户B",
-  },
-}, false)
+  context,
+  &request.RequestShare{
+    AppID:            "[app_id]",
+    TransactionID:    "[transaction_id]"  // OutTradeNo 和 TransactionID 二选一
+    OutOrderNO:       "[out_order_no]", 
+    Receivers: []*request.Receiver{
+      &request.Receiver{
+        Type:        "MERCHANT_ID",
+        Account:     "86693852",
+        Name:        "hu89ohu89ohu89o",
+        Amount:      888,
+        Description: "分给商户A",
+      }
+    }),
+    UnfreezeUnSplit: true,
+  }
+)
 ```
 
 微信官方文档：https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_1&index=1
@@ -59,7 +59,7 @@ paymentService.ProfitSharing.Share(
 ## 分账查询
 
 ```go
-paymentService.ProfitSharing.Query("[transaction_id]", "[out_trade_no]")
+paymentService.ProfitSharing.Query(context, "[transaction_id]", "[out_trade_no]")
 ```
 
 微信官方文档： https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_2&index=3
@@ -69,7 +69,7 @@ paymentService.ProfitSharing.Query("[transaction_id]", "[out_trade_no]")
 ## 分帐回退
 
 ```go
-paymentService.ProfitSharing.Return(&request.RequestShareReturn{
+paymentService.ProfitSharing.Return(context, &request.RequestShareReturn{
   AppID: "[app_id]",
   MchID: "[mch_id]"
   OutOrderNo: "[transaction_id]",
@@ -78,8 +78,6 @@ paymentService.ProfitSharing.Return(&request.RequestShareReturn{
   ReturnAccount: "[return_account]"
   ReturnAmount: "[return_amount]"
   Description: "[description]"
-   
-  
 })
 ```
 
