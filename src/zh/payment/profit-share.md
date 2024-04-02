@@ -15,7 +15,7 @@ paymentService.ProfitSharing.AddReceiver(
   "[account]",
   "[name]",
   "[relation_type]",
-  "[relation_type]",
+  "[custom_relation]",
 )
 ```
 
@@ -34,24 +34,22 @@ paymentService.ProfitSharing.DeleteReceiver(ctx,"[type]", "[account]")
 ```go
 paymentService.ProfitSharing.Share(
   ctx,
-  "[transaction_id]",
-  "[out_order_no]",
-  []*power.HashMap{
-  {
-    "type": "MERCHANT_ID",
-    "account": "86693852",
-    "name": "hu89ohu89ohu89o",
-    "amount": 888,
-    "description": "分给商户A",
-  },
-  {
-    "type": "MERCHANT_ID",
-    "account": "86693852",
-    "name": "hu89ohu89ohu89o",
-    "amount": 888,
-    "description": "分给商户B",
-  },
-}, false)
+  &request.RequestShare{
+    AppID:            "[app_id]",
+    TransactionID:    "[transaction_id]"  // OutTradeNo 和 TransactionID 二选一
+    OutOrderNO:       "[out_order_no]", 
+    Receivers: []*request.Receiver{
+      &request.Receiver{
+        Type:        "MERCHANT_ID",
+        Account:     "86693852",
+        Name:        "hu89ohu89ohu89o",
+        Amount:      888,
+        Description: "分给商户A",
+      }
+    }),
+    UnfreezeUnSplit: false,
+  }
+)
 ```
 
 微信官方文档：https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_1&index=1
@@ -80,8 +78,6 @@ paymentService.ProfitSharing.Return(ctx, &request.RequestShareReturn{
   ReturnAccount: "[return_account]"
   ReturnAmount: "[return_amount]"
   Description: "[description]"
-   
-  
 })
 ```
 
