@@ -104,6 +104,10 @@ func APIOpenPlatformCallback(context *gin.Context) {
 注意：
 > component_verify_ticket 的有效时间为12小时，比 component_access_token 更长，建议保存最近可用的component_verify_ticket，在 component_access_token 过期之前都可以直接使用该 component_verify_ticket 进行更新，避免出现因为 component_verify_ticket 接收失败而无法更新 component_access_token 的情况
 
+> component_verify_ticket是会失效，所以上生产，需要一直开着推送ticket，推送给你的回调服务器，这样可以一直缓存你的component_verify_ticket
+> 保证后面的authorizer_refresh_token可以正常使用。
+
+
 2. [获取令牌](https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/ThirdParty/token/component_access_token.html)
    （component_access_token） 令牌的获取是有限制的，每个令牌的有效期为 2 小时，请自行做好令牌的管理，在令牌快过期时（比如1小时50分），重新调用接口获取。
 > 这一步PowerWechat会封装在Middleware里，自动获取，并且缓存下来，你只需要在初始化OpenPlatform对象时，配置好相关参数就行
@@ -125,7 +129,7 @@ func APIOpenPlatformPreAuthCode(ctx *gin.Context) {
 
 #### 步骤三
 
-准备“授权回调 URI”，然后按照官方文档规则生成 PC 端的授权二维码或者移动端的授权链接，详情请看下方说明
+如果之前没有对小程序或公众号进行过授权，需要 准备“授权回调 URI”，然后按照官方文档规则生成 PC 端的授权二维码或者移动端的授权链接，详情请看下方说明
 
 * 授权链接参数说明
 
