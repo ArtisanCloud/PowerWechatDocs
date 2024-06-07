@@ -38,16 +38,16 @@ MiniProgramApp.WXACode.Get(ctx, &request.RequestQRCodeGet{
 获取小程序码，适用于需要的码数量极多的业务场景。**通过该接口生成的小程序码，永久有效，数量暂无限制。** 更多用法详见 [获取二维码](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/qr-code.html)。
 
 ``` go
-MiniProgramApp.WXACode.GetUnlimited(ctx, &request.RequestQRCodeGetUnlimited{
-  Scene: "a=1",
-  Page: page,
+MiniProgramApp.WXACode.GetUnlimited(ctx, 
+  scene: "a=1",
+  page: page,
   checkPath: false, 
   envVersion: "develop",
-  Width: 430,
-  AutoColor: false,
-  LineColor: []int{0, 0, 0},
-  IsHyaLine: false,
-})
+  width: 430,
+  autoColor: false,
+  lineColor: []int{0, 0, 0},
+  isHyaline: false,
+)
 ```
 
 

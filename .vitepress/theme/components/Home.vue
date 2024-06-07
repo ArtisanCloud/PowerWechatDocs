@@ -1,7 +1,16 @@
 <script setup lang='ts'>
 import GithubStar from './GithubStar.vue'
-
 </script>
+
+<style>
+.githubStar {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-left: 64px;
+  margin-top: -20px;
+}
+</style>
 
 <template>
   <div>
@@ -30,9 +39,20 @@ import GithubStar from './GithubStar.vue'
         </a>
       </p>
       <div class='star-note'>
-        <!-- Place this tag where you want the button to render. -->
-        <GithubStar href='https://github.com/ArtisanCloud/PowerWeChat'
-                    api='https://powerwechat.artisan-cloud.com/github-star.txt' />
+<!--         Place this tag where you want the button to render.-->
+                <GithubStar href='https://github.com/ArtisanCloud/PowerWeChat'
+                            api='https://powerwechat.artisan-cloud.com/github-star.txt' />
+<!--        <div class='githubStar'>-->
+<!--          <iframe-->
+<!--            src='https://ghbtns.com/github-btn.html?user=ArtisanCloud&repo=PowerWeChat&type=star&count=true&size=small'-->
+<!--            frameborder='0'-->
+<!--            scrolling='0'-->
+<!--            width='170'-->
+<!--            height='30'-->
+<!--            title='GitHub'>-->
+<!--          </iframe>-->
+<!--        </div>-->
+
         <p>
           欢迎Star支持，有问题可以<a href='https://github.com/ArtisanCloud/PowerWeChat/issues'>GitHub issues</a>或企业微信<a
           href='/zh/start/qa.html'>联系我们</a>
@@ -320,7 +340,7 @@ html:not(.dark) .accent,
 }
 
 .star-note {
-  padding-top: 30px;
+  padding-top: 10px;
   font-size: 12px;
 }
 

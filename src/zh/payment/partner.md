@@ -74,7 +74,7 @@ if err != nil {
 }
 
 // 因为PrepayID签名方式都一样，所以这个和App是一样的。
-payConf, err := services.PaymentApp.JSSDK.BridgeConfig(ctx,response.PrepayID, true)
+payConf, err := services.PaymentApp.JSSDK.AppConfig(ctx,response.PrepayID, true)
 ```
 
 [微信官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_2_1.shtml)

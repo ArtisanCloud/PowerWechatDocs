@@ -36,7 +36,7 @@ func main() {
   if err != nil {
     panic(err)
   }
-  response,_ := WeComApp.Base.GetCallbackIp(context.Background())
+  response,_ := WeComApp.Base.GetCallbackIP(context.Background())
   log.Println(response)
 }
 ```

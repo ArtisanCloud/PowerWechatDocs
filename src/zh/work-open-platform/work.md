@@ -31,7 +31,7 @@ func main() {
   if err != nil {
     fmt.Dump(err.Error())
   }
-  response := app.Base.GetCallbackIp(ctx)
+  response := app.Base.GetCallbackIP(ctx)
   fmt.Dump(response)
 
 }
