@@ -73,7 +73,7 @@ type CacheInterface interface {
 
 在使用这个方案之前，我们先要通过流程图了解一下PowerWeChat的Cache工作机制。
 
-<img src="https://m.artisancloud.cn/images/powerwechat-docs/common/powerwechat-token-2021-12-07-1723.svg" alt="PowerWeChat Cache Process" width="600" />
+<img src="./images/powerwechat-token-2021-12-07-1723.svg" alt="PowerWeChat Cache Process" width="600" />
 
 通过流程图我们可以看到，PowerWeChat每次都会执行Cache.Get，而Cache.Set只会在没有值的时候重新获取并设置。
 
