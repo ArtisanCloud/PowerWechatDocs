@@ -306,5 +306,6 @@ export default defineConfigWithTheme<ThemeConfig>({
     // googleAnalyticsPlugin({
     //   id: 'G-GPRCVYSQSG',
     // }),
-  ]
+  ],
+  base:"/"
 })
