@@ -122,3 +122,76 @@ type T struct {
 1. [memory](https://github.com/ArtisanCloud/PowerLibs/blob/master/cache/memory.go)
 2. [redis](https://github.com/ArtisanCloud/PowerLibs/blob/master/cache/redis.go)
 
+
+
+## 日志配置
+
+PowerWeChat提供了日志模块，默认情况下，日志会输出到控制台。如果需要输出到文件，可以配置如下：
+
+```go
+
+Log: work.Log{
+		    Level: "debug",
+		    //Level:  "error",
+			//Level: "off",
+			File:  "./wechat.log",
+		},
+
+```
+### 路径
+自定义File，可以指定输出路径，默认路径是项目根目录下:  
+
+./wechat/info.log  
+./wechat/error.log
+
+### 自定义Log
+
+PowerWeChat提供了自定义日志模块，可以自定义日志格式、输出等。
+
+```go
+
+Log: miniProgram.Log{
+			Driver: &testLogDriver.SimpleLogger{},
+			Level:  "debug",
+			File:   "./wechat.log",
+		},
+		
+```
+
+定义了Log的Interface，如下：
+    
+```go
+package contract
+
+const (
+DebugLevel   int8 = 0
+InfoLevel    int8 = 1
+WarningLevel int8 = 2
+ErrorLevel   int8 = 3
+PanicLevel   int8 = 4
+FatalLevel   int8 = 5
+)
+
+type LoggerInterface interface {
+Debug(msg string, v ...interface{})
+Info(msg string, v ...interface{})
+Warn(msg string, v ...interface{})
+Error(msg string, v ...interface{})
+Panic(msg string, v ...interface{})
+Fatal(msg string, v ...interface{})
+
+DebugF(format string, args ...interface{})
+InfoF(format string, args ...interface{})
+WarnF(format string, args ...interface{})
+ErrorF(format string, args ...interface{})
+PanicF(format string, args ...interface{})
+FatalF(format string, args ...interface{})
+
+//Log( level int8, msg string, objs ...interface{})
+//Logf( format string, v ...interface{})
+}
+
+```
+
+### 关闭日志
+请将level设置成off，即可关闭日志输出。
