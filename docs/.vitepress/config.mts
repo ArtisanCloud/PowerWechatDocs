@@ -180,7 +180,35 @@ export default defineConfig({
 				src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9660680807544080',
 				// crossorigin: "anonymous"
 			},
-
+		],
+		[
+			'script',
+			{
+				src: 'https://fundingchoicesmessages.google.com/i/pub-9660680807544080?ers=1',
+				nonce: '2Emt7JGn88cO9VqScs4V6A'
+			}
+		],
+		[
+			'script',
+			{
+				nonce: '2Emt7JGn88cO9VqScs4V6A'
+			},
+			`(function() {
+			function signalGooglefcPresent() {
+				if (!window.frames['googlefcPresent']) {
+					if (document.body) {
+						const iframe = document.createElement('iframe');
+						iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;';
+						iframe.style.display = 'none';
+						iframe.name = 'googlefcPresent';
+						document.body.appendChild(iframe);
+					} else {
+						setTimeout(signalGooglefcPresent, 0);
+					}
+				}
+			}
+			signalGooglefcPresent();
+		})();`
 		]
 	],
 	outDir: '',
