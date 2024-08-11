@@ -132,8 +132,6 @@ PowerWeChat提供了日志模块，默认情况下，日志会输出到控制台
 
 Log: work.Log{
 		    Level: "debug",
-		    //Level:  "error",
-			//Level: "off",
 			File:  "./wechat.log",
 		},
 
@@ -150,10 +148,16 @@ PowerWeChat提供了自定义日志模块，可以自定义日志格式、输出
 
 ```go
 
+import (
+	"github.com/ArtisanCloud/PowerLibs/v3/logger/drivers"
+    ....
+)
+
 Log: miniProgram.Log{
-			Driver: &testLogDriver.SimpleLogger{},
+			Driver: &drivers.SimpleLogger{},
 			Level:  "debug",
-			File:   "./wechat.log",
+			File:   "./wechat_info.log",
+			Error:   "./wechat_error.log",
 		},
 		
 ```
@@ -194,4 +198,15 @@ FatalF(format string, args ...interface{})
 ```
 
 ### 关闭日志
-请将level设置成off，即可关闭日志输出。
+```go
+
+import (
+	"github.com/ArtisanCloud/PowerLibs/v3/logger/drivers"
+    ....
+)
+
+Log: miniProgram.Log{
+			Driver: &drivers.DummyLogger{},
+		},
+		
+```
