@@ -73,7 +73,7 @@ if err != nil {
   panic(err)
 }
 // 根据 code 获取 session
-data, err := miniProgram.Auth.Session("[code]")
+data, err := miniProgram.Auth.Session(ctx, "[code]")
 if err != nil {
   panic(err)
 }

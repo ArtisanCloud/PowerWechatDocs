@@ -10,7 +10,7 @@ description: 通过PowerWechat可以方便的完成小程序登录以及获取�
 将获取的jscode ，换取用户的session信息
 
 ``` go
-MiniProgramApp.Auth.Session("[code]")
+MiniProgramApp.Auth.Session(ctx, "[code]")
 ```
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/login/auth.code2Session.html)
 
