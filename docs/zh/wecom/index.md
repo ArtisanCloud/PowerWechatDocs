@@ -86,6 +86,7 @@ secret是企业应用里面用于保障数据安全的“钥匙”，每一个�
 miniProgram.Log{
   Level: "debug",  // 输出日志等级
   File:  "./wechat.log", //  输出日志文件
+  Stdout: false, //  是否打印在终端
 }
 ```
 

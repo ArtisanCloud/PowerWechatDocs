@@ -31,6 +31,7 @@ PaymentService, err := payment.NewPayment(&payment.UserConfig{
   Log: payment.Log{
     Level: "debug",
     File:  "./wechat.log",
+    Stdout: false, //  是否打印在终端
   },
   Http: payment.Http{
     Timeout: 30.0,
@@ -181,6 +182,7 @@ openssl x509 -noout -serial -in /.../apiclient_cert.pem
 payment.Log{
   Level: "debug",  // 输出日志等级
   File:  "./wechat.log", //  输出日志文件
+  Stdout: false, //  是否打印在终端
 }
 ```
 

@@ -12,6 +12,7 @@ MiniProgramApp, err := miniProgram.NewMiniProgram(&miniProgram.UserConfig{
   Log: miniProgram.Log{
     Level: "debug",
     File:  "./wechat.log",
+    Stdout: false, //  是否打印在终端
   },
   // 可选，不传默认走程序内存
   Cache: kernel.NewRedisClient(&kernel.UniversalOptions{
@@ -70,6 +71,7 @@ MiniProgramApp, err := miniProgram.NewMiniProgram(&miniProgram.UserConfig{
 miniProgram.Log{
   Level: "debug",  // 输出日志等级
   File:  "./wechat.log", //  输出日志文件
+  Stdout: true, //  是否打印在终端
 }
 ```
 

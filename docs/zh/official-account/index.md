@@ -18,6 +18,7 @@ OfficialAccountApp, err := officialAccount.NewOfficialAccount(&officialAccount.U
   Log: officialAccount.Log{
     Level: "debug",
     File:  "./wechat.log",
+    Stdout: false, //  是否打印在终端
   },
 
   HttpDebug: true,
@@ -75,6 +76,7 @@ OfficialAccountApp, err := officialAccount.NewOfficialAccount(&officialAccount.U
 miniProgram.Log{
   Level: "debug",  // 输出日志等级
   File:  "./wechat.log", //  输出日志文件
+  Stdout: false, //  是否打印在终端
 }
 ```
 

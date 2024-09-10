@@ -133,6 +133,7 @@ PowerWeChat提供了日志模块，默认情况下，日志会输出到控制台
 Log: work.Log{
 		    Level: "debug",
 			File:  "./wechat.log",
+			Stdout: false, //  是否打印在终端
 		},
 
 ```
@@ -158,6 +159,7 @@ Log: miniProgram.Log{
 			Level:  "debug",
 			File:   "./wechat_info.log",
 			Error:   "./wechat_error.log",
+			Stdout: false, //  是否打印在终端
 		},
 		
 ```
@@ -207,6 +209,7 @@ import (
 
 Log: miniProgram.Log{
 			Driver: &drivers.DummyLogger{},
+			Stdout: false, //  是否打印在终端
 		},
 		
 ```
