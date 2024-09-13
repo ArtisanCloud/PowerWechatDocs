@@ -17,6 +17,11 @@ WeComApp, err := work.NewWork(&work.UserConfig{
     Callback: "https://wecom.artisan-cloud.com/callback", //
     Scopes:   nil,
   },
+  Log: work.Log{
+    Level:  "debug",
+    File: "./wechat.log",
+    Stdout: false, //  是否打印在终端
+  },
   HttpDebug: true,
   // 可选，不传默认走程序内存
   Cache: kernel.NewRedisClient(&kernel.UniversalOptions{

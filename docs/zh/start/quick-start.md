@@ -31,6 +31,11 @@ func main() {
       Callback: "https://wecom.artisan-cloud.com/callback",
       Scopes:   nil,
     },
+    Log: work.Log{
+        Level:  "debug",
+        File: "./wechat.log",
+        Stdout: false, //  是否打印在终端
+    },
     HttpDebug: true,
   })
   if err != nil {
