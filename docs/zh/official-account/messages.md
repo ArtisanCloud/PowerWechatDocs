@@ -37,10 +37,10 @@ messages.NewVoice(ctx,mediaID, &power.HashMap{})
 ``` go
 messages.NewLink(ctx,&power.HashMap{
   ctx,
-  "title":       "ArtisanCloud",
-  "description": "desc...",
-  "url":         "https://www.artisan-cloud.com",
-  "picurl":      "https://powerwechat.artisan-cloud.com/images/icons/favicon-32x32.png",
+  "Title":       "ArtisanCloud",
+  "Description": "desc...",
+  "Url":         "https://www.artisan-cloud.com",
+  "Picurl":      "https://powerwechat.artisan-cloud.com/images/icons/favicon-32x32.png",
 })
 ``` 
 [微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Service_Center_messages.html#%E5%AE%A2%E6%9C%8D%E6%8E%A5%E5%8F%A3-%E5%8F%91%E6%B6%88%E6%81%AF)
