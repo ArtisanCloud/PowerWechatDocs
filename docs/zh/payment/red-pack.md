@@ -33,16 +33,21 @@ paymentService.SetSubMerchant("[sub_mch_id]", "")
 ### 普通红包
 
 ```go
-paymentService.RedPack.SendNormal(ctx,&power.HashMap{
-  "mch_billno": "10000098201411111234567890", // 商户订单号（每个订单号必须唯一）接口根据商户订单号支持重入，如出现超时可再调用。
-  "send_name": "天虹百货", // 红包发送者名称
-  "re_openid": "oxTWIuGaIt6gTKsQRLau2M0yL16E", // 接受红包的用户openid
-  "total_amount": 1000, // 付款金额，单位分
-  "wishing": "感谢您参加猜灯谜活动，祝您元宵节快乐！", // 红包祝福语
-  "client_ip": "192.168.0.1", // 调用接口的机器Ip地址， 不填则自动获取
-  "act_name": "猜灯谜抢红包活动", // 活动名称
-  "remark": "猜越多得越多，快来抢！", // 备注信息
-})
+paymentService.RedPack.SendNormal(ctx,&request.RequestSendRedPack{
+		MchBillNO:   "0010010404201411170000046545",
+		MchID:       mchId,
+		WXAppID:     appId,
+		SendName:    "ArtisanCloud",
+		ReOpenID:    "oAuaP0TRUMwP169nQfg7XCEAw3HQ",
+		TotalAmount: 100,
+		TotalNum:    1,
+		Wishing:     "恭喜发财",
+		ClientIP:    "127.0.0.1",
+		ActName:     "新年红包",
+		Remark:      "新年红包",
+		SceneID:     "PRODUCT_2",
+		RiskInfo:    "posttime%3d123123412%26clientversion%3d234134%26mobile%3d122344545%26deviceid%3dIOS",
+	})
 ```
 
 微信官方文档：https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_4&index=3
