@@ -21,9 +21,9 @@ PaymentService, err := payment.NewPayment(&payment.UserConfig{
   CertPath:           "[wx_cert_path]",           // 商户后台支付的Cert证书路径
   KeyPath:            "[wx_key_path]",            // 商户后台支付的Key证书路径
   SerialNo:           "[serial_no]",              // 商户支付证书序列号
-  CertificateKeyPath: "[certificate_key_path]",   // 微信支付平台证书的Key证书路径,m微信V3,[选填]
+  CertificateKeyPath: "[certificate_key_path]",   // 商户支付证书序列号,微信V2，[选填]
   WechatPaySerial:    "[wechat_pay_serial]",      // 微信支付平台证书序列号,微信V3，[选填]
-  RSAPublicKeyPath:   "[wx_rsa_public_key_path]", // 商户支付证书序列号,微信V2，[选填]
+  RSAPublicKeyPath:   "[wx_rsa_public_key_path]", // 微信支付平台证书的Key证书路径,m微信V3,[选填]
   SubMchID:           "[sub_mch_id]",             // 服务商平台下的子商户号Id，[选填]
   SubAppID:           "[syb_appid]",              // 服务商平台下的子AppId，[选填]
   NotifyURL:          "[notify_url]",
