@@ -21,9 +21,9 @@ PaymentService, err := payment.NewPayment(&payment.UserConfig{
   CertPath:           "[wx_cert_path]",           // 商户后台支付的Cert证书路径
   KeyPath:            "[wx_key_path]",            // 商户后台支付的Key证书路径
   SerialNo:           "[serial_no]",              // 商户支付证书序列号
-  CertificateKeyPath: "[certificate_key_path]",   // 商户支付证书序列号,微信V2，[选填]
-  WechatPaySerial:    "[wechat_pay_serial]",      // 微信支付平台证书序列号,微信V3，[选填]
-  RSAPublicKeyPath:   "[wx_rsa_public_key_path]", // 微信支付平台证书的Key证书路径,m微信V3,[选填]
+  WechatPaySerial:    "[wechat_pay_serial]",      // 微信支付平台证书序列号[选填]
+  CertificateKeyPath: "[certificate_key_path]",   // 微信支付平台证书路径，[选填]
+  RSAPublicKeyPath:   "[wx_rsa_public_key_path]", // 微信支付平台证书的Key证书路径[选填]
   SubMchID:           "[sub_mch_id]",             // 服务商平台下的子商户号Id，[选填]
   SubAppID:           "[syb_appid]",              // 服务商平台下的子AppId，[选填]
   NotifyURL:          "[notify_url]",
@@ -124,7 +124,7 @@ openssl x509 -noout -serial -in /.../apiclient_cert.pem
 - 必传: `否`
 - 示例: `/.../wx_rsa_public_key.pem`
 
-微信支付API v3使用微信支付 的平台公钥（不是商户私钥 ）进行应答签名。
+微信支付API使用微信支付 的平台公钥（不是商户私钥 ）进行应答签名。
 [获取请详见](./security.md)
 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/wechatpay5_1.shtml)
 
@@ -143,7 +143,7 @@ openssl x509 -noout -serial -in /.../apiclient_cert.pem
 - 必传: `否`
 - 示例: `/.../wx_rsa_public_key.pem`
 
-微信支付API v2使用微信支付 的平台公钥（不是商户私钥 ）进行应答签名。
+微信支付API使用微信支付 的平台公钥（不是商户私钥 ）进行应答签名。
 [获取请详见](https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay_yhk.php?chapter=25_7&index=4)
 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay_yhk.php?chapter=25_7&index=4)
 
