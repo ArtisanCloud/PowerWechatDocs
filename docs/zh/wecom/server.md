@@ -27,7 +27,7 @@ WeComContactApp, err := work.NewWork(&work.UserConfig{
 这里接收一个标准的`http.Request`，PowerWeChat会自动帮你解析里面的参数，你只要将解析出来的string通过web框架返回给微信即可。
 
 ``` go
-rs, err := services.WeComContactApp.Server.Serve(c.Request)
+rs, err := services.WeComContactApp.Server.VerifyURL(c.Request)
 if err != nil {
   panic(err)
 }
