@@ -31,8 +31,8 @@ PaymentService, err := payment.NewPayment(&payment.UserConfig{
   Log: payment.Log{
     Level: "debug",
     // 可以重定向到你的目录下，如果设置File和Error，默认会在当前目录下的wechat文件夹下生成日志
-    File:  "/Users/michaelhu/wechat/platform/info.log", 
-		Error: "/Users/michaelhu/wechat/platform/error.log",
+    File:  "/Users/user/wechat/payment/info.log", 
+	  Error: "/Users/user/wechat/payment/error.log",
     Stdout: false, //  是否打印在终端
   },
   Http: payment.Http{
