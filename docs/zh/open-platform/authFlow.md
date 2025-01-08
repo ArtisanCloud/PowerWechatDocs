@@ -17,7 +17,9 @@ OpenPlatformApp, err := openPlatform.NewOpenPlatform(&openPlatform.UserConfig{
 
   Log: openPlatform.Log{
     Level: "debug",
-    File:  "./wechat.log",
+    // 可以重定向到你的目录下，如果设置File和Error，默认会在当前目录下的wechat文件夹下生成日志
+    File:  "/Users/michaelhu/wechat/platform/info.log", 
+	Error: "/Users/michaelhu/wechat/platform/error.log",
   }, // 日志输出位置
   Cache:     cache, // token缓存
   HttpDebug: true, // 打开后会显示PowerWeChat调用微信API的请求参数和响应结果
