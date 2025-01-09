@@ -11,6 +11,8 @@ H5支付、公众号支付、扫码支付、支付中签约都是使用这个接
 
 ### JSAPI支付
 
+*** 注意： 使用支付功能的时候，请不要把debug设置成true，支付接口不支持debug模式，否则签名会错误 ***
+
 ``` go
 options := &request.RequestJSAPIPrepay{
   Amount: &request.JSAPIAmount{
