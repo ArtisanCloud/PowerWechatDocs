@@ -11,9 +11,9 @@ MiniProgramApp, err := miniProgram.NewMiniProgram(&miniProgram.UserConfig{
   HttpDebug: true,
   Log: miniProgram.Log{
     Level: "debug",
-    // 可以重定向到你的目录下，如果设置File和Error，默认会在当前目录下的wechat文件夹下生成日志
-    File:  "/Users/user/wechat/mini-program/info.log", 
-	  Error: "/Users/user/wechat/mini-program/error.log",
+    // 可以重定向到你的目录下，如果未设置File和Error，默认会在当前目录下的wechat文件夹下生成日志
+    File:  "/Users/user/wechat/mini-program/info.log",
+    Error: "/Users/user/wechat/mini-program/error.log",
     Stdout: false, //  是否打印在终端
   },
   // 可选，不传默认走程序内存

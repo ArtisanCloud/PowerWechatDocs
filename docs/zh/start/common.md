@@ -132,7 +132,7 @@ PowerWeChat提供了日志模块，默认情况下，日志会输出到控制台
 
 Log: work.Log{
 		    Level: "debug",
-			// 可以重定向到你的目录下，如果设置File和Error，默认会在当前目录下的wechat文件夹下生成日志
+			// 可以重定向到你的目录下，如果未设置File和Error，默认会在当前目录下的wechat文件夹下生成日志
 			File:  "/Users/user/wechat/work/info.log", 
 			Error: "/Users/user/wechat/work/error.log",
 			Stdout: false, //  是否打印在终端
@@ -159,7 +159,7 @@ import (
 Log: miniProgram.Log{
 			Driver: &drivers.SimpleLogger{},
 			Level:  "debug",
-			// 可以重定向到你的目录下，如果设置File和Error，默认会在当前目录下的wechat文件夹下生成日志
+			// 可以重定向到你的目录下，如果未设置File和Error，默认会在当前目录下的wechat文件夹下生成日志
 		  	File:  "/Users/user/wechat/mini-program/info.log", 
 		  	Error: "/Users/user/wechat/mini-program/error.log",
 			Stdout: false, //  是否打印在终端
