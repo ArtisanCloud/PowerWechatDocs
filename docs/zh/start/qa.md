@@ -34,6 +34,8 @@ date: 2021-07-06
 
 Michael Hu
 
+申请添加好友时，请备注产品名称，比如：“我关注PowerWechat”
+
 <img src="./images/contact-qr-matrix-x.jpg" alt="请扫我" style="display:inline; width: 150px;"/>
 
 ### 如果你觉得这个项目对你有帮助，可以请作者喝杯咖啡
