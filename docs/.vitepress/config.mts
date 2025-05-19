@@ -41,12 +41,12 @@ const nav = [
   {
     text: "更多产品",
     items: [
+      { text: "MediaX", link: "https://mediax.artisan-cloud.com" },
+      { text: "PowerX", link: "https://powerx.artisan-cloud.com" },
       {
         text: "PowerWechat",
         link: "https://powerwechat.artisan-cloud.com",
       },
-      { text: "MediaX", link: "https://mediax.artisan-cloud.com" },
-      { text: "PowerX", link: "https://powerx.artisan-cloud.com" },
     ],
   },
   {
