@@ -189,6 +189,7 @@ export const sidebar = {
 
 export default defineConfig({
   base: "/",
+  ignoreDeadLinks: true,
   head: [
     [
       "script",
