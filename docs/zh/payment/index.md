@@ -5,13 +5,13 @@ date: 2021-07-06
 
 # 微信支付入门
 
-在使用之前，请先阅读[官方文档API V3](https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay-1.shtml) 了解微信支付的大致工作流程。
+在使用之前，请先阅读[官方文档 API V3](https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay-1.shtml) 了解微信支付的大致工作流程。
 
-微信支付是独立的一个服务，能够支持公众号、小程序、JSSDK、企业微信支付等平台，所以我们这边Payment拆分成了一个单独的实例。
+微信支付是独立的一个服务，能够支持公众号、小程序、JSSDK、企业微信支付等平台，所以我们这边 Payment 拆分成了一个单独的实例。
 
-## Payment实例初始化
+## Payment 实例初始化
 
-``` go
+```go
 
 PaymentService, err := payment.NewPayment(&payment.UserConfig{
   AppID:              "[app_id]",                 // 小程序、公众号或者企业微信的appid
@@ -31,7 +31,7 @@ PaymentService, err := payment.NewPayment(&payment.UserConfig{
   Log: payment.Log{
     Level: "debug",
     // 可以重定向到你的目录下，如果设置File和Error，默认会在当前目录下的wechat文件夹下生成日志
-    File:  "/Users/user/wechat/payment/info.log", 
+    File:  "/Users/user/wechat/payment/info.log",
 	  Error: "/Users/user/wechat/payment/error.log",
     Stdout: false, //  是否打印在终端
   },
@@ -48,7 +48,7 @@ PaymentService, err := payment.NewPayment(&payment.UserConfig{
 })
 ```
 
-## UserConfig参数说明：
+## UserConfig 参数说明：
 
 ### AppID
 
@@ -56,7 +56,7 @@ PaymentService, err := payment.NewPayment(&payment.UserConfig{
 - 必传: `是`
 - 示例: `ww16143ea0101327cc`
 
-小程序、公众号或者企业微信的appId。
+小程序、公众号或者企业微信的 appId。
 
 ### MchID
 
@@ -64,7 +64,7 @@ PaymentService, err := payment.NewPayment(&payment.UserConfig{
 - 必传: `是`
 - 示例: `1611854986`
 
-微信支付商户号ID
+微信支付商户号 ID
 
 ### MchApiV3Key
 
@@ -72,8 +72,8 @@ PaymentService, err := payment.NewPayment(&payment.UserConfig{
 - 必传: `是`
 - 示例: `1611854986`
 
-微信商户里面设置的API
-V3密钥。参考官方文档: [API v3密钥](https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay3_2.shtml)
+微信商户里面设置的 API
+V3 密钥。参考官方文档: [API v3 密钥](https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay3_2.shtml)
 
 ### Key
 
@@ -81,8 +81,8 @@ V3密钥。参考官方文档: [API v3密钥](https://pay.weixin.qq.com/wiki/doc
 - 必传: `是`
 - 示例: `管理员设置的随机数`
 
-微信商户里面设置的API
-V2密钥。参考官方文档: [配置API key](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/guide/Configure_API_key.shtml)
+微信商户里面设置的 API
+V2 密钥。参考官方文档: [配置 API key](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/guide/Configure_API_key.shtml)
 
 ### CertPath
 
@@ -90,8 +90,8 @@ V2密钥。参考官方文档: [配置API key](https://pay.weixin.qq.com/wiki/do
 - 必传: `是`
 - 示例: `/.../apiclient_cert.pem`
 
-微信商户里面设置的API
-V3证书。参考官方文档: [私钥和证书](https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay3_1.shtml)
+微信商户里面设置的 API
+V3 证书。参考官方文档: [私钥和证书](https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay3_1.shtml)
 
 ### KeyPath
 
@@ -99,7 +99,7 @@ V3证书。参考官方文档: [私钥和证书](https://pay.weixin.qq.com/wiki/
 - 必传: `是`
 - 示例: `/.../apiclient_key.pem`
 
-商户API V3私钥。
+商户 API V3 私钥。
 
 ### SerialNo
 
@@ -107,10 +107,10 @@ V3证书。参考官方文档: [私钥和证书](https://pay.weixin.qq.com/wiki/
 - 必传: `是`
 - 示例: `2655A2CD634B06C2A86B28780228A997D047B01A`
 
-商户号API V3证书的序列号。
+商户号 API V3 证书的序列号。
 获取证书调用方法：
 
-``` bash
+```bash
 openssl x509 -noout -serial -in /.../apiclient_cert.pem
 ```
 
@@ -126,7 +126,7 @@ openssl x509 -noout -serial -in /.../apiclient_cert.pem
 - 必传: `否`
 - 示例: `/.../wx_rsa_public_key.pem`
 
-微信支付API使用微信支付 的平台公钥（不是商户私钥 ）进行应答签名。
+微信支付 API 使用微信支付 的平台公钥（不是商户私钥 ）进行应答签名。
 [获取请详见](./security.md)
 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/wechatpay5_1.shtml)
 
@@ -136,7 +136,7 @@ openssl x509 -noout -serial -in /.../apiclient_cert.pem
 - 必传: `否`
 - 示例: `5157F09EFDC096DE15EBE81A47057A7232F1B8E1`
 
-[获取请详见](./security.md)，获取微信支付V3平台证书接口时，微信会一并返回  
+[获取请详见](./security.md)，获取微信支付 V3 平台证书接口时，微信会一并返回  
 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/wechatpay5_1.shtml)
 
 ### RSAPublicKeyPath
@@ -145,7 +145,7 @@ openssl x509 -noout -serial -in /.../apiclient_cert.pem
 - 必传: `否`
 - 示例: `/.../wx_rsa_public_key.pem`
 
-微信支付API使用微信支付 的平台公钥（不是商户私钥 ）进行应答签名。
+微信支付 API 使用微信支付 的平台公钥（不是商户私钥 ）进行应答签名。
 [获取请详见](https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay_yhk.php?chapter=25_7&index=4)
 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay_yhk.php?chapter=25_7&index=4)
 
@@ -155,7 +155,7 @@ openssl x509 -noout -serial -in /.../apiclient_cert.pem
 - 必传: `否`
 - 示例: `ww16143ea0101327cc`
 
-在服务商平台下的，子小程序、公众号或者企业微信的appId。
+在服务商平台下的，子小程序、公众号或者企业微信的 appId。
 
 ### SubMchID
 
@@ -163,7 +163,8 @@ openssl x509 -noout -serial -in /.../apiclient_cert.pem
 - 必传: `否`
 - 示例: `1611854986`
 
-在服务商平台下的，子微信支付商户号ID。
+在服务商平台下的，子微信支付商户号 ID。
+
 > 注意，如果没有在服务商平台下，请不要设置这两个参数。
 
 ### NotifyURL
@@ -172,7 +173,7 @@ openssl x509 -noout -serial -in /.../apiclient_cert.pem
 - 必传: `是`
 - 示例: `https://pay.artisan-cloud.cn/wx/notify`
 
-微信支付完成后的通知回调地址。参考官方文档: [支付通知API](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_1_5.shtml)
+微信支付完成后的通知回调地址。参考官方文档: [支付通知 API](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_1_5.shtml)
 
 ### Log
 
@@ -180,7 +181,7 @@ openssl x509 -noout -serial -in /.../apiclient_cert.pem
 - 必传: `否`
 - 示例:
 
-``` go
+```go
 payment.Log{
   Level: "debug",  // 输出日志等级
   File:  "./wechat.log", //  输出日志文件
@@ -196,7 +197,7 @@ payment.Log{
 - 必传: `否`
 - 示例:
 
-``` go
+```go
 payment.Http{
   Timeout: 30.0,
   BaseURI: "https://api.mch.weixin.qq.com",
@@ -211,7 +212,7 @@ payment.Http{
 - 必传: `否`
 - 默认值：`false`
 
-是否开启打印SDK调用微信API接口时候的日志，开启之后会显示出提交的参数和微信详情的数据，对于排查问题时候非常有帮助。
+是否开启打印 SDK 调用微信 API 接口时候的日志，开启之后会显示出提交的参数和微信详情的数据，对于排查问题时候非常有帮助。
 
 ### Cache
 
@@ -219,7 +220,6 @@ payment.Http{
 - 必传: `否`
 - 默认值：`nil`
 
-如果需要实现Token中控，例如多个应用实例共享或者和其他应用共享Token。
+如果需要实现 Token 中控，例如多个应用实例共享或者和其他应用共享 Token。
 
-更多详细内容请参考： [Cache配置](/zh/start/common.md#cache配置)
-
+更多详细内容请参考： [Cache 配置](/docs/zh/start/common.md#cache配置)

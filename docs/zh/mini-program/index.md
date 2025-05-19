@@ -1,10 +1,10 @@
 # 小程序入门
 
-在调用小程序相应的API接口之前，我们需要将初始化一个`MiniProgramApp`实例，后面调用全部都会通过`MiniProgramApp`提供的方法来完成。
+在调用小程序相应的 API 接口之前，我们需要将初始化一个`MiniProgramApp`实例，后面调用全部都会通过`MiniProgramApp`提供的方法来完成。
 
 具体如下：
 
-``` go
+```go
 MiniProgramApp, err := miniProgram.NewMiniProgram(&miniProgram.UserConfig{
   AppID:     "[miniprogram_app_id]", // 小程序appid
   Secret:    "[miniprogram_secret]", // 小程序app secret
@@ -12,7 +12,7 @@ MiniProgramApp, err := miniProgram.NewMiniProgram(&miniProgram.UserConfig{
   Log: miniProgram.Log{
     Level: "debug",
     // 可以重定向到你的目录下，如果设置File和Error，默认会在当前目录下的wechat文件夹下生成日志
-    File:  "/Users/user/wechat/mini-program/info.log", 
+    File:  "/Users/user/wechat/mini-program/info.log",
 	  Error: "/Users/user/wechat/mini-program/error.log",
     Stdout: false, //  是否打印在终端
   },
@@ -25,13 +25,13 @@ MiniProgramApp, err := miniProgram.NewMiniProgram(&miniProgram.UserConfig{
 })
 ```
 
-## UserConfig参数说明：
+## UserConfig 参数说明：
 
 ### AppID
 
 - 类型: `string`
 - 必传: `是`
-- 示例: `ww16143ea0101327cc` 
+- 示例: `ww16143ea0101327cc`
 
 小程序唯一凭证，即 AppID，可在「[微信公众平台](https://mp.weixin.qq.com/) - 设置 - 开发设置」页中获得。（需要已经成为开发者，且帐号没有异常状态）
 
@@ -39,9 +39,9 @@ MiniProgramApp, err := miniProgram.NewMiniProgram(&miniProgram.UserConfig{
 
 - 类型: `string`
 - 必传: `是`
-- 示例: `1e116d3db6d32322d3b1d8666232b097` 
+- 示例: `1e116d3db6d32322d3b1d8666232b097`
 
-小程序唯一凭证密钥，即 AppSecret，获取方式同 AppID 
+小程序唯一凭证密钥，即 AppSecret，获取方式同 AppID
 
 ### Token
 
@@ -49,10 +49,10 @@ MiniProgramApp, err := miniProgram.NewMiniProgram(&miniProgram.UserConfig{
 - 必传: `否`
 - 示例: `vlhkaO8PW6UYyRgWCgb3UwF`
 
-微信回调消息的Token，请到微信后台获取。
+微信回调消息的 Token，请到微信后台获取。
+
 > 如果会出现报错"初始化报错 illegal base64 data at input byte 0"
 > 可以随机给予一个初始化的字符串，如上案例。
-
 
 ### AESKey
 
@@ -61,15 +61,16 @@ MiniProgramApp, err := miniProgram.NewMiniProgram(&miniProgram.UserConfig{
 - 示例: `zUfVSOan3B5ZZZZZZ66ixY6OrB28MTS9OIiBLaq3q2PhNG`
 
 微信回调消息的密钥，即 AESKey，请到微信后台获取。
-> 如果没有给AESKey，初始化会有提示消息"AES Key is empty, this may occur errors when decode callbacks message"
+
+> 如果没有给 AESKey，初始化会有提示消息"AES Key is empty, this may occur errors when decode callbacks message"
 
 ### Log （TODO）
 
 - 类型: `miniProgram.Log`
 - 必传: `否`
-- 示例: 
+- 示例:
 
-``` go
+```go
 miniProgram.Log{
   Level: "debug",  // 输出日志等级
   File:  "./wechat.log", //  输出日志文件
@@ -85,7 +86,7 @@ miniProgram.Log{
 - 必传: `否`
 - 默认值：`false`
 
-是否开启打印SDK调用微信API接口时候的日志，开启之后会显示出提交的参数和微信详情的数据，对于排查问题时候非常有帮助。
+是否开启打印 SDK 调用微信 API 接口时候的日志，开启之后会显示出提交的参数和微信详情的数据，对于排查问题时候非常有帮助。
 
 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/access-token/auth.getAccessToken.html)
 
@@ -95,11 +96,6 @@ miniProgram.Log{
 - 必传: `否`
 - 默认值：`nil`
 
-如果需要实现Token中控，例如多个应用实例共享或者和其他应用共享Token。
+如果需要实现 Token 中控，例如多个应用实例共享或者和其他应用共享 Token。
 
-更多详细内容请参考： [Cache配置](/zh/start/common.md#cache配置)
-
-
-
-
-
+更多详细内容请参考： [Cache 配置](/docs/zh/start/common.md#cache配置)
