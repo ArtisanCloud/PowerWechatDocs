@@ -139,6 +139,7 @@ export const sidebar = {
         { text: "入门", link: "/zh/open-platform/index" },
         { text: "服务端", link: "/zh/open-platform/server" },
         { text: "代授权", link: "/zh/open-platform/authorizer-delegate" },
+        { text: "服务商支付", link: "/zh/open-platform/jssdk" },
       ],
     },
     {
