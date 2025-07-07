@@ -259,5 +259,14 @@ export default defineConfig({
       message: "Released under the MIT license",
       copyright: `Copyright © 2021-${new Date().getFullYear()} ArtisanCloud`,
     },
+
+    search: {
+      provider: 'algolia',
+      options: {
+        appId: 'WWQJSAUFP5',
+        apiKey: '98e50e9ddbb095088dbb53c068b24f84',
+        indexName: 'powerwechat'
+      }
+    },
   },
 });
