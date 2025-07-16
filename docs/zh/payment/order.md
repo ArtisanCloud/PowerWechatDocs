@@ -5,15 +5,15 @@ date: 2021-07-06
 
 # 订单
 
-H5支付、公众号支付、扫码支付、支付中签约都是使用这个接口。
+H5 支付、公众号支付、扫码支付、支付中签约都是使用这个接口。
 
 ## 下单
 
-### JSAPI支付
+### JSAPI 支付
 
-*** 注意： 使用支付功能的时候，请不要把debug设置成true，支付接口不支持debug模式，否则签名会错误 ***
+**_ 注意： 使用支付功能的时候，请不要把 debug 设置成 true，支付接口不支持 debug 模式，否则签名会错误 _**
 
-``` go
+```go
 options := &request.RequestJSAPIPrepay{
   Amount: &request.JSAPIAmount{
     Total:    1,
@@ -28,7 +28,7 @@ options := &request.RequestJSAPIPrepay{
 }
 
 // 如果需要覆盖掉全局的notify_url
-//options.SetNotifyUrl("https://pay.xxx.com/wx/notify")
+options.SetNotifyUrl("https://pay.xxx.com/wx/notify")
 
 // 下单
 response, err := services.PaymentApp.Order.JSAPITransaction(ctx,options)
@@ -52,9 +52,9 @@ payConf, err := services.PaymentApp.JSSDK.BridgeConfig(response.PrepayID, true)
 
 [微信官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_1_1.shtml)
 
-### App支付
+### App 支付
 
-``` go
+```go
 options := &request2.RequestAppPrepay{
   Amount: &request2.AppAmount{
     Total:    1,
@@ -81,9 +81,9 @@ payConf, err := services.PaymentApp.JSSDK.AppConfig(ctx,response.PrepayID, true)
 
 [微信官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_2_1.shtml)
 
-### Native支付
+### Native 支付
 
-``` go
+```go
 options := &request2.RequestNativePrepay{
   Amount: &request2.NativeAmount{
     Total:    1,
@@ -105,11 +105,9 @@ response, err := services.PaymentApp.Order.TransactionNative(options)
 
 ### 小程序支付
 
-小程序支付和JSAPI支付接口一样，参考上方**[JSAPI支付](#JSAPI支付)**
+小程序支付和 JSAPI 支付接口一样，参考上方**[JSAPI 支付](#JSAPI支付)**
 
 [微信官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_5_1.shtml)
-
-
 
 ## 查询订单
 
@@ -127,17 +125,20 @@ response, err := services.PaymentApp.Order.TransactionNative(options)
 :::
 
 ### 根据商户订单号查询
+
 ```go
 paymentService.Order.QueryByOutTradeNumber("商户系统的内部订单号 [out_trade_no]")
 ```
 
 ### 根据微信支付单号查询
-``` go
+
+```go
 paymentService.Order.QueryByTransactionId("微信支付单号 [transaction_id]")
 ```
 
 查询订单返回结果：
-``` json
+
+```json
 {
   "amount": {
     "currency": "CNY",
@@ -165,15 +166,16 @@ paymentService.Order.QueryByTransactionId("微信支付单号 [transaction_id]")
 ## 关闭订单
 
 以下情况需要调用关单接口：
+
 1. 商户订单支付失败需要生成新单号重新发起支付，要对原订单号调用关单，避免重复支付；
 2. 系统下单后，用户支付超时，系统退出不再受理，避免用户继续，请调用关单接口。
 
-``` go
+```go
 paymentService.Order.Close("商户系统的内部订单号 [out_trade_no]")
 ```
 
 ::: warning
-注意： 
+注意：
 
-关单没有时间限制，建议在订单生成后间隔几分钟（最短5分钟）再调用关单接口，避免出现订单状态同步不及时导致关单失败。
+关单没有时间限制，建议在订单生成后间隔几分钟（最短 5 分钟）再调用关单接口，避免出现订单状态同步不及时导致关单失败。
 :::
