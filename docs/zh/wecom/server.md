@@ -75,7 +75,7 @@ text, _ := ioutil.ReadAll(rs.Body)
 		}
 
 		// 假设员工给应用发送消息，这里可以直接回复消息文本，
-		// return  "I'm recv..."
+		// return  services.WeComContactApp.SendText(ctx, xx)
 
 		// 这里回复success告诉微信我收到了，后续需要回复用户信息可以主动调发消息接口
 		return kernel.SUCCESS_EMPTY_RESPONSE
