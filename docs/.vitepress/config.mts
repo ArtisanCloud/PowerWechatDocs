@@ -196,8 +196,8 @@ export default defineConfig({
       "script",
       {
         async: "",
-        src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9660680807544080",
-        // crossorigin: "anonymous"
+        src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5845974161794952",
+        crossorigin: "anonymous"
       },
     ],
     [
