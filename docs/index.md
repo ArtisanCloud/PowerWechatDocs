@@ -29,11 +29,15 @@ features:
 ## 他们都在使用
 
 <div class="friend-links">
+  <a class="friend-link" href="https://github.com/ArtisanCloud/PowerX" target="_blank" rel="noopener noreferrer">
+    <!-- <img src="https://powerx-dev.artisan-cloud.com/images/logo-m.png" alt="元匠科技" /> -->
+    <img src="./public/images/powerx-logo.png" alt="元匠科技" />
+  </a>
   <a class="friend-link" href="https://www.weahe.com/" target="_blank" rel="noopener noreferrer">
     <img src="https://cdn.weahe.com/app/image/logo.png" alt="万荷科技" />
   </a>
   <a class="friend-link" href="https://www.iceres.cn/" target="_blank" rel="noopener noreferrer">
-    <img src="https://oss.iceres.cn/logo-horizontal.png" alt="万荷科技" />
+    <img src="https://oss.iceres.cn/logo-horizontal.png" alt="冰莲响应科技" />
   </a>
 </div>
 
