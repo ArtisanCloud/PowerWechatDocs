@@ -26,7 +26,7 @@ features:
     details: 在Github上开源，免费商用，欢迎Star。
 ---
 
-## 友情链接
+## 他们都在使用
 
 <div class="friend-links">
   <a class="friend-link" href="https://www.weahe.com/" target="_blank" rel="noopener noreferrer">
