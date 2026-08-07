@@ -32,6 +32,9 @@ features:
   <a class="friend-link" href="https://www.weahe.com/" target="_blank" rel="noopener noreferrer">
     <img src="https://cdn.weahe.com/app/image/logo.png" alt="万荷科技" />
   </a>
+  <a class="friend-link" href="https://www.iceres.cn/" target="_blank" rel="noopener noreferrer">
+    <img src="https://oss.iceres.cn/logo-horizontal.png" alt="万荷科技" />
+  </a>
 </div>
 
 <style>
