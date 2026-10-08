@@ -73,8 +73,9 @@ jobs:
           set -eu
           docker pull --platform linux/amd64 "$IMAGE"
           docker run -d --name powerwechat-smoke -p 127.0.0.1:8080:80 "$IMAGE"
-          trap 'docker rm -f powerwechat-smoke' EXIT
-          curl --retry 10 --retry-connrefused --retry-delay 1 -fsS http://127.0.0.1:8080/ > /tmp/powerwechat-home.html
+          trap 'docker logs powerwechat-smoke; docker rm -f powerwechat-smoke' EXIT
+          curl --retry 10 --retry-all-errors --retry-delay 1 --max-time 5 -fsS \
+            --output /tmp/powerwechat-home.html http://127.0.0.1:8080/
           grep -q PowerWechat /tmp/powerwechat-home.html
           curl -fsS http://127.0.0.1:8080/zh/start/installation > /dev/null
           curl -fsS http://127.0.0.1:8080/images/logo.png > /dev/null
